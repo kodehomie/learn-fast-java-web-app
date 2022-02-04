@@ -9,43 +9,62 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 # Enterprise Technologies and Techniques
 Environment
 - Ubuntu Budgie
+
 Communication
 - Slack 
+
 Version Control
 - Git
+
 Version Control Repository
 - GitHub
+
 Integrated Development Environment (IDE)
 - IntelliJ IDEA Ultimate
+
 Web Server
 - Apache Tomcat 8
+
 Java Development Kit (JDK)
 - JDK 11
+
 Database
 - MySQL Community Server
+
 Authentication & Authorization
 - Google Authentication Identity Service
+
 Logging Framework
 - Log4J
+
 Unit Testing
 - jUnit
+
 Object Relational Mapping (ORM) Framework
 - Hibernate
+
 Web Service Consumption
 - Google Translate
+
 # User Stories
 Use Case
 - As a mentor, I want to connect with a mentee so that I can build my network with rising mentees.
+
 Use Case
 - As a mentee, I want to connect with a mentor so that I can learn from an expert.
+
 About
 - As a user candidate, I want information so that I can decide whether to create an account.
+
 Contact
 - As a user candidate I want to inquire information beyond the scope of the front-end so that I can decide whether to create an account.
+
 Create an account
 - As a new user, I want to create an account so that I can efficiently connect and manage my learning.
+
 Sign in
 - As a Learn Fast user, I want to sign in so that I can access resources.
+
 # Project Plan
     • Log4j is the logging framework for this project.
     • Hibernate object relational mapping framework controls all data access.
