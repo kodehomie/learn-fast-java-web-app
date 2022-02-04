@@ -69,11 +69,12 @@ Sign in
 - As a Learn Fast user, I want to sign in so that I can access resources.
 
 # Project Plan
-    • Log4j is the logging framework for this project.
-    • Hibernate object relational mapping framework controls all data access.
-    • Google Authenticator identity service gives new users permission to register and log into the application.
-    • AWS enables public deployment of this project.
-    • Google Translate API facilitates cross-language communication between mentors and mentees.
+- Log4j is the logging framework for this project.
+- Hibernate object relational mapping framework controls all data access.
+- Google Authenticator identity service gives new users permission to register and log into the application.
+- AWS enables public deployment of this project.
+- Google Translate API facilitates cross-language communication between mentors and mentees.
+    
 # Screen Design
 ![image](https://user-images.githubusercontent.com/79040798/152470389-d29078f1-0c07-4b4b-b04b-4d254ef18f26.png)
 
