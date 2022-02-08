@@ -13,90 +13,90 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 - Make a community for like-minded learners.
 
 # Enterprise Technologies and Techniques
-Environment
+### Environment
 - Ubuntu Budgie
 
-Communication
+### Communication
 - Slack 
 
-Version Control
+### Version Control
 - Git
 
-Version Control Repository
+### Version Control Repository
 - GitHub
 
-Integrated Development Environment (IDE)
+### Integrated Development Environment (IDE)
 - IntelliJ IDEA Ultimate
 
-Web Server
+### Web Server
 - Apache Tomcat 8
 
-Java Development Kit (JDK)
+### Java Development Kit (JDK)
 - JDK 11
 
-Database
+### Database
 - MySQL Community Server
 
-Authentication & Authorization
+### Authentication & Authorization
 - Google Authentication Identity Service
 
-Logging Framework
+### Logging Framework
 - Log4J
 
-Unit Testing
+### Unit Testing
 - jUnit
 
-Object Relational Mapping (ORM) Framework
+### Object Relational Mapping (ORM) Framework
 - Hibernate
 
-Web Service Consumption
+### Web Service Consumption
 - Google Translate
 
 # User Stories
-About
+### About
 - As a user candidate, I want information so that I can decide whether to 
   create an account. (MVP)
 
-Contact
+### Contact
 - As a user candidate I want to inquire information beyond the scope of the 
   front-end so that I can decide whether to create an account. (MVP)
 
-Create an account
+### Create an account
 - As a new user, I want to create an account so that I can efficiently 
   connect and manage my learning. (MVP)
 
-Sign in
+### Sign in
 - As a "Learn Fast" user, I want to sign in so that I can access resources. (MVP)
 
-Find Mentees
+### Find Mentees
 - As any user, I want to find mentees so that I can learn more 
 about them. (MVP)
 
-Find Mentors
+### Find Mentors
 - As any user, I want to find mentors so that I can learn more
   about them. (MVP)
 
-View Available Mentees
+### View Available Mentees
 - As any user, I want to view available mentors so that I can connect with
   them. (MVP)
 
-View Available Mentors
+### View Available Mentors
 - As any user, I want to view available mentors so that I can connect with 
   them. (MVP)
 
-Connect With Mentee
+### Connect With Mentee
 - As a mentor, I want to connect with a mentee so that I can build my 
   network with rising mentees. (MVP)
 
-Connect With Mentor
+### Connect With Mentor
 - As a mentee, I want to connect with a mentor so that I can learn from an 
   expert. (MVP)
 
-Admin Edit Mentee
+### Admin Edit Mentee
 - As an admin, I want to edit mentees so that I can assist in connecting 
   mentors and mentees. (MVP)
 
-Admit Edit Mentor
+### Admit Edit Mentor
 - As an admin, I want to edit mentors so that I can assist in connecting
   mentors and mentees. (MVP)
 
