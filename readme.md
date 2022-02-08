@@ -76,12 +76,12 @@ Find Mentors
 - As any user, I want to find mentors so that I can learn more
   about them. (MVP)
 
-View Available Mentors
-- As any user, I want to view available mentors so that I can connect with 
-  them. (MVP)
-
 View Available Mentees
 - As any user, I want to view available mentors so that I can connect with
+  them. (MVP)
+
+View Available Mentors
+- As any user, I want to view available mentors so that I can connect with 
   them. (MVP)
 
 Connect With Mentee
