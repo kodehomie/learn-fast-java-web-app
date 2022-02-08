@@ -6,10 +6,10 @@ This journal.md file is for documenting my enterprise Java learning journey.
 
 ### WEEK 1
 
-Dates: 2022-JAN-18-TUE - 2022-JAN-22-SAT
-Weekly Java Hours: 9 hours
-Total Enterprise Java Hours: 9 hours
-Notes:
+##### Dates: 2022-JAN-18-TUE - 2022-JAN-22-SAT
+##### Weekly Java Hours: 9 hours
+##### Total Enterprise Java Hours: 9 hours
+##### Notes:
 - Review syllabus and course calendar
 - Setup environment
 - Read references for IntelliJ IDEA and Maven
@@ -24,10 +24,10 @@ Notes:
 
 ### WEEK 2
 
-Dates: 2022-JAN-23-SUN - 2022-JAN-29-SAT
-Weekly Java Hours: 17 hours
-Total Enterprise Java Hours: 26 hours
-Notes:
+##### Dates: 2022-JAN-23-SUN - 2022-JAN-29-SAT
+##### Weekly Java Hours: 17 hours
+##### Total Enterprise Java Hours: 26 hours
+##### Notes:
 - Read about Git
 - Read references for Git and GitHub
 - Watch videos about Git, GitHub, Student Repo, debugging, JSP, and Markdown
@@ -45,10 +45,10 @@ Notes:
 
 ### WEEK 3
 
-Dates: 2022-JAN-30-SUN - 2022-FEB-5-SAT
-Weekly Java Hours: 19 hours
-Total Enterprise Java Hours: 45 hours
-Notes: 
+##### Dates: 2022-JAN-30-SUN - 2022-FEB-5-SAT
+##### Weekly Java Hours: 19 hours
+##### Total Enterprise Java Hours: 45 hours
+##### Notes: 
 - Read about Log4J and JUnit
 - Read references for Log4J and JUnit
 - Watch videos about Log4J and JUnit
@@ -64,7 +64,7 @@ Notes:
 
 ### WEEK 4
 
-Dates: 2022-FEB-6-SUN - 2022-FEB-12-SAT
-Weekly Java Hours:
-Total Enterprise Java Hours:
-Notes:
+##### Dates: 2022-FEB-6-SUN - 2022-FEB-12-SAT
+##### Weekly Java Hours:
+##### Total Enterprise Java Hours:
+##### Notes:
