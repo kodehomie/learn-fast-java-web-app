@@ -1,4 +1,4 @@
-#TIME LOG
+# TIME LOG
 
 ### WEEK 1
 - 2022-JAN-18-TUE - 3 hours
