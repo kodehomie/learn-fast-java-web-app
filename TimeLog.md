@@ -24,3 +24,10 @@ WEEK 3
 - 2022-FEB-1-TUE – 2 hours
 - 2022-FEB-2-WED – 3 hours
 - 2022-FEB-3-THU – 4 hours
+- 2022-FEB-4-FRI – 2 hours
+- 2022-FEB-5-SAT – 3 hours
+- WEEK 3 (19 HOURS)
+
+WEEK 4
+- 2022-FEB-6-SUN - 4 hours
+- 2022-FEB-7-MON - 2 hours
