@@ -95,6 +95,7 @@ Connect With Mentor
 Admin Edit Mentee
 - As an admin, I want to edit mentees so that I can assist in connecting 
   mentors and mentees. (MVP)
+
 Admit Edit Mentor
 - As an admin, I want to edit mentors so that I can assist in connecting
   mentors and mentees. (MVP)
