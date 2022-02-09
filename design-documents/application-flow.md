@@ -26,3 +26,27 @@
 4. If user is authenticated, the server will handle allowing access to edit
    pages.
 5. If authentication fails, then display error message.
+
+### User Find Mentees
+1.
+
+### User Find Mentors
+1.
+
+### View Available Mentees
+1.
+
+### View Available Mentors
+1.
+
+### Connect With Mentees
+1.
+
+### Connect With Mentors
+1.
+
+### Admin Edit Mentee
+1.
+
+### Admin Edit Mentor
+1.
