@@ -1,56 +1,57 @@
 # Justin Hoang Individual Project
 Learn Fast: Java Web Application
 
-# Learn Fast: Java Web Application
+### Learn Fast: Java Web Application
 "Learn Fast" is a java web application for mentors and mentees that need learning and networking management solutions.
 
-# Problem Statement (Learning Opportunity Statement)
+### Problem Statement (Learning Opportunity Statement)
 Mentors and mentees need a more efficient way to connect and manage their learning. Mentors want a better solution for connecting with their mentors, and they want an efficient management system for their learning material. Mentees want a way to find mentors and want practical tools for learning.
 
-# Learn Fast: Java Web Application Objectives
+### Learn Fast: Java Web Application Objectives
 - Create a connection solution for mentors and mentees.
 - Build a learning management solution for mentors and mentees.
 - Make a community for like-minded learners.
 
-# Enterprise Technologies and Techniques
-### Environment
-- Ubuntu Budgie
+### Enterprise Technologies and Techniques
 
-### Communication
-- Slack 
+##### Environment
+* Ubuntu Budgie
 
-### Version Control
-- Git
+##### Communication
+* Slack 
 
-### Version Control Repository
-- GitHub
+##### Version Control
+* Git
 
-### Integrated Development Environment (IDE)
-- IntelliJ IDEA Ultimate
+##### Version Control Repository
+* GitHub
 
-### Web Server
-- Apache Tomcat 8
+##### Integrated Development Environment (IDE)
+* IntelliJ IDEA Ultimate Edition
 
-### Java Development Kit (JDK)
-- JDK 11
+##### Web Server
+* Apache Tomcat 8
 
-### Database
-- MySQL Community Server
+##### Java Development Kit (JDK)
+* JDK 11
 
-### Authentication & Authorization
-- Google Authentication Identity Service
+##### Database
+* MySQL Community Server
 
-### Logging Framework
-- Log4J
+##### Authentication & Authorization
+* Google Authentication Identity Service
 
-### Unit Testing
-- jUnit
+##### Logging Framework
+* Log4J
 
-### Object Relational Mapping (ORM) Framework
-- Hibernate
+##### Unit Testing
+* JUnit
 
-### Web Service Consumption
-- Google Translate
+##### Object Relational Mapping (ORM) Framework
+* Hibernate
+
+##### Web Service Consumption
+* Google Translate
 
 # Design
 
