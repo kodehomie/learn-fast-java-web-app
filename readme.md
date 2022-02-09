@@ -62,4 +62,5 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 # Progress Documentation
 
 [Time Log](time-log.md)
+
 [Journal](journal.md)
