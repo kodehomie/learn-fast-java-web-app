@@ -1,6 +1,6 @@
-# PROJECT PLAN
+# Project Plan
 
-### WEEK 3
+### Week 3
 - [X] Create project repository on GitHub
 - [X] Create and push project structure in IntelliJ to GitHub
 - [X] Add link to individual project list in student repo
@@ -14,7 +14,7 @@
 - [X] Learn unit testing (JUnit)
 - [X] Document progress in journal
 
-### WEEK 4
+### Week 4
 - [X] Learn data access objects (DAOs)
 - [X] Learn Hibernate
 - [ ] Create the database
@@ -28,7 +28,7 @@
 - [ ] Unit test dao add user functionality
 - [ ] Document progress in journal
 
-### WEEK 5
+### Week 5
 
 - [ ] Learn Hibernate
 - [ ] Create the template for all JSP using Materialize
@@ -41,7 +41,7 @@
 - [ ] Add JSP for adding a user
 - [ ] Document progress in journal
 
-### WEEK 6
+### Week 6
 
 - [ ] Design the database
 - [ ] Create the database
@@ -59,7 +59,7 @@
 - [ ] Review individual projects
 - [ ] Document progress in journal
 
-### WEEK 7
+### Week 7
 - [ ] Learn security
 - [ ] Learn authentication
 - [ ] Design the database
@@ -71,11 +71,11 @@
 - [ ] Implement Log4J
 - [ ] Document progress in journal
 
-### WEEK 8
+### Week 8
 - [ ] Learn web services
 - [ ] Document progress in journal
 
-### WEEK 9
+### Week 9
 - [ ] Learn RESTful web services
 - [ ] Create team project repository with problem statement, project 
   plan, etc.
@@ -84,35 +84,35 @@
 - [ ] Implement authentication
 - [ ] Document progress in journal
 
-### WEEK 10
+### Week 10
 - [ ] Work week
 - [ ] Document progress in journal
 
-### WEEK 11
+### Week 11
 - [ ] Work week
 - [ ] Document progress in journal
 
-### WEEK 12
+### Week 12
 - [ ] Present team project
 - [ ] Document progress in journal
 
-### WEEK 13
+### Week 13
 - [ ] Learn asynchronous messaging
 - [ ] Present professional development project
 - [ ] Document progress in journal
 
-### WEEK 14
+### Week 14
 - [ ] Review individual project
 - [ ] Document progress in journal
 
-### WEEK 15
+### Week 15
 - [ ] Final Presentation
 - [ ] Create video, add video link to readme.md
 - [ ] Finalize all documentation
 - [ ] Code quality check
 - [ ] Document progress in journal
 
-### WEEK 16
+### Week 16
 - [ ] Present individual project
 - [ ] Final touches before code complete
 - [ ] Document progress in journal

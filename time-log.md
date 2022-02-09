@@ -1,14 +1,14 @@
-# TIME LOG
+# Time Log
 
-### WEEK 1
+### Week 1
 - 2022-JAN-18-TUE - 3 hours
 - 2022-JAN-19-WED - 1 hour
 - 2022-JAN-20-THU - 1 hour
 - 2022-JAN-21-FRI - 1 hour
 - 2022-JAN-22-SAT - 3 hours
-- WEEK 1 - (9 HOURS)
+- Week 1 - (9 hours)
 
-### WEEK 2
+### Week 2
 - 2022-JAN-23-SUN - 5 hours
 - 2022-JAN-24-MON - 1 hour
 - 2022-JAN-25-TUE - 1 hour
@@ -16,9 +16,9 @@
 - 2022-JAN-27-THU - 1 hour
 - 2022-JAN-28-FRI - 4 hours
 - 2022-JAN-29-SAT - 4 hours
-- WEEK 2 – (17 HOURS)
+- Week 2 – (17 hours)
 
-### WEEK 3
+### Week 3
 - 2022-JAN-30-SUN - 4 hours
 - 2022-JAN-31-MON – 1 hour
 - 2022-FEB-1-TUE – 2 hours
@@ -26,9 +26,9 @@
 - 2022-FEB-3-THU – 4 hours
 - 2022-FEB-4-FRI – 2 hours
 - 2022-FEB-5-SAT – 3 hours
-- WEEK 3 (19 HOURS)
+- Week 3 (19 hours)
 
-### WEEK 4
+### Week 4
 - 2022-FEB-6-SUN - 4 hours
 - 2022-FEB-7-MON - 2 hours
 - 2022-FEB-8-TUE -
