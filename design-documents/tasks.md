@@ -1,56 +1,56 @@
 # Tasks by Story
 
 ### About
-- [ ] new about static page
+- [ ] Create new about static page
 
 ### Contact
-- [ ] new contact static page
+- [ ] Create new contact static page
 
 ### Create an account
-- [ ] new user jsp
-- [ ] add user controller (java class)
-- [ ] user entity (java class)
-- [ ] user table
-- [ ] user dao to add user to db (java class)
-- [ ] unit test dao add user functionality
+- [ ] Create new user JSP
+- [ ] Create user controller (Java class)
+- [ ] Create user entity (Java class)
+- [ ] Create user table
+- [ ] Create user DAO to add user in DB (Java class)
+- [ ] Unit test dao add user functionality
 
 ### Sign In
 - [ ] Learn Google authentication
 - [ ] Add tasks once I learn more!
 
 ### Find Mentees
-- [ ] mentee table
-- [ ] search mentees jsp
-- [ ] search mentees controller (java class)
-- [ ] mentee entity (java class)
-- [ ] mentee table
-- [ ] mentee dao to search for mentee by name and location
-- [ ] unit test mentee dao searches (find by name and location)
+- [ ] Crate mentee table
+- [ ] Search mentees JSP
+- [ ] Search mentees controller (Java class)
+- [ ] Create mentee entity (Java class)
+- [ ] Create mentee table
+- [ ] Create mentee DAO to search for mentee by name and location
+- [ ] Unit test mentee DAO searches (find by name and location)
 
 ### Find Mentors
-- [ ] mentor table
-- [ ] search mentors jsp
-- [ ] search mentors controller (java class)
-- [ ] mentor entity (java class)
-- [ ] mentor table
-- [ ] mentor dao to search for mentor by name and location
-- [ ] unit test mentor dao searches (find by name and location)
+- [ ] Create mentor table
+- [ ] Search mentors JSP
+- [ ] Search mentors controller (Java class)
+- [ ] Create mentor entity (Java class)
+- [ ] Create mentor table
+- [ ] Create mentor DAO to search for mentor by name and location
+- [ ] Unit test mentor dao searches (find by name and location)
 
 ### View Available Mentees
-- [ ] mentee dao to search for mentee by availability
-- [ ] unit test mentee dao searches (find by availability)
+- [ ] Create mentee DAO to search for mentee by availability
+- [ ] Unit test mentee DAO searches (find by availability)
 
 ### View Available Mentors
-- [ ] mentor dao to search for mentee by availability
-- [ ] unit test mentor dao searches (find by availability)
+- [ ] Create mentor DAO to search for mentee by availability
+- [ ] Unit test mentor DAO searches (find by availability)
 
 ### Connect With Mentees
-- [ ] mentee dao to search for mentee by contact information
-- [ ] unit test mentee dao searches (find by contact information)
+- [ ] Create mentee DAO to search for mentee by contact information
+- [ ] Unit test mentee dao searches (find by contact information)
 
 ### Connect With Mentors
-- [ ] mentor dao to search for mentee by contact information
-- [ ] unit test mentor dao searches (find by contact information)
+- [ ] Create mentor DAO to search for mentee by contact information
+- [ ] Unit test mentor DAO searches (find by contact information)
 
 ### Admin Edit Mentee
 - [ ] 
