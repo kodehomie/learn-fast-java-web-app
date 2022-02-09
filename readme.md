@@ -58,3 +58,8 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 * [Screen Design](design-documents/screen-designs.md)
 * [Application Flow](design-documents/application-flow.md)
 * [Database Design](design-documents/database-diagram.png)
+
+# Progress Documentation
+
+[Time Log](time-log.md)
+[Journal](journal.md)
