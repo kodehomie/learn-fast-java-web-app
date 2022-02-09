@@ -52,12 +52,6 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ### Web Service Consumption
 - Google Translate
 
-# Screen Design
-![image](https://user-images.githubusercontent.com/79040798/152470389-d29078f1-0c07-4b4b-b04b-4d254ef18f26.png)
-
-# Application Flow
-[image]
-
 # Design
 * [User Stories](design-documents/user-stories.md)
 * [Tasks](design-documents/tasks.md)
