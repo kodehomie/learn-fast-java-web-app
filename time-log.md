@@ -31,4 +31,4 @@
 ### Week 4
 - 2022-FEB-6-SUN - 4 hours
 - 2022-FEB-7-MON - 2 hours
-- 2022-FEB-8-TUE -
+- 2022-FEB-8-TUE - 5 hours
