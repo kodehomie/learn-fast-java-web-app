@@ -1,10 +1,10 @@
 # Tasks by Story
 
 ### About
-- [ ] new about jsp
+- [ ] new about static page
 
 ### Contact
-- [ ] new contact jsp
+- [ ] new contact static page
 
 ### Create an account
 - [ ] new user jsp
