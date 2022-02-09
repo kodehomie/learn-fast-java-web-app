@@ -53,7 +53,7 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Web Service Consumption
 * Google Translate
 
-# Design
+### Design
 
 * [User Stories](design-documents/user-stories.md)
 * [Tasks](design-documents/tasks.md)
@@ -61,7 +61,7 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 * [Application Flow](design-documents/application-flow.md)
 * [Database Design](design-documents/database-diagram.png)
 
-# Progress Documentation
+### Progress Documentation
 
 * [Time Log](time-log.md)
 * [Journal](journal.md)
