@@ -53,6 +53,7 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 - Google Translate
 
 # Design
+
 * [User Stories](design-documents/user-stories.md)
 * [Tasks](design-documents/tasks.md)
 * [Screen Design](design-documents/screen-designs.md)
@@ -61,6 +62,5 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 # Progress Documentation
 
-[Time Log](time-log.md)
-
-[Journal](journal.md)
+* [Time Log](time-log.md)
+* [Journal](journal.md)
