@@ -8,9 +8,9 @@ Learn Fast: Java Web Application
 Mentors and mentees need a more efficient way to connect and manage their learning. Mentors want a better solution for connecting with their mentors, and they want an efficient management system for their learning material. Mentees want a way to find mentors and want practical tools for learning.
 
 ### Learn Fast: Java Web Application Objectives
-- Create a connection solution for mentors and mentees.
-- Build a learning management solution for mentors and mentees.
-- Make a community for like-minded learners.
+* Create a connection solution for mentors and mentees.
+* Build a learning management solution for mentors and mentees.
+* Make a community for like-minded learners.
 
 ### Enterprise Technologies and Techniques
 
