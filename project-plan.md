@@ -20,12 +20,12 @@
 - [ ] Create the database
 - [X] Select Materialize template
 - [X] Design and configure CSS
-- [ ] Create new user jsp
+- [ ] Create new user JSP
 - [ ] Add user controller (Java class)
 - [ ] Create user entity (Java class)
 - [ ] Create user table
-- [ ] Create user dao to add user to db (Java class)
-- [ ] Unit test dao add user functionality
+- [ ] Create user DAO to add user to DB (Java class)
+- [ ] Unit test DAO add user functionality
 - [ ] Document progress in journal
 
 ### Week 5
