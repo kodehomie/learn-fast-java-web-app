@@ -75,8 +75,7 @@
                     <p class="light">By utilizing Learn Fast, we were able to
                         create a community that incorporates like-minded
                         learners. Additionally, a single system across all
-                        platforms allow for a more unified learning experience
-                        .</p>
+                        platforms allow for a more unified learning experience.</p>
                 </div>
             </div>
 
@@ -89,8 +88,7 @@
                     <p class="light">We have provided detailed documentation
                         as well as specific examples to help new learners get
                         started. We are also always open to feedback and can
-                        answer any questions a user may have about Learn Fast
-                        .</p>
+                        answer any questions a user may have about Learn Fast.</p>
                 </div>
             </div>
         </div>
