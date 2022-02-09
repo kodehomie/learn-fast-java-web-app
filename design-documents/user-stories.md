@@ -24,7 +24,7 @@
   about them. (MVP)
 
 ### View Available Mentees
-- As any user, I want to view available mentors so that I can connect with
+- As any user, I want to view available mentees so that I can connect with
   them. (MVP)
 
 ### View Available Mentors
