@@ -4,8 +4,8 @@
 * Paula Waite
 * Google
 * Microsoft
-* Adobe
 * Materialize
+* Adobe
 
 ### Index 0.1
 
