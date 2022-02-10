@@ -7,7 +7,7 @@
 * Materialize (Utilization of modern responsive CSS framework based on 
   Material Design by Google)
 * Adobe (Utilization of Adobe Photoshop)
-##### Thank you, I really appreciate the resource utility and inspiration🙏🙏🙏
+##### Thank you; I appreciate you, the resource utility, and the inspiration. 🙏🙏🙏
 
 ### Index 0.1
 
