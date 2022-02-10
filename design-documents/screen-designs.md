@@ -1,11 +1,12 @@
 # Screen Design
 
 ### Attribution
-* Paula Waite
-* Google
-* Microsoft
-* Materialize
-* Adobe
+* Paula Waite (Inspiration from Fat Bike Trail Reports)
+* Google (Inspiration from Gmail)
+* Microsoft (Utilization of Microsoft Whiteboard)
+* Materialize (Utilization of modern responsive CSS framework based on 
+  Material Design by Google)
+* Adobe (Utilization of Adobe Photoshop)
 
 ### Index 0.1
 
