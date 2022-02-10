@@ -4,8 +4,8 @@
 * Paula Waite (Inspiration from Fat Bike Trail Reports)
 * Google (Inspiration from Gmail)
 * Microsoft (Utilization of Microsoft Whiteboard)
-* Materialize (Utilization of modern responsive CSS framework based on 
-  Material Design by Google)
+* Materialize (Utilization of Materialize modern responsive CSS framework 
+  based on Material Design by Google)
 * Adobe (Utilization of Adobe Photoshop)
 ##### Thank you; I appreciate you, the resource utility, and the inspiration. 🙏🙏🙏
 
