@@ -17,6 +17,10 @@
 
 ![Home](learn-fast-screen-design-index0.2.png)
 
+### About 0.1
+
+![About](learn-fast-screen-design-about0.1.png)
+
 ### Sign Up 0.1
 
 ![Sign Up](learn-fast-screen-design-sign-up0.1.png)
