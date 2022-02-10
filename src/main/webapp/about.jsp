@@ -29,12 +29,7 @@
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
-        <h1 class="header center yellow darken-2-text">Learn Fast: Java Web
-            Application</h1>
-        <div class="row center">
-            <h5 class="header col s12 light">A modern social connection and
-            learning management system for mentors and mentees</h5>
-        </div>
+        <h1 class="header center yellow darken-2-text">About</h1>
         <div class="row center">
             <h5 class="header col s12 light">[Insert about information
                 here]</h5>
