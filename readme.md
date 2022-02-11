@@ -53,6 +53,16 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Web Service Consumption
 * Google Translate
 
+##### CSS
+* Materialize
+
+##### Data Validation
+* Bootstrap Validator (Front End)
+* Hibernate Validation
+
+##### Hosting
+* Amazon Web Services (AWS)
+
 ### Design
 
 * [User Stories](design-documents/user-stories.md)
