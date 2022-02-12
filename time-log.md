@@ -34,4 +34,5 @@
 * 2022-FEB-8-TUE - 5 hours
 * 2022-FEB-9-WED - 3 hours
 * 2022-FEB-10-THU - 4 hours
-* 2022-FEB-11-FRI -
+* 2022-FEB-11-FRI - 3 hours
+* 2022-FEB-12-SAT - 
