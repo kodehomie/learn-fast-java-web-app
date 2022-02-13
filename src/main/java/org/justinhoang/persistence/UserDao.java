@@ -1,4 +1,4 @@
 package org.justinhoang.persistence;
 
-public class UserData {
+public class UserDao {
 }
