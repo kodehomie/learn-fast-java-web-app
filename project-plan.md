@@ -9,7 +9,7 @@
 - [X] List technologies, versions, and uses
 - [X] Write project plan
 - [X] Document application flow
-- [ ] Triple-check for Checkpoint 1
+- [X] Triple-check for Checkpoint 1
 - [X] Learn logging (Log4J)
 - [X] Learn unit testing (JUnit)
 - [X] Document progress in journal
@@ -17,7 +17,7 @@
 ### Week 4
 - [X] Learn data access objects (DAOs)
 - [X] Learn Hibernate
-- [ ] Create the database
+- [X] Create the database
 - [X] Select Materialize template
 - [X] Design and configure CSS
 - [ ] Create new user JSP
