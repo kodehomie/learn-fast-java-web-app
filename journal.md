@@ -85,3 +85,10 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Study data structures and algorithms
 - Practice computer science Java flashcards
 - Learn about C
+
+### WEEK 5
+
+##### Dates: 2022-FEB-13-SUN - 2022-FEB-19-SAT
+##### Weekly Java Hours:
+##### Total Enterprise Java Hours:
+##### Notes:
