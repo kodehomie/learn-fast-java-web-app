@@ -65,6 +65,23 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 4
 
 ##### Dates: 2022-FEB-6-SUN - 2022-FEB-12-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours:
+##### Weekly Java Hours: 25 hours
+##### Total Enterprise Java Hours: 70 hours
 ##### Notes:
+- Read DAO pattern tutorial
+- Read manage data sources (database tools in IntelliJ)
+- Read Hibernate tutorial
+- Read Singleton Pattern
+- Read Hibernate reference
+- Read Hibernate 5.4 user doc
+- Read MySQL reference manual
+- Read connection pooling
+- Read c3p0 connection pooling config
+- Watch Videos about DAO and Hibernate
+- Explore database tools in IntelliJ
+- Work on the UserData class is a DAO exercise
+- Work on Hibernate and DAO practice exercise
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
