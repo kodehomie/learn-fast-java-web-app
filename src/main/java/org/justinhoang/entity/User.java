@@ -1,13 +1,24 @@
 package org.justinhoang.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /** The type User. */
 @Entity(name = "User")
 @Table(name = "user") // case sensitive!
-public class User {
+@ToString
+//@AllArgsConstructor
+//@NoArgsConstructor
+@EqualsAndHashCode
+public class User implements Serializable {
 
     // Every Entity must have a unique identifier which is annotated @Id
     // Notice there is no @Column here as the column and instance variable name are the same
@@ -60,7 +71,7 @@ public class User {
    *
    * @return the int
    */
-  public int id() {
+  public int getId() {
         return id;
     }
 
@@ -186,5 +197,15 @@ public class User {
         sb.append(", password='").append(password).append('\'');
         sb.append('}');
         return sb.toString();
+    }
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Role> roles = new HashSet<Role>();
+
+    public void addRole(Role role) {
+        roles.add(role);
+
     }
 }

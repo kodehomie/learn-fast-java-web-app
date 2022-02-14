@@ -1,4 +1,50 @@
-<web-app xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+<web-app
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+        version="3.1" xmlns:xsi="http://java.sun.com/jsf/core">
   <display-name>Archetype Created Web Application</display-name>
+  <description>
+    Welcome to Learn Fast!
+  </description>
+  <!-- Protect everything within the "user" directory. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>RequiresUserRole</web-resource-name>
+      <url-pattern>/sign-in-confirmation.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-role>
+    <role-name>user</role-name>
+  </security-role>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/sign-in.jsp</form-login-page>
+      <form-error-page>/sign-in-error.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <error-page>
+    <error-code>404</error-code>
+    <location>/general-error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/general-error.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/general-error.jsp</location>
+  </error-page>
+  <!-- ********************************************************************* -->
+  <!-- Home *********************************************************** -->
+  <!-- ********************************************************************* -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
 </web-app>

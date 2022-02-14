@@ -20,11 +20,14 @@
     <javax.version>7.0</javax.version>
     <mysql-version>8.0.16</mysql-version>
     <jstl-version>1.2</jstl-version>
+    <springstarterweb-version>2.6.3</springstarterweb-version>
+    <springtx-version>5.3.15</springtx-version>
     <hibernate-version>5.4.4.Final</hibernate-version>
     <log4j-version>2.10.0</log4j-version>
     <junit.version>4.12</junit.version>
     <junit-vintage-version>4.12.0</junit-vintage-version>
     <jupiter-version>5.0.0</jupiter-version>
+    <lombok-version>1.18.2</lombok-version>
     <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
@@ -47,6 +50,20 @@
       <artifactId>jstl</artifactId>
       <version>${jstl-version}</version>
     </dependency>
+  <!--    Spring-->
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${springstarterweb-version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${springtx-version}</version>
+    </dependency>
+
     <!-- next 2 dependencies are for hibernate -->
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
@@ -59,6 +76,13 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-c3p0</artifactId>
       <version>${hibernate-version}</version>
+    </dependency>
+<!--    next dependency for project lombok-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok-version}</version>
+      <scope>provided</scope>
     </dependency>
     <!-- next 2 dependencies are for log4j -->
     <dependency>
@@ -116,6 +140,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
