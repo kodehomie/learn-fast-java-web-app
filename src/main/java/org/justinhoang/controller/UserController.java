@@ -29,7 +29,7 @@ public class UserController {
 
     @RequestMapping(value = "/")
     public ModelAndView listUser(ModelAndView model) throws IOException {
-        List<User> listUser = userService.getAllUsers();
+        List<User> listUser = userService.readAllUsers();
         model.addObject("listUser", listUser);
         model.setViewName("home");
         return model;
@@ -47,7 +47,7 @@ public class UserController {
     public ModelAndView saveUser(@ModelAttribute User user) {
         if (user.getId() == 0) { // if user id is 0 then creating the
             // user other updating the user
-            userService.addUser(user);
+            userService.updateUser(user);
         } else {
             userService.updateUser(user);
         }
@@ -63,8 +63,8 @@ public class UserController {
 
     @RequestMapping(value = "/edit-user", method = RequestMethod.GET)
     public ModelAndView editContact(HttpServletRequest request) {
-        int userId = Integer.parseInt(request.getParameter("id"));
-        User user = userService.getUser(userId);
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = userService.readUser(id);
         ModelAndView model = new ModelAndView("UserForm");
         model.addObject("user", user);
 

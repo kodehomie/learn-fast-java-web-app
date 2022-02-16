@@ -4,15 +4,26 @@ import java.util.List;
 
 import org.justinhoang.entity.User;
 
+import javax.transaction.Transactional;
+
 public interface UserService {
 
-    public void addUser(User user);
 
-    public List<User> getAllUsers();
+    @Transactional
+    User createUser(User user);
 
-    public void deleteUser(Integer userId);
+    @Transactional
+    User readUser(int id);
 
-    public User getUser(int userid);
+    @Transactional
+    List<User> readAllUsers();
 
-    public User updateUser(User user);
+    @Transactional
+    void updateUser(User user);
+
+    @Transactional
+    void deleteUser(Integer id);
+
+
+
 }

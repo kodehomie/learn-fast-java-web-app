@@ -1,8 +1,7 @@
 package org.justinhoang.service;
 import java.util.List;
 
-import org.justinhoang.persistence.UserDAO;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.justinhoang.persistence.GenericDao;
 import org.springframework.stereotype.Service;
 
 import org.justinhoang.entity.User;
@@ -13,38 +12,46 @@ import javax.transaction.Transactional;
 @Transactional
 public class UserServiceImp implements UserService {
 
-    @Autowired
-    private UserDAO userDAO;
+    private final GenericDao<User> userGenericDao;
 
-    @Override
+    public UserServiceImp(GenericDao<User> userGenericDao) {
+        this.userGenericDao = userGenericDao;
+    }
+
+
     @Transactional
-    public void addUser(User user) {
-        userDAO.addUser(user);
+    public User createUser(User user) {
+        userGenericDao.create(user);
+        return user;
     }
 
-    @Override
+
     @Transactional
-    public List<User> getAllUsers() {
-        return userDAO.getAllUsers();
+    public User readUser(int id) {
+        return userGenericDao.readId(id);
     }
 
-    @Override
+
     @Transactional
-    public void deleteUser(Integer userId) {
-        userDAO.deleteUser(userId);
+    public List<User> readAllUsers() {
+        return userGenericDao.readAll();
     }
 
-    public User getUser(int empid) {
-        return userDAO.getUser(empid);
+
+    @Transactional
+    public void updateUser(User user) {
+        userGenericDao.update(user);
     }
 
-    public User updateUser(User user) {
 
-        return userDAO.updateUser(user);
+    @Transactional
+    public void deleteUser(Integer id) {
+
+        userGenericDao.delete(id);
+
     }
 
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
+
+
 
 }

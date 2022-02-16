@@ -1,23 +1,22 @@
 package org.justinhoang.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /** The type User. */
 @Entity(name = "User")
 @Table(name = "user") // case sensitive!
 @ToString
-//@AllArgsConstructor
-//@NoArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
 public class User implements Serializable {
 
     // Every Entity must have a unique identifier which is annotated @Id
@@ -41,9 +40,6 @@ public class User implements Serializable {
 
     @Column(name = "password")
     private String password;
-
-  /** Instantiates a new User. */
-  public User() {}
 
   /**
    * Instantiates a new User.
@@ -99,12 +95,10 @@ public class User implements Serializable {
    * Sets first name.
    *
    * @param firstName the first name
-   * @return the first name
    */
-  public User setFirstName(String firstName) {
+  public void setFirstName(String firstName) {
         this.firstName = firstName;
-        return this;
-    }
+  }
 
   /**
    * Last name string.
@@ -119,12 +113,10 @@ public class User implements Serializable {
    * Sets last name.
    *
    * @param lastName the last name
-   * @return the last name
    */
-  public User setLastName(String lastName) {
+  public void setLastName(String lastName) {
         this.lastName = lastName;
-        return this;
-    }
+  }
 
   /**
    * Email string.
@@ -159,12 +151,10 @@ public class User implements Serializable {
    * Sets username.
    *
    * @param username the username
-   * @return the username
    */
-  public User setUsername(String username) {
+  public void setUsername(String username) {
         this.username = username;
-        return this;
-    }
+  }
 
   /**
    * Password string.
@@ -186,26 +176,29 @@ public class User implements Serializable {
         return this;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("User{");
-        sb.append("id=").append(id);
-        sb.append(", firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", email='").append(email).append('\'');
-        sb.append(", username='").append(username).append('\'');
-        sb.append(", password='").append(password).append('\'');
-        sb.append('}');
-        return sb.toString();
-    }
+
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private Set<Role> roles = new HashSet<Role>();
+    private final Set<Role> roles = new HashSet<Role>();
 
     public void addRole(Role role) {
         roles.add(role);
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        User user = (User) o;
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

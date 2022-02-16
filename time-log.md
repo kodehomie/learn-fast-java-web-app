@@ -41,7 +41,7 @@
 ### Week 5
 * 2022-FEB-13-SUN - 5 hours
 * 2022-FEB-14-MON - 4 hours
-* 2022-FEB-15-TUE -
+* 2022-FEB-15-TUE - 4 hours
 * 2022-FEB-16-WED -
 * 2022-FEB-17-THU -
 * 2022-FEB-18-FRI -
