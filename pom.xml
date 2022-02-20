@@ -22,7 +22,7 @@
     <jstl-version>1.2</jstl-version>
     <springstarterweb-version>2.6.3</springstarterweb-version>
     <springtx-version>5.3.15</springtx-version>
-    <hibernate-version>6.0.0.CR1</hibernate-version>
+    <hibernate-version>5.6.5.Final</hibernate-version>
     <log4j-version>2.10.0</log4j-version>
     <junit.version>4.12</junit.version>
     <junit-vintage-version>4.12.0</junit-vintage-version>
@@ -77,6 +77,12 @@
       <artifactId>hibernate-c3p0</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
+<!--    C3PO-->
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.3</version>
+    </dependency>
 <!--    next dependency for project lombok-->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -94,6 +100,11 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
       <version>${log4j-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.logging</groupId>
+      <artifactId>jboss-logging</artifactId>
+      <version>3.3.2.Final</version>
     </dependency>
     <!-- next 4 dependencies are for log4j -->
     <dependency>
@@ -120,16 +131,7 @@
       <version>${jupiter-version}</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>com.mchange</groupId>
-      <artifactId>c3p0</artifactId>
-      <version>0.9.5.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.logging</groupId>
-      <artifactId>jboss-logging</artifactId>
-      <version>3.3.2.Final</version>
-    </dependency>
+
 
   </dependencies>
 
@@ -190,4 +192,5 @@
       </plugins>
     </pluginManagement>
   </build>
+
 </project>
