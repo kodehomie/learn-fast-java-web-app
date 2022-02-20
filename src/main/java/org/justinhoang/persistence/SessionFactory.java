@@ -1,12 +1,12 @@
 package org.justinhoang.persistence;
 
 import org.hibernate.SessionFactory;
+import org.springframework.boot.neo4j.SessionFactoryProvider;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class SessionFactory {
-
 
 
     protected void setUp() throws Exception {
