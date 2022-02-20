@@ -1,36 +1,47 @@
 package org.justinhoang.model;
 
-import org.hibernate.Hibernate;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Proxy;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 /** The type Role. */
 
 @MappedSuperclass
+//@Entity(name = "Role")
+@Table(name = "role")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@Proxy(lazy=false)
 public class Role extends BaseModel {
 
-    @OneToMany
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private int id;
+
+    @Column(name = "user_id")
+    private int userId;
+
+    @Column(name = "user_username")
+    private String username;
+
+    @Column(name = "role")
     private String role;
 
-    @ManyToOne
-    @JoinColumn(name="username", referencedColumnName = "username", nullable
-            = false)
-    private User user;
+    @Column(name = "create_date")
+    private LocalDate createDate;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
-            return false;
-        Role role = (Role) o;
-        return false;
-    }
+    @Column(name = "update_date")
+    private LocalDate updateDate;
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
-    }
+
+
 }

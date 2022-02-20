@@ -31,7 +31,6 @@ public class User extends BaseModel {
   /**
    * Instantiates a new User.
    *
-   * @param id the id
    * @param firstName the first name
    * @param lastName the last name
    * @param email the email
