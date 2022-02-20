@@ -5,12 +5,14 @@ import org.hibernate.Hibernate;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 
 /** The type Role. */
 
 @MappedSuperclass
 public class Role extends BaseModel {
 
+    @OneToMany
     private String role;
 
     @ManyToOne
