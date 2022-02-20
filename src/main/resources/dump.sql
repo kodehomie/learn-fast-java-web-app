@@ -39,8 +39,8 @@ CREATE TABLE `role` (
                         `user_id` int NOT NULL,
                         `user_username` int NOT NULL,
                         `role` varchar(70) NOT NULL,
-                        `createDate` timestamp NOT NULL,
-                        `updateDate` timestamp NOT NULL,
+                        `create_date` timestamp NOT NULL,
+                        `update_date` timestamp NOT NULL,
                         PRIMARY KEY (`id`),
                         KEY `user_id` (`user_id`),
                         KEY `user_username` (`user_username`),
@@ -48,7 +48,8 @@ CREATE TABLE `role` (
                         CONSTRAINT `role_ibfk_2` FOREIGN KEY (`user_username`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `role` (`id`, `user_id`, `user_username`, `role`, `createDate`, `updateDate`) VALUES
+INSERT INTO `role` (`id`, `user_id`, `user_username`, `role`, `create_date`,
+                    `update_date`) VALUES
                       (1,	1,	1,	'admin',	'2022-02-20 20:25:49',	'2022-02-20 20:25:49'),
                       (2,	2,	2,	'admin',	'2022-02-20 20:26:14',	'2022-02-20 20:26:14'),
                       (3,	3,	3,	'user',	'2022-02-20 20:26:27',	'2022-02-20 20:26:27'),
@@ -109,3 +110,27 @@ INSERT INTO `mentee` (`id`, `user_id`, `user_first_name`, `user_last_name`, `use
                        (3,	5,	5,	5,	5,	5),
                        (4,	6,	6,	6,	6,	6),
                        (5,	7,	7,	7,	7,	7);
+-- COURSE TABLE
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course` (
+                          `id` int NOT NULL AUTO_INCREMENT,
+                          `title` varchar(70) NOT NULL,
+                          `section` int NOT NULL,
+                          `format` varchar(70) NOT NULL,
+                          `mentor_first_name` int NOT NULL,
+                          `mentor_last_name` int NOT NULL,
+                          `section_status` varchar(70) NOT NULL,
+                          `meets` varchar(70) NOT NULL,
+                          `start_date` date NOT NULL,
+                          `end_date` date NOT NULL,
+                          `description` varchar(255) NOT NULL,
+                          PRIMARY KEY (`id`),
+                          KEY `mentor_first_name` (`mentor_first_name`),
+                          KEY `mentor_last_name` (`mentor_last_name`),
+                          CONSTRAINT `course_ibfk_1` FOREIGN KEY (`mentor_first_name`) REFERENCES `mentor` (`id`),
+                          CONSTRAINT `course_ibfk_2` FOREIGN KEY (`mentor_last_name`) REFERENCES `mentor` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `course` (`id`, `title`, `section`, `format`, `mentor_first_name`, `mentor_last_name`, `section_status`, `meets`, `start_date`, `end_date`, `description`) VALUES
+                       (1,	'Technology Mentorship',	1,	'Online (live or on demand) web conference',	1,	1,	'Open',	'MTTh 6:30-8:30p',	'2022-06-21',	'2022-08-05',	'Classroom one-to-many style technology mentorship.'),
+                       (2,	'Industrial Ecology Mentorship',	2,	'In-person or Online',	2,	2,	'Open',	'TTh 3:15-6:15p',	'2022-06-21',	'2022-08-05',	'Personal one-to-one style industrial ecology mentorship.');
