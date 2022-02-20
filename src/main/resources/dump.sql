@@ -81,4 +81,31 @@ CREATE TABLE `mentor` (
 INSERT INTO `mentor` (`id`, `user_id`, `user_first_name`, `user_last_name`, `user_email`, `user_username`) VALUES
                        (1,	1,	1,	1,	1,	1),
                        (2,	2,	2,	2,	2,	2);
---
+-- MENTEE TABLE
+DROP TABLE IF EXISTS `mentee`;
+CREATE TABLE `mentee` (
+                          `id` int NOT NULL AUTO_INCREMENT,
+                          `user_id` int NOT NULL,
+                          `user_first_name` int NOT NULL,
+                          `user_last_name` int NOT NULL,
+                          `user_email` int NOT NULL,
+                          `user_username` int NOT NULL,
+                          PRIMARY KEY (`id`),
+                          KEY `user_id` (`user_id`),
+                          KEY `user_first_name` (`user_first_name`),
+                          KEY `user_last_name` (`user_last_name`),
+                          KEY `user_email` (`user_email`),
+                          KEY `user_username` (`user_username`),
+                          CONSTRAINT `mentee_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentee_ibfk_2` FOREIGN KEY (`user_first_name`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentee_ibfk_3` FOREIGN KEY (`user_last_name`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentee_ibfk_4` FOREIGN KEY (`user_email`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentee_ibfk_5` FOREIGN KEY (`user_username`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `mentee` (`id`, `user_id`, `user_first_name`, `user_last_name`, `user_email`, `user_username`) VALUES
+                       (1,	3,	3,	3,	3,	3),
+                       (2,	4,	4,	4,	4,	4),
+                       (3,	5,	5,	5,	5,	5),
+                       (4,	6,	6,	6,	6,	6),
+                       (5,	7,	7,	7,	7,	7);
