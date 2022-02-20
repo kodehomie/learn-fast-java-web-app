@@ -3,15 +3,20 @@ package org.justinhoang.model;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /** The type User. */
 @MappedSuperclass
 public class User extends BaseModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -31,13 +36,16 @@ public class User extends BaseModel {
   /**
    * Instantiates a new User.
    *
+   * @param id the id
    * @param firstName the first name
    * @param lastName the last name
    * @param email the email
    * @param username the username
    * @param password the password
    */
-  public User(String firstName, String lastName, String email, String username, String password) {
+  public User(
+      int id, String firstName, String lastName, String email, String username, String password) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -47,12 +55,26 @@ public class User extends BaseModel {
         roles = new HashSet<Role>();
     }
 
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
   /**
-   * First name string.
+   * Sets id.
    *
-   * @return the string
+   * @param id the id
    */
-  public String firstName() {
+  public void setId(int id) {
+        this.id = id;
+    }
+
+  /**
+   * Gets first name.
+   *
+   * @return the first name
+   */
+  public String getFirstName() {
         return firstName;
     }
 
@@ -66,11 +88,11 @@ public class User extends BaseModel {
     }
 
   /**
-   * Last name string.
+   * Gets last name.
    *
-   * @return the string
+   * @return the last name
    */
-  public String lastName() {
+  public String getLastName() {
         return lastName;
     }
 
@@ -84,11 +106,11 @@ public class User extends BaseModel {
     }
 
   /**
-   * Email string.
+   * Gets email.
    *
-   * @return the string
+   * @return the email
    */
-  public String email() {
+  public String getEmail() {
         return email;
     }
 
@@ -96,19 +118,17 @@ public class User extends BaseModel {
    * Sets email.
    *
    * @param email the email
-   * @return the email
    */
-  public User setEmail(String email) {
+  public void setEmail(String email) {
         this.email = email;
-        return this;
     }
 
   /**
-   * Username string.
+   * Gets username.
    *
-   * @return the string
+   * @return the username
    */
-  public String username() {
+  public String getUsername() {
         return username;
     }
 
@@ -122,11 +142,11 @@ public class User extends BaseModel {
     }
 
   /**
-   * Password string.
+   * Gets password.
    *
-   * @return the string
+   * @return the password
    */
-  public String password() {
+  public String getPassword() {
         return password;
     }
 
@@ -134,14 +154,21 @@ public class User extends BaseModel {
    * Sets password.
    *
    * @param password the password
-   * @return the password
    */
-  public User setPassword(String password) {
+  public void setPassword(String password) {
         this.password = password;
-        return this;
     }
 
-//    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+  /**
+   * Gets roles.
+   *
+   * @return the roles
+   */
+  public Set<Role> getRoles() {
+        return roles;
+    }
+
+    //    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private final Set<Role> roles;
