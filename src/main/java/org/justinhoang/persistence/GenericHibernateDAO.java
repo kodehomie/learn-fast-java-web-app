@@ -9,30 +9,53 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+/**
+ * The type Generic hibernate dao.
+ *
+ * @param <T> the type parameter
+ * @param <ID> the type parameter
+ */
 public abstract class GenericHibernateDAO<T, ID extends Serializable> implements GenericDAO<T, ID> {
 
     private Class<T> persistentClass;
     private Session session;
 
-    public GenericHibernateDAO() {
+  /** Instantiates a new Generic hibernate dao. */
+  public GenericHibernateDAO() {
         this.persistentClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
 
-    @SuppressWarnings("unchecked")
-    public void setSession(Session s) {
+  /**
+   * Sets session.
+   *
+   * @param s the s
+   */
+  @SuppressWarnings("unchecked")
+  public void setSession(Session s) {
         this.session = s;
     }
 
-    protected Session getSession() {
+  /**
+   * Gets session.
+   *
+   * @return the session
+   */
+  protected Session getSession() {
         if (session == null)
             throw new IllegalStateException("Session has not been set on DAO before usage");
         return session;
     }
 
-    public Class<T> getPersistentClass() {
+  /**
+   * Gets persistent class.
+   *
+   * @return the persistent class
+   */
+  public Class<T> getPersistentClass() {
         return persistentClass;
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public T findById(ID id, boolean lock) {
         T entity;
@@ -50,8 +73,12 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
         return findByCriteria();
     }
 
-    protected abstract List<T> findByCriteria();
-
+  /**
+   * Find by criteria list.
+   *
+   * @return the list
+   */
+  protected abstract List<T> findByCriteria();
 
     @SuppressWarnings("unchecked")
     public List<T> findByExample(T exampleInstance, String[] excludeProperty) {
@@ -74,11 +101,13 @@ public abstract class GenericHibernateDAO<T, ID extends Serializable> implements
         getSession().delete(entity);
     }
 
-    public void flush() {
+  /** Flush. */
+  public void flush() {
         getSession().flush();
     }
 
-    public void clear() {
+  /** Clear. */
+  public void clear() {
         getSession().clear();
     }
 

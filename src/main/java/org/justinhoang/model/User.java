@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+/** The type User. */
 public class User implements Serializable {
 
     @Id
@@ -35,18 +36,18 @@ public class User implements Serializable {
     @Column(name = "password")
     private String password;
 
-    /**
-     * Instantiates a new User.
-     *
-     * @param id the id
-     * @param firstName the first name
-     * @param lastName the last name
-     * @param email the email
-     * @param username the username
-     * @param password the password
-     */
-    public User(
-            int id, String firstName, String lastName, String email, String username, String password) {
+  /**
+   * Instantiates a new User.
+   *
+   * @param id the id
+   * @param firstName the first name
+   * @param lastName the last name
+   * @param email the email
+   * @param username the username
+   * @param password the password
+   */
+  public User(
+      int id, String firstName, String lastName, String email, String username, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -57,116 +58,116 @@ public class User implements Serializable {
         roles = new HashSet<Role>();
     }
 
-    /**
-     * Id int.
-     *
-     * @return the int
-     */
-    public int getId() {
+  /**
+   * Id int.
+   *
+   * @return the int
+   */
+  public int getId() {
         return id;
     }
 
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     * @return the id
-     */
-    public User setId(int id) {
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   * @return the id
+   */
+  public User setId(int id) {
         this.id = id;
         return this;
     }
 
-    /**
-     * First name string.
-     *
-     * @return the string
-     */
-    public String firstName() {
+  /**
+   * First name string.
+   *
+   * @return the string
+   */
+  public String firstName() {
         return firstName;
     }
 
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
+  /**
+   * Sets first name.
+   *
+   * @param firstName the first name
+   */
+  public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    /**
-     * Last name string.
-     *
-     * @return the string
-     */
-    public String lastName() {
+  /**
+   * Last name string.
+   *
+   * @return the string
+   */
+  public String lastName() {
         return lastName;
     }
 
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
+  /**
+   * Sets last name.
+   *
+   * @param lastName the last name
+   */
+  public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    /**
-     * Email string.
-     *
-     * @return the string
-     */
-    public String email() {
+  /**
+   * Email string.
+   *
+   * @return the string
+   */
+  public String email() {
         return email;
     }
 
-    /**
-     * Sets email.
-     *
-     * @param email the email
-     * @return the email
-     */
-    public User setEmail(String email) {
+  /**
+   * Sets email.
+   *
+   * @param email the email
+   * @return the email
+   */
+  public User setEmail(String email) {
         this.email = email;
         return this;
     }
 
-    /**
-     * Username string.
-     *
-     * @return the string
-     */
-    public String username() {
+  /**
+   * Username string.
+   *
+   * @return the string
+   */
+  public String username() {
         return username;
     }
 
-    /**
-     * Sets username.
-     *
-     * @param username the username
-     */
-    public void setUsername(String username) {
+  /**
+   * Sets username.
+   *
+   * @param username the username
+   */
+  public void setUsername(String username) {
         this.username = username;
     }
 
-    /**
-     * Password string.
-     *
-     * @return the string
-     */
-    public String password() {
+  /**
+   * Password string.
+   *
+   * @return the string
+   */
+  public String password() {
         return password;
     }
 
-    /**
-     * Sets password.
-     *
-     * @param password the password
-     * @return the password
-     */
-    public User setPassword(String password) {
+  /**
+   * Sets password.
+   *
+   * @param password the password
+   * @return the password
+   */
+  public User setPassword(String password) {
         this.password = password;
         return this;
     }
@@ -176,7 +177,12 @@ public class User implements Serializable {
     @EqualsAndHashCode.Exclude
     private final Set<Role> roles;
 
-    public void addRole(Role role) {
+  /**
+   * Add role.
+   *
+   * @param role the role
+   */
+  public void addRole(Role role) {
         roles.add(role);
 
     }

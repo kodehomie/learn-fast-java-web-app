@@ -3,16 +3,51 @@ package org.justinhoang.persistence;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * The interface Generic dao.
+ *
+ * @param <T> the type parameter
+ * @param <ID> the type parameter
+ */
 public interface GenericDAO<T, ID extends Serializable> {
 
-    T findById(ID id, boolean lock);
+  /**
+   * Find by id t.
+   *
+   * @param id the id
+   * @param lock the lock
+   * @return the t
+   */
+  T findById(ID id, boolean lock);
 
-    List<T> findAll();
+  /**
+   * Find all list.
+   *
+   * @return the list
+   */
+  List<T> findAll();
 
-    List<T> findByExample(T exampleInstance, String[] excludeProperty);
+  /**
+   * Find by example list.
+   *
+   * @param exampleInstance the example instance
+   * @param excludeProperty the exclude property
+   * @return the list
+   */
+  List<T> findByExample(T exampleInstance, String[] excludeProperty);
 
-    T makePersistent(T entity);
+  /**
+   * Make persistent t.
+   *
+   * @param entity the entity
+   * @return the t
+   */
+  T makePersistent(T entity);
 
-    void makeTransient(T entity);
-
+  /**
+   * Make transient.
+   *
+   * @param entity the entity
+   */
+  void makeTransient(T entity);
 }

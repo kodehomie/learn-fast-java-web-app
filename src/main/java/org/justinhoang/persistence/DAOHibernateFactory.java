@@ -2,6 +2,7 @@ package org.justinhoang.persistence;
 
 import org.hibernate.Session;
 
+/** The type Dao hibernate factory. */
 public class DAOHibernateFactory extends DAOFactory {
 
     private Session SessionUtil;
@@ -16,8 +17,13 @@ public class DAOHibernateFactory extends DAOFactory {
         }
     }
 
-    // You could override this if you don't want HibernateUtil for lookup
-    protected Session getCurrentSession() {
+  /**
+   * Gets current session.
+   *
+   * @return the current session
+   */
+  // You could override this if you don't want HibernateUtil for lookup
+  protected Session getCurrentSession() {
         return SessionUtil.getSessionFactory().getCurrentSession();
     }
 
