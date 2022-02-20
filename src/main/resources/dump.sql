@@ -56,4 +56,29 @@ INSERT INTO `role` (`id`, `user_id`, `user_username`, `role`, `createDate`, `upd
                       (5,	5,	5,	'user',	'2022-02-20 20:26:47',	'2022-02-20 20:26:47'),
                       (6,	6,	6,	'user',	'2022-02-20 20:26:58',	'2022-02-20 20:26:58'),
                       (7,	7,	7,	'user',	'2022-02-20 20:27:13',	'2022-02-20 20:27:13');
+-- MENTOR TABLE
+DROP TABLE IF EXISTS `mentor`;
+CREATE TABLE `mentor` (
+                          `id` int NOT NULL AUTO_INCREMENT,
+                          `user_id` int NOT NULL,
+                          `user_first_name` int NOT NULL,
+                          `user_last_name` int NOT NULL,
+                          `user_email` int NOT NULL,
+                          `user_username` int NOT NULL,
+                          PRIMARY KEY (`id`),
+                          KEY `user_id` (`user_id`),
+                          KEY `user_first_name` (`user_first_name`),
+                          KEY `user_last_name` (`user_last_name`),
+                          KEY `user_email` (`user_email`),
+                          KEY `user_username` (`user_username`),
+                          CONSTRAINT `mentor_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentor_ibfk_2` FOREIGN KEY (`user_first_name`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentor_ibfk_3` FOREIGN KEY (`user_last_name`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentor_ibfk_4` FOREIGN KEY (`user_email`) REFERENCES `user` (`id`),
+                          CONSTRAINT `mentor_ibfk_5` FOREIGN KEY (`user_username`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `mentor` (`id`, `user_id`, `user_first_name`, `user_last_name`, `user_email`, `user_username`) VALUES
+                       (1,	1,	1,	1,	1,	1),
+                       (2,	2,	2,	2,	2,	2);
 --
