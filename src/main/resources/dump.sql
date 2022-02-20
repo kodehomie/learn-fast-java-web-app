@@ -134,3 +134,24 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`id`, `title`, `section`, `format`, `mentor_first_name`, `mentor_last_name`, `section_status`, `meets`, `start_date`, `end_date`, `description`) VALUES
                        (1,	'Technology Mentorship',	1,	'Online (live or on demand) web conference',	1,	1,	'Open',	'MTTh 6:30-8:30p',	'2022-06-21',	'2022-08-05',	'Classroom one-to-many style technology mentorship.'),
                        (2,	'Industrial Ecology Mentorship',	2,	'In-person or Online',	2,	2,	'Open',	'TTh 3:15-6:15p',	'2022-06-21',	'2022-08-05',	'Personal one-to-one style industrial ecology mentorship.');
+-- ENROLLMENT TABLE
+DROP TABLE IF EXISTS `enrollment`;
+CREATE TABLE `enrollment` (
+                              `id` int NOT NULL AUTO_INCREMENT,
+                              `mentee_id` int NOT NULL,
+                              `course_id` int NOT NULL,
+                              `course_title` int NOT NULL,
+                              PRIMARY KEY (`id`),
+                              KEY `mentee_id` (`mentee_id`),
+                              KEY `course_id` (`course_id`),
+                              KEY `course_title` (`course_title`),
+                              CONSTRAINT `enrollment_ibfk_1` FOREIGN KEY (`mentee_id`) REFERENCES `mentee` (`id`),
+                              CONSTRAINT `enrollment_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+                              CONSTRAINT `enrollment_ibfk_3` FOREIGN KEY (`course_title`) REFERENCES `course` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `enrollment` (`id`, `mentee_id`, `course_id`, `course_title`) VALUES
+                              (1,	1,	1,	1),
+                              (2,	1,	2,	2),
+                              (3,	2,	1,	1),
+                              (4,	3,	2,	2);
