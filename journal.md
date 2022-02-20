@@ -89,6 +89,18 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 5
 
 ##### Dates: 2022-FEB-13-SUN - 2022-FEB-19-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours:
+##### Weekly Java Hours: 21 hours
+##### Total Enterprise Java Hours: 91 hours
 ##### Notes:
+- Read Hibernate associations
+- Read Hibernate implement equals
+- Read Hibernate reference
+- Read MySQL reference manual
+- Read Hibernate tutorial
+- Watch Videos
+- Work on Hibernate exercise
+- Work on individual project
+- Launch side project to AWS
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
