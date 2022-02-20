@@ -4,10 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Proxy;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 /** The type Role. */
@@ -22,10 +23,10 @@ import java.time.LocalDate;
 @Proxy(lazy=false)
 public class Role extends BaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+//    @GenericGenerator(name = "native", strategy = "native")
+//    private int id;
 
     @Column(name = "user_id")
     private int userId;

@@ -3,9 +3,9 @@ package org.justinhoang.model;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,10 +13,10 @@ import java.util.Set;
 @MappedSuperclass
 public class User extends BaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private int id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+//    @GenericGenerator(name = "native", strategy = "native")
+//    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -43,9 +43,8 @@ public class User extends BaseModel {
    * @param username the username
    * @param password the password
    */
-  public User(
-      int id, String firstName, String lastName, String email, String username, String password) {
-        this.id = id;
+  public User(String firstName, String lastName, String email, String username, String password) {
+//        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -55,19 +54,6 @@ public class User extends BaseModel {
         roles = new HashSet<Role>();
     }
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-  /**
-   * Sets id.
-   *
-   * @param id the id
-   */
-  public void setId(int id) {
-        this.id = id;
-    }
 
   /**
    * Gets first name.
