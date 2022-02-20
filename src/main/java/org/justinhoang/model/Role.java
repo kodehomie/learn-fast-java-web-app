@@ -1,22 +1,15 @@
 package org.justinhoang.model;
 
-import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
 
 /** The type Role. */
-@Getter
-@Setter
-@RequiredArgsConstructor
-@Entity
-@ToString
 
-public class Role {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+@MappedSuperclass
+public class Role extends BaseModel {
 
     private String role;
 

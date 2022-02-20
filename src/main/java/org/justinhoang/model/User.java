@@ -3,23 +3,15 @@ package org.justinhoang.model;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
 import java.util.HashSet;
 import java.util.Set;
 
 /** The type User. */
-public class User implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int id;
+@MappedSuperclass
+public class User extends BaseModel {
 
     @Column(name = "first_name")
     private String firstName;
@@ -46,9 +38,7 @@ public class User implements Serializable {
    * @param username the username
    * @param password the password
    */
-  public User(
-      int id, String firstName, String lastName, String email, String username, String password) {
-        this.id = id;
+  public User(String firstName, String lastName, String email, String username, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -56,26 +46,6 @@ public class User implements Serializable {
         this.password = password;
 
         roles = new HashSet<Role>();
-    }
-
-  /**
-   * Id int.
-   *
-   * @return the int
-   */
-  public int getId() {
-        return id;
-    }
-
-  /**
-   * Sets id.
-   *
-   * @param id the id
-   * @return the id
-   */
-  public User setId(int id) {
-        this.id = id;
-        return this;
     }
 
   /**
