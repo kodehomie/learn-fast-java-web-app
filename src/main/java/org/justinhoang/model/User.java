@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.StringJoiner;
 
 /** The type User. */
 @MappedSuperclass
@@ -36,7 +37,6 @@ public class User extends BaseModel {
   /**
    * Instantiates a new User.
    *
-   * @param id the id
    * @param firstName the first name
    * @param lastName the last name
    * @param email the email
@@ -181,5 +181,17 @@ public class User extends BaseModel {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
+                .add("firstName='" + firstName + "'")
+                .add("lastName='" + lastName + "'")
+                .add("email='" + email + "'")
+                .add("username='" + username + "'")
+                .add("password='" + password + "'")
+                .add("roles=" + roles)
+                .toString();
     }
 }
