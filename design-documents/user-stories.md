@@ -31,6 +31,10 @@
 - As any user, I want to view available mentors so that I can connect with
   them. (MVP)
 
+### Delete Availability
+- As any user, I want to delete available status so that others will not  
+  connect with me at this time. (MVP)
+
 ### Connect With Mentee
 - As a mentor, I want to connect with a mentee so that I can build my
   network with rising mentees. (MVP)
