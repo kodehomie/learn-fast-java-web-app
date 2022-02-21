@@ -11,7 +11,7 @@ public class SessionFactoryHelper {
     private static SessionFactory sessionFactory;
 
   /** Instantiates a new Session factory helper. */
-  public SessionFactoryHelper() {}
+  private SessionFactoryHelper() {}
 
   /**
    * Sets up.
