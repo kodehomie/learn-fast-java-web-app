@@ -1,15 +1,24 @@
 package org.justinhoang.persistence;
 
 import org.hibernate.SessionFactory;
-import org.springframework.boot.neo4j.SessionFactoryProvider;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-public class SessionFactory {
+/** The type Session factory. */
+public class SessionFactoryHelper {
 
+    private static SessionFactory sessionFactory;
 
-    protected void setUp() throws Exception {
+  /** Instantiates a new Session factory helper. */
+  public SessionFactoryHelper() {}
+
+  /**
+   * Sets up.
+   *
+   * @throws Exception the exception
+   */
+  protected static void setUp() throws Exception {
         // A SessionFactory is set up once for an application!
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
@@ -22,6 +31,19 @@ public class SessionFactory {
             // so destroy it manually.
             StandardServiceRegistryBuilder.destroy( registry );
         }
+    }
+
+  /**
+   * Gets session factory.
+   *
+   * @return the session factory
+   * @throws Exception the exception
+   */
+  public static SessionFactory getSessionFactory() throws Exception {
+        if (sessionFactory == null) {
+            setUp();
+        }
+        return sessionFactory;
     }
 
 
