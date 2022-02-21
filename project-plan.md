@@ -24,22 +24,22 @@
 - [ ] Add user controller (Java class)
 - [ ] Create user entity (Java class)
 - [ ] Create user table
-- [ ] Create user DAO to add user to DB (Java class)
-- [ ] Unit test DAO add user functionality
-- [ ] Document progress in journal
+- [X] Create user DAO to add user to DB (Java class)
+- [X] Unit test DAO add user functionality
+- [X] Document progress in journal
 
 ### Week 5
 
-- [ ] Learn Hibernate
-- [ ] Create the template for all JSP using Materialize
-- [ ] Add the role table
-- [ ] Add the role entity
-- [ ] Create the role DAO
+- [X] Learn Hibernate
+- [X] Create the template for all JSP using Materialize
+- [X] Add the role table
+- [X] Add the role entity
+- [X] Create the role DAO
 - [ ] Create unit tests for the role DAO
 - [ ] Add JSP for displaying user
 - [ ] Add JSP for displaying role
 - [ ] Add JSP for adding a user
-- [ ] Document progress in journal
+- [X] Document progress in journal
 
 ### Week 6
 
