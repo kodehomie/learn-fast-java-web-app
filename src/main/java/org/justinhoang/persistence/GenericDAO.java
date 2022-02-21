@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface GenericDAO<T, ID extends Serializable> {
 
+
   /**
    * Find by id t.
    *
