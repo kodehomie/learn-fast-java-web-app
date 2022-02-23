@@ -51,7 +51,7 @@
 ### Week 6
 * 2022-FEB-20-SUN - 4 hours
 * 2022-FEB-21-MON - 2 hours
-* 2022-FEB-22-TUE -
+* 2022-FEB-22-TUE - 3 hours
 * 2022-FEB-23-WED - 
 * 2022-FEB-24-THU - 
 * 2022-FEB-25-FRI - 
