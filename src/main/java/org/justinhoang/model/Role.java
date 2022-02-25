@@ -1,32 +1,27 @@
 package org.justinhoang.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import org.hibernate.annotations.Proxy;
+import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
-/** The type Role. */
+/**
+ * The type Role.
+ */
+@Data
+@Entity
+public class Role {
 
-@MappedSuperclass
-//@Entity(name = "Role")
-@Table(name = "role")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@Proxy(lazy=false)
-public class Role extends BaseModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-//    @GenericGenerator(name = "native", strategy = "native")
-//    private int id;
+    @Column(name = "role")
+    private String role;
+
+    @ManyToOne
+    @JoinColumn(name = "user_username", referencedColumnName = "username", nullable = false)
+    private User user;
 
     @Column(name = "user_id")
     private int userId;
@@ -34,15 +29,11 @@ public class Role extends BaseModel {
     @Column(name = "user_username")
     private String username;
 
-    @Column(name = "role")
-    private String role;
-
     @Column(name = "create_date")
     private LocalDate createDate;
 
     @Column(name = "update_date")
     private LocalDate updateDate;
-
 
 
 }
