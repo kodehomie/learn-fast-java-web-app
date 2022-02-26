@@ -20,7 +20,19 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <!--ORIGINAL MAVEN PROPERTIES END-->
         <!--ADDITIONAL PROPERTIES-->
-        <junit.version>4.11</junit.version>
+        <maven.compiler.release>11</maven.compiler.release>
+        <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
+        <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
+        <javax.version>8.0.1</javax.version>
+        <jstl-version>1.2</jstl-version>
+        <mysql-version>8.0.27</mysql-version>
+        <log4j-version>2.17.1</log4j-version>
+        <junit.version>4.13.2</junit.version>
+        <junit.version>4.12</junit.version>
+        <junit-vintage-version>5.8.2</junit-vintage-version>
+        <jupiter-version>5.0.0</jupiter-version>
+        <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
+        <!--ADDITIONAL PROPERTIES-->
 
 
     </properties>
@@ -35,6 +47,61 @@
         </dependency>
         <!--ORIGINAL MAVEN DEPENDENCIES END-->
         <!--ADDITIONAL DEPENDENCIES -->
+<!--        JAVAX-->
+        <!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>${javax.version}</version>
+            <scope>provided</scope>
+        </dependency>
+<!--        JSTL-->
+        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl-version}</version>
+        </dependency>
+<!--        MYSQL-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-version}</version>
+        </dependency>
+<!--        LOG4J-->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
+<!--        JUNIT-->
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit-vintage-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
+
 
     </dependencies>
 
