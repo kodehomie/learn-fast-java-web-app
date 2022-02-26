@@ -1,53 +1,22 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!--
-  ~ Hibernate, Relational Persistence for Idiomatic Java
-  ~
-  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
-  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-
     <session-factory>
-
-        <!-- Database connection settings -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/learnfast</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
-
-        <!-- JDBC connection pool (use the built-in) -->
-        <!--        <property name="connection.pool_size">1</property>-->
-
-        <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-
-        <!-- Disable the second-level cache  -->
-        <!--        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
-
-        <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">true</property>
-
-        <!-- Drop and re-create the database schema on startup -->
-<!--                <property name="hbm2ddl.auto">create</property>-->
-
+        <property name="hibernate.archive.autodetection">class,hbm</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:mem:lf</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <property name="hibernate.c3p0.min_size">5</property>
-
         <property name="hibernate.c3p0.max_size">20</property>
-
-        <property name="hibernate.c3p0.timeout">300</property>
-
-        <property name="hibernate.c3p0.max_statements">50</property>
-
-        <property name="hibernate.c3p0.idle_test_period">3000</property>
-
-        <mapping class="org.justinhoang.model.User"/>
-        <mapping class="org.justinhoang.model.Role"/>
-
+        <property name="hibernate.c3p0.acquire_increment">2</property>
+        <property name="hibernate.c3p0.timeout">1800</property>
+        <property name="hibernate.c3p0.max_statements">150</property>
     </session-factory>
-
 </hibernate-configuration>

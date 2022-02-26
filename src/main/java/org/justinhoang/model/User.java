@@ -1,62 +1,51 @@
 package org.justinhoang.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
+import javax.validation.constraints.Size;
 
-
-/**
- * The type User.
- */
-@Data
 @Entity
-public class User implements Serializable {
+@Table(name = "TBL_USERS")
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
-    private int id;
+    @GeneratedValue
+    @Column(name = "USER_ID")
+    private Long id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "USER_NAME")
+    @Size(max = 20, min = 3, message = "{user.name.invalid}")
+    @NotEmpty(message="Please Enter your name")
+    private String name;
 
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "email")
+    @Column(name = "USER_EMAIL", unique = true)
+    @Email(message = "{user.email.invalid}")
+    @NotEmpty(message="Please Enter your email")
     private String email;
 
-    @Column(name = "username")
-    private String username;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "create_date")
-    private LocalDateTime create_date;
-
-    @Column(name = "update_date")
-    private LocalDateTime update_date;
-
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Role> roles = new HashSet<Role>();
-
-    /**
-     * Add role.
-     *
-     * @param role the role
-     */
-    public void addRole(Role role) {
-        roles.add(role);
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
