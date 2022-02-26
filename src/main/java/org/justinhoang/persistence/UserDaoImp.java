@@ -1,7 +1,7 @@
 package org.justinhoang.persistence;
 
 import org.hibernate.SessionFactory;
-import org.justinhoang.model.User;
+import org.justinhoang.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

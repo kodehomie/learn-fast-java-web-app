@@ -1,6 +1,6 @@
 package org.justinhoang.service;
 
-import org.justinhoang.model.User;
+import org.justinhoang.entity.User;
 import org.justinhoang.persistence.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

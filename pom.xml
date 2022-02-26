@@ -33,6 +33,8 @@
         <jupiter-version>5.8.2</jupiter-version>
         <junit-platform-runner-version>1.8.2</junit-platform-runner-version>
         <!--ADDITIONAL PROPERTIES-->
+        <lombok-maven-plugin-version>1.18.20.0</lombok-maven-plugin-version>
+        <lombok-maven-version>1.18.20.0</lombok-maven-version>
 
 
     </properties>
@@ -113,8 +115,40 @@
         </dependency>
         <!--ADDITIONAL DEPENDENCIES SET 1 END-->
         <!--ADDITIONAL DEPENDENCIES SET 2-->
+        <!--PROJECT LOMBOK-->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <profile.name>local</profile.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>aws</id>
+            <properties>
+                <profile.name>aws</profile.name>
+            </properties>
+        </profile>
+    </profiles>
+    <filters>
+        <filter>profiles/${profile.name}.properties</filter>
+    </filters>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
 
     <build>
         <finalName>LearnFast</finalName>
@@ -141,6 +175,15 @@
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.2.2</version>
+                    <configuration>
+                        <webResources>
+                            <resource>
+                                <directory>src/main/webapp/META-INF</directory>
+                                <filtering>true</filtering>
+                                <targetPath>META-INF</targetPath>
+                            </resource>
+                        </webResources>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
@@ -152,17 +195,30 @@
                 </plugin>
                 <!--ORIGINAL MAVEN PLUGINS END-->
                 <!--ADDITIONAL PLUGINS SET 1-->
+                <!--JUNIT-->
                 <plugin>
                     <artifactId>junit-platform-surefire-provider</artifactId>
                     <version>${junit-platform-runner-version}</version>
                 </plugin>
                 <!--ADDITIONAL PLUGINS SET 1 END-->
                 <!--ADDITIONAL PLUGINS SET 2-->
+                <!--PROJECT LOMBOK-->
+                <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven-plugin -->
+                <plugin>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>${lombok-maven-plugin-version}</version>
+                </plugin>
+                <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
+                <plugin>
+                    <artifactId>lombok-maven</artifactId>
+                    <version>${lombok-maven-version}</version>
+                </plugin>
 
                 <!--ADDITIONAL MAVEN PLUGINS END-->
             </plugins>
 
         </pluginManagement>
+
 
     </build>
 

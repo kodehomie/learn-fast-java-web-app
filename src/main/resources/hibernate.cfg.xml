@@ -4,19 +4,24 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.archive.autodetection">class,hbm</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">root</property>
-        <property name="hibernate.connection.url">jdbc:hsqldb:mem:lf</property>
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/FBTR</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">${db.username}</property>
+        <property name="connection.password">${db.password}</property>
 
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
-        <property name="hibernate.c3p0.acquire_increment">2</property>
-        <property name="hibernate.c3p0.timeout">1800</property>
-        <property name="hibernate.c3p0.max_statements">150</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+
+        <!--<property name="connection.username">root</property>
+        <property name="connection.password">root</property>-->
+
+        <mapping class="org.justinhoang.entity.User"/>
+        <mapping class="org.justinhoang.entity.Role"/>
+
     </session-factory>
+
 </hibernate-configuration>

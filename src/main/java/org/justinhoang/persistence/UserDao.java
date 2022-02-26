@@ -1,6 +1,6 @@
 package org.justinhoang.persistence;
 
-import org.justinhoang.model.User;
+import org.justinhoang.entity.User;
 
 import java.util.List;
 
