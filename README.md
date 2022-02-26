@@ -16,6 +16,7 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 ##### Environment
 * Ubuntu Budgie
+* Windows 11 Pro
 
 ##### Communication
 * Slack 
@@ -29,14 +30,27 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Integrated Development Environment (IDE)
 * IntelliJ IDEA Ultimate Edition
 
-##### Web Server
-* Apache Tomcat 8
+##### Dependency Management
+* Apache Maven
 
 ##### Java Development Kit (JDK)
 * JDK 11
 
 ##### Database
 * MySQL Community Server
+
+##### Object Relational Mapping (ORM) Framework
+* Hibernate
+
+##### Web Server
+* Apache Tomcat 8
+
+##### CSS
+* Materialize
+
+##### Data Validation
+* Bootstrap Validator (Front End)
+* Hibernate Validation
 
 ##### Authentication & Authorization
 * Google Authentication Identity Service
@@ -47,21 +61,22 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Unit Testing
 * JUnit
 
-##### Object Relational Mapping (ORM) Framework
-* Hibernate
-
 ##### Web Service Consumption
+* Oracle JavaMail API
 * Google Translate
-
-##### CSS
-* Materialize
-
-##### Data Validation
-* Bootstrap Validator (Front End)
-* Hibernate Validation
 
 ##### Hosting
 * Amazon Web Services (AWS)
+
+##### Independent Research Topics
+* C
+* Hibernate Validation
+* Materialize
+* Hibernate Validation
+* Hibernate Search
+* Spring Framework
+* Project Lombok
+* Spring Boot
 
 ### Design
 
