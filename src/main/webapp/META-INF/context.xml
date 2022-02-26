@@ -1,0 +1,18 @@
+<Context docBase="justinhoang" path="/justinhoang" reloadable="true">
+
+    <!--    <Realm className="org.apache.catalina.realm.DataSourceRealm"-->
+    <!--           dataSourceName="jdbc/authority"-->
+    <!--           userTable="users" userNameCol="user_name" userCredCol="user_pass"-->
+    <!--           userRoleTable="user_roles" roleNameCol="role_name"/>-->
+
+    <Realm className="org.apache.catalina.realm.DataSourceRealm"
+           driverName="com.mysql.jdbc.Driver"
+           connectionURL=${db.connection.url}
+    userTable="User" userNameCol="user_name" userCredCol="user_pass"
+    userRoleTable="user_roles" roleNameCol="role_name" >
+
+
+</Context>
+
+
+
