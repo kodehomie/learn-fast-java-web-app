@@ -6,4 +6,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <display-name>Learn Fast: Java Web Application</display-name>
+    <description>Java Web App</description>
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/datasourcerealm</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>
