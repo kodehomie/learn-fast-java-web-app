@@ -57,3 +57,13 @@
 * 2022-FEB-25-FRI - 3 hours
 * 2022-FEB-26-SAT - 5 hours
 * Week 6 (23 hours)
+
+### Week 7
+* 2022-FEB-27-SUN -
+* 2022-FEB-28-MON -
+* 2022-MAR-1-TUE - 
+* 2022-MAR-2-WED - 
+* 2022-MAR-3-THU -
+* 2022-MAR-4-FRI - 
+* 2022-MAR-5-SAT -
+* Week 7

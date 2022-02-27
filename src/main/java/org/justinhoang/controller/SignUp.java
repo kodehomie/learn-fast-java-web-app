@@ -1,13 +1,12 @@
 package org.justinhoang.controller;
 
-import com.mysql.cj.Messages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.entity.User;
 import org.justinhoang.entity.UserRole;
 import org.justinhoang.persistence.GenericDao;
 import org.justinhoang.util.DaoFactory;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,4 +63,6 @@ public class SignUp extends HttpServlet {
     }
 
 
+    public void setJspViewResolver(UrlBasedViewResolver jspViewResolver) {
+    }
 }
