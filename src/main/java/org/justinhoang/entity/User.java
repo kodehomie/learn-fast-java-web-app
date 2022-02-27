@@ -2,9 +2,11 @@ package org.justinhoang.entity;
 
 import lombok.*;
 import org.hibernate.annotations.Proxy;
+import org.springframework.beans.MutablePropertyValues;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,7 +53,7 @@ public class User {
      */
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<UserRole> userRoles = new HashSet<>();
 
     /**
@@ -59,8 +61,16 @@ public class User {
      */
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     public Set<Contact> contacts = new HashSet<>();
+
+    /**
+     * The Orders.
+     */
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    public Set<Order> orders = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -125,4 +135,6 @@ public class User {
         userRoles.remove(userRole);
         userRole.setUser(null);
     }
+
+
 }

@@ -7,10 +7,6 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
-DROP DATABASE IF EXISTS `learnfast`;
-CREATE DATABASE `learnfast` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `learnfast`;
-
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
                           `id` int NOT NULL AUTO_INCREMENT,
@@ -185,4 +181,4 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- 2022-02-27 20:31:58
+-- 2022-02-27 20:52:04

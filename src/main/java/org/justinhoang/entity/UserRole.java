@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Proxy(lazy = false)
 @Entity(name = "UserRole")
 @Table(name = "user_roles")
-public class UserRole { // @OneToMany
+public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -55,5 +55,8 @@ public class UserRole { // @OneToMany
         this.roleName = roleName;
         this.username = username;
         this.user = user;
+    }
+
+    public void setRole(String roleName) {
     }
 }
