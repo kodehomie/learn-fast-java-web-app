@@ -19,7 +19,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <!--ORIGINAL MAVEN PROPERTIES END-->
-        <!--ADDITIONAL PROPERTIES-->
+        <!--ADDITIONAL PROPERTIES SET 1-->
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
         <maven-surefire-plugin-version>2.22.1</maven-surefire-plugin-version>
@@ -32,10 +32,19 @@
         <junit-vintage-version>5.8.2</junit-vintage-version>
         <jupiter-version>5.8.2</jupiter-version>
         <junit-platform-runner-version>1.8.2</junit-platform-runner-version>
-        <!--ADDITIONAL PROPERTIES-->
+        <!--ADDITIONAL PROPERTIES SET 1 END-->
+        <!--ADDITIONAL PROPERTIES SET 2-->
+        <lombok-version>1.18.22</lombok-version>
         <lombok-maven-plugin-version>1.18.20.0</lombok-maven-plugin-version>
         <lombok-maven-version>1.18.20.0</lombok-maven-version>
-
+        <hibernate-orm-core-version>6.0.0.CR1</hibernate-orm-core-version>
+        <hibernate-orm-c3p0-version>6.0.0.CR1</hibernate-orm-c3p0-version>
+        <!--ADDITIONAL PROPERTIES SET 2 END-->
+        <!--ADDITIONAL PROPERTIES SET 3-->
+        <spring-webmvc-version>5.3.16</spring-webmvc-version>
+        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>
+        <spring-aop-version>5.3.16</spring-aop-version>
+        <spring-tx-version>5.3.16</spring-tx-version>
 
     </properties>
 
@@ -57,7 +66,7 @@
             <version>${javax.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--        JSTL-->
+        <!--JSTL-->
         <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
         <dependency>
             <groupId>jstl</groupId>
@@ -120,9 +129,54 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${lombok-version}</version>
             <scope>provided</scope>
         </dependency>
+        <!--HIBERNATE-->
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-orm-core-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-c3p0 -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate-orm-c3p0-version}</version>
+        </dependency>
+        <!--ADDITIONAL DEPENDENCIES SET 2 END-->
+        <!--ADDITIONAL DEPENDENCIES SET 3-->
+        <!--SPRING-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring-webmvc-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring-aop-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring-tx-version}</version>
+        </dependency>
+
+
+
+
+
 
     </dependencies>
 
@@ -213,6 +267,8 @@
                     <artifactId>lombok-maven</artifactId>
                     <version>${lombok-maven-version}</version>
                 </plugin>
+                <!--ADDITIONAL PLUGINS SET 2 END-->
+                <!--ADDITIONAL PLUGINS SET 3-->
 
                 <!--ADDITIONAL MAVEN PLUGINS END-->
             </plugins>

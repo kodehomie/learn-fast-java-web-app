@@ -71,7 +71,6 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 ##### Independent Research Topics
 * C
-* Hibernate Validation
 * Materialize
 * Hibernate Validation
 * Hibernate Search

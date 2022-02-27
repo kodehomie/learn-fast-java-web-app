@@ -1,66 +1,59 @@
-<%--<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>--%>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
-<%--<c:set var="contextPath" value="${pageContext.request.contextPath}"/>--%>
-<%--<!DOCTYPE html>--%>
-<%--<html lang="en">--%>
-<%--<head>--%>
-<%--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>--%>
-<%--    <meta name="description" content="">--%>
-<%--    <meta name="author" content="">--%>
-<%--    <title>Learn Fast - Create an account</title>--%>
+<c:import url="context-type.jsp"/>
+<c:import url="head.jsp"/>
+<body>
 
-<%--    <!-- CSS  -->--%>
-<%--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--%>
-<%--    <link href="${pageContext.request.contextPath}/resources/css/materialize.css" type="text/css" rel="stylesheet"--%>
-<%--          media="screen,projection"/>--%>
-<%--    <link href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css" rel="stylesheet"--%>
-<%--          media="screen,projection"/>--%>
+<div class="container">
+
+    <form action="signup" method="POST">
 
 
-<%--    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->--%>
-<%--    <!--[if lt IE 9]>--%>
-<%--    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>--%>
-<%--    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>--%>
-<%--    <![endif]-->--%>
-<%--</head>--%>
+        <div class="row form-group">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <label class="text-black" for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="text-black" for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row form-group">
+
+            <div class="col-md-12">
+                <label class="text-black" for="password">Password</label>
+                <input type="text" id="password" name="password" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <input type="submit" name="submit" value="SignUp" class="btn-large materialize-red">
+            </div>
+        </div>
 
 
-<%--<body>--%>
+    </form>
 
-<%--<div class="container">--%>
+</div>
 
-<%--    <form:form method="POST" modelAttribute="userForm" class="form-signin">--%>
-<%--        <h2 class="form-signin-heading">Create your account</h2>--%>
-<%--        <spring:bind path="username">--%>
-<%--            <div class="form-group ${status.error ? 'has-error' : ''}">--%>
-<%--                <form:input type="text" path="username" class="form-control" placeholder="Username"--%>
-<%--                            autofocus="true"></form:input>--%>
-<%--                <form:errors path="username"></form:errors>--%>
-<%--            </div>--%>
-<%--        </spring:bind>--%>
+<jsp:include page="footer.jsp"/>
 
-<%--        <spring:bind path="password">--%>
-<%--            <div class="form-group ${status.error ? 'has-error' : ''}">--%>
-<%--                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>--%>
-<%--                <form:errors path="password"></form:errors>--%>
-<%--            </div>--%>
-<%--        </spring:bind>--%>
-
-<%--        <spring:bind path="passwordConfirm">--%>
-<%--            <div class="form-group ${status.error ? 'has-error' : ''}">--%>
-<%--                <form:input type="password" path="passwordConfirm" class="form-control"--%>
-<%--                            placeholder="Confirm your password"></form:input>--%>
-<%--                <form:errors path="passwordConfirm"></form:errors>--%>
-<%--            </div>--%>
-<%--        </spring:bind>--%>
-
-<%--        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>--%>
-<%--    </form:form>--%>
-
-<%--</div>--%>
-<%--<!-- /container -->--%>
-<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>--%>
-<%--<script src="${contextPath}/resources/js/bootstrap.min.js"></script>--%>
-<%--</body>--%>
-<%--</html>--%>
+</body>
+</html>

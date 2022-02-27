@@ -4,11 +4,10 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:mysql://localhost:3306/FBTR</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/learnfast</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.username">${db.username}</property>
-        <property name="connection.password">${db.password}</property>
-
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
         <property name="hibernate.c3p0.timeout">300</property>
@@ -20,7 +19,7 @@
         <property name="connection.password">root</property>-->
 
         <mapping class="org.justinhoang.entity.User"/>
-        <mapping class="org.justinhoang.entity.Role"/>
+        <mapping class="org.justinhoang.entity.UserRole"/>
 
     </session-factory>
 

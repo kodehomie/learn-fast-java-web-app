@@ -1,0 +1,32 @@
+package org.justinhoang.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Controller;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * The type Sign up action.
+ */
+@WebServlet(
+        urlPatterns = {"/signUpAction"}
+)
+public class SignUpAction extends HttpServlet {
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/signup.jsp");
+        dispatcher.forward(req, resp);
+    }
+
+}
