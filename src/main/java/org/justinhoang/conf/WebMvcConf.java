@@ -4,12 +4,15 @@ import org.justinhoang.persistence.UserDaoImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.CacheControl;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.theme.ThemeChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.justinhoang.persistence.UserDao;
+
+import java.time.Duration;
 
 @Configuration
 @EnableWebMvc
@@ -31,6 +34,16 @@ public class WebMvcConf implements WebMvcConfigurer {
         registry.addViewController("/signin.jsp").setViewName("signin");
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/webapp", "classpath:/resources/")
+                .addResourceLocations("/css/")
+                .addResourceLocations("/img/")
+                .addResourceLocations("/js/");
+//         .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)));
+    }
+
     @Bean
     DriverManagerDataSource getDataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
@@ -46,15 +59,6 @@ public class WebMvcConf implements WebMvcConfigurer {
     @Bean
     public UserDao getUserDao() {
         return new UserDaoImpl(getDataSource());
-    }
-
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //specifying static resource location
-        registry.addResourceHandler("webapp/resources/**")
-                .addResourceLocations("/css/")
-                .addResourceLocations("/img/")
-                .addResourceLocations("/js/");
     }
 
     @Override
