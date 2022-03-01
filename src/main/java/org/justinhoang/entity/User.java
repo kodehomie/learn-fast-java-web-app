@@ -19,7 +19,7 @@ public class User {
     private Date createTime;
     private Date updateTime;
     private Date birthdate;
-    private UserRole userRole; // Enum Role
+    private UserRole userRole;
 }
 
 

@@ -5,16 +5,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
-public class UserDaoImpl implements UserDao {
+public class UserAuth implements GenAuthDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public UserDaoImpl(DataSource dataSource) {
+    public UserAuth(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override
-    public int signUpUser(User user) {
+    public int signUp(User user) {
 
         String sql = "INSERT INTO 'user' VALUES(?,?,?,?,?,?,?,?,?,?)";
 
@@ -29,9 +29,8 @@ public class UserDaoImpl implements UserDao {
             return 0;
         }
     }
-
     @Override
-    public String signInUser(User user) {
+    public String signIn(User user) {
 
         String sql = "SELECT id FROM user WHERE id=? AND password=?";
 

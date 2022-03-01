@@ -1,13 +1,13 @@
 package org.justinhoang.controller;
 
 
+import org.justinhoang.persistence.UserAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.justinhoang.persistence.UserDao;
 import org.justinhoang.entity.User;
 
 import java.util.Date;
@@ -16,7 +16,7 @@ import java.util.Date;
 public class UserSignUpController {
 
     @Autowired
-    private UserDao userDao;
+    private UserAuth userAuth;
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ModelAndView
@@ -38,7 +38,7 @@ public class UserSignUpController {
         user.setPhone(phone);
         user.setUsername(username);
 
-        int counter = userDao.signUpUser(user);
+        int counter = userAuth.signUp(user);
 
         if (counter > 0) {
             mv.addObject("msg", "User account creation successful.");

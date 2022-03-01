@@ -1,19 +1,19 @@
 package org.justinhoang.controller;
 
+import org.justinhoang.persistence.UserAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.justinhoang.persistence.UserDao;
 import org.justinhoang.entity.User;
 
 @Controller
 public class UserSignInController {
 
     @Autowired
-    private UserDao userDao;
+    private UserAuth userAuth;
 
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public ModelAndView userSignIn(@RequestParam("username") String username, @RequestParam("password") String password) {
@@ -25,7 +25,7 @@ public class UserSignInController {
         user.setPassword(password);
 
 
-        String name = userDao.signInUser(user);
+        String name = userAuth.signIn(user);
 
         if (name != null) {
 
@@ -34,7 +34,7 @@ public class UserSignInController {
 
         } else {
 
-            mv.addObject("msg", "Invalid user id or password.");
+            mv.addObject("msg", "Invalid username or password.");
             mv.setViewName("signin");
         }
 

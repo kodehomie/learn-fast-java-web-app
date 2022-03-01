@@ -1,18 +1,13 @@
 package org.justinhoang.conf;
 
-import org.justinhoang.persistence.UserDaoImpl;
+import org.justinhoang.persistence.UserAuth;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.CacheControl;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.theme.ThemeChangeInterceptor;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.justinhoang.persistence.UserDao;
-
-import java.time.Duration;
 
 @Configuration
 @EnableWebMvc
@@ -57,8 +52,8 @@ public class WebMvcConf implements WebMvcConfigurer {
     }
 
     @Bean
-    public UserDao getUserDao() {
-        return new UserDaoImpl(getDataSource());
+    public UserAuth getUserCrudDaoImpl() {
+        return new UserAuth(getDataSource());
     }
 
     @Override
