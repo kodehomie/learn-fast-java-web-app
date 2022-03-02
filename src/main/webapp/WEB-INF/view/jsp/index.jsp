@@ -6,14 +6,14 @@ Time: 6:21 PM
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<c:import url="resources/content-type.jsp"/>
+<c:import url="/resources/content-type.jsp"/>
 <head>
-    <c:import url="resources/meta.jsp"/>
+    <c:import url="/resources/meta.jsp"/>
     <title>Learn Fast: Free, Private & Secure Community</title>
-    <c:import url="resources/css.jsp"/>
+    <c:import url="/resources/css.jsp"/>
 </head>
 <body>
-<c:import url="resources/nav-index.jsp"/>
+<c:import url="/resources/nav-index.jsp"/>
 <%--<c:import url="resources/sidenav-index.jsp"/>--%>
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -46,7 +46,7 @@ Time: 6:21 PM
                     <h2 class="center materialize-red-text"><i class="material-icons">
                         flash_on</i></h2>
                     <h5 class="center">Speeds up learning</h5>
-                    <img src="resources/img/bear1.jpg" width="150">
+                    <img class="center" src="resources/img/bear1.jpg" width="150">
                 </div>
             </div>
 
@@ -81,8 +81,8 @@ Time: 6:21 PM
     <br><br>
 </div>
 
-<c:import url="resources/footer-index.jsp"/>
-<c:import url="resources/js.jsp"/>
+<c:import url="/resources/footer-index.jsp"/>
+<c:import url="/resources/js.jsp"/>
 
 </body>
 </html>

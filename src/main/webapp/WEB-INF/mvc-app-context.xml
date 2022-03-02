@@ -35,4 +35,16 @@
             </list>
         </property>
     </bean>
+
+<!--    <bean id="log"-->
+<!--          class="org.springframework.web.context.ContextLoader">-->
+<!--        <property name="locations">-->
+<!--            <list>-->
+<!--                <value>classpath:log4j.properties</value>-->
+<!--                <value>classpath:log4j2.xml</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
 </beans>
