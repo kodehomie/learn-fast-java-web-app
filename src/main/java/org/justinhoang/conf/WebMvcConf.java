@@ -29,8 +29,8 @@ public class WebMvcConf implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
-        registry.addViewController("/signup.jsp").setViewName("signup");
-        registry.addViewController("/signin.jsp").setViewName("signin");
+        registry.addViewController("/signup").setViewName("signup");
+        registry.addViewController("/signin").setViewName("signin");
     }
 
     @Override
@@ -59,12 +59,5 @@ public class WebMvcConf implements WebMvcConfigurer {
     public UserAuth getUserAuth() {
         return new UserAuth(getDataSource());
     }
-
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(new LocaleChangeInterceptor());
-//        registry.addInterceptor(new ThemeChangeInterceptor()).addPathPatterns("/**").excludePathPatterns("/admin/**");
-//        registry.addInterceptor(new SecurityInterceptor()).addPathPatterns("/secure/*");
-//    }
 
 }

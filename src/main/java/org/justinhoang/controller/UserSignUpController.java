@@ -37,6 +37,7 @@ public class UserSignUpController {
         user.setEmail(email);
         user.setPhone(phone);
         user.setUsername(username);
+        user.setPassword(password);
 
         int counter = userAuth.signUp(user);
 

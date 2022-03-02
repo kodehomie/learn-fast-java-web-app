@@ -23,13 +23,14 @@ Time: 6:21 PM
                 <h5 class="form-heading col s12 light">to continue to Learn Fast</h5>
 
                 <div class="form-group ${error != null ? 'has-error' : ''}">
-                    <%--            <span>${message}</span>--%>
+
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
                         <input placeholder="Username" id="username" name="username" type="text" class="validate"
                                autofocus="true">
                         <label for="username"></label>
                     </div>
+
                     <div class="input-field col s6">
                         <i class="material-icons prefix">lock</i>
                         <input placeholder="Password" id="password" name="password" type="text" class="validate"
@@ -37,10 +38,10 @@ Time: 6:21 PM
                         <label for="password"></label>
                     </div>
 
-                    <%--            <span>${error}</span>--%>
-<%--                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                     <a class="left materialize-red-text" href="signup.jsp">Create account</a>
-                    <button class="right btn btn-lg btn-primary btn-block materialize-red" type="submit" value="signin">Next</button>
+                    <button class="right btn btn-lg btn-primary btn-block materialize-red" type="submit" value="signin">
+                        Next
+                    </button>
                 </div>
 
             </form>
@@ -48,15 +49,7 @@ Time: 6:21 PM
         </div>
     </div>
 </div>
-<%--<div class="container">--%>
-<%--    <strong>Sign in | <a href="signup.jsp">Create an account</a></strong>--%>
-<%--    <form action="/signin" method="post">--%>
-<%--        User Id: <input type="text" name="username"/>--%>
-<%--        Password: <input type="password" name="password"/>--%>
-<%--        <input type="submit" value="Login"/>--%>
-<%--    </form>--%>
-<%--</div>--%>
-<%--${msg}--%>
+
 
 <c:import url="resources/js.jsp"/>
 

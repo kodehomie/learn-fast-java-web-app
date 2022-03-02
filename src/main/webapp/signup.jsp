@@ -7,79 +7,80 @@ Time: 6:21 PM
 <c:import url="resources/content-type.jsp"/>
 <head>
     <c:import url="resources/meta.jsp"/>
-    <title>Sign Up</title>
+    <title>Learn Fast - Sign Up</title>
     <c:import url="resources/css.jsp"/>
 </head>
 <body>
 
-<div class="section no-pad-bot" id="index-banner">
+<div class="container">
+    <br><br>
+
+
     <div class="container">
         <br><br>
-        <h1 class="header center">Create your Learn Fast Account</h1>
+
         <div class="row center">
-            <h5 class="header col s12 light">to continue to Learn Fast</h5>
-        </div>
-        <div class="row center">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input placeholder="First Name" id="first_name" type="text" class="validate">
-                        <label for="first_name"></label>
+            <form method="POST" action="signup" class="form-login">
+                <h2 class="form-heading">Create your Lean Fast Account</h2>
+                <h5 class="form-heading col s12 light">to continue to Learn Fast</h5>
+
+                <div class="form-group ${error != null ? 'has-error' : ''}">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="birthdate" id="birthdate" type="date" class="validate">
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input placeholder="Last Name" id="last_name" type="text" class="validate">
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="First Name" id="first_name" type="text" class="validate">
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                        </div>
                     </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">mail</i>
+                            <input placeholder="Email" id="email" type="email" class="validate">
+                        </div>
+                        <div class="input-field col s6">
+                            <i class="material-icons prefix">phone</i>
+                            <input placeholder="Phone" id="phone" type="text" class="validate">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person</i>
+                            <input placeholder="Username" id="username" type="text" class="validate">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input placeholder="Password" id="password" type="password" class="validate">
+                        </div>
+                    </div>
+
+                    <button class="right btn btn-lg btn-primary btn-block materialize-red" type="submit"
+                            value="signup">
+                        Next
+                    </button>
                 </div>
-
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">mail</i>
-                        <input placeholder="Email" id="email" type="email" class="validate">
-                    </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input placeholder="Phone" id="phone" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">person</i>
-                        <input placeholder="Username" id="username" type="text" class="validate">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock</i>
-                        <input placeholder="Password" id="password" type="password" class="validate">
-                    </div>
-                </div>
-
-                <a input type="submit" value="Next" class="materialize-red lighten-2 btn-large">Next</a>
-
 
             </form>
-        </div>
-        <br><br>
 
+        </div>
     </div>
 </div>
 
-
-<%--<form action="/signup" method="post">--%>
-<%--		<pre>--%>
-<%--	    <strong>Create an account | <a href="signin.jsp">Sign in</a></strong>--%>
-<%--		--%>
-<%--		User Id: <input type="text" name="userId"/>--%>
-<%--		--%>
-<%--		Password: <input type="password" name="password"/>--%>
-<%--	--%>
-<%--		<input type="submit" value="Next"/>--%>
-<%--	</pre>--%>
-<%--</form>--%>
 
 <%--${msg}--%>
 

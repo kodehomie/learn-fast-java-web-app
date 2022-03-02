@@ -1,12 +1,7 @@
 package org.justinhoang.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.*;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -21,27 +16,24 @@ public class User {
 
     @Id
     private Long id;
-
-    private String firstName;
-
-    private String lastName;
-
-    private String username;
-
-    private String password;
-
-    private String email;
-
-    private String phone;
-
-    private Date createTime;
-
-    private Date updateTime;
-
+    @Column(name = "birthdate")
     private Date birthdate;
-
-    private String role;
-
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
+    @Column(name = "username")
+    private String username;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "phone")
+    private String phone;
+    @Column(name = "create_time")
+    private Date createTime;
+    @Column(name = "update_time")
+    private Date updateTime;
 
 }
 

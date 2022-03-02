@@ -20,7 +20,7 @@ public class UserAuth implements GenAuthDao {
     public int signUp(User user) {
         String sql = "INSERT INTO 'user' VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
-            int counter = jdbcTemplate.update(sql, new Object[]{user.getId(), user.getPassword()});
+            int counter = jdbcTemplate.update(sql, new Object[]{user.getBirthdate(), user.getFirstName(),user.getLastName(), user.getEmail(), user.getPhone(), user.getUsername() ,user.getPassword()});
             return counter;
         } catch (Exception e) {
             e.printStackTrace();
