@@ -14,7 +14,7 @@ Time: 6:21 PM
 </head>
 <body>
 <c:import url="resources/jsp/nav-index.jsp"/>
-<c:import url="resources/jsp/sidenav-index.jsp"/>
+<%--<c:import url="resources/jsp/sidenav-index.jsp"/>--%>
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>

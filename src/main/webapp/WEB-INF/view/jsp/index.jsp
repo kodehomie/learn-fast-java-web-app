@@ -6,15 +6,15 @@ Time: 6:21 PM
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<c:import url="/resources/jsp/content-type.jsp"/>
+<c:import url="resources/jsp/content-type.jsp"/>
 <head>
-    <c:import url="/resources/jsp/meta.jsp"/>
+    <c:import url="resources/jsp/meta.jsp"/>
     <title>Learn Fast: Free, Private & Secure Community</title>
-    <c:import url="/resources/jsp/css.jsp"/>
+    <c:import url="resources/jsp/css.jsp"/>
 </head>
 <body>
-<c:import url="/resources/jsp/nav-index.jsp"/>
-<%--<c:import url="resources/sidenav-index.jsp"/>--%>
+<c:import url="resources/jsp/nav-index.jsp"/>
+<%--<c:import url="resources/jsp/sidenav-index.jsp"/>--%>
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
@@ -41,12 +41,16 @@ Time: 6:21 PM
 
         <!--   Icon Section   -->
         <div class="row">
+
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center materialize-red-text"><i class="material-icons">
                         flash_on</i></h2>
-                    <h5 class="center">Speeds up learning</h5>
-                    <img class="center" src="resources/img/bear1.jpg" width="150">
+
+                    <div class="center">
+                        <h5 class="center">Speeds up learning</h5>
+                        <img class="center" src="<c:url value="resources/img/bear1-index.jpg"/>" width="150">
+                    </div>
                 </div>
             </div>
 
@@ -54,12 +58,11 @@ Time: 6:21 PM
                 <div class="icon-block">
                     <h2 class="center materialize-red-text"><i class="material-icons">
                         group</i></h2>
-                    <h5 class="center">Learning Experience Focused</h5>
 
-                    <p class="light">By utilizing Learn Fast, we were able to
-                        create a community that incorporates like-minded
-                        learners. Additionally, a single system across all
-                        platforms allow for a more unified learning experience.</p>
+                    <div class="center">
+                        <h5 class="center">Experience Focused</h5>
+                        <img class="center" src="<c:url value="resources/img/bear2-index.jpg"/>" width="150">
+                    </div>
                 </div>
             </div>
 
@@ -67,22 +70,20 @@ Time: 6:21 PM
                 <div class="icon-block">
                     <h2 class="center materialize-red-text"><i class="material-icons">
                         settings</i></h2>
-                    <h5 class="center">Easy to use</h5>
-
-                    <p class="light">We have provided detailed documentation
-                        as well as specific examples to help new learners get
-                        started. We are also always open to feedback and can
-                        answer any questions a user may have about Learn Fast.</p>
+                    <div class="center">
+                        <h5 class="center">Easy to use</h5>
+                        <img class="center" src="<c:url value="resources/img/bear3-index.jpg"/>" width="150">
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+        <br><br>
     </div>
-    <br><br>
 </div>
 
-<c:import url="/resources/jsp/footer-index.jsp"/>
-<c:import url="/resources/jsp/js.jsp"/>
+<c:import url="resources/jsp/footer-index.jsp"/>
+<c:import url="resources/jsp/js.jsp"/>
 
 </body>
 </html>

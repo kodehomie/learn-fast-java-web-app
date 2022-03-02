@@ -3033,7 +3033,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_handleFocus",
       value: function _handleFocus(e) {
-        // Only trap focus if this modal is the last entity opened (prevents loops in nested modals).
+        // Only trap focus if this modal is the last model opened (prevents loops in nested modals).
         if (!this.el.contains(e.target) && this._nthModalOpened === Modal._modalsOpen) {
           this.el.focus();
         }
@@ -8734,7 +8734,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     // Number of years either side, or array of upper/lower range
     yearRange: 10,
 
-    // used internally (don't conf outside)
+    // used internally (don't config outside)
     minYear: 0,
     maxYear: 9999,
     minMonth: undefined,
@@ -10437,7 +10437,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
   var _defaults = {
     duration: 200, // ms
-    dist: -100, // zoom scale
+    dist: -100, // zoom scale TODO: make this more intuitive as an option
     shift: 0, // spacing for center image
     padding: 0, // Padding between non center items
     numVisible: 5, // Number of visible items in carousel
