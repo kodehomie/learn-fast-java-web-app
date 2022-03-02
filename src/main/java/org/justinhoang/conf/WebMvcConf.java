@@ -18,6 +18,8 @@ import java.time.Duration;
 @ComponentScan("org.justinhoang")
 public class WebMvcConf implements WebMvcConfigurer {
 
+    private static final int BROWSER_CACHE_CONTROL = 604800;
+
     @Bean
     InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver vr = new InternalResourceViewResolver();
@@ -33,14 +35,27 @@ public class WebMvcConf implements WebMvcConfigurer {
         registry.addViewController("/signin").setViewName("signin");
     }
 
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/resources/**")
+//                .addResourceLocations("/", "classpath:webapp/resources/")
+//                .addResourceLocations("/css/")
+//                .addResourceLocations("/img/")
+//                .addResourceLocations("/js/");
+//
+//    }
+
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/", "classpath:webapp/resources/")
-                .addResourceLocations("/css/")
+                .addResourceLocations("/resources/")
+                .setCachePeriod(BROWSER_CACHE_CONTROL);
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("/", "classpath:webapp/resources/img/")
                 .addResourceLocations("/img/")
-                .addResourceLocations("/js/");
-
+                .setCachePeriod(BROWSER_CACHE_CONTROL);
     }
 
     @Bean

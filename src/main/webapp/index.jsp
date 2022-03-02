@@ -45,8 +45,10 @@ Time: 6:21 PM
                 <div class="icon-block">
                     <h2 class="center materialize-red-text"><i class="material-icons">
                         flash_on</i></h2>
-                    <h5 class="center">Speeds up learning</h5>
-                    <img class="center" src="resources/img/bear1.jpg" width="150">
+                    <div class="center">
+                        <h5 class="center">Speeds up learning</h5>
+                        <img class="center" src="<c:url value="resources/img/bear1.jpg"/>" width="150">
+                    </div>
                 </div>
             </div>
 

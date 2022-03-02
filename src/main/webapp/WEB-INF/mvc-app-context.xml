@@ -13,11 +13,11 @@
     <context:component-scan base-package="org.justinhoang"/>
     <mvc:annotation-driven/>
 
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/view/jsp/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
+<!--    <bean id="viewResolver"-->
+<!--          class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--        <property name="prefix" value="/WEB-INF/view/jsp/"/>-->
+<!--        <property name="suffix" value=".jsp"/>-->
+<!--    </bean>-->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}"/>
@@ -25,6 +25,8 @@
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
     </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/" />
 
     <bean id="dbProperties"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

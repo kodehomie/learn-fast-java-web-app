@@ -20,7 +20,7 @@ Time: 6:21 PM
         <br><br>
 
         <div class="row center">
-            <form method="POST" action="signup" class="form-login">
+            <form method="POST" action="signup" class="form">
                 <h2 class="form-heading">Create your Lean Fast Account</h2>
                 <h5 class="form-heading col s12 light">to continue to Learn Fast</h5>
 
