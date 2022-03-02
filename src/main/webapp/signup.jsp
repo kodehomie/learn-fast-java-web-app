@@ -4,11 +4,11 @@ Date: 2022-Feb-28-Mon
 Time: 6:21 PM
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="resources/content-type.jsp"/>
+<c:import url="resources/jsp/content-type.jsp"/>
 <head>
-    <c:import url="resources/meta.jsp"/>
+    <c:import url="resources/jsp/meta.jsp"/>
     <title>Learn Fast - Sign Up</title>
-    <c:import url="resources/css.jsp"/>
+    <c:import url="resources/jsp/css.jsp"/>
 </head>
 <body>
 
@@ -21,7 +21,7 @@ Time: 6:21 PM
 
         <div class="row center">
             <form method="POST" action="signup" class="form">
-                <h2 class="form-heading">Create your Lean Fast Account</h2>
+                <h2 class="form-heading">Create your Learn Fast Account</h2>
                 <h5 class="form-heading col s12 light">to continue to Learn Fast</h5>
 
                 <div class="form-group ${error != null ? 'has-error' : ''}">
@@ -84,7 +84,7 @@ Time: 6:21 PM
 
 <%--${msg}--%>
 
-<c:import url="resources/js.jsp"/>
+<c:import url="resources/jsp/js.jsp"/>
 
 </body>
 </html>

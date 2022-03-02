@@ -33,17 +33,8 @@ public class WebMvcConf implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/signup").setViewName("signup");
         registry.addViewController("/signin").setViewName("signin");
+        registry.addViewController("/welcome").setViewName("welcome");
     }
-
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/resources/**")
-//                .addResourceLocations("/", "classpath:webapp/resources/")
-//                .addResourceLocations("/css/")
-//                .addResourceLocations("/img/")
-//                .addResourceLocations("/js/");
-//
-//    }
 
 
     @Override
@@ -52,9 +43,21 @@ public class WebMvcConf implements WebMvcConfigurer {
                 .addResourceLocations("/", "classpath:webapp/resources/")
                 .addResourceLocations("/resources/")
                 .setCachePeriod(BROWSER_CACHE_CONTROL);
-        registry.addResourceHandler("/img/**")
+        registry.addResourceHandler("/css/**", "/css/{filename:\\w+\\}.css")
+                .addResourceLocations("/", "classpath:webapp/resources/css/")
+                .addResourceLocations("/css/")
+                .setCachePeriod(BROWSER_CACHE_CONTROL);
+        registry.addResourceHandler("/img/**", "/img/{filename:\\w+\\}.*")
                 .addResourceLocations("/", "classpath:webapp/resources/img/")
                 .addResourceLocations("/img/")
+                .setCachePeriod(BROWSER_CACHE_CONTROL);
+        registry.addResourceHandler("/js/**", "/js/{filename:\\w+\\}.js")
+                .addResourceLocations("/", "classpath:webapp/resources/js/")
+                .addResourceLocations("/js/")
+                .setCachePeriod(BROWSER_CACHE_CONTROL);
+        registry.addResourceHandler("/jsp/**", "**/jsp/{filename:\\w+\\}.jsp")
+                .addResourceLocations("/", "classpath:webapp/resources/jsp/")
+                .addResourceLocations("/jsp/")
                 .setCachePeriod(BROWSER_CACHE_CONTROL);
     }
 

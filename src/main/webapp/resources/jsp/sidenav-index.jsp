@@ -3,12 +3,10 @@ Author: Justin Hoang
 Date: 2022-Feb-28-Mon
 Time: 6:21 PM
 --%>
-<nav> <!-- navbar content here  --> </nav>
-
 <ul id="slide-out" class="sidenav">
     <li><div class="user-view">
         <div class="background">
-            <img src="img/jkh.png">
+            <img src="resources/img/jkh.png">
         </div>
         <a href="#user"><img class="circle" src="img/yuna.jpg"></a>
         <a href="#name"><span class="white-text name">John Doe</span></a>

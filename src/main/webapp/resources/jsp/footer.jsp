@@ -35,11 +35,11 @@ Time: 6:21 PM
             </div>
         </div>
     </div>
-    <div class="footer-copyright materialize-red lighten-2">
-        <div class="container materialize-red lighten-2">
-            Built with ❤️️ & 🍜 by: <a class=""
-                                       href="http://materializecss.com">Justin
-            Hoang
+
+    <div class="footer-copyright materialize-red lighten-2 white-text">
+        <div class="container materialize-red lighten-2 white-text">
+            Built with (❤) & (🍜) by: <a class="white-text" href="mailto:jhoang1@madisoncollege.edu">
+            <address>Justin Hoang</address>
         </a>
         </div>
     </div>

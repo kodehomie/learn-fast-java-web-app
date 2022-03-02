@@ -4,11 +4,11 @@ Date: 2022-Feb-28-Mon
 Time: 6:21 PM
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="resources/content-type.jsp"/>
+<c:import url="resources/jsp/content-type.jsp"/>
 <head>
-    <c:import url="resources/meta.jsp"/>
+    <c:import url="resources/jsp/meta.jsp"/>
     <title>Learn Fast</title>
-    <c:import url="resources/css.jsp"/>
+    <c:import url="resources/jsp/css.jsp"/>
 </head>
 <body>
 
@@ -51,7 +51,7 @@ Time: 6:21 PM
 </div>
 
 
-<c:import url="resources/js.jsp"/>
+<c:import url="resources/jsp/js.jsp"/>
 
 </body>
 </html>
