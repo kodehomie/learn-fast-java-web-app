@@ -13,27 +13,29 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * [Spring MVC Servlet Web Application Context]
  * (containing controllers, view resolvers, and other web related beans)
  *
- *
  * @author jkhoang
  */
 @Configuration
 @EnableWebMvc
 @ComponentScan("org.justinhoang")
-public class ServWebAppConf implements WebMvcConfigurer {
-    private static final int BROWSER_CACHE_CONTROL = 604800;
+public class ServWebAppConf implements WebMvcConfigurer
+{
+
+    //    private static final int BROWSER_CACHE_CONTROL = 604800;
+    private static final int BROWSER_CACHE_CONTROL = 10;
 
 
     // Controllers
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
+    @Override public void addViewControllers(ViewControllerRegistry registry)
+    {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/signup").setViewName("signup");
         registry.addViewController("/signin").setViewName("signin");
         registry.addViewController("/welcome").setViewName("welcome");
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    @Override public void addResourceHandlers(ResourceHandlerRegistry registry)
+    {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/", "classpath:webapp/resources/")
                 .addResourceLocations("/resources/")
@@ -57,8 +59,8 @@ public class ServWebAppConf implements WebMvcConfigurer {
     }
 
     // View Resolvers
-    @Bean
-    InternalResourceViewResolver viewResolver() {
+    @Bean InternalResourceViewResolver viewResolver()
+    {
         InternalResourceViewResolver vr = new InternalResourceViewResolver();
         vr.setPrefix("/");
         vr.setSuffix(".jsp");

@@ -1,4 +1,4 @@
-package org.justinhoang.conf;
-
-public class AppConfig {
-}
+//package org.justinhoang.conf;
+//
+//public class AppConfig {
+//}

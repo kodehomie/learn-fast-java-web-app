@@ -1,6 +1,5 @@
 package org.justinhoang.conf;
 
-import org.justinhoang.persistence.UserAuth;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,20 +22,33 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 @ComponentScan("org.justinhoang")
-public class RootWebAppConf implements WebMvcConfigurer {
+public class RootWebAppConf implements WebMvcConfigurer
+{
 
-    @Bean
-    DriverManagerDataSource getDataSource() {
+    @Bean DriverManagerDataSource getDataSource()
+    {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/learnfasttest");
-        ds.setUsername("root");
-        ds.setPassword("root");
+        ds.setUrl(
+                "jdbc:mysql://aa1rb6j5gd3h71f.cy1croagkang.us-east-2.rds.amazonaws.com:3306/LearnFast");
+        ds.setUsername("justin");
+        ds.setPassword("*mybffjustin*");
         return ds;
     }
 
-    @Bean
-    public UserAuth getUserAuth() {
-        return new UserAuth(getDataSource());
-    }
+    //    @Bean
+    //    DriverManagerDataSource getDataSource() {
+    //        DriverManagerDataSource ds = new DriverManagerDataSource();
+    //        ds.setDriverClassName("com.mysql.jdbc.Driver");
+    //        ds.setUrl("jdbc:mysql://localhost:3306/learnfasttest");
+    //        ds.setUsername("root");
+    //        ds.setPassword("root");
+    //        return ds;
+    //    }
+
+    //    @Bean
+    //    public UserAuth getUserAuth() {
+    //        return new UserAuth(getDataSource());
+    //    }
+
 }

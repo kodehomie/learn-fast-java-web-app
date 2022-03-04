@@ -42,15 +42,15 @@
 <!--        </property>-->
 <!--    </bean>-->
 
-<!--&lt;!&ndash;    <bean id="log"&ndash;&gt;-->
-<!--&lt;!&ndash;          class="org.springframework.web.context.ContextLoader">&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="locations">&ndash;&gt;-->
-<!--&lt;!&ndash;            <list>&ndash;&gt;-->
-<!--&lt;!&ndash;                <value>classpath:log4j.properties</value>&ndash;&gt;-->
-<!--&lt;!&ndash;                <value>classpath:log4j2.xml</value>&ndash;&gt;-->
-<!--&lt;!&ndash;            </list>&ndash;&gt;-->
-<!--&lt;!&ndash;        </property>&ndash;&gt;-->
-<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+<!--    <bean id="log"-->
+<!--          class="org.springframework.web.context.ContextLoader">-->
+<!--        <property name="locations">-->
+<!--            <list>-->
+<!--                <value>classpath:log4j.properties</value>-->
+<!--                <value>classpath:log4j2.xml</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
 
 <!--</beans>-->
