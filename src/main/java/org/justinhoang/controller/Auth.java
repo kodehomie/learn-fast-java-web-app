@@ -68,8 +68,6 @@ public class Auth extends HttpServlet implements PropertiesLoader
      *
      * @param req  servlet request
      * @param resp servlet response
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws

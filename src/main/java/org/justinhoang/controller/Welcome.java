@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
-
-public class Welcome {
-}
+//package org.justinhoang.controller;
+//
+//public class Welcome {
+//}
