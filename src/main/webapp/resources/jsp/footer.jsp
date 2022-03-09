@@ -5,7 +5,7 @@ Time: 6:21 PM
 --%>
 <footer class="page-footer materialize-red lighten-2">
     <div class="container materialize-red lighten-2">
-        <div class="container materialize-red lighten-2">
+        <div class="container">
             <div class="row">
                 <div>
                     <a class="white-text" href="#!">Privacy</a>

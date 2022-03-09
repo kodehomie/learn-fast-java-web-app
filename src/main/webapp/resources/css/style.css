@@ -7,19 +7,17 @@
  */
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 1rem;
 }
+
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
 
 /* Page content */
 .content {
-    padding: 16px;
+    padding: 1rem;
 }
-/*#content {*/
-/*    padding: 16px;*/
-/*}*/
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -29,9 +27,9 @@
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-    padding-top: 60px;
-}
+/*.sticky + .content {*/
+/*    padding-top: 3.75rem;*/
+/*}*/
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .stickyBottom {
@@ -41,51 +39,33 @@
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.stickyBottom + .content {
-    padding-bottom: 60px;
-}
-/*#sticky + #content {*/
-/*    padding-top: 60px;*/
-/*}*/
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-/*.sticky-bottom + .content {*/
-/*    padding-top: 60px;*/
+/*.stickyBottom + .content {*/
+/*    padding-bottom: 9.75rem;*/
 /*}*/
 
 #footer {
-    position: absolute;
+    position: sticky;
 
     /* Place above nav */
-    bottom: 50px;
-    left: 0px;
+    bottom: 3.125rem;
 
-    height: 50px;
+    height: 3.125rem;
     width: 100%;
 
-    text-align: center;
+    text-align: justify-all;
 }
 
-/*#stickyBottom {*/
-/*    position: fixed;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    width: 100%;*/
-/*    z-index: 5;*/
-
-/*    text-align: center;*/
-/*}*/
-
-/*#bottomDiv {*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*}*/
-/*#stickyBottom + #content {*/
-/*    padding-top: 60px;*/
-/*}*/
-
-/*#bottomDiv + #content {*/
-/*    padding-top: 60px;*/
-/*}*/
+.nav, .nav-wrapper, .navbar, #nav, #nav-mobile, #stickyBottom, #nav-bottom {
+    justify-content: space-evenly;
+    justify-items: stretch;
+    justify-self: center;
+    text-justify: distribute;
+    -webkit-justify-content: space-between;
+    text-align-all: center;
+    align-self: stretch;
+    align-items: stretch;
+    -webkit-align-content: stretch;
+    -webkit-align-self: stretch;
+    -webkit-align-items: stretch;
+    width: 100%;
+}

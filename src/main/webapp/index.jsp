@@ -94,7 +94,7 @@ Time: 6:21 PM
 <c:import url = "resources/jsp/js.jsp"/>
 <!-- Always visible Sticky Bottom Nav-->
 <div class = "nav-bottom stickyBottom" id = "stickyBottom">
-    <c:import url = "resources/jsp/nav-bottom.jsp"/>
+    <c:import url = "resources/jsp/footer-index.jsp"/>
 </div>
 
 <!-- Only visible when your at the bottom of the page-->
