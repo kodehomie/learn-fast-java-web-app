@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>learn-fast Maven Webapp</name>
+    <name>Learn Fast</name>
     <!--change it to the project's website -->
     <url>https://www.example.com</url>
 

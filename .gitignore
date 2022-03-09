@@ -67,6 +67,10 @@ fabric.properties
  .ebextensions/*
 
 # Sensitive
+*.properties
+.properties
+*.config
+.config
 app.properties
 db.properties
 https-instance.config
