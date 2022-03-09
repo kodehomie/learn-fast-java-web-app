@@ -67,5 +67,7 @@ fabric.properties
  .ebextensions/*
 
 # Sensitive
+app.properties
+db.properties
 https-instance.config
 cognito.properties
