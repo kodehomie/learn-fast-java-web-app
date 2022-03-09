@@ -2,8 +2,7 @@ package org.justinhoang.auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class KeysItem
-{
+public class KeysItem{
 
     @JsonProperty("kty")
     private String kty;
@@ -23,33 +22,27 @@ public class KeysItem
     @JsonProperty("n")
     private String N;
 
-    public String getKty()
-    {
+    public String getKty(){
         return kty;
     }
 
-    public String getE()
-    {
+    public String getE(){
         return E;
     }
 
-    public String getUse()
-    {
+    public String getUse(){
         return use;
     }
 
-    public String getKid()
-    {
+    public String getKid(){
         return kid;
     }
 
-    public String getAlg()
-    {
+    public String getAlg(){
         return alg;
     }
 
-    public String getN()
-    {
+    public String getN(){
         return N;
     }
 }

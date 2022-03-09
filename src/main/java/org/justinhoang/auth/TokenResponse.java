@@ -2,8 +2,7 @@ package org.justinhoang.auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TokenResponse
-{
+public class TokenResponse {
 
     @JsonProperty("access_token")
     private String accessToken;
@@ -20,28 +19,23 @@ public class TokenResponse
     @JsonProperty("expires_in")
     private int expiresIn;
 
-    public String getAccessToken()
-    {
+    public String getAccessToken(){
         return accessToken;
     }
 
-    public String getRefreshToken()
-    {
+    public String getRefreshToken(){
         return refreshToken;
     }
 
-    public String getIdToken()
-    {
+    public String getIdToken(){
         return idToken;
     }
 
-    public String getTokenType()
-    {
+    public String getTokenType(){
         return tokenType;
     }
 
-    public int getExpiresIn()
-    {
+    public int getExpiresIn(){
         return expiresIn;
     }
 }

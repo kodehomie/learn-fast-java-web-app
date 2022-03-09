@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- required fields -->
+        <!-- JDBC Database connection settings -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/learnfast</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <property name="connection.username">${db.username}</property>
+        <property name="connection.password">${db.password}</property>
+
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+<!--        <property name="connection.pool_size">1</property>-->
+
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Set the current session context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- optional fields -->
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+<!--        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>-->
+
+        <!-- please add entity classes here -->
+        <mapping class="org.justinhoang.entity.Course" />
+        <mapping class="org.justinhoang.entity.CourseType" />
+        <mapping class="org.justinhoang.entity.Mentee" />
+        <mapping class="org.justinhoang.entity.Mentor" />
+        <mapping class="org.justinhoang.entity.MentorInfo" />
+        <mapping class="org.justinhoang.entity.Review" />
+        <mapping class="org.justinhoang.entity.Role" />
+        <mapping class="org.justinhoang.entity.User" />
+    </session-factory>
+</hibernate-configuration>

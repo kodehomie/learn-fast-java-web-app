@@ -17,6 +17,9 @@
 .content {
     padding: 16px;
 }
+/*#content {*/
+/*    padding: 16px;*/
+/*}*/
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -29,3 +32,60 @@
 .sticky + .content {
     padding-top: 60px;
 }
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.stickyBottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.stickyBottom + .content {
+    padding-bottom: 60px;
+}
+/*#sticky + #content {*/
+/*    padding-top: 60px;*/
+/*}*/
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+/*.sticky-bottom + .content {*/
+/*    padding-top: 60px;*/
+/*}*/
+
+#footer {
+    position: absolute;
+
+    /* Place above nav */
+    bottom: 50px;
+    left: 0px;
+
+    height: 50px;
+    width: 100%;
+
+    text-align: center;
+}
+
+/*#stickyBottom {*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    z-index: 5;*/
+
+/*    text-align: center;*/
+/*}*/
+
+/*#bottomDiv {*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*}*/
+/*#stickyBottom + #content {*/
+/*    padding-top: 60px;*/
+/*}*/
+
+/*#bottomDiv + #content {*/
+/*    padding-top: 60px;*/
+/*}*/

@@ -27,7 +27,7 @@
         <javax.version>8.0.1</javax.version>
         <jstl-version>1.2</jstl-version>
         <mysql-version>8.0.28</mysql-version>
-        <log4j-version>2.17.2</log4j-version>
+        <log4j-version>2.17.1</log4j-version>
         <junit.version>4.13.2</junit.version>
         <junit-vintage-version>5.8.2</junit-vintage-version>
         <jupiter-version>5.8.2</jupiter-version>
@@ -42,7 +42,7 @@
         <!--ADDITIONAL PROPERTIES SET 2 END-->
         <!--ADDITIONAL PROPERTIES SET 3-->
         <spring-webmvc-version>5.3.16</spring-webmvc-version>
-        <spring-jdbc-version>5.3.16</spring-jdbc-version>
+<!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
         <java-jwt-version>3.18.3</java-jwt-version>
         <json-version>20211205</json-version>
         <commons-io-version>2.11.0</commons-io-version>
@@ -51,9 +51,9 @@
         <jackson-databind-version>2.13.1</jackson-databind-version>
         <apache-commons-codec-version>1.15</apache-commons-codec-version>
 
-        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>
-        <spring-aop-version>5.3.16</spring-aop-version>
-        <spring-tx-version>5.3.16</spring-tx-version>
+<!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
+<!--        <spring-aop-version>5.3.16</spring-aop-version>-->
+<!--        <spring-tx-version>5.3.16</spring-tx-version>-->
         <slf4j-version>2.0.0-alpha6</slf4j-version>
 
     </properties>
@@ -159,22 +159,49 @@
             <version>${hibernate-orm-c3p0-version}</version>
         </dependency>
         <!--ADDITIONAL DEPENDENCIES SET 2 END-->
+
         <!--ADDITIONAL DEPENDENCIES SET 3-->
-        <!-- spring mvc dependency -->
+        <!-- SPRING MVC -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>${spring-webmvc-version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>5.3.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-jcl -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jcl</artifactId>
+            <version>5.3.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>5.3.16</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.3.16</version>
+        </dependency>
+
         <!-- spring jdbc dependency -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-                <dependency>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-jdbc</artifactId>
-                    <version>${spring-jdbc-version}</version>
-                </dependency>
+<!--                <dependency>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                    <artifactId>spring-jdbc</artifactId>-->
+<!--                    <version>${spring-jdbc-version}</version>-->
+<!--                </dependency>-->
         <!--ADDITIONAL DEPENDENCIES SET 3 END-->
+
         <!--ADDITIONAL DEPENDENCIES SET 4-->
         <!-- for parsing access token -->
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
@@ -220,10 +247,6 @@
             <version>${apache-commons-codec-version}</version>
         </dependency>
 
-
-
-
-
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -231,6 +254,34 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.10.2</version>
+        </dependency>
+<!--        HIBERNATE-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.5.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.6.5.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.2.Final</version>
+        </dependency>
+
+
 
     </dependencies>
 

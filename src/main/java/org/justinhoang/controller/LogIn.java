@@ -1,9 +1,8 @@
 package org.justinhoang.controller;
 
-
-import org.apache.logging.log4j.Logger;
 import org.justinhoang.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 
-@WebServlet(urlPatterns = {"/logIn"})
+@WebServlet(urlPatterns = {"/login"})
 
 /** Begins the authentication process using AWS Cognito
  *
@@ -41,15 +40,10 @@ import java.util.Properties;
     {
         try
         {
-            properties   = loadProperties("/cognito.properties");
+            properties   = load("cognito.properties");
             CLIENT_ID    = properties.getProperty("client.id");
             LOGIN_URL    = properties.getProperty("loginURL");
             REDIRECT_URL = properties.getProperty("redirectURL");
-        }
-        catch (IOException ioException)
-        {
-            logger.error("Cannot load properties..." + ioException.getMessage(),
-                         ioException);
         }
         catch (Exception e)
         {
@@ -62,12 +56,9 @@ import java.util.Properties;
      *
      * @param req  servlet request
      * @param resp servlet response
-     * @throws ServletException
-     * @throws IOException
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
-                                                                           ServletException,
                                                                            IOException
     {
         // TODO if properties weren't loaded properly, route to an error page

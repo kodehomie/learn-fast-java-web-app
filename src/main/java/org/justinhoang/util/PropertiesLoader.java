@@ -1,37 +1,58 @@
 package org.justinhoang.util;
 
-import java.io.*;
-import java.util.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
-
-/**
- * This interface contains a default method that can be used anywhere a Properties
- * object is needed to be loaded.
- *
- * @author Eric Knapp
- */
 public interface PropertiesLoader
 {
-
-    /**
-     * This default method will load a properties file into a Properties instance
-     * and return it.
-     *
-     * @param propertiesFilePath a path to a file on the java classpath list
-     * @return a populated Properties instance or an empty Properties instance if
-     * the file path was not found.
-     * @throws IOException properties file cannot be read
-     * @throws Exception   something went wrong accessing the properties file
-     */
-    default Properties loadProperties(String propertiesFilePath) throws
-                                                                 IOException,
-                                                                 Exception
+    default Properties load(String filePath)
     {
-        Properties properties = new Properties();
-
-        properties.load(
-                this.getClass().getResourceAsStream(propertiesFilePath));
-
+        Properties  properties  = new Properties();
+        try (InputStream inputStream = findFile(filePath))
+        {
+            properties.load(inputStream);
+        }
+        catch (IOException ignore)
+        {
+        }
         return properties;
+    }
+
+    private InputStream findFile(String fileName) throws FileNotFoundException
+    {
+        InputStream inputStream = findInWorkingDirectory(fileName);
+        if (inputStream == null)
+            inputStream = findInClasspath(fileName);
+        if (inputStream == null)
+            inputStream = findInSourceDirectory(fileName);
+        return inputStream;
+    }
+
+    private InputStream findInSourceDirectory(String fileName) throws
+                                                               FileNotFoundException
+    {
+        return new FileInputStream("src/main/resources/" + fileName);
+    }
+
+    private InputStream findInClasspath(String fileName)
+    {
+        return Thread.currentThread().getContextClassLoader()
+                     .getResourceAsStream(fileName);
+    }
+
+    private InputStream findInWorkingDirectory(String fileName)
+    {
+        try
+        {
+            return new FileInputStream(
+                    System.getProperty("user.dir") + fileName);
+        }
+        catch (FileNotFoundException e)
+        {
+            return null;
+        }
     }
 }
