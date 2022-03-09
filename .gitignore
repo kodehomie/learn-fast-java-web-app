@@ -75,3 +75,8 @@ app.properties
 db.properties
 https-instance.config
 cognito.properties
+
+# ignore ALL .log files
+*.log
+# ignore ALL files in ANY directory named temp
+temp/ 
