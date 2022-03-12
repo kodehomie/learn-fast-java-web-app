@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.entity.Course;
 import org.justinhoang.entity.CourseFormat;
+import org.justinhoang.entity.CourseSection;
 import org.justinhoang.persistence.GenericDao;
 import org.justinhoang.util.DaoFactory;
 
@@ -32,11 +33,12 @@ public class CreateCourse extends HttpServlet
         Course course = new Course();
         course.setTitle(req.getParameter("title"));
 
-        GenericDao typeDao = DaoFactory.createDao(CourseFormat.class);
+        GenericDao sectionDao = DaoFactory.createDao(CourseFormat.class);
 
-        CourseFormat type = (CourseFormat) typeDao.readById(
-                Integer.parseInt(req.getParameter("type")));
-        course.setCourseType(type);
+        CourseSection courseSection = (CourseSection) sectionDao.readById(
+                Integer.parseInt(req.getParameter("section")));
+        course.setCourseSection(courseSection);
+
 
 //        GenericDao userDao = DaoFactory.createDao(User.class);
 //        User user = (User) userDao.findByPropertyEqual("userName",

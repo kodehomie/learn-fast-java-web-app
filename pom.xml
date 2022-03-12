@@ -48,9 +48,9 @@
         <java-jwt-version>3.18.3</java-jwt-version>
         <json-version>20211205</json-version>
         <commons-io-version>2.11.0</commons-io-version>
-        <jackson-core-version>2.13.1</jackson-core-version>
-        <jackson-annotations-version>2.13.1</jackson-annotations-version>
-        <jackson-databind-version>2.13.1</jackson-databind-version>
+        <jackson-core-version>2.13.2</jackson-core-version>
+        <jackson-annotations-version>2.13.2</jackson-annotations-version>
+        <jackson-databind-version>2.13.2</jackson-databind-version>
         <apache-commons-codec-version>1.15</apache-commons-codec-version>
 <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
 <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
@@ -63,6 +63,10 @@
         <aws-java-sdk-cognitoidp-version>1.12.176</aws-java-sdk-cognitoidp-version>
         <aws-lambda-java-events-version>3.11.0</aws-lambda-java-events-version>
         <!--ADDITIONAL PROPERTIES SET 5 END-->
+        <!--ADDITIONAL PROPERTIES SET 6-->
+        <jersey-client-version>3.0.4</jersey-client-version>
+        <jersey-hk2-version>3.0.4</jersey-hk2-version>
+        <!--ADDITIONAL PROPERTIES SET 6 END-->
 
     </properties>
 
@@ -315,13 +319,23 @@
             <artifactId>aws-lambda-java-events</artifactId>
             <version>${aws-lambda-java-events-version}</version>
         </dependency>
-
-
-
-
-
-
         <!--ADDITIONAL DEPENDENCIES SET 5 END-->
+        <!--ADDITIONAL DEPENDENCIES SET 6-->
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey-client-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 -->
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey-hk2-version}</version>
+        </dependency>
+
+
+        <!--ADDITIONAL DEPENDENCIES SET 6 END-->
 
 
 

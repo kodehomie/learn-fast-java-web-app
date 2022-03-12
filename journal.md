@@ -97,7 +97,7 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Read Hibernate reference
 - Read MySQL reference manual
 - Read Hibernate tutorial
-- Watch Videos
+- Watch Videos about Hibernate
 - Work on Hibernate exercise
 - Work on individual project
 - Launch side project to AWS
@@ -108,6 +108,48 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 6
 
 ##### Dates: 2022-FEB-20-SUN - 2022-FEB-26-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours:
+##### Weekly Java Hours: 23 hours
+##### Total Enterprise Java Hours: 114 hours
 ##### Notes:
+- Read guide to writing testable code
+- AWS references
+- Watch Videos about Elastic Beanstalk
+- Do design reviews
+- Team meeting
+- Setup AWS
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
+
+### WEEK 7
+
+##### Dates: 2022-FEB-27-SUN - 2022-MAR-5-SAT
+##### Weekly Java Hours: 25 hours
+##### Total Enterprise Java Hours: 139 hours
+##### Notes:
+- Read AWS Cognito Developer Guide
+- Read user pool authentication flow
+- Read using tokens with user pools
+- Read using the ID token
+- Read verifying JSON Web Token
+- Complete AWS Cognito exercise
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
+
+### WEEK 8
+
+##### Dates: 2022-MAR-6-SUN - 2022-MAR-12-SAT
+##### Weekly Java Hours:
+##### Total Enterprise Java Hours: 
+##### Notes:
+- Read what is a web service
+- Read SOAP overview
+- Read Rest overview
+- Read SOAP vs REST Web Services
+- Read restful web services
+- Read JSON tutorial
+- Read API references
+- 

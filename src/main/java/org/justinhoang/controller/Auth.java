@@ -60,7 +60,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     public void init() throws ServletException {
         super.init();
-        loadProperties();
         loadKey();
     }
 
@@ -109,7 +108,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         HttpResponse<?> response = null;
 
         response = client.send(authRequest, HttpResponse.BodyHandlers.ofString());
-
 
         logger.debug("Response headers: " + response.headers().toString());
         logger.debug("Response body: " + response.body().toString());
@@ -166,8 +164,17 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
-        String userName = jwt.getClaim("cognito:username").asString();
+        String birthdate = jwt.getClaim("cognito:Birthdat").asString();
+        String firstName = jwt.getClaim("cognito:Given Name").asString();
+        String lastName = jwt.getClaim("cognito:Family Name").asString();
+        String email = jwt.getClaim("cognito:Email").asString();
+        String userName = jwt.getClaim("cognito:User name").asString();
+        logger.debug("here's the birthdate: " + birthdate);
+        logger.debug("here's the first name: " + firstName);
+        logger.debug("here's the last name: " + lastName);
+        logger.debug("here's the email: " + email);
         logger.debug("here's the username: " + userName);
+
 
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
@@ -230,24 +237,25 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         }
     }
 
-    /**
-     * Read in the cognito props file and get/set the client id, secret, and required urls
-     * for authenticating a user.
-     */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
-    private void loadProperties() {
-        try {
-            properties = load("/cognito.properties");
-            CLIENT_ID = properties.getProperty("client.id");
-            CLIENT_SECRET = properties.getProperty("client.secret");
-            OAUTH_URL = properties.getProperty("oauthURL");
-            LOGIN_URL = properties.getProperty("loginURL");
-            REDIRECT_URL = properties.getProperty("redirectURL");
-            REGION = properties.getProperty("region");
-            POOL_ID = properties.getProperty("poolId");
-        }
-        catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
-        }
-    }
+//    /**
+//     * Read in the cognito props file and get/set the client id, secret, and required urls
+//     * for authenticating a user.
+//     */
+//    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
+//    private void loadProperties() {
+//        try {
+//            properties = load("/cognito.properties");
+//            CLIENT_ID = properties.getProperty("client.id");
+//            CLIENT_SECRET = properties.getProperty("client.secret");
+//            OAUTH_URL = properties.getProperty("oauthURL");
+//            LOGIN_URL = properties.getProperty("loginURL");
+//            REDIRECT_URL = properties.getProperty("redirectURL");
+//            REGION = properties.getProperty("region");
+//            POOL_ID = properties.getProperty("poolId");
+//        }
+//        catch (Exception e) {
+//            logger.error("Error loading properties" + e.getMessage(), e);
+//        }
+//    }
+
 }

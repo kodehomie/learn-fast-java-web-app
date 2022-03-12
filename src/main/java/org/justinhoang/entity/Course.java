@@ -63,7 +63,11 @@ public class Course
     @JoinTable(name = "course_user", joinColumns = @JoinColumn(name =
             "course_id"), inverseJoinColumns = @JoinColumn(name =
             "course_type_id"))
+    private List<CourseSection> courseSections;
     private List<CourseFormat> courseFormats;
+    private List<CourseMentor> courseMentors;
+    private List<CourseMeet> courseMeets;
+    private List<CourseDate> courseDates;
 
     public Course()
     {
@@ -122,6 +126,25 @@ public class Course
     }
 
 
+    public void setCourseSection(CourseSection courseSection)
+    {
+        if (courseSection == null)
+        {
+            courseSections = new ArrayList<>();
+        }
+
+        courseSections.add(courseSection);
+    }
+    public List<CourseSection> getCourseSections()
+    {
+        return courseSections;
+    }
+
+    public void setCourseSections(List<CourseSection> courseSections)
+    {
+        this.courseSections = courseSections;
+    }
+
 
     public void setCourseFormat(CourseFormat courseFormat)
     {
@@ -144,18 +167,13 @@ public class Course
         this.courseFormats = courseFormats;
     }
 
-    public void setCourseFormats(CourseFormat courseFormat)
-    {
 
-        if (courseFormats == null)
-        {
-            courseFormats = new ArrayList<>();
-        }
 
-        courseFormats.add(courseFormat);
-    }
+
+
 
 }
+
 
 
 

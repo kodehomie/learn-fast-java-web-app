@@ -16,6 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Admin.
+ */
 @WebServlet(urlPatterns = {"/admin"})
 
 public class Admin extends HttpServlet

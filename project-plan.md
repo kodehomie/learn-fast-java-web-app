@@ -20,10 +20,10 @@
 - [X] Create the database
 - [X] Select Materialize template
 - [X] Design and configure CSS
-- [ ] Create new user JSP
-- [ ] Add user controller (Java class)
-- [ ] Create user entity (Java class)
-- [ ] Create user table
+- [X] Create new user JSP
+- [X] Add user controller (Java class)
+- [X] Create user entity (Java class)
+- [X] Create user table
 - [X] Create user DAO to add user to DB (Java class)
 - [X] Unit test DAO add user functionality
 - [X] Document progress in journal
@@ -43,33 +43,29 @@
 
 ### Week 6
 
-- [ ] Design the database
-- [ ] Create the database
-- [ ] Create the user table
-- [ ] Add the user entity
+- [X] Design the database
+- [X] Create the database
+- [X] Create the user table
+- [X] Add the user entity
 - [ ] Build the user create JSP
 - [ ] Build the user search jsp
 - [ ] Build the user update JSP
 - [ ] Build the user delete JSP
-- [ ] Build the role create JSP
-- [ ] Build the role search jsp
-- [ ] Build the role update JSP
-- [ ] Build the role delete JSP
-- [ ] Deploy to AWS
-- [ ] Review individual projects
-- [ ] Document progress in journal
+- [X] Deploy to AWS
+- [X] Review individual projects
+- [X] Document progress in journal
 
 ### Week 7
-- [ ] Learn security
-- [ ] Learn authentication
-- [ ] Design the database
-- [ ] Create the database
-- [ ] Configure authentication
+- [X] Learn security
+- [X] Learn authentication
+- [X] Design the database
+- [X] Create the database
+- [X] Configure authentication
 - [ ] At least one DAO with full CRUD (Create, Read, Update, Delete) 
   implemented with hibernate
 - [ ] Fully unit test DAO
-- [ ] Implement Log4J
-- [ ] Document progress in journal
+- [X] Implement Log4J
+- [X] Document progress in journal
 
 ### Week 8
 - [ ] Learn web services

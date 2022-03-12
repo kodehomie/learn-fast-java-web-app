@@ -6,13 +6,13 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class CourseDates
+public class CourseMeet
 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String meetingDates;
+    private String meetingInfo;
 
 }
