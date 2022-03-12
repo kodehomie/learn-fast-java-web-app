@@ -3,8 +3,7 @@ package org.justinhoang.controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.entity.Course;
-import org.justinhoang.entity.CourseType;
-import org.justinhoang.entity.User;
+import org.justinhoang.entity.CourseFormat;
 import org.justinhoang.persistence.GenericDao;
 import org.justinhoang.util.DaoFactory;
 
@@ -17,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "AddCourse", urlPatterns = {"/addCourse"})
+@WebServlet(name = "CreateCourse", urlPatterns = {"/createCourse"})
 
-public class AddCourse extends HttpServlet
+public class CreateCourse extends HttpServlet
 {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -33,25 +32,25 @@ public class AddCourse extends HttpServlet
         Course course = new Course();
         course.setTitle(req.getParameter("title"));
 
-        GenericDao typeDao = DaoFactory.createDao(CourseType.class);
+        GenericDao typeDao = DaoFactory.createDao(CourseFormat.class);
 
-        CourseType type = (CourseType) typeDao.getById(
+        CourseFormat type = (CourseFormat) typeDao.readById(
                 Integer.parseInt(req.getParameter("type")));
         course.setCourseType(type);
 
-        GenericDao userDao = DaoFactory.createDao(User.class);
-        User user = (User) userDao.findByPropertyEqual("userName",
-                                                       req.getRemoteUser())
-                                  .get(0);
-        course.setUser(user);
+//        GenericDao userDao = DaoFactory.createDao(User.class);
+//        User user = (User) userDao.findByPropertyEqual("userName",
+//                                                       req.getRemoteUser())
+//                                  .get(0);
+//        course.setUser(user);
 
         GenericDao dao = DaoFactory.createDao(Course.class);
-        int        id  = dao.insert(course);
+        int        id  = dao.create(course);
 
-        req.setAttribute("course", dao.getById(id));
+        req.setAttribute("course", dao.readById(id));
         logger.debug("Getting the course...");
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewCourses");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/readCourses");
         dispatcher.forward(req, resp);
     }
 
@@ -64,13 +63,13 @@ public class AddCourse extends HttpServlet
         req.setAttribute("types", getAllTypes());
 
         RequestDispatcher dispatcher =
-                req.getRequestDispatcher("/addCourse" + ".jsp");
+                req.getRequestDispatcher("/create-course" + ".jsp");
         dispatcher.forward(req, resp);
     }
 
-    private List<CourseType> getAllTypes()
+    private List<CourseFormat> getAllTypes()
     {
-        GenericDao dao = DaoFactory.createDao(CourseType.class);
+        GenericDao dao = DaoFactory.createDao(CourseFormat.class);
         logger.debug("Types" + dao.readAll());
         return dao.readAll();
     }

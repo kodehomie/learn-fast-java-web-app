@@ -19,6 +19,7 @@ Time: 6:21 PM
         <div class="row center">
             <h5 class="header col s12 light">to continue to Learn Fast</h5>
         </div>
+
         <div class="row center">
             <form class="col s12">
                 <div class="row">

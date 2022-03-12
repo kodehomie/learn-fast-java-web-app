@@ -63,7 +63,7 @@ public class Course
     @JoinTable(name = "course_user", joinColumns = @JoinColumn(name =
             "course_id"), inverseJoinColumns = @JoinColumn(name =
             "course_type_id"))
-    private List<CourseType> courseTypes;
+    private List<CourseFormat> courseFormats;
 
     public Course()
     {
@@ -123,36 +123,36 @@ public class Course
 
 
 
-    public void setCourseType(CourseType courseType)
+    public void setCourseFormat(CourseFormat courseFormat)
     {
 
-        if (courseTypes == null)
+        if (courseFormats == null)
         {
-            courseTypes = new ArrayList<>();
+            courseFormats = new ArrayList<>();
         }
 
-        courseTypes.add(courseType);
+        courseFormats.add(courseFormat);
     }
 
-    public List<CourseType> getCourseTypes()
+    public List<CourseFormat> getCourseFormats()
     {
-        return courseTypes;
+        return courseFormats;
     }
 
-    public void setCourseTypes(List<CourseType> courseTypes)
+    public void setCourseFormats(List<CourseFormat> courseFormats)
     {
-        this.courseTypes = courseTypes;
+        this.courseFormats = courseFormats;
     }
 
-    public void setCourseTypes(CourseType courseType)
+    public void setCourseFormats(CourseFormat courseFormat)
     {
 
-        if (courseTypes == null)
+        if (courseFormats == null)
         {
-            courseTypes = new ArrayList<>();
+            courseFormats = new ArrayList<>();
         }
 
-        courseTypes.add(courseType);
+        courseFormats.add(courseFormat);
     }
 
 }

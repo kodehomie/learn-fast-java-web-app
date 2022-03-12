@@ -37,7 +37,7 @@
 
         <!-- please add entity classes here -->
         <mapping class="org.justinhoang.entity.Course" />
-        <mapping class="org.justinhoang.entity.CourseType" />
+        <mapping class="org.justinhoang.entity.CourseFormat" />
         <mapping class="org.justinhoang.entity.Mentee" />
         <mapping class="org.justinhoang.entity.Mentor" />
         <mapping class="org.justinhoang.entity.MentorInfo" />
