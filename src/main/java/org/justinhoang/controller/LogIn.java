@@ -34,8 +34,10 @@ import java.util.Properties;
      * Read in the cognito props file and get the client id and required urls
      * for authenticating a user.
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
-    // 4 to do this work a single time and put the properties in the application scope
+    // TODO This code appears in a couple classes, consider using a startup
+    //  servlet similar to adv java project
+    // 4 to do this work a single time and put the properties in the
+    // application scope
     private void loadProperties()
     {
         try
@@ -54,8 +56,10 @@ import java.util.Properties;
     /**
      * Route to the aws-hosted cognito login page.
      *
-     * @param req  servlet request
-     * @param resp servlet response
+     * @param req
+     *         servlet request
+     * @param resp
+     *         servlet response
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws

@@ -43,6 +43,8 @@
         <!--ADDITIONAL PROPERTIES SET 3-->
         <spring-webmvc-version>5.3.16</spring-webmvc-version>
 <!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
+        <!--ADDITIONAL PROPERTIES SET 3 END-->
+        <!--ADDITIONAL PROPERTIES SET 4-->
         <java-jwt-version>3.18.3</java-jwt-version>
         <json-version>20211205</json-version>
         <commons-io-version>2.11.0</commons-io-version>
@@ -50,11 +52,17 @@
         <jackson-annotations-version>2.13.1</jackson-annotations-version>
         <jackson-databind-version>2.13.1</jackson-databind-version>
         <apache-commons-codec-version>1.15</apache-commons-codec-version>
-
 <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
 <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
 <!--        <spring-tx-version>5.3.16</spring-tx-version>-->
         <slf4j-version>2.0.0-alpha6</slf4j-version>
+        <!--ADDITIONAL PROPERTIES SET 4 END-->
+        <!--ADDITIONAL PROPERTIES SET 5-->
+        <aws-java-sdk-bom-version>1.12.176</aws-java-sdk-bom-version>
+        <aws-lambda-java-core-version>1.2.1</aws-lambda-java-core-version>
+        <aws-java-sdk-cognitoidp-version>1.12.176</aws-java-sdk-cognitoidp-version>
+        <aws-lambda-java-events-version>3.11.0</aws-lambda-java-events-version>
+        <!--ADDITIONAL PROPERTIES SET 5 END-->
 
     </properties>
 
@@ -201,7 +209,6 @@
 <!--                    <version>${spring-jdbc-version}</version>-->
 <!--                </dependency>-->
         <!--ADDITIONAL DEPENDENCIES SET 3 END-->
-
         <!--ADDITIONAL DEPENDENCIES SET 4-->
         <!-- for parsing access token -->
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
@@ -280,6 +287,41 @@
             <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>1.0.2.Final</version>
         </dependency>
+        <!--ADDITIONAL DEPENDENCIES SET 4 END-->
+        <!--ADDITIONAL DEPENDENCIES SET 5-->
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-bom</artifactId>
+            <version>${aws-java-sdk-bom-version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-core</artifactId>
+            <version>${aws-lambda-java-core-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-cognitoidp</artifactId>
+            <version>${aws-java-sdk-cognitoidp-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-events -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-events</artifactId>
+            <version>${aws-lambda-java-events-version}</version>
+        </dependency>
+
+
+
+
+
+
+        <!--ADDITIONAL DEPENDENCIES SET 5 END-->
 
 
 
