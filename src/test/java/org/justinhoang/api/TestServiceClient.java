@@ -1,4 +1,4 @@
-package org.justinhoang;
+package org.justinhoang.api;
 
 import org.junit.Test;
 import javax.ws.rs.client.*;
@@ -13,7 +13,7 @@ public class TestServiceClient {
         WebTarget target =
                 client.target("https://swapi.dev/api/planets/1");
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
-        assertEquals("???", response);
+        assertEquals("", response);
     }
 }
 

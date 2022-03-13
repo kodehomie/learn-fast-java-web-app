@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.justinhoang</groupId>
@@ -42,7 +42,7 @@
         <!--ADDITIONAL PROPERTIES SET 2 END-->
         <!--ADDITIONAL PROPERTIES SET 3-->
         <spring-webmvc-version>5.3.16</spring-webmvc-version>
-<!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
+        <!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
         <!--ADDITIONAL PROPERTIES SET 3 END-->
         <!--ADDITIONAL PROPERTIES SET 4-->
         <java-jwt-version>3.18.3</java-jwt-version>
@@ -52,24 +52,26 @@
         <jackson-annotations-version>2.13.2</jackson-annotations-version>
         <jackson-databind-version>2.13.2</jackson-databind-version>
         <apache-commons-codec-version>1.15</apache-commons-codec-version>
-<!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
-<!--        <spring-aop-version>5.3.16</spring-aop-version>-->
-<!--        <spring-tx-version>5.3.16</spring-tx-version>-->
+        <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
+        <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
+        <!--        <spring-tx-version>5.3.16</spring-tx-version>-->
         <slf4j-version>2.0.0-alpha6</slf4j-version>
         <!--ADDITIONAL PROPERTIES SET 4 END-->
         <!--ADDITIONAL PROPERTIES SET 5-->
         <aws-java-sdk-bom-version>1.12.176</aws-java-sdk-bom-version>
         <aws-lambda-java-core-version>1.2.1</aws-lambda-java-core-version>
-        <aws-java-sdk-cognitoidp-version>1.12.176</aws-java-sdk-cognitoidp-version>
+        <aws-java-sdk-cognitoidp-version>1.12.176
+        </aws-java-sdk-cognitoidp-version>
         <aws-lambda-java-events-version>3.11.0</aws-lambda-java-events-version>
         <!--ADDITIONAL PROPERTIES SET 5 END-->
         <!--ADDITIONAL PROPERTIES SET 6-->
         <jersey-client-version>3.0.4</jersey-client-version>
         <jersey-hk2-version>3.0.4</jersey-hk2-version>
+        <javax.ws.rs-api-version>2.1.1</javax.ws.rs-api-version>
+
         <!--ADDITIONAL PROPERTIES SET 6 END-->
 
     </properties>
-
 
     <dependencies>
         <!--ORIGINAL MAVEN DEPENDENCIES-->
@@ -207,11 +209,11 @@
 
         <!-- spring jdbc dependency -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-<!--                <dependency>-->
-<!--                    <groupId>org.springframework</groupId>-->
-<!--                    <artifactId>spring-jdbc</artifactId>-->
-<!--                    <version>${spring-jdbc-version}</version>-->
-<!--                </dependency>-->
+        <!--                <dependency>-->
+        <!--                    <groupId>org.springframework</groupId>-->
+        <!--                    <artifactId>spring-jdbc</artifactId>-->
+        <!--                    <version>${spring-jdbc-version}</version>-->
+        <!--                </dependency>-->
         <!--ADDITIONAL DEPENDENCIES SET 3 END-->
         <!--ADDITIONAL DEPENDENCIES SET 4-->
         <!-- for parsing access token -->
@@ -272,7 +274,7 @@
             <artifactId>reflections</artifactId>
             <version>0.10.2</version>
         </dependency>
-<!--        HIBERNATE-->
+        <!--        HIBERNATE-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -333,11 +335,117 @@
             <artifactId>jersey-hk2</artifactId>
             <version>${jersey-hk2-version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.4.0-b180830.0359</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.json.bind/javax.json.bind-api -->
+        <dependency>
+            <groupId>javax.json.bind</groupId>
+            <artifactId>javax.json.bind-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
+        <!--            <version>2.6.4</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-test</artifactId>-->
+        <!--            <version>2.6.4</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.amazonaws</groupId>-->
+        <!--            <artifactId>aws-java-sdk-cognitoidp</artifactId>-->
+        <!--            <version>1.12.177</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.asynchttpclient</groupId>-->
+        <!--            <artifactId>async-http-client</artifactId>-->
+        <!--            <version>2.12.3</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.squareup.okhttp3</groupId>-->
+        <!--            <artifactId>okhttp</artifactId>-->
+        <!--            <version>5.0.0-alpha.4</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.squareup.okhttp3</groupId>-->
+        <!--            <artifactId>okhttp</artifactId>-->
+        <!--            <version>4.9.3</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.10.0-RC1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>javax.activation-api</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-bundle-jaxrs -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle-jaxrs</artifactId>
+            <version>2.7.18</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tomee/openejb-core -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-core</artifactId>
+            <version>8.0.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.tomee/javaee-api -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0-5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>openejb-junit5</artifactId>
+            <version>8.0.10</version>
+        </dependency>
+
+
+
 
 
         <!--ADDITIONAL DEPENDENCIES SET 6 END-->
-
-
 
     </dependencies>
 
@@ -388,7 +496,6 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
-
 
             </plugins>
         </pluginManagement>
