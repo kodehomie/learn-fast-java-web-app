@@ -142,8 +142,8 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 8
 
 ##### Dates: 2022-MAR-6-SUN - 2022-MAR-12-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours: 
+##### Weekly Java Hours: 24 hours
+##### Total Enterprise Java Hours: 163 hours 
 ##### Notes:
 - Read what is a web service
 - Read SOAP overview
@@ -152,4 +152,17 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Read restful web services
 - Read JSON tutorial
 - Read API references
-- 
+- Watch videos about SOAP, REST, and JSON
+- Add JavaMail API for consumption for individual project
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
+
+### WEEK 9
+
+##### Dates: 2022-MAR-13-SUN - 2022-MAR-19-SAT
+##### Weekly Java Hours:
+##### Total Enterprise Java Hours:
+##### Notes:
+-
