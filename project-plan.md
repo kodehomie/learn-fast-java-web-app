@@ -68,11 +68,11 @@
 - [X] Document progress in journal
 
 ### Week 8
-- [ ] Learn web services
-- [ ] Document progress in journal
+- [X] Learn web services
+- [X] Document progress in journal
 
 ### Week 9
-- [ ] Learn RESTful web services
+- [X] Learn RESTful web services
 - [ ] Create team project repository with problem statement, project 
   plan, etc.
 - [ ] Deploy to AWS

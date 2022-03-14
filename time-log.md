@@ -79,7 +79,7 @@
 * Week 8 (24 hours)
 
 ### Week 9
-* 2022-MAR-13-SUN - 
+* 2022-MAR-13-SUN - 4 hours
 * 2022-MAR-14-MON - 
 * 2022-MAR-15-TUE - 
 * 2022-MAR-16-WED - 
