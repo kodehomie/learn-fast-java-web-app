@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
+package org.justinhoang.persistence.controller;
 
 import org.justinhoang.util.PropertiesLoader;
 import org.apache.logging.log4j.LogManager;

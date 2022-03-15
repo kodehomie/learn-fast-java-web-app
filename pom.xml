@@ -42,7 +42,7 @@
         <!--ADDITIONAL PROPERTIES SET 2 END-->
         <!--ADDITIONAL PROPERTIES SET 3-->
         <spring-webmvc-version>5.3.16</spring-webmvc-version>
-        <!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
+        <spring-jdbc-version>5.3.16</spring-jdbc-version>
         <!--ADDITIONAL PROPERTIES SET 3 END-->
         <!--ADDITIONAL PROPERTIES SET 4-->
         <java-jwt-version>3.18.3</java-jwt-version>
@@ -52,9 +52,9 @@
         <jackson-annotations-version>2.13.2</jackson-annotations-version>
         <jackson-databind-version>2.13.2</jackson-databind-version>
         <apache-commons-codec-version>1.15</apache-commons-codec-version>
-        <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
-        <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
-        <!--        <spring-tx-version>5.3.16</spring-tx-version>-->
+        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>
+        <spring-aop-version>5.3.16</spring-aop-version>
+        <spring-tx-version>5.3.16</spring-tx-version>
         <slf4j-version>2.0.0-alpha6</slf4j-version>
         <!--ADDITIONAL PROPERTIES SET 4 END-->
         <!--ADDITIONAL PROPERTIES SET 5-->
@@ -209,11 +209,11 @@
 
         <!-- spring jdbc dependency -->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-        <!--                <dependency>-->
-        <!--                    <groupId>org.springframework</groupId>-->
-        <!--                    <artifactId>spring-jdbc</artifactId>-->
-        <!--                    <version>${spring-jdbc-version}</version>-->
-        <!--                </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring-jdbc-version}</version>
+        </dependency>
         <!--ADDITIONAL DEPENDENCIES SET 3 END-->
         <!--ADDITIONAL DEPENDENCIES SET 4-->
         <!-- for parsing access token -->
@@ -274,19 +274,7 @@
             <artifactId>reflections</artifactId>
             <version>0.10.2</version>
         </dependency>
-        <!--        HIBERNATE-->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.6.5.Final</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.6.5.Final</version>
-            <scope>compile</scope>
-        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
@@ -295,46 +283,21 @@
         </dependency>
         <!--ADDITIONAL DEPENDENCIES SET 4 END-->
         <!--ADDITIONAL DEPENDENCIES SET 5-->
-        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom -->
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-bom</artifactId>
-            <version>${aws-java-sdk-bom-version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core -->
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-core</artifactId>
-            <version>${aws-lambda-java-core-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp -->
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-java-sdk-cognitoidp</artifactId>
-            <version>${aws-java-sdk-cognitoidp-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-events -->
-        <dependency>
-            <groupId>com.amazonaws</groupId>
-            <artifactId>aws-lambda-java-events</artifactId>
-            <version>${aws-lambda-java-events-version}</version>
-        </dependency>
+
         <!--ADDITIONAL DEPENDENCIES SET 5 END-->
         <!--ADDITIONAL DEPENDENCIES SET 6-->
-        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client -->
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>${jersey-client-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 -->
-        <dependency>
-            <groupId>org.glassfish.jersey.inject</groupId>
-            <artifactId>jersey-hk2</artifactId>
-            <version>${jersey-hk2-version}</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.jersey.core</groupId>-->
+        <!--            <artifactId>jersey-client</artifactId>-->
+        <!--            <version>${jersey-client-version}</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.jersey.inject</groupId>-->
+        <!--            <artifactId>jersey-hk2</artifactId>-->
+        <!--            <version>${jersey-hk2-version}</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -348,43 +311,6 @@
             <version>1.0</version>
         </dependency>
 
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
-        <!--            <version>2.6.4</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-test</artifactId>-->
-        <!--            <version>2.6.4</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.amazonaws</groupId>-->
-        <!--            <artifactId>aws-java-sdk-cognitoidp</artifactId>-->
-        <!--            <version>1.12.177</version>-->
-        <!--        </dependency>-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.asynchttpclient</groupId>-->
-        <!--            <artifactId>async-http-client</artifactId>-->
-        <!--            <version>2.12.3</version>-->
-        <!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.squareup.okhttp3</groupId>-->
-        <!--            <artifactId>okhttp</artifactId>-->
-        <!--            <version>5.0.0-alpha.4</version>-->
-        <!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.squareup.okhttp3</groupId>-->
-        <!--            <artifactId>okhttp</artifactId>-->
-        <!--            <version>4.9.3</version>-->
-        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
@@ -410,12 +336,12 @@
             <version>1.6.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws -->
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>3.5.1</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-frontend-jaxws &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.cxf</groupId>-->
+        <!--            <artifactId>cxf-rt-frontend-jaxws</artifactId>-->
+        <!--            <version>3.5.1</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-bundle-jaxrs -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -440,10 +366,6 @@
             <artifactId>openejb-junit5</artifactId>
             <version>8.0.10</version>
         </dependency>
-
-
-
-
 
         <!--ADDITIONAL DEPENDENCIES SET 6 END-->
 

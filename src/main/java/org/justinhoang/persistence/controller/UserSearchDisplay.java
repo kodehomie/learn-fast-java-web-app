@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
+package org.justinhoang.persistence.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

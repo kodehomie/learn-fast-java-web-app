@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
+package org.justinhoang.persistence.controller;
 
 import org.justinhoang.entity.Search;
 import org.justinhoang.entity.UserDirectory;

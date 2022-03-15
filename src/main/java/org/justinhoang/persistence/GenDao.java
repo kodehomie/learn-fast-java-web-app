@@ -1,26 +1,17 @@
-package org.justinhoang.persistence;
-
-
-import java.io.Serializable;
-import java.util.List;
-
-
-public interface GenDao<T, PK extends Serializable> {
-
-    /** Persist the newInstance object into database */
-    PK create(T newInstance);
-
-    /**
-     * Retrieve an object that was previously persisted to the database using
-     * the indicated id as primary key
-     */
-    T read(PK id);
-    List<T> read();
-
-    /** Save changes made to a persistent object. */
-    void update(T transientObject);
-
-    /** Remove an object from persistent storage in the database */
-    void delete(PK id) throws Exception;
-    void delete(T persistentObject) throws Exception;
-}
+//package org.justinhoang.persistence;
+//
+//import java.util.List;
+//import java.util.Optional;
+//
+//public interface GenDao<T>
+//{
+//    void create(T newInstance);
+//
+//    Optional<T> readId(Long id);
+//
+//    List<T> readAll();
+//
+//    void update(T transientObject);
+//
+//    void delete(T persistentObject);
+//}

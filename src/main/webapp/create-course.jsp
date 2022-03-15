@@ -130,8 +130,8 @@ Time: 7:25 PM
                 </div>
 
 
-                <a input type = "submit" value = "Next"
-                   class = "materialize-red lighten-2 btn-large">Next</a>
+                <button type = "submit" value = "Next"
+                   class = "materialize-red lighten-2 btn-large">Next</button>
 
 
             </form>

@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
+package org.justinhoang.persistence.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

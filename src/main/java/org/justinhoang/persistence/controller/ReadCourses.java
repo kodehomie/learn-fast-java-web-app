@@ -1,4 +1,4 @@
-package org.justinhoang.controller;
+package org.justinhoang.persistence.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ReadCourse", urlPatterns = {"/readCourse"})
+@WebServlet(name = "ReadCourses", urlPatterns = {"/readCourses"})
 
-public class ReadCourse extends HttpServlet
+public class ReadCourses extends HttpServlet
 {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -33,7 +33,15 @@ public class ReadCourse extends HttpServlet
         logger.debug("Courses: " + courses);
 
         RequestDispatcher dispatcher =
-                req.getRequestDispatcher("/readCourse" + ".jsp");
+                req.getRequestDispatcher("/readCourses" + ".jsp");
         dispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws
+                                                                            ServletException,
+                                                                            IOException
+    {
+        doGet(req, resp);
     }
 }
