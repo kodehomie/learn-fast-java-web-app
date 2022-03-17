@@ -1,16 +1,15 @@
 package org.justinhoang.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Data
+@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -21,7 +20,7 @@ public class Mentor
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -39,12 +38,8 @@ public class Mentor
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "mentor", cascade = {
             CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,
             CascadeType.REFRESH})
+    @ToString.Exclude
     private List<Course> courses;
-
-    public Mentor()
-    {
-
-    }
 
     public Mentor(String firstName, String lastName, String email)
     {
@@ -78,6 +73,22 @@ public class Mentor
         tempCourse.setMentor(this);
     }
 
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        final Mentor mentor = (Mentor) o;
+        return id != null && Objects.equals(id, mentor.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return getClass().hashCode();
+    }
 }
 
 

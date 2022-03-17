@@ -1,14 +1,13 @@
 package org.justinhoang.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Data
+@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -19,7 +18,7 @@ public class MentorInfo
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "website")
     private String website;
@@ -54,6 +53,22 @@ public class MentorInfo
         this.interest = interest;
     }
 
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        final MentorInfo that = (MentorInfo) o;
+        return id != null && Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return getClass().hashCode();
+    }
 }
 
 

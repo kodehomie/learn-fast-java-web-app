@@ -2,7 +2,6 @@ package org.justinhoang.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -23,35 +22,25 @@ public class Course
     @Column(name = "id")
     private Long id;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @Column(name = "title")
     private String title;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User user;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @OneToMany(fetch = FetchType.LAZY,
                cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id")
     @ToString.Exclude
     private List<Review> reviews;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
@@ -61,8 +50,6 @@ public class Course
     @ToString.Exclude
     private List<Mentee> mentees;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
@@ -72,8 +59,6 @@ public class Course
     @ToString.Exclude
     private List<User> users;
 
-    @FullTextField(name = "field_suggest",
-                   analyzer = "edge_ngram")
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
@@ -194,7 +179,7 @@ public class Course
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
             return false;
         final Course course = (Course) o;
-        return false;
+        return id != null && Objects.equals(id, course.id);
     }
 
     @Override

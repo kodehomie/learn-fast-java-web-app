@@ -1,6 +1,5 @@
 package org.justinhoang.controller;
 
-import org.justinhoang.entity.Search;
 import org.justinhoang.util.PropertiesLoader;
 
 import javax.servlet.RequestDispatcher;

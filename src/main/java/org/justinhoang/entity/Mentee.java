@@ -1,15 +1,14 @@
 package org.justinhoang.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Data
+@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -20,7 +19,7 @@ public class Mentee
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -37,58 +36,14 @@ public class Mentee
     @JoinTable(name = "course_mentee",
                joinColumns = @JoinColumn(name = "mentee_id"),
                inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @ToString.Exclude
     private List<Course> courses;
-
-    public Mentee()
-    {
-
-    }
 
     public Mentee(String firstName, String lastName, String email)
     {
         this.firstName = firstName;
         this.lastName  = lastName;
         this.email     = email;
-    }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-
-    public String getFirstName()
-    {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName)
-    {
-        this.firstName = firstName;
-    }
-
-    public String getLastName()
-    {
-        return lastName;
-    }
-
-    public void setLastName(String lastName)
-    {
-        this.lastName = lastName;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
     }
 
     public List<Course> getCourses()
@@ -101,6 +56,22 @@ public class Mentee
         this.courses = courses;
     }
 
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        final Mentee mentee = (Mentee) o;
+        return id != null && Objects.equals(id, mentee.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return getClass().hashCode();
+    }
 }
 
 
