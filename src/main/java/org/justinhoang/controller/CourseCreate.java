@@ -33,11 +33,11 @@ public class CourseCreate extends HttpServlet
         Course course = new Course();
         course.setTitle(req.getParameter("title"));
 
-        GenericDao sectionDao = DaoFactory.createDao(CourseFormat.class);
+        GenericDao<?> sectionDao = DaoFactory.createDao(CourseFormat.class);
 
         CourseSection courseSection = (CourseSection) sectionDao.readById(
                 Integer.parseInt(req.getParameter("section")));
-        course.setCourseSection(courseSection);
+//        course.setCourseSection(courseSection);
 
 
         GenericDao dao = DaoFactory.createDao(Course.class);

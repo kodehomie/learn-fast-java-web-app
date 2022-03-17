@@ -37,6 +37,9 @@ public class AppStartup extends HttpServlet implements PropertiesLoader
      */
     public AppStartup()
     {
+        assert false;
+        String propertiesFilePath = "cognito.properties";
+        properties    = new Properties(load(propertiesFilePath));
         CLIENT_ID     = properties.getProperty("client.id");
         CLIENT_SECRET = properties.getProperty("client.secret");
         OAUTH_URL     = properties.getProperty("oauthURL");
@@ -49,22 +52,13 @@ public class AppStartup extends HttpServlet implements PropertiesLoader
     public void init() throws ServletException
     {
         super.init();
-
         ServletContext servletContext;
         servletContext = getServletContext();
         String propertiesFilePath = "cognito.properties";
         servletContext.setAttribute("cognitoProperties", properties);
         try
         {
-            load(propertiesFilePath);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        try
-        {
+            new AppStartup();
             properties    = new Properties(load(propertiesFilePath));
             CLIENT_ID     = properties.getProperty("client.id");
             CLIENT_SECRET = properties.getProperty("client.secret");
@@ -73,6 +67,7 @@ public class AppStartup extends HttpServlet implements PropertiesLoader
             REDIRECT_URL  = properties.getProperty("redirectURL");
             REGION        = properties.getProperty("region");
             POOL_ID       = properties.getProperty("poolId");
+            servletContext.setAttribute("cognitoProperties", properties);
         }
         catch (Exception e)
         {
@@ -87,25 +82,15 @@ public class AppStartup extends HttpServlet implements PropertiesLoader
                                                                                 IOException
     {
         HttpSession       httpsession;
-//        UserDirectory     userDirectory;
         String            driver;
         String            username;
         String            password;
-        Search            search;
         String            url;
         RequestDispatcher dispatcher;
         url        = "/app-startup.jsp";
         dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
-    }
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-    {
-    }
-
-    public void destroy()
-    {
     }
 }
 

@@ -4,11 +4,8 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name = "connection.driver_class">com.mysql.cj.jdbc.Driver
-        </property>
-        <property name = "connection.url">
-            jdbc:mysql://localhost:3306/learnfasttest
-        </property>
+        <property name = "connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name = "connection.url">jdbc:mysql://localhost:3306/learnfasttest</property>
         <property name = "connection.username">root</property>
         <property name = "connection.password">root</property>
         <property name = "dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -29,5 +26,11 @@
         <mapping class = "org.justinhoang.entity.Review"/>
         <mapping class = "org.justinhoang.entity.Role"/>
         <mapping class = "org.justinhoang.entity.User"/>
+        <mapping class = "org.justinhoang.entity.CourseEntity"/>
+        <mapping resource = "CourseEntity.hbm.xml"/>
+        <mapping resource = "UserEntity.hbm.xml"/>
+        <mapping class = "org.justinhoang.entity.UserEntity"/>
+        <mapping class = "org.justinhoang.entity.UserRoleEntity"/>
+        <mapping resource = "UserRoleEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

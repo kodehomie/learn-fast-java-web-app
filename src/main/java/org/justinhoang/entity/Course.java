@@ -27,51 +27,34 @@ public class Course
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
     @OneToMany(fetch = FetchType.LAZY,
                cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
     @ToString.Exclude
     private List<Review> reviews;
 
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinTable(name = "course_mentee",
-               joinColumns = @JoinColumn(name = "course_id"),
-               inverseJoinColumns = @JoinColumn(name = "mentee_id"))
     @ToString.Exclude
     private List<Mentee> mentees;
 
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinTable(name = "course_user",
-               joinColumns = @JoinColumn(name = "course_id"),
-               inverseJoinColumns = @JoinColumn(name = "user_id"))
     @ToString.Exclude
     private List<User> users;
 
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                            CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinTable(name = "course_user",
-               joinColumns = @JoinColumn(name = "course_id"),
-               inverseJoinColumns = @JoinColumn(name = "course_type_id"))
     @ToString.Exclude
-    private List<Course>        courses;
-    private List<CourseSection> courseSections;
-    private List<CourseFormat>  courseFormats;
-    private List<CourseMentor>  courseMentors;
-    private List<CourseMeet>    courseMeets;
-    private List<CourseDate>    courseDates;
+    private List<Course> courses;
 
     public Course(String title)
     {
@@ -86,89 +69,6 @@ public class Course
     public void setCourses(List<Course> courses)
     {
         this.courses = courses;
-    }
-
-    public List<Review> getReviews()
-    {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews)
-    {
-        this.reviews = reviews;
-    }
-
-    public void addReview(Review review)
-    {
-
-        if (reviews == null)
-        {
-            reviews = new ArrayList<>();
-        }
-
-        reviews.add(review);
-    }
-
-    public void setUser(User user)
-    {
-
-        if (users == null)
-        {
-            users = new ArrayList<>();
-        }
-
-        users.add(user);
-    }
-
-    public List<User> getUsers()
-    {
-        return users;
-    }
-
-    public void setUsers(List<User> users)
-    {
-        this.users = users;
-    }
-
-    public void setCourseSection(CourseSection courseSection)
-    {
-        if (courseSection == null)
-        {
-            courseSections = new ArrayList<>();
-        }
-
-        courseSections.add(courseSection);
-    }
-
-    public List<CourseSection> getCourseSections()
-    {
-        return courseSections;
-    }
-
-    public void setCourseSections(List<CourseSection> courseSections)
-    {
-        this.courseSections = courseSections;
-    }
-
-    public void setCourseFormat(CourseFormat courseFormat)
-    {
-
-        if (courseFormats == null)
-        {
-            courseFormats = new ArrayList<>();
-        }
-
-        courseFormats.add(courseFormat);
-    }
-
-    public List<CourseFormat> getCourseFormats()
-    {
-        return courseFormats;
-    }
-
-    public void setCourseFormats(List<CourseFormat> courseFormats)
-    {
-        this.courseFormats = courseFormats;
     }
 
     @Override

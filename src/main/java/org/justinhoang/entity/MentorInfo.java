@@ -42,11 +42,6 @@ public class MentorInfo
         this.mentor = mentor;
     }
 
-    public MentorInfo()
-    {
-
-    }
-
     public MentorInfo(String website, String interest)
     {
         this.website  = website;

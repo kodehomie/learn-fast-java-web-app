@@ -35,7 +35,8 @@ public class Role {
     @EqualsAndHashCode.Exclude private LocalDateTime createDate;
 
     @ManyToOne
-    @JoinColumn(name="userName", referencedColumnName = "userName", nullable = false)    // referenceColumnName if not primary key
+    @JoinColumn(name="username", referencedColumnName = "username", nullable
+            = false)
     private User user;
 
     @Override
