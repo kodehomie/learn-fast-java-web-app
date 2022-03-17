@@ -1,7 +1,6 @@
-package org.justinhoang.persistence.controller;
+package org.justinhoang.controller;
 
 import org.justinhoang.entity.Search;
-import org.justinhoang.entity.UserDirectory;
 import org.justinhoang.util.PropertiesLoader;
 
 import javax.servlet.RequestDispatcher;
@@ -89,7 +88,7 @@ public class AppStartup extends HttpServlet implements PropertiesLoader
                                                                                 IOException
     {
         HttpSession       httpsession;
-        UserDirectory     userDirectory;
+//        UserDirectory     userDirectory;
         String            driver;
         String            username;
         String            password;

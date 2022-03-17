@@ -1,4 +1,4 @@
-package org.justinhoang.persistence.controller;
+package org.justinhoang.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,16 +18,17 @@ import java.io.IOException;
         urlPatterns = {"/deleteById"}
 )
 
-public class DeleteById extends HttpServlet {
+public class CourseDelete extends HttpServlet {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        GenericDao<Course> genDao = DaoFactory.createDao(Course.class);
+        GenericDao<Course> genDao =
+                (GenericDao<Course>) DaoFactory.createDao(Course.class);
         genDao.delete(genDao.readById(Integer.parseInt(req.getParameter(
-                "DeleteById"))));
+                "CourseDelete"))));
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin");
         dispatcher.forward(req, resp);

@@ -1,19 +1,19 @@
 package org.justinhoang.persistence;
 
-import jakarta.persistence.criteria.Expression;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.criteria.HibernateCriteriaBuilder;
-import org.hibernate.query.criteria.JpaCriteriaQuery;
-import org.hibernate.query.criteria.JpaPredicate;
-import org.hibernate.query.criteria.JpaRoot;
 
-import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class GenericDao<T>
 {
@@ -21,9 +21,10 @@ public class GenericDao<T>
     private final Class<T> type;
     private final Logger   logger = LogManager.getLogger(this.getClass());
 
-    public GenericDao(Class<T> type)
+
+    public GenericDao(final Class<?> type)
     {
-        this.type = type;
+        this.type = (Class<T>) type;
     }
 
     public int create(T entity)
@@ -41,7 +42,7 @@ public class GenericDao<T>
     public <T> T readById(int id)
     {
         Session session = getSession();
-        T       entity  = (T) session.get(type, id);
+        T       entity  = (T) session.get(String.valueOf(type), id);
         session.close();
         return entity;
     }
@@ -50,11 +51,11 @@ public class GenericDao<T>
     {
         Session session = getSession();
 
-        HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
 
-        JpaCriteriaQuery<T> query = builder.createQuery(type);
-        JpaRoot<T>          root  = query.from(type);
-        List<T>             list  = session.createQuery(query).getResultList();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T>          root  = query.from(type);
+        List<T>          list  = session.createQuery(query).getResultList();
         session.close();
         return list;
 
@@ -72,19 +73,20 @@ public class GenericDao<T>
 
     public void delete(T entity)
     {
-        Session     session     = getSession();
-        Transaction transaction = session.beginTransaction();
-        session.remove(entity);
-        transaction.commit();
-        session.close();
+        try (Session session = getSession())
+        {
+            Transaction transaction = session.beginTransaction();
+            session.remove(entity);
+            transaction.commit();
+        }
     }
 
-    public List<T> findByPropertyEqual(String propertyName, String value)
+    public List<T> findByPropertyEqual(String propertyName, Object value)
     {
-        Session                  session = getSession();
-        HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
-        JpaCriteriaQuery<T>      query   = builder.createQuery(type);
-        JpaRoot<T>               root    = query.from(type);
+        Session          session = getSession();
+        CriteriaBuilder  builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query   = builder.createQuery(type);
+        Root<T>          root    = query.from(type);
         query.select(root).where(builder.equal(root.get(propertyName), value));
 
         return session.createQuery(query).getResultList();
@@ -92,38 +94,20 @@ public class GenericDao<T>
 
     public List<T> findByPropertyEqual(Map<String, Object> propertyMap)
     {
-        Session                  session    = getSession();
-        HibernateCriteriaBuilder builder    = session.getCriteriaBuilder();
-        JpaCriteriaQuery<T>      query      = builder.createQuery(type);
-        JpaRoot<T>               root       = query.from(type);
-        List<JpaPredicate>       predicates = new ArrayList<>();
-        for (Map.Entry entry : propertyMap.entrySet())
+        Session          session    = getSession();
+        CriteriaBuilder  builder    = session.getCriteriaBuilder();
+        CriteriaQuery<T> query      = builder.createQuery(type);
+        Root<T>          root       = query.from(type);
+        List<Predicate>  predicates = new ArrayList<Predicate>();
+        for (Map.Entry<String, Object> entry : propertyMap.entrySet())
         {
-            predicates.add(builder.equal(root.get((String) entry.getKey()),
+            predicates.add(builder.equal(root.get(entry.getKey()),
                                          entry.getValue()));
         }
-        query.select(root)
-             .where(builder.and(predicates.toArray(new JpaPredicate[0])));
+        query.select(root).where(builder.and(
+                predicates.toArray(new Predicate[predicates.size()])));
 
         return session.createQuery(query).getResultList();
-    }
-
-    public List<T> findByPropertyLike(String propertyName, String value)
-    {
-        Session session = getSession();
-
-        logger.debug("Searching for user with {} = {}", propertyName, value);
-
-        HibernateCriteriaBuilder builder      = session.getCriteriaBuilder();
-        JpaCriteriaQuery<T>      query        = builder.createQuery(type);
-        JpaRoot<T>               root         = query.from(type);
-        Expression<String>       propertyPath = root.get(propertyName);
-
-        query.where(builder.like(propertyPath, "%" + value + "%"));
-
-        List<T> results = session.createQuery(query).getResultList();
-        session.close();
-        return results;
     }
 
     private Session getSession()

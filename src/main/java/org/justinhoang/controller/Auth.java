@@ -1,4 +1,4 @@
-package org.justinhoang.persistence.controller;
+package org.justinhoang.controller;
 
 import org.justinhoang.auth.*;
 import org.justinhoang.util.PropertiesLoader;

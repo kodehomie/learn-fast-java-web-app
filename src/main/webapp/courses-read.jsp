@@ -33,7 +33,8 @@
                 <th scope = "col">Description</th>
                 </thead>
                 <tbody>
-                <c:forEach var = "user" items = "${courses}">
+                <jsp:useBean id="courses" scope="session" type="java.util.List"/>
+                <c:forEach var = "course" items = "${courses}">
                     <tr>
                         <td>${course.id}</td>
                         <td>${course.title}</td>

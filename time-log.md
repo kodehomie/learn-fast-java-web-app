@@ -81,8 +81,8 @@
 ### Week 9
 * 2022-MAR-13-SUN - 4 hours
 * 2022-MAR-14-MON - 2 hours
-* 2022-MAR-15-TUE - 
-* 2022-MAR-16-WED - 
+* 2022-MAR-15-TUE - 5 hours
+* 2022-MAR-16-WED - 3 hours
 * 2022-MAR-17-THU - 
 * 2022-MAR-18-FRI - 
 * 2022-MAR-19-SAT - 

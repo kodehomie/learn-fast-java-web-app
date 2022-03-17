@@ -19,7 +19,7 @@
 
         <div class = "centered highlight">
             <h2></h2>
-            <form action = "searchCourse">
+            <form action = "courseSearch">
                 <p>
                     <label>
                         <input class = "with-gap" name = "searchTerm"

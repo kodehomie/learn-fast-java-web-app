@@ -1,16 +1,16 @@
 package org.justinhoang.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.hibernate.Hibernate;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Data
+@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
@@ -21,62 +21,86 @@ public class Course
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
     @Column(name = "title")
     private String title;
 
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User user;
 
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "mentor_id")
     private Mentor mentor;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
+    @OneToMany(fetch = FetchType.LAZY,
+               cascade = CascadeType.ALL)
     @JoinColumn(name = "course_id")
+    @ToString.Exclude
     private List<Review> reviews;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,
-                                                   CascadeType.MERGE,
-                                                   CascadeType.DETACH,
-                                                   CascadeType.REFRESH})
-    @JoinTable(name = "course_mentee", joinColumns = @JoinColumn(name =
-            "course_id"), inverseJoinColumns = @JoinColumn(name = "mentee_id"))
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
+    @ManyToMany(fetch = FetchType.LAZY,
+                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                           CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "course_mentee",
+               joinColumns = @JoinColumn(name = "course_id"),
+               inverseJoinColumns = @JoinColumn(name = "mentee_id"))
+    @ToString.Exclude
     private List<Mentee> mentees;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,
-                                                   CascadeType.MERGE,
-                                                   CascadeType.DETACH,
-                                                   CascadeType.REFRESH})
-    @JoinTable(name = "course_user", joinColumns = @JoinColumn(name =
-            "course_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
+    @ManyToMany(fetch = FetchType.LAZY,
+                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                           CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "course_user",
+               joinColumns = @JoinColumn(name = "course_id"),
+               inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @ToString.Exclude
     private List<User> users;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,
-                                                   CascadeType.MERGE,
-                                                   CascadeType.DETACH,
-                                                   CascadeType.REFRESH})
-    @JoinTable(name = "course_user", joinColumns = @JoinColumn(name =
-            "course_id"), inverseJoinColumns = @JoinColumn(name =
-            "course_type_id"))
+    @FullTextField(name = "field_suggest",
+                   analyzer = "edge_ngram")
+    @ManyToMany(fetch = FetchType.LAZY,
+                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                           CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "course_user",
+               joinColumns = @JoinColumn(name = "course_id"),
+               inverseJoinColumns = @JoinColumn(name = "course_type_id"))
+    @ToString.Exclude
+    private List<Course>        courses;
     private List<CourseSection> courseSections;
-    private List<CourseFormat> courseFormats;
-    private List<CourseMentor> courseMentors;
-    private List<CourseMeet> courseMeets;
-    private List<CourseDate> courseDates;
-
-    public Course()
-    {
-
-    }
+    private List<CourseFormat>  courseFormats;
+    private List<CourseMentor>  courseMentors;
+    private List<CourseMeet>    courseMeets;
+    private List<CourseDate>    courseDates;
 
     public Course(String title)
     {
         this.title = title;
+    }
+
+    public List<Course> getCourses()
+    {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses)
+    {
+        this.courses = courses;
     }
 
     public List<Review> getReviews()
@@ -89,8 +113,6 @@ public class Course
         this.reviews = reviews;
     }
 
-    // add a convenience method
-
     public void addReview(Review review)
     {
 
@@ -101,8 +123,6 @@ public class Course
 
         reviews.add(review);
     }
-
-
 
     public void setUser(User user)
     {
@@ -125,7 +145,6 @@ public class Course
         this.users = users;
     }
 
-
     public void setCourseSection(CourseSection courseSection)
     {
         if (courseSection == null)
@@ -135,6 +154,7 @@ public class Course
 
         courseSections.add(courseSection);
     }
+
     public List<CourseSection> getCourseSections()
     {
         return courseSections;
@@ -144,7 +164,6 @@ public class Course
     {
         this.courseSections = courseSections;
     }
-
 
     public void setCourseFormat(CourseFormat courseFormat)
     {
@@ -167,11 +186,22 @@ public class Course
         this.courseFormats = courseFormats;
     }
 
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        final Course course = (Course) o;
+        return false;
+    }
 
-
-
-
-
+    @Override
+    public int hashCode()
+    {
+        return getClass().hashCode();
+    }
 }
 
 

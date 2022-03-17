@@ -4,18 +4,33 @@
 //import org.hibernate.cfg.Configuration;
 //
 //public class HibernateUtil {
-//    public static SessionFactory factory;
 //
-//    //Restrict other classes from creating objects.
-//    private HibernateUtil() {
-//    }
+//    private static final SessionFactory sessionFactory = buildSessionFactory();
 //
-//    //Hibernate SessionFactory object as singleton.
-//    public static synchronized SessionFactory getSessionFactory() {
-//        if (factory == null) {
-//            factory = new Configuration().configure("hibernate.cfg.xml").
-//                    buildSessionFactory();
+//    private static SessionFactory buildSessionFactory() {
+//        try {
+//
+//            SessionFactory sessionFactory = new Configuration()
+//                    .configure("/org/justinhoang/persistence/hibernate.cfg.xml")
+////                    .addResource("org/justinhoang/resources/User.hbm.xml")
+//                    .buildSessionFactory();
+//
+//            return sessionFactory;
+//
+//        } catch (Throwable ex) {
+//            // Make sure you log the exception, as it might be swallowed
+//            System.err.println("Initial SessionFactory creation failed." + ex);
+//            throw new ExceptionInInitializerError(ex);
 //        }
-//        return factory;
 //    }
+//
+//    public static SessionFactory getSessionFactory() {
+//        return sessionFactory;
+//    }
+//
+//    public static void shutdown() {
+//        // Close caches and connection pools
+//        getSessionFactory().close();
+//    }
+//
 //}

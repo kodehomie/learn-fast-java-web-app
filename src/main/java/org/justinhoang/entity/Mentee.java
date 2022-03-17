@@ -31,12 +31,12 @@ public class Mentee
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,
-                                                   CascadeType.MERGE,
-                                                   CascadeType.DETACH,
-                                                   CascadeType.REFRESH})
-    @JoinTable(name = "course_mentee", joinColumns = @JoinColumn(name =
-            "mentee_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @ManyToMany(fetch = FetchType.LAZY,
+                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                           CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "course_mentee",
+               joinColumns = @JoinColumn(name = "mentee_id"),
+               inverseJoinColumns = @JoinColumn(name = "course_id"))
     private List<Course> courses;
 
     public Mentee()
@@ -99,12 +99,6 @@ public class Mentee
     public void setCourses(List<Course> courses)
     {
         this.courses = courses;
-    }
-
-    @Override public String toString()
-    {
-        return "Mentee [id=" + id + ", firstName=" + firstName + ", lastName=" +
-               lastName + ", email=" + email + "]";
     }
 
 }

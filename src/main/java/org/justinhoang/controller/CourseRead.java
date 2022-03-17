@@ -1,4 +1,4 @@
-package org.justinhoang.persistence.controller;
+package org.justinhoang.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ReadCourse", urlPatterns = {"/readCourse"})
+@WebServlet(name = "CourseRead", urlPatterns = {"/readCourse"})
 
-public class ReadCourse extends HttpServlet
+public class CourseRead extends HttpServlet
 {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -27,7 +27,8 @@ public class ReadCourse extends HttpServlet
                                                                            ServletException,
                                                                            IOException
     {
-        GenericDao<Course> course     = DaoFactory.createDao(Course.class);
+        GenericDao<Course> course     =
+                (GenericDao<Course>) DaoFactory.createDao(Course.class);
         List<Course>       courses = course.readAll();
         req.setAttribute("courses", courses);
         logger.debug("Courses: " + courses);

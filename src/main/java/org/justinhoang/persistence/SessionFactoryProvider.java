@@ -3,9 +3,8 @@ package org.justinhoang.persistence;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+import org.hibernate.service.ServiceRegistry;
 
 /**
  * This file provides a SessionFactory for use with DAOs using Hibernate
@@ -29,10 +28,11 @@ public class SessionFactoryProvider {
      */
     public static void createSessionFactory() {
 
-        StandardServiceRegistry standardRegistry =
+        ServiceRegistry serviceRegistry =
                 new StandardServiceRegistryBuilder().configure().build();
+
         Metadata metaData =
-                new MetadataSources(standardRegistry).getMetadataBuilder().build();
+                new MetadataSources(serviceRegistry).getMetadataBuilder().build();
         sessionFactory = metaData.getSessionFactoryBuilder().build();
     }
 

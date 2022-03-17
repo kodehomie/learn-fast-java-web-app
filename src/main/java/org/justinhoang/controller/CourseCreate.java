@@ -1,4 +1,4 @@
-package org.justinhoang.persistence.controller;
+package org.justinhoang.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CreateCourse", urlPatterns = {"/createCourse"})
+@WebServlet(name = "CourseCreate", urlPatterns = {"/createCourse"})
 
-public class CreateCourse extends HttpServlet
+public class CourseCreate extends HttpServlet
 {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -39,12 +39,6 @@ public class CreateCourse extends HttpServlet
                 Integer.parseInt(req.getParameter("section")));
         course.setCourseSection(courseSection);
 
-
-//        GenericDao userDao = DaoFactory.createDao(User.class);
-//        User user = (User) userDao.findByPropertyEqual("userName",
-//                                                       req.getRemoteUser())
-//                                  .get(0);
-//        course.setUser(user);
 
         GenericDao dao = DaoFactory.createDao(Course.class);
         int        id  = dao.create(course);
