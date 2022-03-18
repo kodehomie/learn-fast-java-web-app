@@ -1,7 +1,0 @@
-client.secret=
-client.id=
-oauthURL=https://learnfast.auth.us-east-2.amazoncognito.com/oauth2/token
-loginURL=https://learnfast.auth.us-east-2.amazoncognito.com/login
-redirectURL=https://learnfast.us-east-2.elasticbeanstalk.com/auth
-region=us-east-2
-poolId=us-east-2_6hs0khOWR

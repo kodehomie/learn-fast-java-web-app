@@ -1,369 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns = "http://maven.apache.org/POM/4.0.0"
          xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <groupId>org.justinhoang</groupId>
-    <artifactId>learn-fast</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>LearnFast</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-
-    <name>Learn Fast</name>
-    <!--change it to the project's website -->
-    <url>https://www.example.com</url>
-
+    <name>LearnFast</name>
+    <description>LearnFast</description>
     <properties>
-        <!--ORIGINAL MAVEN PROPERTIES-->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <!--ORIGINAL MAVEN PROPERTIES END-->
-        <!--ADDITIONAL PROPERTIES SET 1-->
-        <maven.compiler.release>11</maven.compiler.release>
-        <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
-        <maven-surefire-plugin-version>2.22.1</maven-surefire-plugin-version>
-        <javax.version>8.0.1</javax.version>
-        <jstl-version>1.2</jstl-version>
-        <mysql-version>8.0.28</mysql-version>
-        <log4j-version>2.10.0</log4j-version>
-        <!--        <log4j-version>2.17.1</log4j-version>-->
-        <junit.version>4.13.2</junit.version>
-        <junit-vintage-version>5.8.2</junit-vintage-version>
-        <jupiter-version>5.8.2</jupiter-version>
-        <junit-platform-runner-version>1.8.2</junit-platform-runner-version>
-        <lombok-version>1.18.22</lombok-version>
-        <lombok-maven-plugin-version>1.18.20.0</lombok-maven-plugin-version>
-        <lombok-maven-version>1.18.20.0</lombok-maven-version>
-        <hibernate-core-version>5.4.1.Final</hibernate-core-version>
-        <hibernate-entitymanager-version>5.4.1.Final
-        </hibernate-entitymanager-version>
-        <!--        <hibernate-orm-core-version>5.2.12.Final</hibernate-orm-core-version>-->
-        <hibernate-orm-c3p0-version>5.2.12.Final</hibernate-orm-c3p0-version>
-        <!--        <hibernate-orm-core-version>6.0.0.CR1</hibernate-orm-core-version>-->
-        <!--        <hibernate-orm-c3p0-version>6.0.0.CR1</hibernate-orm-c3p0-version>-->
-        <java-jwt-version>3.18.3</java-jwt-version>
-        <json-version>20211205</json-version>
-        <apache-commons-io-version>2.11.0</apache-commons-io-version>
-        <apache-commons-codec-version>1.15</apache-commons-codec-version>
-        <jackson-core-version>2.13.2</jackson-core-version>
-        <jackson-annotations-version>2.13.2</jackson-annotations-version>
-        <jackson-databind-version>2.13.2</jackson-databind-version>
-        <!--ADDITIONAL PROPERTIES SET 1 END-->
-        <!--ADDITIONAL PROPERTIES SET 2-->
 
-        <!--ADDITIONAL PROPERTIES SET 2 END-->
-        <!--ADDITIONAL PROPERTIES SET 3-->
-        <spring-webmvc-version>5.3.16</spring-webmvc-version>
-        <!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
-        <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
-        <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
-        <!--        <spring-tx-version>5.3.16</spring-tx-version>-->
-
-        <!--        <aws-java-sdk-bom-version>1.12.176</aws-java-sdk-bom-version>-->
-        <!--        <aws-lambda-java-core-version>1.2.1</aws-lambda-java-core-version>-->
-        <!--        <aws-java-sdk-cognitoidp-version>1.12.176-->
-        <!--        </aws-java-sdk-cognitoidp-version>-->
-        <!--        <aws-lambda-java-events-version>3.11.0</aws-lambda-java-events-version>-->
-        <!--        <jersey-client-version>3.0.4</jersey-client-version>-->
-        <!--        <jersey-hk2-version>3.0.4</jersey-hk2-version>-->
-        <!--        <javax.ws.rs-api-version>2.1.1</javax.ws.rs-api-version>-->
-        <!--ADDITIONAL PROPERTIES SET 3 END-->
+        <!--ORIGINAL-->
+        <java.version>11</java.version>
+        <!--ORIGINAL END-->
 
     </properties>
 
     <dependencies>
-        <!--ORIGINAL MAVEN DEPENDENCIES-->
+
+        <!--ORIGINAL-->
+        <!--DEVELOPER TOOLS-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
-        <!--ORIGINAL MAVEN DEPENDENCIES END-->
-        <!--ADDITIONAL DEPENDENCIES SET 1-->
-        <!--JAVAX-->
-        <!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
-            <version>${javax.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--JSTL-->
-        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl-version}</version>
-        </dependency>
-        <!--MYSQL-->
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-version}</version>
-        </dependency>
-        <!--LOG4J-->
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j-version}</version>
-            <!--            <scope>provided</scope>-->
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j-version}</version>
-            <!--            <scope>provided</scope>-->
-        </dependency>
-        <!--JUNIT-->
-        <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>${junit-vintage-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${jupiter-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit-platform-runner-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!--PROJECT LOMBOK-->
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok-version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--WEB-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!--HIBERNATE-->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-core &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.hibernate</groupId>-->
-        <!--            <artifactId>hibernate-core</artifactId>-->
-        <!--            <version>${hibernate-orm-core-version}</version>-->
-        <!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>${hibernate-orm-c3p0-version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <!--        TEMPLATE ENGINES-->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate-core-version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org
-        .hibernate/hibernate-entitymanager
-         -->
+        <!--        SQL-->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate-entitymanager-version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
         <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>${java-jwt-version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <!--        IO-->
         <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>${json-version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <!--        TESTING-->
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${apache-commons-io-version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
         <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${apache-commons-codec-version}</version>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson-core-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson-annotations-version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson-databind-version}</version>
-        </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.xml.bind</groupId>-->
-<!--            <artifactId>jaxb-api</artifactId>-->
-<!--            <version>2.4.0-b180830.0359</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.json.bind/javax.json.bind-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.json.bind</groupId>-->
-<!--            <artifactId>javax.json.bind-api</artifactId>-->
-<!--            <version>1.0</version>-->
-<!--        </dependency>-->
-        <!--ADDITIONAL DEPENDENCIES SET 1 END-->
-        <!--ADDITIONAL DEPENDENCIES SET 2-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk</artifactId>-->
-<!--            <version>1.12.180</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-core &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk-core</artifactId>-->
-<!--            <version>1.12.180</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk-cognitoidp</artifactId>-->
-<!--            <version>1.12.180</version>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-test-utils &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.amazonaws</groupId>-->
-<!--            <artifactId>aws-java-sdk-test-utils</artifactId>-->
-<!--            <version>1.12.180</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-        <!--ADDITIONAL DEPENDENCIES SET 2 END-->
-
-        <!--ADDITIONAL DEPENDENCIES SET 3-->
-        <!-- SPRING MVC -->
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework</groupId>-->
-        <!--            <artifactId>spring-webmvc</artifactId>-->
-        <!--            <version>${spring-webmvc-version}</version>-->
-        <!--        </dependency>-->
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.mail/javax.mail-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.mail</groupId>-->
-<!--            <artifactId>javax.mail-api</artifactId>-->
-<!--            <version>1.6.2</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.activation/javax.activation-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.activation</groupId>-->
-<!--            <artifactId>javax.activation-api</artifactId>-->
-<!--            <version>1.2.0</version>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-        <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>javax.mail</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.cxf/cxf-bundle-jaxrs &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.cxf</groupId>-->
-<!--            <artifactId>cxf-bundle-jaxrs</artifactId>-->
-<!--            <version>2.7.18</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomee/openejb-core &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.tomee</groupId>-->
-<!--            <artifactId>openejb-core</artifactId>-->
-<!--            <version>8.0.10</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.lucene/lucene-core &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.lucene</groupId>-->
-<!--            <artifactId>lucene-core</artifactId>-->
-<!--            <version>9.0.0</version>-->
-<!--        </dependency>-->
-
-        <!--ADDITIONAL DEPENDENCIES SET 3 END-->
+        <!--            ORIGINAL END-->
 
     </dependencies>
 
     <build>
-        <finalName>learn-fast</finalName>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.2.2</version>
-                    <configuration>
-                        <webResources>
-                            <resource>
-                                <directory>src/main/.platform</directory>
-                                <targetPath>.platform</targetPath>
-                                <filtering>true</filtering>
-                            </resource>
-                            <resource>
-                                <directory>src/main/.ebextensions</directory>
-                                <targetPath>.ebextensions</targetPath>
-                                <filtering>true</filtering>
-                            </resource>
-                        </webResources>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
+        <plugins>
 
-            </plugins>
-        </pluginManagement>
+            <!--            ORIGINAL-->
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.8</version>
+                <executions>
+                    <execution>
+                        <id>generate-docs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html</backend>
+                            <doctype>book</doctype>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.restdocs</groupId>
+                        <artifactId>spring-restdocs-asciidoctor</artifactId>
+                        <version>${spring-restdocs.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <!--            ORIGINAL END-->
+
+        </plugins>
     </build>
+
 </project>
