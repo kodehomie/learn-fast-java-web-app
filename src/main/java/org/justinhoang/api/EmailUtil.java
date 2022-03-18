@@ -39,7 +39,6 @@ public class EmailUtil
             msg.setRecipients(Message.RecipientType.TO,
                               InternetAddress.parse(recipient, false));
             Transport.send(msg);
-            log.info("Message: " + msg);
 
         }
         catch (Exception e)

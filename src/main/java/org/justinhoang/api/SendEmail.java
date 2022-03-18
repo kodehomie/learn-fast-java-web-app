@@ -12,8 +12,8 @@ import java.util.Properties;
 public class SendEmail
 {
 
-    private final  Logger     log = LogManager.getLogger(this.getClass());
-    private static Properties properties;
+    private final Logger     log = LogManager.getLogger(this.getClass());
+    private       Properties prop;
 
     public SendEmail()
     {
@@ -22,10 +22,10 @@ public class SendEmail
 
     private void load()
     {
-        properties = new Properties();
+        prop = new Properties();
         try
         {
-            properties.load(this.getClass().getResourceAsStream(
+            prop.load(this.getClass().getResourceAsStream(
                     "/javamailapi.properties"));
         }
         catch (IOException ioe)
@@ -53,14 +53,13 @@ public class SendEmail
             protected PasswordAuthentication getPasswordAuthentication()
             {
                 return new PasswordAuthentication(
-                        properties.getProperty("sender"),
-                        properties.getProperty("password"));
+                        prop.getProperty("sender"),
+                        prop.getProperty("password"));
             }
         };
         Session session = Session.getDefaultInstance(prop, auth);
-        EmailUtil.sendEmail(session, properties.getProperty("recipient"),
-                            Subject,
-                            msg);
+        EmailUtil.sendEmail(session, prop.getProperty("recipient"),
+                            Subject, msg);
 
     }
 
