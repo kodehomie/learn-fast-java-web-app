@@ -17,15 +17,17 @@
     <description>LearnFast</description>
     <properties>
 
-        <!--ORIGINAL-->
+        <!--ORIGINAL PROPERTIES-->
         <java.version>11</java.version>
-        <!--ORIGINAL END-->
+        <!--ORIGINAL PROPERTIES END-->
+        <!--ADDITIONAL PROPERTIES-->
+        <!--ADDITIONAL PROPERTIES END-->
 
     </properties>
 
     <dependencies>
 
-        <!--ORIGINAL-->
+        <!--ORIGINAL DEPENDENCIES-->
         <!--DEVELOPER TOOLS-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +49,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -65,12 +73,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
-        <!--        TEMPLATE ENGINES-->
+        <!--TEMPLATE ENGINES-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <!--        SQL-->
+        <!--SQL-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -80,12 +88,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!--        IO-->
+        <!--IO-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-        <!--        TESTING-->
+        <!--TESTING-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -96,8 +104,16 @@
             <artifactId>spring-restdocs-mockmvc</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--            ORIGINAL END-->
-
+        <!--ORIGINAL DEPENDENCIES END-->
+        <!--ADDITIONAL DEPENDENCIES-->
+        <!--LOG4J2-->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <version>2.6.4</version>
+        </dependency>
+        <!--ADDITIONAL DEPENDENCIES END-->
     </dependencies>
 
     <build>
