@@ -1,74 +1,147 @@
 package org.justinhoang.entity;
 
-import lombok.*;
-import org.hibernate.Hibernate;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
-@RequiredArgsConstructor
-@Getter
-@Setter
-@ToString
-@Table(name = "course")
+@Table(name = "course",
+       schema = "learnfasttest")
 public class Course
 {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-
-    @Column(name = "title")
+    private long   id;
     private String title;
+    private String section;
+    private String format;
+    private String mentor;
+    private String sectionStatus;
+    private String meets;
+    private String dates;
+    private String description;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                          CascadeType.DETACH, CascadeType.REFRESH})
-    private User user;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id",
+            nullable = false)
+    public long getId()
+    {
+        return id;
+    }
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                          CascadeType.DETACH, CascadeType.REFRESH})
-    private Mentor mentor;
+    public void setId(final long id)
+    {
+        this.id = id;
+    }
 
-    @OneToMany(fetch = FetchType.LAZY,
-               cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private List<Review> reviews;
+    @Basic
+    @Column(name = "title",
+            nullable = false,
+            length = 50)
+    public String getTitle()
+    {
+        return title;
+    }
 
-    @ManyToMany(fetch = FetchType.LAZY,
-                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                           CascadeType.DETACH, CascadeType.REFRESH})
-    @ToString.Exclude
-    private List<Mentee> mentees;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                           CascadeType.DETACH, CascadeType.REFRESH})
-    @ToString.Exclude
-    private List<User> users;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                           CascadeType.DETACH, CascadeType.REFRESH})
-    @ToString.Exclude
-    private List<Course> courses;
-
-    public Course(String title)
+    public void setTitle(final String title)
     {
         this.title = title;
     }
 
-    public List<Course> getCourses()
+    @Basic
+    @Column(name = "section",
+            nullable = false,
+            length = 50)
+    public String getSection()
     {
-        return courses;
+        return section;
     }
 
-    public void setCourses(List<Course> courses)
+    public void setSection(final String section)
     {
-        this.courses = courses;
+        this.section = section;
+    }
+
+    @Basic
+    @Column(name = "format",
+            nullable = false,
+            length = 50)
+    public String getFormat()
+    {
+        return format;
+    }
+
+    public void setFormat(final String format)
+    {
+        this.format = format;
+    }
+
+    @Basic
+    @Column(name = "mentor",
+            nullable = false,
+            length = 70)
+    public String getMentor()
+    {
+        return mentor;
+    }
+
+    public void setMentor(final String mentor)
+    {
+        this.mentor = mentor;
+    }
+
+    @Basic
+    @Column(name = "section_status",
+            nullable = false,
+            length = 50)
+    public String getSectionStatus()
+    {
+        return sectionStatus;
+    }
+
+    public void setSectionStatus(final String sectionStatus)
+    {
+        this.sectionStatus = sectionStatus;
+    }
+
+    @Basic
+    @Column(name = "meets",
+            nullable = false,
+            length = 50)
+    public String getMeets()
+    {
+        return meets;
+    }
+
+    public void setMeets(final String meets)
+    {
+        this.meets = meets;
+    }
+
+    @Basic
+    @Column(name = "dates",
+            nullable = false,
+            length = 50)
+    public String getDates()
+    {
+        return dates;
+    }
+
+    public void setDates(final String dates)
+    {
+        this.dates = dates;
+    }
+
+    @Basic
+    @Column(name = "description",
+            nullable = false,
+            length = 255)
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public void setDescription(final String description)
+    {
+        this.description = description;
     }
 
     @Override
@@ -76,19 +149,23 @@ public class Course
     {
         if (this == o)
             return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+        if (o == null || getClass() != o.getClass())
             return false;
-        final Course course = (Course) o;
-        return id != null && Objects.equals(id, course.id);
+        final Course that = (Course) o;
+        return id == that.id && Objects.equals(title, that.title) &&
+               Objects.equals(section, that.section) &&
+               Objects.equals(format, that.format) &&
+               Objects.equals(mentor, that.mentor) &&
+               Objects.equals(sectionStatus, that.sectionStatus) &&
+               Objects.equals(meets, that.meets) &&
+               Objects.equals(dates, that.dates) &&
+               Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode()
     {
-        return getClass().hashCode();
+        return Objects.hash(id, title, section, format, mentor, sectionStatus,
+                            meets, dates, description);
     }
 }
-
-
-
-

@@ -1,86 +1,131 @@
 package org.justinhoang.entity;
 
-import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.justinhoang.util.TimestampAttributeConverter;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
-/**
- * The type User.
- */
-@Data
 @Entity
-@Getter
-@Setter
-@ToString
 public class User implements Serializable
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",
             nullable = false)
-    private Long id;
-
-    @Column(name = "birthdate")
-    private Date birthdate;
-
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "username")
+    private Long   id;
     private String username;
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
+    //    private List<UserAttributes> userAttributes;
+    private String birthdate;
     private String email;
+    private String phoneNumber;
+    private String givenName;
+    private String familyName;
+    private String gender;
 
-    @Column(name = "phone")
-    private String phone;
+    public Long getId()
+    {
+        return id;
+    }
 
-    @CreationTimestamp
-    @Convert(converter = TimestampAttributeConverter.class)
-    @EqualsAndHashCode.Exclude
-    @Column(name = "create_date")
-    private LocalDateTime createDate;
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
 
-    @UpdateTimestamp
-    @Convert(converter = TimestampAttributeConverter.class)
-    @EqualsAndHashCode.Exclude
-    @Column(name = "update_date")
-    private LocalDateTime updateDate;
+    public String getUsername()
+    {
+        return username;
+    }
 
-    @OneToMany(mappedBy = "user",
-               fetch = FetchType.EAGER,
-               cascade = CascadeType.ALL,
-               orphanRemoval = true)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Role> roles = new HashSet<Role>();
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
 
-    @OneToMany(mappedBy = "user",
-               fetch = FetchType.LAZY)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Course> courses = new HashSet<Course>();
+    public String getPassword()
+    {
+        return password;
+    }
 
-    @OneToMany(mappedBy = "user",
-               fetch = FetchType.LAZY)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Review> reviews = new HashSet<Review>();
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+    //    public List <UserAttributes > getUserAttributes() {
+    //        return userAttributes;
+    //    }
+    //    public void setUserAttributes(List <UserAttributes > userAttributes) {
+    //        this.userAttributes = userAttributes;
+    //    }
 
+    public String getBirthdate()
+    {
+        return birthdate;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public String getPhoneNumber()
+    {
+        return phoneNumber;
+    }
+
+    public String getGivenName()
+    {
+        return givenName;
+    }
+
+    public String getFamilyName()
+    {
+        return familyName;
+    }
+
+    public String getGender()
+    {
+        return gender;
+    }
+
+    public void setBirthdate(final String birthdate)
+    {
+        this.birthdate = birthdate;
+    }
+
+    public void setEmail(final String email)
+    {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(final String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setGivenName(final String givenName)
+    {
+        this.givenName = givenName;
+    }
+
+    public void setFamilyName(final String familyName)
+    {
+        this.familyName = familyName;
+    }
+
+    public void setGender(final String gender)
+    {
+        this.gender = gender;
+    }
+
+//    @Override
+//    public String toString()
+//    {
+//        return "User{" + "id=" + id + ", username='" + username + '\'' +
+//               ", password='" + password + '\'' + ", userAttributes=" +
+//               userAttributes + ", birthdate='" + birthdate + '\'' +
+//               ", email='" + email + '\'' + ", phoneNumber='" + phoneNumber +
+//               '\'' + ", givenName='" + givenName + '\'' + ", familyName='" +
+//               familyName + '\'' + ", gender='" + gender + '\'' + '}';
+//    }
 }
-
-

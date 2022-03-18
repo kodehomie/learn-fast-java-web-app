@@ -4,13 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name = "connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name = "connection.url">jdbc:mysql://localhost:3306/learnfasttest</property>
+        <property name = "connection.driver_class">com.mysql.cj.jdbc.Driver
+        </property>
+<!--        <property name = "connection.url">-->
+<!--            jdbc:mysql://aa1o5gtrytdulsc.us-east-2.rds.amazonaws.com:3306/LearnFast-->
+<!--        </property>-->
+                <property name = "connection.url">
+                    jdbc:mysql://localhost:3306/learnfasttest
+                </property>
         <property name = "connection.username">root</property>
         <property name = "connection.password">root</property>
         <property name = "dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name = "hibernate.hbm2ddl.auto">update</property>
+<!--        <property name = "current_session_context_class">thread</property>-->
+<!--        <property name = "hibernate.hbm2ddl.auto">update</property>-->
         <property name = "show_sql">true</property>
+        <property name = "format_sql">true</property>
 
         <property name = "hibernate.c3p0.min_size">5</property>
         <property name = "hibernate.c3p0.max_size">20</property>
@@ -19,18 +27,7 @@
         <property name = "hibernate.c3p0.idle_test_period">3000</property>
 
         <mapping class = "org.justinhoang.entity.Course"/>
-        <mapping class = "org.justinhoang.entity.CourseFormat"/>
-        <mapping class = "org.justinhoang.entity.Mentee"/>
-        <mapping class = "org.justinhoang.entity.Mentor"/>
-        <mapping class = "org.justinhoang.entity.MentorInfo"/>
-        <mapping class = "org.justinhoang.entity.Review"/>
-        <mapping class = "org.justinhoang.entity.Role"/>
         <mapping class = "org.justinhoang.entity.User"/>
-        <mapping class = "org.justinhoang.entity.CourseEntity"/>
-        <mapping resource = "CourseEntity.hbm.xml"/>
-        <mapping resource = "UserEntity.hbm.xml"/>
-        <mapping class = "org.justinhoang.entity.UserEntity"/>
-        <mapping class = "org.justinhoang.entity.UserRoleEntity"/>
-        <mapping resource = "UserRoleEntity.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

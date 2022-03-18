@@ -36,7 +36,10 @@
         <lombok-version>1.18.22</lombok-version>
         <lombok-maven-plugin-version>1.18.20.0</lombok-maven-plugin-version>
         <lombok-maven-version>1.18.20.0</lombok-maven-version>
-        <hibernate-orm-core-version>5.2.12.Final</hibernate-orm-core-version>
+        <hibernate-core-version>5.4.1.Final</hibernate-core-version>
+        <hibernate-entitymanager-version>5.4.1.Final
+        </hibernate-entitymanager-version>
+        <!--        <hibernate-orm-core-version>5.2.12.Final</hibernate-orm-core-version>-->
         <hibernate-orm-c3p0-version>5.2.12.Final</hibernate-orm-c3p0-version>
         <!--        <hibernate-orm-core-version>6.0.0.CR1</hibernate-orm-core-version>-->
         <!--        <hibernate-orm-c3p0-version>6.0.0.CR1</hibernate-orm-c3p0-version>-->
@@ -53,8 +56,8 @@
         <!--ADDITIONAL PROPERTIES SET 2 END-->
         <!--ADDITIONAL PROPERTIES SET 3-->
         <spring-webmvc-version>5.3.16</spring-webmvc-version>
-<!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
-<!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
+        <!--        <spring-jdbc-version>5.3.16</spring-jdbc-version>-->
+        <!--        <spring-data-jpa-version>2.6.2</spring-data-jpa-version>-->
         <!--        <spring-aop-version>5.3.16</spring-aop-version>-->
         <!--        <spring-tx-version>5.3.16</spring-tx-version>-->
 
@@ -148,18 +151,34 @@
             <scope>provided</scope>
         </dependency>
         <!--HIBERNATE-->
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate-orm-core-version}</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-core &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.hibernate</groupId>-->
+        <!--            <artifactId>hibernate-core</artifactId>-->
+        <!--            <version>${hibernate-orm-core-version}</version>-->
+        <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-c3p0 -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-c3p0</artifactId>
             <version>${hibernate-orm-c3p0-version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-core-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org
+        .hibernate/hibernate-entitymanager
+         -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-entitymanager-version}</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
         <dependency>
             <groupId>com.auth0</groupId>
@@ -202,20 +221,46 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind-version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.4.0-b180830.0359</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.json.bind/javax.json.bind-api -->
-        <dependency>
-            <groupId>javax.json.bind</groupId>
-            <artifactId>javax.json.bind-api</artifactId>
-            <version>1.0</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.xml.bind</groupId>-->
+<!--            <artifactId>jaxb-api</artifactId>-->
+<!--            <version>2.4.0-b180830.0359</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.json.bind/javax.json.bind-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.json.bind</groupId>-->
+<!--            <artifactId>javax.json.bind-api</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
         <!--ADDITIONAL DEPENDENCIES SET 1 END-->
         <!--ADDITIONAL DEPENDENCIES SET 2-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk</artifactId>-->
+<!--            <version>1.12.180</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-core</artifactId>-->
+<!--            <version>1.12.180</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-cognitoidp &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-cognitoidp</artifactId>-->
+<!--            <version>1.12.180</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-test-utils &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.amazonaws</groupId>-->
+<!--            <artifactId>aws-java-sdk-test-utils</artifactId>-->
+<!--            <version>1.12.180</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <!--ADDITIONAL DEPENDENCIES SET 2 END-->
 
@@ -228,18 +273,18 @@
         <!--            <version>${spring-webmvc-version}</version>-->
         <!--        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>javax.mail-api</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>javax.activation-api</artifactId>
-            <version>1.2.0</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.mail/javax.mail-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.mail</groupId>-->
+<!--            <artifactId>javax.mail-api</artifactId>-->
+<!--            <version>1.6.2</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.activation/javax.activation-api &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.activation</groupId>-->
+<!--            <artifactId>javax.activation-api</artifactId>-->
+<!--            <version>1.2.0</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
         <dependency>
             <groupId>com.sun.mail</groupId>
@@ -247,18 +292,24 @@
             <version>1.6.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-bundle-jaxrs -->
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-bundle-jaxrs</artifactId>
-            <version>2.7.18</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.tomee/openejb-core -->
-        <dependency>
-            <groupId>org.apache.tomee</groupId>
-            <artifactId>openejb-core</artifactId>
-            <version>8.0.10</version>
-        </dependency>
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.cxf/cxf-bundle-jaxrs &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.cxf</groupId>-->
+<!--            <artifactId>cxf-bundle-jaxrs</artifactId>-->
+<!--            <version>2.7.18</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomee/openejb-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.tomee</groupId>-->
+<!--            <artifactId>openejb-core</artifactId>-->
+<!--            <version>8.0.10</version>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.lucene/lucene-core &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.lucene</groupId>-->
+<!--            <artifactId>lucene-core</artifactId>-->
+<!--            <version>9.0.0</version>-->
+<!--        </dependency>-->
 
         <!--ADDITIONAL DEPENDENCIES SET 3 END-->
 

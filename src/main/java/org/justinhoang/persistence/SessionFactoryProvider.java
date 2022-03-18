@@ -3,6 +3,7 @@ package org.justinhoang.persistence;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
@@ -28,7 +29,7 @@ public class SessionFactoryProvider {
      */
     public static void createSessionFactory() {
 
-        ServiceRegistry serviceRegistry =
+        StandardServiceRegistry serviceRegistry =
                 new StandardServiceRegistryBuilder().configure().build();
 
         Metadata metaData =
