@@ -1,17 +1,10 @@
 package org.justinhoang.auth;
-/*
-// Copyright 2013-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
- */
-
-import java.util.Base64;
-import java.util.Base64.Encoder;
-import java.util.Base64.Decoder;
 
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidParameterException;
+import java.util.Base64;
 
 /**
  * Utility class for all operations on JWT.
@@ -94,8 +87,8 @@ public class CognitoJWTParser
         try
         {
             validateJWT(jwt);
-            Base64.Decoder dec            = Base64.getDecoder();
-            final byte[]   sectionDecoded =
+            Base64.Decoder dec = Base64.getDecoder();
+            final byte[] sectionDecoded =
                     dec.decode(jwt.split("\\.")[SIGNATURE]);
             return new String(sectionDecoded, "UTF-8");
         }

@@ -51,7 +51,7 @@ Time: 6:21 PM
                         <div class = "center">
                             <h5 class = "center">Speeds up learning</h5>
                             <img class = "center"
-                                 src = "<c:url value="resources/img/bear1-index.jpg"/>"
+                                 src = "<c:url value="../../resources/img/bear1-index.jpg"/>"
                                  width = "150">
                         </div>
                     </div>
@@ -66,7 +66,7 @@ Time: 6:21 PM
                         <div class = "center">
                             <h5 class = "center">Experience Focused</h5>
                             <img class = "center"
-                                 src = "<c:url value="resources/img/bear2-index.jpg"/>"
+                                 src = "<c:url value="../../resources/img/bear2-index.jpg"/>"
                                  width = "150">
                         </div>
                     </div>
@@ -80,7 +80,7 @@ Time: 6:21 PM
                         <div class = "center">
                             <h5 class = "center">Easy to use</h5>
                             <img class = "center"
-                                 src = "<c:url value="resources/img/bear3-index.jpg"/>"
+                                 src = "<c:url value="../../resources/img/bear3-index.jpg"/>"
                                  width = "150">
                         </div>
                     </div>

@@ -2,7 +2,8 @@ package org.justinhoang.auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CognitoTokenHeader{
+public class CognitoTokenHeader
+{
 
     @JsonProperty("kid")
     private String kid;
@@ -10,11 +11,13 @@ public class CognitoTokenHeader{
     @JsonProperty("alg")
     private String alg;
 
-    public String getKid(){
+    public String getKid()
+    {
         return kid;
     }
 
-    public String getAlg(){
+    public String getAlg()
+    {
         return alg;
     }
 }

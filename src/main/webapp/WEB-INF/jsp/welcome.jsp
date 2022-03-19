@@ -5,7 +5,7 @@ Time: 7:25 PM
 --%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <c:set var = "contextPath" value = "${pageContext.request.contextPath}"/>
-<c:import url = "resources/jsp/content-type.jsp"/>
+<c:import url = "view/jsp/content-type.jsp"/>
 <head>
     <c:import url = "resources/jsp/meta.jsp"/>
     <title>Learn Fast: Free, Private & Secure Community</title>
