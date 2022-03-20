@@ -23,15 +23,16 @@ public class EmailService
     private final Logger log = LogManager.getLogger(this.getClass());
 
     @Autowired
-    private JavaMailSender mailSender;
+    private JavaMailSender    mailSender;
     @Autowired
     private SimpleMailMessage preConfiguredMessage;
 
-
-    public void sendMail() {
+    public void sendMail()
+    {
         EmailConf emailConf = new EmailConf();
         emailConf.emailTemplate();
     }
+
     public void sendMail(String recipient, String subject, String body)
     {
         SimpleMailMessage message = new SimpleMailMessage();
@@ -61,7 +62,7 @@ public class EmailService
             {
                 mimeMessage.setRecipient(Message.RecipientType.TO,
                                          new InternetAddress(to));
-                mimeMessage.setFrom(new InternetAddress("admin@gmail.com"));
+                mimeMessage.setFrom(new InternetAddress("sender@gmail.com"));
                 mimeMessage.setSubject(subject);
                 mimeMessage.setText(body);
 
@@ -79,7 +80,6 @@ public class EmailService
         }
         catch (MailException ex)
         {
-            // simply log it and go on...
             log.error(ex.getMessage());
         }
     }
@@ -114,7 +114,6 @@ public class EmailService
         }
         catch (MailException ex)
         {
-            // simply log it and go on...
             log.error(ex.getMessage());
         }
     }
