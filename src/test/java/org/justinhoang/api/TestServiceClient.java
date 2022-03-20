@@ -29,8 +29,6 @@ public class TestServiceClient
                 "One of my most productive days was throwing away 1,000 lines" +
                 " of code.";
         assertEquals(expectedProgrammingQuote, programmingQuotes.getEn());
-        //        assertEquals("
-
     }
 
 }
