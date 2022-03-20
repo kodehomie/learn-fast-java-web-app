@@ -57,12 +57,6 @@ public class AuthController extends HttpServlet implements PropLoader
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-//    @RequestMapping("/login")
-//    public String auth()
-//    {
-//        return "auth";
-//    }
-
     @Override
     public void init() throws ServletException
     {

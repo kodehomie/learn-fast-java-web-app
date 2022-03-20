@@ -29,10 +29,9 @@ public class CognitoJWTParser
         try
         {
             validateJWT(jwt);
-            Base64.Decoder dec            = Base64.getDecoder();
-            final byte[]   sectionDecoded =
-                    dec.decode(jwt.split("\\.")[HEADER]);
-            final String   jwtSection     = new String(sectionDecoded, "UTF-8");
+            Base64.Decoder dec = Base64.getDecoder();
+            final byte[] sectionDecoded = dec.decode(jwt.split("\\.")[HEADER]);
+            final String jwtSection = new String(sectionDecoded, "UTF-8");
             return new JSONObject(jwtSection);
         }
         catch (final UnsupportedEncodingException e)

@@ -22,8 +22,8 @@ public class LearnFastApplication implements CommandLineRunner
     @Override
     public void run(String... args)
     {
-        emailService.sendMail("justinkhoang@icloud.com", "Subject", "Body");
-
-        emailService.sendPreConfiguredMail("HelloWorld");
+//        emailService.sendMail("justinkhoang@icloud.com", "Subject", "Body");
+//
+//        emailService.sendPreConfiguredMail("HelloWorld");
     }
 }

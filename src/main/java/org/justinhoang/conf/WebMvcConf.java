@@ -43,5 +43,4 @@ public class WebMvcConf implements WebMvcConfigurer
                 .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)));
     }
 
-
 }

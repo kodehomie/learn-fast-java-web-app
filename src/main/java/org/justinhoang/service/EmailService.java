@@ -53,15 +53,15 @@ public class EmailService
         mailSender.send(mailMessage);
     }
 
-    public void sendMailWithAttachment(String to, String subject, String body
-            , String fileToAttach)
+    public void sendMailWithAttachment(String recipient, String subject,
+                                       String body, String fileToAttach)
     {
         MimeMessagePreparator preparator = new MimeMessagePreparator()
         {
             public void prepare(MimeMessage mimeMessage) throws Exception
             {
                 mimeMessage.setRecipient(Message.RecipientType.TO,
-                                         new InternetAddress(to));
+                                         new InternetAddress(recipient));
                 mimeMessage.setFrom(new InternetAddress("sender@gmail.com"));
                 mimeMessage.setSubject(subject);
                 mimeMessage.setText(body);
@@ -78,13 +78,13 @@ public class EmailService
         {
             mailSender.send(preparator);
         }
-        catch (MailException ex)
+        catch (MailException e)
         {
-            log.error(ex.getMessage());
+            log.error(e.getMessage());
         }
     }
 
-    public void sendMailWithInlineResources(String to, String subject,
+    public void sendMailWithInlineResources(String recipient, String subject,
                                             String fileToAttach)
     {
         MimeMessagePreparator preparator = new MimeMessagePreparator()
@@ -92,7 +92,7 @@ public class EmailService
             public void prepare(MimeMessage mimeMessage) throws Exception
             {
                 mimeMessage.setRecipient(Message.RecipientType.TO,
-                                         new InternetAddress(to));
+                                         new InternetAddress(recipient));
                 mimeMessage.setFrom(new InternetAddress("sender@gmail.com"));
                 mimeMessage.setSubject(subject);
 
@@ -112,9 +112,9 @@ public class EmailService
         {
             mailSender.send(preparator);
         }
-        catch (MailException ex)
+        catch (MailException e)
         {
-            log.error(ex.getMessage());
+            log.error(e.getMessage());
         }
     }
 }
