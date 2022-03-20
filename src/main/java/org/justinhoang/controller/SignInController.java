@@ -14,9 +14,7 @@ import java.util.Properties;
 
 @WebServlet(urlPatterns = {"/login"})
 
-/** Begins the authentication process using AWS Cognito
- *
- */ public class SignInController extends HttpServlet implements PropLoader
+public class SignInController extends HttpServlet implements PropLoader
 {
     Properties properties;
     private final Logger logger = LogManager.getLogger(this.getClass());

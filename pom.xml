@@ -155,10 +155,18 @@
             <version>${spring-core-version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-autoconfigure</artifactId>-->
+<!--            <version>${spring-boot-autoconfigure-version}</version>-->
+<!--        </dependency>-->
+        <!--JAVAX-->
+        <!-- https://mvnrepository.com/artifact/javax/javaee-web-api -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>${spring-boot-autoconfigure-version}</version>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>${javax.version}</version>
+            <scope>provided</scope>
         </dependency>
         <!--JSTL-->
         <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->

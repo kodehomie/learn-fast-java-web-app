@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.auth.*;
 import org.justinhoang.util.PropLoader;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,11 +42,6 @@ import java.util.stream.Collectors;
 @WebServlet(urlPatterns = {"/auth"})
 // TODO if something goes wrong it this process, route to an error page.
 //  Currently, errors are only caught and logged.
-/**
- * Inspired by: https://stackoverflow
- * .com/questions/52144721/how-to-get-access-token-using-client-credentials
- * -using-java-code
- */
 
 public class AuthController extends HttpServlet implements PropLoader
 {
@@ -60,6 +56,12 @@ public class AuthController extends HttpServlet implements PropLoader
     Keys       jwks;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+//    @RequestMapping("/login")
+//    public String auth()
+//    {
+//        return "auth";
+//    }
 
     @Override
     public void init() throws ServletException
@@ -143,7 +145,7 @@ public class AuthController extends HttpServlet implements PropLoader
         logger.debug("Response headers: " + response.headers().toString());
         logger.debug("Response body: " + response.body().toString());
 
-        ObjectMapper  mapper        = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
         TokenResponse tokenResponse =
                 mapper.readValue(response.body().toString(),
                                  TokenResponse.class);
@@ -165,7 +167,7 @@ public class AuthController extends HttpServlet implements PropLoader
      */
     private String validate(TokenResponse tokenResponse) throws IOException
     {
-        ObjectMapper       mapper      = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(
                 CognitoJWTParser.getHeader(tokenResponse.getIdToken())
                                 .toString(), CognitoTokenHeader.class);
@@ -177,10 +179,10 @@ public class AuthController extends HttpServlet implements PropLoader
         // todo pick proper key from the two - it just so happens that the
         //  first one works for my case
         // Use Key's N and E
-        BigInteger modulus  = new BigInteger(1,
-                                             org.apache.commons.codec.binary.Base64.decodeBase64(
-                                                     jwks.getKeys().get(0)
-                                                         .getN()));
+        BigInteger modulus = new BigInteger(1,
+                                            org.apache.commons.codec.binary.Base64.decodeBase64(
+                                                    jwks.getKeys().get(0)
+                                                        .getN()));
         BigInteger exponent = new BigInteger(1,
                                              org.apache.commons.codec.binary.Base64.decodeBase64(
                                                      jwks.getKeys().get(0)
@@ -283,9 +285,9 @@ public class AuthController extends HttpServlet implements PropLoader
      * it into objects for easier use.
      * <p>
      * JSON Web Key Set (JWKS) location: https://cognito-idp.{region}
-     * .amazonaws.com/{userPoolId}/.well-known/jwks.json
-     * Demo url: https://cognito-idp.us-east-2.amazonaws
-     * .com/us-east-2_XaRYHsmKB/.well-known/jwks.json
+     * .amazonaws.com/{userPoolId}/.well-known/jwks.json Demo url:
+     * https://cognito-idp.us-east-2.amazonaws .com/us-east-2_XaRYHsmKB/
+     * .well-known/jwks.json
      *
      * @see Keys
      * @see KeysItem
@@ -296,10 +298,9 @@ public class AuthController extends HttpServlet implements PropLoader
 
         try
         {
-            URL  jwksURL  = new URL(String.format(
+            URL jwksURL = new URL(String.format(
                     "https://cognito-idp.%s.amazonaws.com/%s/.well-known/jwks" +
-                    ".json",
-                    REGION, POOL_ID));
+                    ".json", REGION, POOL_ID));
             File jwksFile = new File("jwks.json");
             FileUtils.copyURLToFile(jwksURL, jwksFile);
             jwks = mapper.readValue(jwksFile, Keys.class);
@@ -321,7 +322,8 @@ public class AuthController extends HttpServlet implements PropLoader
      * Read in the cognito props file and get/set the client id, secret, and
      * required urls for authenticating a user.
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
+    // TODO This code appears in a couple classes, consider using a startup
+    //  servlet similar to adv java project
     private void loadProperties()
     {
         try

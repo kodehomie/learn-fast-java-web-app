@@ -2,7 +2,9 @@ package org.justinhoang;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
+@ServletComponentScan
 @SpringBootApplication
 public class LearnFastApplication
 {
@@ -11,5 +13,4 @@ public class LearnFastApplication
     {
         SpringApplication.run(LearnFastApplication.class, args);
     }
-
 }
