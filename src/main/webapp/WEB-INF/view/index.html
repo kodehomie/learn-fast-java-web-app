@@ -10,13 +10,11 @@
     <!--CSS-->
     <link href = "https://fonts.googleapis.com/icon?family=Material+Icons"
           rel = "stylesheet">
-    <link href = "static/css/materialize.css" type = "text/css"
+    <link href = "css/materialize.css" type = "text/css"
           rel = "stylesheet"
-          media = "screen,projection"
-          th:href="@{/css/materialize.css}"/>
-    <link href = "static/css/style.css" type = "text/css" rel = "stylesheet"
-          media = "screen,projection"
-          th:href="@{/css/materialize.css}"/>
+          media = "screen,projection"/>
+    <link href = "css/style.css" type = "text/css" rel = "stylesheet"
+          media = "screen,projection"/>
     <link rel = "stylesheet"
           href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
@@ -100,9 +98,9 @@
                             <h5 class = "center">Speeds up
                                                  learning</h5>
                             <img class = "center"
-                                 src = "static/img/bear1-index.jpg" width
+                                 src = "img/bear1-index.jpg" width
                                          = "150" alt = "bear"
-                                 th:src = "@{static/img/bear1-index.jpg}"/>
+                                 th:src = "@{img/bear1-index.jpg}"/>
                         </div>
                     </div>
                 </div>
@@ -118,30 +116,31 @@
                                                  Focused</h5>
                             <img class = "center"
                                  src = "img/bear2-index.jpg" width =
-                                         "150" alt = "bear"/>
+                                         "150" alt = "bear" th:src =
+                                         "@{img/bear2-index.jpg}"/>
                         </div>
                     </div>
                 </div>
                 
-                <div class = "col s12 m4">
-                    <div class = "icon-block">
-                        <h2 class = "center materialize-red-text"><i
-                                class = "material-icons">
-                            settings</i></h2>
-                        <div class = "center">
-                            <h5 class = "center">Easy to use</h5>
-                            <img class = "center"
-                                 src = "img/bear3-index.jpg" width =
-                                         "150" alt = "bear"/>
+                <div class = " col s12 m4">
+                            <div class = "icon-block">
+                                <h2 class = "center materialize-red-text"><i
+                                        class = "material-icons">
+                                    settings</i></h2>
+                                <div class = "center">
+                                    <h5 class = "center">Easy to use</h5>
+                                    <img class = "center"
+                                         src = "img/bear3-index.jpg" width =
+                                                 "150" alt = "bear"/>
+                                </div>
+                            </div>
                         </div>
+                    
                     </div>
                 </div>
             
             </div>
-        </div>
-    
-    </div>
-    <br><br>
+            <br><br>
 </main>
 <!--MAIN END-->
 <!--JS SCRIPTS-->
