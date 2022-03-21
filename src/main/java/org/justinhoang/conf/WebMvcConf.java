@@ -13,6 +13,7 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.http.CacheControl;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -45,50 +46,69 @@ public class WebMvcConf implements WebMvcConfigurer, ApplicationContextAware
     /* ******************************************************************* */
 
     @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry)
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
     {
         WebMvcConfigurer.super.addResourceHandlers(registry);
         registry.addResourceHandler("/img/**")
-                .addResourceLocations("classpath:/img/");
+                .addResourceLocations("classpath:/img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/**")
-                .addResourceLocations("classpath:/css/");
+                .addResourceLocations("classpath:/css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/**")
-                .addResourceLocations("classpath:/js/");
+                .addResourceLocations("classpath:/js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
 
         registry.addResourceHandler("/img/*")
-                .addResourceLocations("classpath:/img/");
+                .addResourceLocations("classpath:/img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/*")
-                .addResourceLocations("classpath:/css/");
+                .addResourceLocations("classpath:/css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/*")
-                .addResourceLocations("classpath:/js/");
+                .addResourceLocations("classpath:/js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
 
         registry.addResourceHandler("/img/")
-                .addResourceLocations("classpath:/img/");
+                .addResourceLocations("classpath:/img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/")
-                .addResourceLocations("classpath:/css/");
+                .addResourceLocations("classpath:/css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/")
-                .addResourceLocations("classpath:/js/");
+                .addResourceLocations("classpath:/js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
 
         registry.addResourceHandler("/img/**")
-                .addResourceLocations("classpath:img/");
+                .addResourceLocations("classpath:img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/**")
-                .addResourceLocations("classpath:css/");
+                .addResourceLocations("classpath:css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/**")
-                .addResourceLocations("classpath:js/");
+                .addResourceLocations("classpath:js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
 
         registry.addResourceHandler("/img/*")
-                .addResourceLocations("classpath:img/");
+                .addResourceLocations("classpath:img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/*")
-                .addResourceLocations("classpath:css/");
+                .addResourceLocations("classpath:css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/*")
-                .addResourceLocations("classpath:js/");
+                .addResourceLocations("classpath:js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
 
         registry.addResourceHandler("/img/")
-                .addResourceLocations("classpath:img/");
+                .addResourceLocations("classpath:img/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/css/")
-                .addResourceLocations("classpath:css/");
+                .addResourceLocations("classpath:css/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
         registry.addResourceHandler("/js/")
-                .addResourceLocations("classpath:js/");
+                .addResourceLocations("classpath:js/").resourceChain(true)
+                .addResolver(new PathResourceResolver());
+
     }
 
     @Bean
