@@ -1,60 +1,149 @@
 <html lang = "en" xmlns:th = "http://www.thymeleaf.org">
 
 <head>
-    <!-- Required meta tags -->
+    <title>Create User</title>
+    <!-- META -->
     <meta charset = "utf-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1">
     
-    <!-- Bootstrap CSS -->
+    <!--MATERIALIZE CSS-->
+    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel = "stylesheet">
+    <link href = "resources/css/materialize.css" type = "text/css"
+          rel = "stylesheet"
+          media = "screen,projection"/>
+    <link href = "resources/css/style.css" type = "text/css" rel = "stylesheet"
+          media = "screen,projection"/>
+    <!-- Compiled and minified CSS -->
+    <link rel = "stylesheet"
+          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- BOOTSTRAP CSS -->
     <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel = "stylesheet"
           integrity = "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin = "anonymous">
-    
-    <title>Create Users</title>
 </head>
+
 <body>
+<!--TOP NAV-->
+<nav class = "sticky materialize-red lighten-2" id = "nav" role = "navigation">
+    <div class = "navbar-fixed">
+        
+        <ul class = "left show-on-small">
+            <li><a id = "logo-container" href = "welcome"
+                   class = "left brand-logo show-on-small">Learn Fast</a></li>
+        </ul>
+        <ul id = "nav-mobile" class = "right hide-on-small-only">
+            <li><a href = "usersRead">User Listing</a></li>
+            <li><a href = "#">2</a></li>
+            <li><a href = "#">3</a></li>
+        </ul>
+    
+    </div>
+</nav>
+<!--TOP NAV END-->
 
-<div class = "container-fluid">
+<div id = "page-container">
+    <div id = "content-wrap">
+        <div class = "content" id = "content">
+            <div class = "section no-pad-bot" id = "index-banner">
+                <div class = "container">
+                    <br><br>
+                    <h1 class = "header center">User Data</h1>
+                    <div class = "row center">
+                        <h5 class = "header col s12 light"></h5>
+                    </div>
+                    <br><br>
+                
+                </div>
+            </div>
+            
+            <hr/>
+            <div class = "container">
+                <section class = "section">
+                    
+                    <form th:action = "@{/userUpdate}" th:object = "${user}"
+                          method = "POST">
+                        
+                        <input type = "text" th:field = "*{birthdate}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter Birthdate"/>
+                        <input type = "text" th:field = "*{email}"
+                               class = "form-control col-4 mb-4"
+                               placeholder = "Enter email"/>
+                        <input type = "text" th:field = "*{phoneNumber}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter phone number"/>
+                        <input type = "text" th:field = "*{givenName}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter first name"/>
+                        <input type = "text" th:field = "*{familyName}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter last name"/>
+                        <input type = "text" th:field = "*{gender}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter gender"/>
+                        <input type = "text" th:field = "*{username}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter username"/>
+                        <input type = "text" th:field = "*{password}"
+                               class = "form-control col-4 mb-4" placeholder =
+                                       "Enter password"/>
+                        
+                        
+                        <button type = "submit" class = "btn btn-success col-2">
+                            Save
+                        </button>
+                        <input type = "hidden" th:field = "*{id}"/>
+                    
+                    </form>
+                    <hr/>
+                    <a th:href = "@{/usersRead}">Back to user listing</a>
+                </section>
+            </div>
+        </div>
+    </div>
     
-    <h3>Create Users</h3>
-    <hr/>
     
-    <form th:action = "@{/userUpdate}" th:object = "${user}"
-          method = "POST">
-        
-        <input type = "text" th:field = "*{birthdate}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter Birthdate"/>
-        <input type = "text" th:field = "*{email}"
-               class = "form-control col-4 mb-4" placeholder = "Enter email"/>
-        <input type = "text" th:field = "*{phoneNumber}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter phone number"/>
-        <input type = "text" th:field = "*{givenName}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter first name"/>
-        <input type = "text" th:field = "*{familyName}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter last name"/>
-        <input type = "text" th:field = "*{gender}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter gender"/>
-        <input type = "text" th:field = "*{username}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter Username"/>
-        <input type = "text" th:field = "*{password}"
-               class = "form-control col-4 mb-4" placeholder =
-                       "Enter Password"/>
-        
-        
-        <button type = "submit" class = "btn btn-success col-2">Save</button>
-        <input type = "hidden" th:field = "*{id}"/>
-    
-    </form>
-    <hr/>
-    <a th:href = "@{/read}">Back to user listing</a>
-</div>
-
+    <!--JS SCRIPTS-->
+    <script src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "resources/js/materialize.js"></script>
+    <script src = "resources/js/init.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type = "text/javascript"
+            src = "https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!--JS SCRIPTS END-->
 </body>
+<!--NAV-->
+<div class = "bottomNav">
+    <nav class = "navbar fixed-bottom materialize-red lighten-2"
+         role = "navigation">
+        <div class = "nav-wrapper container">
+            
+            <div class = "center container">
+                <ul class = "center container" id = "nav-bottom">
+                    <li><a href = "welcome"><i class = "material-icons">home</i></a>
+                    </li>
+                    <li><a href = "#"><i class = "material-icons">search</i></a>
+                    </li>
+                    <li><a href = "#"><i
+                            class = "material-icons">ondemand_video</i></a>
+                    </li>
+                    <li><a href = "#"><i class = "material-icons">shop</i></a>
+                    </li>
+                    <li><a href = "#"><i class = "material-icons">chat</i></a>
+                    </li>
+                    <li><a href = "#"><i class = "material-icons">person_pin</i></a>
+                    </li>
+                </ul>
+            </div>
+            
+            </ul>
+        
+        </div>
+    </nav>
+</div>
+<!--NAV END-->
 </html>
