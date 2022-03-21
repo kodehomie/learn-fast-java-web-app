@@ -29,7 +29,7 @@ public class UserController
         return mav;
     }
 
-    @GetMapping({"/read"})
+    @GetMapping({"/usersRead"})
     public ModelAndView getAllUsers()
     {
         ModelAndView mav = new ModelAndView("users-read");

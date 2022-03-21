@@ -24,8 +24,10 @@ public class WebMvcConf implements WebMvcConfigurer
     {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("welcome").setViewName("welcome");
-        registry.addViewController("users-read").setViewName("users-read");
-        registry.addViewController("users-create-form")
+        registry.addViewController("userCreateForm")
+                .setViewName("users-create-form");
+        registry.addViewController("usersRead").setViewName("users-read");
+        registry.addViewController("userUpdateForm")
                 .setViewName("users-create-form");
     }
 
