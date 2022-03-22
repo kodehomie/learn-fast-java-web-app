@@ -1,62 +1,57 @@
 package org.justinhoang.controller;
 
 import org.justinhoang.entity.User;
-import org.justinhoang.persistence.UserRepo;
+import org.justinhoang.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
+@RequestMapping("/user")
 public class UserController
 {
 
-    private final UserRepo userRepo;
+    @Autowired
+    private UserService userService;
 
-    public UserController(final UserRepo userRepo)
+    @PostMapping("/userCreate")
+    public String createUser(@ModelAttribute("user") User entity)
     {
-        this.userRepo = userRepo;
+        userService.createUser(entity);
+        return "redirect:/user/users-read";
     }
 
     @GetMapping("/userCreateForm")
-    public ModelAndView userCreateForm()
+    public String userCreateForm(Model entity)
     {
-        ModelAndView mav  = new ModelAndView("user-create-form");
-        User         user = new User();
-        mav.addObject("user", user);
-        return mav;
+        User user = new User();
+        entity.addAttribute("user", user);
+        return "user-form";
     }
 
-    @GetMapping({"/usersRead"})
-    public ModelAndView getAllUsers()
+    @GetMapping("/usersRead")
+    public String usersRead(Model entity)
     {
-        ModelAndView mav = new ModelAndView("users-read");
-        mav.addObject("users", userRepo.findAll());
-        return mav;
-    }
-
-    @PostMapping("/userUpdate")
-    public String saveUser(@ModelAttribute User user)
-    {
-        userRepo.save(user);
-        return "redirect:/list";
+        List<User> users = userService.readUsers();
+        entity.addAttribute("users", users);
+        return "users-read";
     }
 
     @GetMapping("/userUpdateForm")
-    public ModelAndView userUpdateForm(@RequestParam Long userId)
+    public String userUpdateForm(@RequestParam("id") Long id, Model entity)
     {
-        ModelAndView mav  = new ModelAndView("user-create-form");
-        User         user = userRepo.findById(userId).get();
-        mav.addObject("user", user);
-        return mav;
+        User user = userService.readUser(id);
+        entity.addAttribute("user", user);
+        return "user-form";
     }
 
     @GetMapping("/userDelete")
-    public String deleteUser(@RequestParam Long id)
+    public String userDelete(@RequestParam("id") Long id)
     {
-        userRepo.deleteById(id);
-        return "redirect:/list";
+        userService.deleteUser(id);
+        return "redirect:/user/users-read";
     }
 }

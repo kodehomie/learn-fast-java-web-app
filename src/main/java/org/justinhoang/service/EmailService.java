@@ -1,120 +1,62 @@
 package org.justinhoang.service;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.justinhoang.conf.EmailConf;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.MailException;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.mail.javamail.MimeMessagePreparator;
-import org.springframework.stereotype.Service;
-
+import javax.mail.Authenticator;
 import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.io.File;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import java.util.Date;
+import java.util.Properties;
 
-@Service("emailService")
+@Path("/email")
 public class EmailService
 {
-    private final Logger log = LogManager.getLogger(this.getClass());
-
-    @Autowired
-    private JavaMailSender    mailSender;
-    @Autowired
-    private SimpleMailMessage preConfiguredMessage;
-
-    public void sendMail()
+    @POST
+    public String lowerCase(final String message)
     {
-        EmailConf emailConf = new EmailConf();
-        emailConf.emailTemplate();
-    }
-
-    public void sendMail(String recipient, String subject, String body)
-    {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(recipient);
-        message.setSubject(subject);
-        message.setText(body);
-        mailSender.send(message);
-    }
-
-    /**
-     * This method will send a pre-configured message
-     */
-    public void sendPreConfiguredMail(String message)
-    {
-        SimpleMailMessage mailMessage =
-                new SimpleMailMessage(preConfiguredMessage);
-        mailMessage.setText(message);
-        mailSender.send(mailMessage);
-    }
-
-    public void sendMailWithAttachment(String recipient, String subject,
-                                       String body, String fileToAttach)
-    {
-        MimeMessagePreparator preparator = new MimeMessagePreparator()
-        {
-            public void prepare(MimeMessage mimeMessage) throws Exception
-            {
-                mimeMessage.setRecipient(Message.RecipientType.TO,
-                                         new InternetAddress(recipient));
-                mimeMessage.setFrom(new InternetAddress("sender@gmail.com"));
-                mimeMessage.setSubject(subject);
-                mimeMessage.setText(body);
-
-                FileSystemResource file =
-                        new FileSystemResource(new File(fileToAttach));
-                MimeMessageHelper helper =
-                        new MimeMessageHelper(mimeMessage, true);
-                helper.addAttachment("logo.jpg", file);
-            }
-        };
-
         try
         {
-            mailSender.send(preparator);
+            //Create some properties and get the default Session
+            final Properties props = new Properties();
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.debug", "true");
+            final Session session =
+                    Session.getInstance(props, new Authenticator()
+                    {
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication()
+                        {
+                            return new PasswordAuthentication("MyUsername",
+                                                              "MyPassword");
+                        }
+                    });
+            //Set this just to see some internal logging
+            session.setDebug(true);
+            //Create a message
+            final MimeMessage msg = new MimeMessage(session);
+            msg.setFrom(new InternetAddress("sender@host.com"));
+            final InternetAddress[] address =
+                    {new InternetAddress("addy@host.com")};
+            msg.setRecipients(Message.RecipientType.TO, address);
+            msg.setSubject("JavaMail API test");
+            msg.setSentDate(new Date());
+            msg.setText(message, "UTF-8");
+            Transport.send(msg);
         }
-        catch (MailException e)
+        catch (AddressException e)
         {
-            log.error(e.getMessage());
+            return "Failed to send message: " + e.getMessage();
         }
-    }
-
-    public void sendMailWithInlineResources(String recipient, String subject,
-                                            String fileToAttach)
-    {
-        MimeMessagePreparator preparator = new MimeMessagePreparator()
+        catch (MessagingException e)
         {
-            public void prepare(MimeMessage mimeMessage) throws Exception
-            {
-                mimeMessage.setRecipient(Message.RecipientType.TO,
-                                         new InternetAddress(recipient));
-                mimeMessage.setFrom(new InternetAddress("sender@gmail.com"));
-                mimeMessage.setSubject(subject);
-
-                MimeMessageHelper helper =
-                        new MimeMessageHelper(mimeMessage, true);
-
-                helper.setText("<html><body><img " +
-                               "src='cid:identifier000'></body></html>", true);
-
-                FileSystemResource res =
-                        new FileSystemResource(new File(fileToAttach));
-                helper.addInline("identifier000", res);
-            }
-        };
-
-        try
-        {
-            mailSender.send(preparator);
+            return "Failed to send message: " + e.getMessage();
         }
-        catch (MailException e)
-        {
-            log.error(e.getMessage());
-        }
+        return "Sent";
     }
 }

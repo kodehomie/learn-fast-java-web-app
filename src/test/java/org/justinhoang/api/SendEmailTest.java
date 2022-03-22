@@ -3,8 +3,6 @@ package org.justinhoang.api;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
-import org.justinhoang.conf.EmailConf;
-import org.justinhoang.service.EmailService;
 
 class SendEmailTest
 {
@@ -14,10 +12,7 @@ class SendEmailTest
     @Test
     void sendEmail()
     {
-        EmailConf emailConf = new EmailConf();
-        emailConf.emailTemplate();
-        emailConf.getJavaMailSender();
-        EmailService emailService = new EmailService();
-        emailService.sendMail();
+        SendEmail send = new SendEmail();
+        send.SMTP("subject test", "message test (success)");
     }
 }

@@ -15,9 +15,9 @@ public abstract class AbsHibernateDao<T extends Serializable>
     @Autowired
     protected SessionFactory sessionFactory;
 
-    public void setClazz(final Class<T> clazzToSet)
+    public void setClassx(Class<T> classx)
     {
-        classx = Preconditions.checkNotNull(clazzToSet);
+        classx = Preconditions.checkNotNull(classx);
     }
 
     public T create(final T entity)
