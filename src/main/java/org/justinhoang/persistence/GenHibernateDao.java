@@ -11,9 +11,5 @@ import java.io.Serializable;
 public class GenHibernateDao<T extends Serializable> extends AbsHibernateDao<T>
         implements GenDaoInt<T>
 {
-    @Override
-    public void setClassx(final Class<T> classx)
-    {
 
-    }
 }

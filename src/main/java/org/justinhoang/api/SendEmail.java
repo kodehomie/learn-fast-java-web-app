@@ -54,7 +54,7 @@ public class SendEmail
             {
                 return new PasswordAuthentication(
                         properties.getProperty("sender"),
-                        properties.getProperty("password"));
+                        properties.getProperty("jm.password"));
             }
         };
         Session session = Session.getDefaultInstance(prop, auth);

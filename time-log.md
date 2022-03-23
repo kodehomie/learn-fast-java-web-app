@@ -91,7 +91,7 @@
 ### Week 10
 * 2022-MAR-20-SUN - 6 hours
 * 2022-MAR-21-MON - 5 hours
-* 2022-MAR-22-TUE - 
+* 2022-MAR-22-TUE - 5 hours
 * 2022-MAR-23-WED - 
 * 2022-MAR-24-THU - 
 * 2022-MAR-25-FRI - 

@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface GenDaoInt<T extends Serializable>
 {
-    void setClassx(Class<T> classx);
 
     T create(final T entity);
 

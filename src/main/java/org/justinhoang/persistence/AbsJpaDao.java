@@ -1,7 +1,5 @@
 package org.justinhoang.persistence;
 
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
@@ -9,14 +7,14 @@ import java.util.List;
 
 public abstract class AbsJpaDao<T extends Serializable>
 {
-    private Class<T> classx;
+    private Class<T> clazz;
 
     @PersistenceContext(unitName = "entityManagerFactory")
     private EntityManager entityManager;
 
-    public final void setClassx(final Class<T> classx)
+    public final void setClazz(final Class<T> classx)
     {
-        this.classx = classx;
+        this.clazz = clazz;
     }
 
     public T create(final T entity)
@@ -27,13 +25,13 @@ public abstract class AbsJpaDao<T extends Serializable>
 
     public T readId(final long id)
     {
-        return entityManager.find(classx, id);
+        return entityManager.find(clazz, id);
     }
 
     @SuppressWarnings("unchecked")
     public List<T> readAll()
     {
-        return entityManager.createQuery("from " + classx.getName())
+        return entityManager.createQuery("from " + clazz.getName())
                             .getResultList();
     }
 

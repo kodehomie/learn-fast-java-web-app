@@ -10,14 +10,14 @@ import java.util.List;
 
 public abstract class AbsHibernateDao<T extends Serializable>
 {
-    private Class<T> classx;
+    private Class<T> clazz;
 
     @Autowired
     protected SessionFactory sessionFactory;
 
-    public void setClassx(Class<T> classx)
+    public void setClazz(Class<T> clazz)
     {
-        classx = Preconditions.checkNotNull(classx);
+        clazz = Preconditions.checkNotNull(clazz);
     }
 
     public T create(final T entity)
@@ -29,12 +29,12 @@ public abstract class AbsHibernateDao<T extends Serializable>
 
     public T readId(final long id)
     {
-        return (T) getCurrentSession().get(classx, id);
+        return (T) getCurrentSession().get(clazz, id);
     }
 
     public List<T> readAll()
     {
-        return getCurrentSession().createQuery("from " + classx.getName())
+        return getCurrentSession().createQuery("from " + clazz.getName())
                                   .list();
     }
 
