@@ -1,0 +1,52 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+/*MATERIALIZE STARTER*/
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+/*MATERIALIZE STARTER END*/
+
+/*FIXED*/
+body {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.containerx {
+    width: 100%;
+    margin: auto;
+}
+
+.fixed-header, .fixed-footer {
+    width: 100%;
+    position: fixed;
+}
+
+.fixed-header {
+    top: 0;
+    background-color: #e57373;
+}
+
+.fixed-footer {
+    bottom: 0;
+    background-color: #e57373;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.containerx p {
+    line-height: 10rem;
+}
+
+/*FIXED END*/

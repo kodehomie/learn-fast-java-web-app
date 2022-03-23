@@ -57,42 +57,4 @@ public class WebMvcConf implements WebMvcConfigurer
                 .addResourceLocations("classpath:/jsp/").resourceChain(false)
                 .addResolver(new PathResourceResolver());
     }
-
-
-    //
-    //    @Bean
-    //    public ResourceBundleMessageSource messageSource()
-    //    {
-    //        ResourceBundleMessageSource messageSource =
-    //                new ResourceBundleMessageSource();
-    //        messageSource.setBasename("Messages");
-    //        return messageSource;
-    //    }
-
-    //    @Override
-    //    public void addViewControllers(ViewControllerRegistry registry)
-    //    {
-    //        registry.addViewController("/")
-    //                .setViewName("/WEB-INF/view/index");
-    //        registry.addViewController("welcome").setViewName("welcome");
-    //        registry.addViewController("userCreateForm")
-    //                .setViewName("users-create-form");
-    //        registry.addViewController("usersRead").setViewName("users-read");
-    //        registry.addViewController("userUpdateForm")
-    //                .setViewName("users-create-form");
-    //        registry.addViewController("jsp").setViewName("jsp/sample");
-    //    }
-    //
-    //    @Bean
-    //    public ViewResolver internalResourceViewResolver()
-    //    {
-    //        InternalResourceViewResolver resolver =
-    //                new InternalResourceViewResolver();
-    //        resolver.setPrefix("/WEB-INF/view");
-    //        resolver.setSuffix(".jsp");
-    //        resolver.setViewNames("view/*");
-    //        resolver.setOrder(2);
-    //        return resolver;
-    //    }
-
 }
