@@ -105,6 +105,8 @@ fabric.properties
 .properties
 *.config
 .config
+*.conf
+.conf
 app.properties
 db.properties
 https-instance.config
