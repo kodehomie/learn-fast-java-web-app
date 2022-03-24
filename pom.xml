@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns = "http://maven.apache.org/POM/4.0.0"
          xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.justinhoang</groupId>
     <artifactId>LearnFast</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>LearnFast</name>
-    <description>LearnFast</description>
-    <url>https://www.example.com</url>
+    <name>LearnFast Maven Webapp</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
 
     <properties>
-
         <!--ORIGINAL PROPERTIES-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.release>11</maven.compiler.release>
-        <java.version>11</java.version>
         <!--ORIGINAL PROPERTIES END-->
 
         <!--MAVEN PROPERTIES-->
+        <maven.compiler.release>11</maven.compiler.release>
+        <java.version>11</java.version>
         <maven.compiler.release>11</maven.compiler.release>
         <maven-clean-plugin-version>3.1.0</maven-clean-plugin-version>
         <maven-resource-plugin-version>3.2.0</maven-resource-plugin-version>
@@ -43,7 +43,8 @@
         <hibernate-validator-version>7.0.4.Final</hibernate-validator-version>
         <jstl-version>1.2</jstl-version>
         <taglibs-version>1.1.2</taglibs-version>
-        <javax-servlet-jsp-jstl-api-version>1.2.2</javax-servlet-jsp-jstl-api-version>
+        <javax-servlet-jsp-jstl-api-version>1.2.2
+        </javax-servlet-jsp-jstl-api-version>
         <javax-servlet-api-version>4.0.1</javax-servlet-api-version>
         <jsp.version>2.3.3</jsp.version>
         <javax.version>8.0.1</javax.version>
@@ -66,12 +67,18 @@
         <jackson-databind-version>2.13.2</jackson-databind-version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <!--ADDITIONAL PROPERTIES END-->
-
     </properties>
 
     <dependencies>
-
-        <!--ORIGINAL DEPENDENCIES-->
+        <!--ORIGINAL DEPENDENCY-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!--ORIGINAL DEPENDENCY END-->
+        <!--CORE DEPENDENCIES-->
         <!--SPRING-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
         <dependency>
@@ -105,18 +112,6 @@
             <version>${hibernate-c3p0-version}</version>
             <type>pom</type>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate.javax.persistence</groupId>-->
-<!--            <artifactId>hibernate-jpa-2.1-api</artifactId>-->
-<!--            <version>1.0.2.Final</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax.validation/validation-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax.validation</groupId>-->
-<!--            <artifactId>validation-api</artifactId>-->
-<!--            <version>2.0.1.Final</version>-->
-<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
@@ -174,14 +169,6 @@
             <version>2.1.1</version>
             <scope>provided</scope>
         </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/javax/javaee-api &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>javax</groupId>-->
-<!--            <artifactId>javaee-api</artifactId>-->
-<!--            <version>8.0.1</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
         <!--        JSP-->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
@@ -271,7 +258,7 @@
             <version>${maven-deploy-plugin-version}</version>
         </dependency>
 
-        <!--ORIGINAL DEPENDENCIES END-->
+        <!--CORE DEPENDENCIES END-->
         <!--ADDITIONAL DEPENDENCIES-->
 
         <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
@@ -317,7 +304,6 @@
             <version>3.0.4</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -338,11 +324,12 @@
         </dependency>
 
         <!--ADDITIONAL DEPENDENCIES END-->
+
     </dependencies>
 
     <build>
         <finalName>LearnFast</finalName>
-        <pluginManagement>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
 
                 <!--ORIGINAL PLUGINS-->
@@ -412,5 +399,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
