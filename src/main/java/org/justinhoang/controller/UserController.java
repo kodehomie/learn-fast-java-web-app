@@ -20,6 +20,11 @@ public class UserController
     @Autowired
     private UserService userService;
 
+    public UserController(UserService userService) {
+        super();
+        this.userService = userService;
+    }
+
     /**
      * Create user string.
      *
@@ -29,7 +34,7 @@ public class UserController
      * @return the string
      */
     @PostMapping("/userCreate")
-    public String createUser(@ModelAttribute("user") User entity)
+    public String userCreate(@ModelAttribute("user") User entity)
     {
         userService.createUser(entity);
         return "redirect:/user/users-read";

@@ -9,7 +9,6 @@ import java.util.List;
  */
 public interface UserService
 {
-
     /**
      * Create user.
      *
@@ -36,11 +35,18 @@ public interface UserService
     List<User> readUsers();
 
     /**
+     * Update user.
+     *
+     * @param user
+     *         the user
+     */
+    void updateUser(User user);
+
+    /**
      * Delete user.
      *
      * @param id
      *         the id
      */
     void deleteUser(Long id);
-
 }

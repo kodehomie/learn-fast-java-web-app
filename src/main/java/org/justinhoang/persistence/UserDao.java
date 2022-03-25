@@ -10,6 +10,14 @@ import java.util.List;
 public interface UserDao
 {
     /**
+     * Create user.
+     *
+     * @param user
+     *         the user
+     */
+    void createUser(User user);
+
+    /**
      * Read user user.
      *
      * @param id
@@ -27,12 +35,12 @@ public interface UserDao
     List<User> readUsers();
 
     /**
-     * Create user.
+     * Update user.
      *
      * @param user
      *         the user
      */
-    void createUser(User user);
+    void updateUser(User user);
 
     /**
      * Delete user.
