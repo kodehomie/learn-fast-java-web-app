@@ -14,11 +14,17 @@ import org.justinhoang.util.PropLoader;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * The type Pro quote dao.
+ */
 public class ProQuoteDao implements PropLoader
 {
     private final Logger     log = LogManager.getLogger(this.getClass());
     private       Properties prop;
 
+    /**
+     * Instantiates a new Pro quote dao.
+     */
     public ProQuoteDao()
     {
         load();
@@ -42,6 +48,11 @@ public class ProQuoteDao implements PropLoader
         }
     }
 
+    /**
+     * Gets quote.
+     *
+     * @return the quote
+     */
     public ProgrammingQuotes getQuote()
     {
         Client    client = ClientBuilder.newClient();

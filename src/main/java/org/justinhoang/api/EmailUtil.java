@@ -10,10 +10,25 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Date;
 
+/**
+ * The type Email util.
+ */
 public class EmailUtil
 {
     private final Logger log = LogManager.getLogger(this.getClass());
 
+    /**
+     * Send email.
+     *
+     * @param session
+     *         the session
+     * @param recipient
+     *         the recipient
+     * @param subject
+     *         the subject
+     * @param body
+     *         the body
+     */
     public static void sendEmail(Session session, String recipient,
                                  String subject, String body)
     {

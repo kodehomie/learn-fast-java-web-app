@@ -12,6 +12,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+/**
+ * The type User dao imp.
+ */
 @Repository
 public class UserDaoImp implements UserDao
 {
@@ -30,17 +33,17 @@ public class UserDaoImp implements UserDao
     public User readUser(Long id)
     {
         Session currentSession = sessionFactory.getCurrentSession();
-        User    user        = currentSession.get(User.class, id);
+        User    user           = currentSession.get(User.class, id);
         return user;
     }
 
     @Override
     public List<User> readUsers()
     {
-        Session session = sessionFactory.getCurrentSession();
-        CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery<User> cq   = cb.createQuery(User.class);
-        Root<User>          root = cq.from(User.class);
+        Session             session = sessionFactory.getCurrentSession();
+        CriteriaBuilder     cb      = session.getCriteriaBuilder();
+        CriteriaQuery<User> cq      = cb.createQuery(User.class);
+        Root<User>          root    = cq.from(User.class);
         cq.select(root);
         Query query = session.createQuery(cq);
         return query.getResultList();
@@ -53,6 +56,5 @@ public class UserDaoImp implements UserDao
         User    user    = session.byId(User.class).load(id);
         session.delete(user);
     }
-
 
 }

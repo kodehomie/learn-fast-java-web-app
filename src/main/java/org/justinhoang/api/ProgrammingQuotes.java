@@ -2,6 +2,9 @@ package org.justinhoang.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * The type Programming quotes.
+ */
 public class ProgrammingQuotes
 {
 
@@ -14,31 +17,64 @@ public class ProgrammingQuotes
     @JsonProperty("id")
     private String id;
 
+    /**
+     * Sets author.
+     *
+     * @param author
+     *         the author
+     */
     public void setAuthor(String author)
     {
         this.author = author;
     }
 
+    /**
+     * Gets author.
+     *
+     * @return the author
+     */
     public String getAuthor()
     {
         return author;
     }
 
+    /**
+     * Sets en.
+     *
+     * @param en
+     *         the en
+     */
     public void setEn(String en)
     {
         this.en = en;
     }
 
+    /**
+     * Gets en.
+     *
+     * @return the en
+     */
     public String getEn()
     {
         return en;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id
+     *         the id
+     */
     public void setId(String id)
     {
         this.id = id;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public String getId()
     {
         return id;

@@ -10,11 +10,19 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+/**
+ * The type Web mvc conf.
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.justinhoang"})
 public class WebMvcConf implements WebMvcConfigurer
 {
+    /**
+     * Resolver internal resource view resolver.
+     *
+     * @return the internal resource view resolver
+     */
     @Bean
     public InternalResourceViewResolver resolver()
     {

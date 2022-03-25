@@ -6,8 +6,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * The interface Prop loader.
+ */
 public interface PropLoader
 {
+    /**
+     * Load properties.
+     *
+     * @param filePath
+     *         the file path
+     *
+     * @return the properties
+     */
     default Properties load(String filePath)
     {
         Properties properties = new Properties();
@@ -15,8 +26,13 @@ public interface PropLoader
         {
             properties.load(inputStream);
         }
-        catch (IOException ignore)
+        catch (IOException ioe)
         {
+            ioe.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
         }
         return properties;
     }

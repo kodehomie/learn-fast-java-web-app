@@ -2,7 +2,9 @@ package org.justinhoang.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-
+/**
+ * The type App init.
+ */
 public class AppInit
         extends AbstractAnnotationConfigDispatcherServletInitializer
 {

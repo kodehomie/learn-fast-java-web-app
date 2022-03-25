@@ -10,7 +10,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.auth.*;
 import org.justinhoang.util.PropLoader;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,20 +38,50 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+/**
+ * The type Auth controller.
+ */
 @WebServlet(urlPatterns = {"/auth"})
 // TODO if something goes wrong it this process, route to an error page.
 //  Currently, errors are only caught and logged.
 
 public class AuthController extends HttpServlet implements PropLoader
 {
+    /**
+     * The Properties.
+     */
     Properties properties;
+    /**
+     * The Client id.
+     */
     String     CLIENT_ID;
+    /**
+     * The Client secret.
+     */
     String     CLIENT_SECRET;
+    /**
+     * The Oauth url.
+     */
     String     OAUTH_URL;
+    /**
+     * The Login url.
+     */
     String     LOGIN_URL;
+    /**
+     * The Redirect url.
+     */
     String     REDIRECT_URL;
+    /**
+     * The Region.
+     */
     String     REGION;
+    /**
+     * The Pool id.
+     */
     String     POOL_ID;
+    /**
+     * The Jwks.
+     */
     Keys       jwks;
 
     private final Logger logger = LogManager.getLogger(this.getClass());

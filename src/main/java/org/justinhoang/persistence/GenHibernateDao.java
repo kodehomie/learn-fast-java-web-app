@@ -6,6 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
 
+/**
+ * The type Gen hibernate dao.
+ *
+ * @param <T>
+ *         the type parameter
+ */
 @Repository
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class GenHibernateDao<T extends Serializable> extends AbsHibernateDao<T>

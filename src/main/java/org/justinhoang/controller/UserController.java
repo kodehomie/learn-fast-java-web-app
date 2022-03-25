@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * The type User controller.
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController
@@ -17,6 +20,14 @@ public class UserController
     @Autowired
     private UserService userService;
 
+    /**
+     * Create user string.
+     *
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @PostMapping("/userCreate")
     public String createUser(@ModelAttribute("user") User entity)
     {
@@ -24,6 +35,14 @@ public class UserController
         return "redirect:/user/users-read";
     }
 
+    /**
+     * User create form string.
+     *
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @GetMapping("/userCreateForm")
     public String userCreateForm(Model entity)
     {
@@ -32,6 +51,14 @@ public class UserController
         return "user-form";
     }
 
+    /**
+     * Users read string.
+     *
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @GetMapping("/usersRead")
     public String usersRead(Model entity)
     {
@@ -40,6 +67,16 @@ public class UserController
         return "users-read";
     }
 
+    /**
+     * User update form string.
+     *
+     * @param id
+     *         the id
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @GetMapping("/userUpdateForm")
     public String userUpdateForm(@RequestParam("id") Long id, Model entity)
     {
@@ -48,6 +85,14 @@ public class UserController
         return "user-form";
     }
 
+    /**
+     * User delete string.
+     *
+     * @param id
+     *         the id
+     *
+     * @return the string
+     */
     @GetMapping("/userDelete")
     public String userDelete(@RequestParam("id") Long id)
     {

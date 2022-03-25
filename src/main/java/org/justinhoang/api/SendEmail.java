@@ -9,12 +9,18 @@ import javax.mail.Session;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * The type Send email.
+ */
 public class SendEmail
 {
 
     private final  Logger     log = LogManager.getLogger(this.getClass());
     private static Properties properties;
 
+    /**
+     * Instantiates a new Send email.
+     */
     public SendEmail()
     {
         load();
@@ -38,6 +44,14 @@ public class SendEmail
         }
     }
 
+    /**
+     * Smtp.
+     *
+     * @param Subject
+     *         the subject
+     * @param msg
+     *         the msg
+     */
     public void SMTP(String Subject, String msg)
     {
         Properties prop = new Properties();

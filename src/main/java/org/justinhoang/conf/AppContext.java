@@ -13,6 +13,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * The type App context.
+ */
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
@@ -22,6 +25,11 @@ public class AppContext
     @Autowired
     private Environment environment;
 
+    /**
+     * Session factory local session factory bean.
+     *
+     * @return the local session factory bean
+     */
     @Bean
     public LocalSessionFactoryBean sessionFactory()
     {
@@ -32,6 +40,11 @@ public class AppContext
         return sessionFactory;
     }
 
+    /**
+     * Data source data source.
+     *
+     * @return the data source
+     */
     @Bean
     public DataSource dataSource()
     {
@@ -61,6 +74,11 @@ public class AppContext
         return properties;
     }
 
+    /**
+     * Gets transaction manager.
+     *
+     * @return the transaction manager
+     */
     @Bean
     public HibernateTransactionManager getTransactionManager()
     {
