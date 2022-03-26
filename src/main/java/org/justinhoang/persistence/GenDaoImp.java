@@ -33,10 +33,10 @@ public class GenDaoImp<T> implements GenDao
     private SessionFactory sessionFactory;
 
     @Override
-    public void create(final Serializable entity)
+    public void create(Object o)
     {
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.saveOrUpdate(entity);
+        currentSession.saveOrUpdate(o);
     }
 
     @Override
@@ -60,17 +60,17 @@ public class GenDaoImp<T> implements GenDao
     }
 
     @Override
-    public void update(final Serializable entity)
+    public void update(Object o)
     {
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.saveOrUpdate(entity);
+        currentSession.saveOrUpdate(o);
     }
 
     @Override
-    public void delete(final Serializable entity)
+    public void delete(Object o)
     {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(entity);
+        session.delete(o);
     }
 
     @Override

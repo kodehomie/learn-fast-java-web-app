@@ -162,7 +162,23 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 9
 
 ##### Dates: 2022-MAR-13-SUN - 2022-MAR-19-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours:
+##### Weekly Java Hours: 26 hours
+##### Total Enterprise Java Hours: 189 hours
+##### Notes:
+- Read addressing REST resources
+- Read RESTful methods
+- Read JAX-RS Annotations
+- Read guidelines for creating a RESTFUL API
+- Watch videos about RESTful service
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
+
+### WEEK 10
+
+##### Dates: 2022-MAR-20-SUN - 2022-MAR-26-SAT
+##### Weekly Java Hours: 
+##### Total Enterprise Java Hours: 
 ##### Notes:
 -

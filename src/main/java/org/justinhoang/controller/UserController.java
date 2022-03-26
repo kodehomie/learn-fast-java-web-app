@@ -1,7 +1,7 @@
 package org.justinhoang.controller;
 
 import org.justinhoang.entity.User;
-import org.justinhoang.service.UserService;
+import org.justinhoang.service.GenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +18,12 @@ public class UserController
 {
 
     @Autowired
-    private UserService userService;
+    private GenService<User> genService;
 
-    public UserController(UserService userService) {
+    public UserController(GenService<User> genService)
+    {
         super();
-        this.userService = userService;
+        this.genService = genService;
     }
 
     /**
@@ -36,7 +37,7 @@ public class UserController
     @PostMapping("/userCreate")
     public String userCreate(@ModelAttribute("user") User entity)
     {
-        userService.createUser(entity);
+        genService.create(entity);
         return "redirect:/user/users-read";
     }
 
@@ -67,7 +68,7 @@ public class UserController
     @GetMapping("/usersRead")
     public String usersRead(Model entity)
     {
-        List<User> users = userService.readUsers();
+        List<User> users = genService.readAll();
         entity.addAttribute("users", users);
         return "users-read";
     }
@@ -85,7 +86,7 @@ public class UserController
     @GetMapping("/userUpdateForm")
     public String userUpdateForm(@RequestParam("id") Long id, Model entity)
     {
-        User user = userService.readUser(id);
+        User user = genService.readId(id);
         entity.addAttribute("user", user);
         return "user-form";
     }
@@ -101,7 +102,7 @@ public class UserController
     @GetMapping("/userDelete")
     public String userDelete(@RequestParam("id") Long id)
     {
-        userService.deleteUser(id);
+        genService.delete(id);
         return "redirect:/user/users-read";
     }
 }

@@ -5,15 +5,15 @@ import java.util.List;
 
 public interface GenDao<T extends Serializable>
 {
-    void create(final T entity);
+    void create(Object o);
 
-    T readId(final Long id);
+    Object readId(Long id);
 
-    List<T> readAll();
+    List<Object> readAll();
 
-    void update(final T entity);
+    void update(Object o);
 
-    void delete(final T entity);
+    void delete(Object o);
 
-    void deleteId(final Long id);
+    void deleteId(Long id);
 }
