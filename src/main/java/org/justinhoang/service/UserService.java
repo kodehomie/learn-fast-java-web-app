@@ -1,52 +1,16 @@
 package org.justinhoang.service;
 
 import org.justinhoang.entity.User;
+import org.justinhoang.exception.ResourceNotFoundException;
 
 import java.util.List;
 
-/**
- * The interface User service.
- */
-public interface UserService
-{
-    /**
-     * Create user.
-     *
-     * @param user
-     *         the user
-     */
+public interface UserService {
+
     void createUser(User user);
-
-    /**
-     * Read user user.
-     *
-     * @param id
-     *         the id
-     *
-     * @return the user
-     */
-    User readUser(Long id);
-
-    /**
-     * Read users list.
-     *
-     * @return the list
-     */
+    User readUser(Long id) throws ResourceNotFoundException;
     List<User> readUsers();
-
-    /**
-     * Update user.
-     *
-     * @param user
-     *         the user
-     */
     void updateUser(User user);
+    void deleteUser(Long id) throws ResourceNotFoundException;
 
-    /**
-     * Delete user.
-     *
-     * @param id
-     *         the id
-     */
-    void deleteUser(Long id);
 }

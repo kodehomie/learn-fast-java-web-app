@@ -2,7 +2,7 @@ package org.justinhoang.persistence;
 
 import org.junit.jupiter.api.Test;
 
-class GenDaoIntTest
+class GenDaoIntIntTest
 {
 
     @Test

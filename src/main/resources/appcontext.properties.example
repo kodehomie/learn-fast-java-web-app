@@ -1,0 +1,60 @@
+#APPLICATION CONTEXT PROPERTIES
+
+#DRIVER MANAGER DATA SOURCE PROPERTIES
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/database
+jdbc.username=username
+jdbc.password=password
+
+#HIBERNATE PROPERTIES
+
+#HIBERNATE JDBC PROPERTIES
+hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver
+hibernate.connection.url=jdbc:mysql://localhost:3306/datbase
+hibernate.connection.username=username
+hibernate.connection.password=password
+#hibernate.connection.url=jdbc:mysql://
+#hibernate.connection.username=
+#hibernate.connection.password=
+hibernate.connection.pool_size=20
+
+#HIBERNATE DATA SOURCE PROPERTIES
+#hibernate.connection.datasource=
+#hibernate.jndi.url=
+#hibernate.jndi.class=
+
+#HIBERNATE CONFIGURATION PROPERTIES
+hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+hibernate.show_sql=true
+hibernate.format_sql=true
+#hibernate.default_catalog=
+#hibernate.default_schema=
+#hibernate.session_factory_name=
+#hibernate.default_entity_mode=
+#hibernate.order_updates=
+#hibernate.use_identifier_rollback=
+#hibernate.generate_statistics=
+#hibernate.use_sql_comments=
+
+#HIBERNATE CACHE PROPERTIES
+#hibernate.cache.provider_class=
+#hibernate.cache.use_minimal_puts=
+#hibernate.cache.use_query_cache=
+#hibernate.cache.use_second_level_cache=
+#hibernate.cache.query_cache_factory=
+#hibernate.cache.region_prefix=
+#hibernate.cache.use_structured_entries=
+
+#HIBERNATE TRANSACTION PROPERTIES
+#hibernate.transaction.factory_class=
+#hibernate.transaction.manager_lookup_class=
+#hibernate.transaction.flush_before_completion=
+#hibernate.transaction.auto_close_session=
+
+#HIBERNATE MISCELLANEOUS PROPERTIES
+#hibernate.connection.provider_class=
+#hibernate.connection.isolation=
+#hibernate.connection.autocommit=
+#hibernate.connection.release_mode=
+#hibernate.current_session_context_class=
+hibernate.hbm2ddl.auto=update

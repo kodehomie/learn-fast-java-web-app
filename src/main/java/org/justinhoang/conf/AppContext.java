@@ -2,14 +2,20 @@ package org.justinhoang.conf;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -17,31 +23,51 @@ import java.util.Properties;
  * The type App context.
  */
 @Configuration
-@PropertySource("classpath:db.properties")
+@PropertySource("classpath:appcontext.properties")
 @EnableTransactionManagement
+@ComponentScan({"org.justinhoang"})
+@EnableJpaRepositories(basePackages = "org.justinhoang.persistence")
 public class AppContext
 {
 
     @Autowired
-    private Environment environment;
+    private Environment env;
 
-    /**
-     * Session factory local session factory bean.
-     *
-     * @return the local session factory bean
-     */
-    @Bean
-    public LocalSessionFactoryBean sessionFactory()
+    public AppContext()
     {
-        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("org.justinhoang.entity");
-        sessionFactory.setHibernateProperties(hibernateProperties());
-        return sessionFactory;
+        super();
+    }
+
+    //    @Bean
+    //    public LocalSessionFactoryBean sessionFactory()
+    //    {
+    //        LocalSessionFactoryBean sessionFactory = new
+    //        LocalSessionFactoryBean();
+    //        sessionFactory.setDataSource(dataSource());
+    //        sessionFactory.setPackagesToScan("org.justinhoang.entity");
+    //        sessionFactory.setHibernateProperties(hibernateProperties());
+    //        return sessionFactory;
+    //    }
+
+    @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory()
+    {
+        final LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
+                new LocalContainerEntityManagerFactoryBean();
+        entityManagerFactoryBean.setDataSource(dataSource());
+        entityManagerFactoryBean.setPackagesToScan(
+                new String[]{"org.justinhoang.entity"});
+
+        final HibernateJpaVendorAdapter vendorAdapter =
+                new HibernateJpaVendorAdapter();
+        entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);
+        entityManagerFactoryBean.setJpaProperties(hibernateProperties());
+
+        return entityManagerFactoryBean;
     }
 
     /**
-     * Data source data source.
+     * Initialize Data source data source.
      *
      * @return the data source
      */
@@ -49,42 +75,55 @@ public class AppContext
     public DataSource dataSource()
     {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(
-                environment.getRequiredProperty("jdbc.driverClassName"));
-        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
-        dataSource.setUsername(
-                environment.getRequiredProperty("jdbc.username"));
-        dataSource.setPassword(
-                environment.getRequiredProperty("jdbc.password"));
+        dataSource.setDriverClassName(env.getRequiredProperty("jdbc.driver"));
+        dataSource.setUrl(env.getRequiredProperty("jdbc.url"));
+        dataSource.setUsername(env.getRequiredProperty("jdbc.username"));
+        dataSource.setPassword(env.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
 
+    // Puts Hibernate properties in environment.
     private Properties hibernateProperties()
     {
         Properties properties = new Properties();
         properties.put("hibernate.dialect",
-                       environment.getRequiredProperty("hibernate.dialect"));
+                       env.getRequiredProperty("hibernate.dialect"));
         properties.put("hibernate.show_sql",
-                       environment.getRequiredProperty("hibernate.show_sql"));
+                       env.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql",
-                       environment.getRequiredProperty("hibernate.format_sql"));
+                       env.getRequiredProperty("hibernate.format_sql"));
+        properties.put("hibernate.cache.use_query_cache",
+                       env.getRequiredProperty(
+                               "hibernate.cache.use_query_cache"));
+        properties.put("hibernate.cache.use_second_level_cache",
+                       env.getRequiredProperty(
+                               "hibernate.cache.use_second_level_cache"));
         properties.put("hibernate.hbm2ddl.auto",
-                       environment.getRequiredProperty(
-                               "hibernate.hbm2ddl.auto"));
+                       env.getRequiredProperty("hibernate.hbm2ddl.auto"));
         return properties;
     }
 
-    /**
-     * Gets transaction manager.
-     *
-     * @return the transaction manager
-     */
+    //    @Bean
+    //    public HibernateTransactionManager getTransactionManager()
+    //    {
+    //        HibernateTransactionManager transactionManager =
+    //                new HibernateTransactionManager();
+    //        transactionManager.setSessionFactory(sessionFactory().getObject
+    //        ());
+    //        return transactionManager;
+    //    }
     @Bean
-    public HibernateTransactionManager getTransactionManager()
+    public PlatformTransactionManager transactionManager(final EntityManagerFactory emf)
     {
-        HibernateTransactionManager transactionManager =
-                new HibernateTransactionManager();
-        transactionManager.setSessionFactory(sessionFactory().getObject());
+        final JpaTransactionManager transactionManager =
+                new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
+    }
+
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation()
+    {
+        return new PersistenceExceptionTranslationPostProcessor();
     }
 }

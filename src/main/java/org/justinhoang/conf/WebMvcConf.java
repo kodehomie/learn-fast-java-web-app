@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"org.justinhoang"})
+@ComponentScan(basePackages = {"org.justinhoang.controller"})
 public class WebMvcConf implements WebMvcConfigurer
 {
     /**
