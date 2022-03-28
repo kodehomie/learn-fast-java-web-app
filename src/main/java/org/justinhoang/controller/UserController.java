@@ -1,9 +1,9 @@
 package org.justinhoang.controller;
 
-import lombok.SneakyThrows;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.entity.User;
+import org.justinhoang.exception.ResourceNotFoundException;
 import org.justinhoang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,9 +80,9 @@ public class UserController
      *
      * @return the string
      */
-    @SneakyThrows
     @GetMapping("/userUpdateForm")
-    public String userUpdateForm(@RequestParam("id") Long id, Model entity)
+    public String userUpdateForm(@RequestParam("id") Long id, Model entity) throws
+                                                                            ResourceNotFoundException
 
     {
         User user = userService.readUser(id);
@@ -98,9 +98,9 @@ public class UserController
      *
      * @return the string
      */
-    @SneakyThrows
     @GetMapping("/userDelete")
-    public String userDelete(@RequestParam("id") Long id)
+    public String userDelete(@RequestParam("id") Long id) throws
+                                                          ResourceNotFoundException
     {
         userService.deleteUser(id);
         return "redirect:/user/users-read";
