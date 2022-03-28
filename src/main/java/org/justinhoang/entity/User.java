@@ -12,8 +12,6 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "user")
-@Cacheable
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
