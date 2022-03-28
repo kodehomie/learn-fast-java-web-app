@@ -20,10 +20,17 @@ import java.util.List;
 public class UserController
 {
     @Autowired
-    private UserService userService;
+    private       UserService userService;
+    private final Logger      logger = LogManager.getLogger(this.getClass());
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
-
+    /**
+     * User create string.
+     *
+     * @param user
+     *         the user
+     *
+     * @return the string
+     */
     @PostMapping("/userCreate")
     public String userCreate(@ModelAttribute("user") User user)
     {
@@ -31,6 +38,14 @@ public class UserController
         return "redirect:/user/users-read";
     }
 
+    /**
+     * User create form string.
+     *
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @GetMapping("/userCreateForm")
     public String userCreateForm(Model entity)
     {
@@ -39,6 +54,14 @@ public class UserController
         return "user-form";
     }
 
+    /**
+     * Users read string.
+     *
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @GetMapping("/usersRead")
     public String usersRead(Model entity)
     {
@@ -47,6 +70,16 @@ public class UserController
         return "users-read";
     }
 
+    /**
+     * User update form string.
+     *
+     * @param id
+     *         the id
+     * @param entity
+     *         the entity
+     *
+     * @return the string
+     */
     @SneakyThrows
     @GetMapping("/userUpdateForm")
     public String userUpdateForm(@RequestParam("id") Long id, Model entity)
@@ -57,6 +90,14 @@ public class UserController
         return "user-form";
     }
 
+    /**
+     * User delete string.
+     *
+     * @param id
+     *         the id
+     *
+     * @return the string
+     */
     @SneakyThrows
     @GetMapping("/userDelete")
     public String userDelete(@RequestParam("id") Long id)

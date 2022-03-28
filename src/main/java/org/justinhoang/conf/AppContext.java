@@ -29,26 +29,22 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = "org.justinhoang.persistence")
 public class AppContext
 {
-
     @Autowired
     private Environment env;
 
+    /**
+     * Instantiates a new App context.
+     */
     public AppContext()
     {
         super();
     }
 
-    //    @Bean
-    //    public LocalSessionFactoryBean sessionFactory()
-    //    {
-    //        LocalSessionFactoryBean sessionFactory = new
-    //        LocalSessionFactoryBean();
-    //        sessionFactory.setDataSource(dataSource());
-    //        sessionFactory.setPackagesToScan("org.justinhoang.entity");
-    //        sessionFactory.setHibernateProperties(hibernateProperties());
-    //        return sessionFactory;
-    //    }
-
+    /**
+     * Entity manager factory local container entity manager factory bean.
+     *
+     * @return the local container entity manager factory bean
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory()
     {
@@ -67,7 +63,7 @@ public class AppContext
     }
 
     /**
-     * Initialize Data source data source.
+     * Data source data source.
      *
      * @return the data source
      */
@@ -103,15 +99,14 @@ public class AppContext
         return properties;
     }
 
-    //    @Bean
-    //    public HibernateTransactionManager getTransactionManager()
-    //    {
-    //        HibernateTransactionManager transactionManager =
-    //                new HibernateTransactionManager();
-    //        transactionManager.setSessionFactory(sessionFactory().getObject
-    //        ());
-    //        return transactionManager;
-    //    }
+    /**
+     * Transaction manager platform transaction manager.
+     *
+     * @param emf
+     *         the emf
+     *
+     * @return the platform transaction manager
+     */
     @Bean
     public PlatformTransactionManager transactionManager(final EntityManagerFactory emf)
     {
@@ -121,6 +116,11 @@ public class AppContext
         return transactionManager;
     }
 
+    /**
+     * Exception translation persistence exception translation post processor.
+     *
+     * @return the persistence exception translation post processor
+     */
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation()
     {
