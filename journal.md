@@ -178,7 +178,7 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 10
 
 ##### Dates: 2022-MAR-20-SUN - 2022-MAR-26-SAT
-##### Weekly Java Hours: 
+##### Weekly Java Hours: 29 hours
 ##### Total Enterprise Java Hours: 
 ##### Notes:
 -

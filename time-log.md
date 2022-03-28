@@ -95,5 +95,15 @@
 * 2022-MAR-23-WED - 5 hours
 * 2022-MAR-24-THU - 4 hours
 * 2022-MAR-25-FRI - 2 hours
-* 2022-MAR-26-SAT - 
-* Week 10
+* 2022-MAR-26-SAT - 2 hours
+* Week 10 (29 hours)
+
+### Week 11
+* 2022-MAR-27-SUN - 4 hours
+* 2022-MAR-28-MON - 
+* 2022-MAR-29-TUE - 
+* 2022-MAR-30-WED - 
+* 2022-MAR-31-THU - 
+* 2022-APR-1-FRI - 
+* 2022-APR-2-SAT - 
+* Week 11

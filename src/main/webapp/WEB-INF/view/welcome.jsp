@@ -69,7 +69,7 @@ Time: 7:25 PM
                 <div class = "col s12 m4">
                     <div class = "center">
                         <img class = "center"
-                             src = "<c:url value="img/bear1-welcome.jpg"/>"
+                             src = "resources/img/bear1-welcome.jpg"
                              width = "150">
                     </div>
                 </div>
@@ -77,7 +77,7 @@ Time: 7:25 PM
                 <div class = "col s12 m4">
                     <div class = "center">
                         <img class = "center"
-                             src = "<c:url value="img/bear2-welcome.jpg"/>"
+                             src = "resources/img/bear2-welcome.jpg"
                              width = "150">
                     </div>
                 </div>
@@ -85,7 +85,7 @@ Time: 7:25 PM
                 <div class = "col s12 m4">
                     <div class = "center">
                         <img class = "center"
-                             src = "<c:url value="img/bear3-welcome.jpg"/>"
+                             src = "resources/img/bear3-welcome.jpg"
                              width = "150">
                     </div>
                 </div>

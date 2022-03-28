@@ -38,7 +38,7 @@ Time: 5:44 PM
             <div class = "navbar-fixed">
 
                 <ul class = "left show-on-small">
-                    <li><a id = "logo-container" href = "welcome"
+                    <li><a id = "logo-container" href = "${pageContext.request.contextPath}/welcome"
                            class = "left brand-logo show-on-small">Learn
                                                                    Fast</a></li>
                 </ul>

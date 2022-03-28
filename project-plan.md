@@ -35,10 +35,10 @@
 - [X] Add the role table
 - [X] Add the role entity
 - [X] Create the role DAO
-- [ ] Create unit tests for the role DAO
-- [ ] Add JSP for displaying user
-- [ ] Add JSP for displaying role
-- [ ] Add JSP for adding a user
+- [X] Create unit tests for the role DAO
+- [X] Add JSP for displaying user
+- [X] Add JSP for displaying role
+- [X] Add JSP for adding a user
 - [X] Document progress in journal
 
 ### Week 6
@@ -47,10 +47,10 @@
 - [X] Create the database
 - [X] Create the user table
 - [X] Add the user entity
-- [ ] Build the user create JSP
-- [ ] Build the user search jsp
-- [ ] Build the user update JSP
-- [ ] Build the user delete JSP
+- [X] Build the user create JSP
+- [X] Build the user search jsp
+- [X] Build the user update JSP
+- [X] Build the user delete JSP
 - [X] Deploy to AWS
 - [X] Review individual projects
 - [X] Document progress in journal
@@ -61,9 +61,9 @@
 - [X] Design the database
 - [X] Create the database
 - [X] Configure authentication
-- [ ] At least one DAO with full CRUD (Create, Read, Update, Delete) 
+- [X] At least one DAO with full CRUD (Create, Read, Update, Delete) 
   implemented with hibernate
-- [ ] Fully unit test DAO
+- [X] Fully unit test DAO
 - [X] Implement Log4J
 - [X] Document progress in journal
 
