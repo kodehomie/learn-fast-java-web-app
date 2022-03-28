@@ -3,16 +3,17 @@ package org.justinhoang.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.lang.reflect.Type;
 
 /**
  * The type User.
  */
 @Entity
 @Table(name = "user")
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
