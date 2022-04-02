@@ -12,7 +12,6 @@ public class AppInit
     protected Class<?>[] getRootConfigClasses()
     {
         return new Class[]{AppContext.class};
-        //return null;
     }
 
     @Override
