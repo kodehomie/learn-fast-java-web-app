@@ -105,5 +105,15 @@
 * 2022-MAR-30-WED - 2 hours
 * 2022-MAR-31-THU - 2 hours
 * 2022-APR-1-FRI - 3 hours
-* 2022-APR-2-SAT - 
-* Week 11
+* 2022-APR-2-SAT - 1 hours
+* Week 11 (20 hours)
+
+### Week 12
+* 2022-APR-3-SUN - 1 hour
+* 2022-APR-4-MON - 
+* 2022-APR-5-TUE - 
+* 2022-APR-6-WED - 
+* 2022-APR-7-THU - 
+* 2022-APR-8-FRI - 
+* 2022-APR-9-SAT - 
+* Week 12
