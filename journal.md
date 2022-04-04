@@ -159,7 +159,7 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Practice computer science Java flashcards
 - Learn about C
 
-### WEEK 9
+### WEEK 9 (SPRING BREAK)
 
 ##### Dates: 2022-MAR-13-SUN - 2022-MAR-19-SAT
 ##### Weekly Java Hours: 26 hours
@@ -174,6 +174,7 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Study data structures and algorithms
 - Practice computer science Java flashcards
 - Learn about C
+- Spring Break
 
 ### WEEK 10
 

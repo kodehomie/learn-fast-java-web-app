@@ -1,6 +1,7 @@
 # Project Plan
 
 ### Week 3
+##### Dates: 2022-JAN-30-SUN - 2022-FEB-5-SAT
 - [X] Create project repository on GitHub
 - [X] Create and push project structure in IntelliJ to GitHub
 - [X] Add link to individual project list in student repo
@@ -15,6 +16,7 @@
 - [X] Document progress in journal
 
 ### Week 4
+##### Dates: 2022-FEB-6-SUN - 2022-FEB-12-SAT
 - [X] Learn data access objects (DAOs)
 - [X] Learn Hibernate
 - [X] Create the database
@@ -29,7 +31,7 @@
 - [X] Document progress in journal
 
 ### Week 5
-
+##### Dates: 2022-FEB-13-SUN - 2022-FEB-19-SAT
 - [X] Learn Hibernate
 - [X] Create the template for all JSP using Materialize
 - [X] Add the role table
@@ -42,7 +44,7 @@
 - [X] Document progress in journal
 
 ### Week 6
-
+##### Dates: 2022-FEB-20-SUN - 2022-FEB-26-SAT
 - [X] Design the database
 - [X] Create the database
 - [X] Create the user table
@@ -56,6 +58,7 @@
 - [X] Document progress in journal
 
 ### Week 7
+##### Dates: 2022-FEB-27-SUN - 2022-MAR-5-SAT
 - [X] Learn security
 - [X] Learn authentication
 - [X] Design the database
@@ -68,10 +71,12 @@
 - [X] Document progress in journal
 
 ### Week 8
+##### Dates: 2022-MAR-6-SUN - 2022-MAR-12-SAT
 - [X] Learn web services
 - [X] Document progress in journal
 
-### Week 9
+### Week 9 (SPRING BREAK)
+##### Dates: 2022-MAR-13-SUN - 2022-MAR-19-SAT
 - [X] Learn RESTful web services
 - [X] Create team project repository with problem statement, project 
   plan, etc.
@@ -81,27 +86,33 @@
 - [X] Document progress in journal
 
 ### Week 10
+##### Dates: 2022-MAR-20-SUN - 2022-MAR-26-SAT
 - [X] Work week
 - [X] Document progress in journal
 
 ### Week 11
+##### Dates: 2022-MAR-27-SUN - 2022-APR-2-SAT
 - [ ] Work week
 - [ ] Document progress in journal
 
 ### Week 12
+##### Dates: 2022-APR-3-SUN - 2022-APR-9-SAT
 - [ ] Present team project
 - [ ] Document progress in journal
 
 ### Week 13
+##### Dates: 2022-APR-10-SUN - 2022-APR-16-SAT
 - [ ] Learn asynchronous messaging
 - [ ] Present professional development project
 - [ ] Document progress in journal
 
 ### Week 14
+##### Dates: 2022-APR-17-SUN - 2022-APR-23-SAT
 - [ ] Review individual project
 - [ ] Document progress in journal
 
 ### Week 15
+##### Dates: 2022-APR-24-SUN - 2022-APR-30-SAT
 - [ ] Final Presentation
 - [ ] Create video, add video link to readme.md
 - [ ] Finalize all documentation
@@ -109,6 +120,14 @@
 - [ ] Document progress in journal
 
 ### Week 16
+##### Dates: 2022-MAY-1-SUN - 2022-MAY-7-SAT
 - [ ] Present individual project
 - [ ] Final touches before code complete
 - [ ] Document progress in journal
+
+### Week 17
+##### Dates: 2022-MAY-9-SUN - 2022-MAY-14-SAT
+- [ ] Present individual project
+- [ ] Final touches before code complete
+- [ ] Document progress in journal
+- [ ] Complete enterprise Java
