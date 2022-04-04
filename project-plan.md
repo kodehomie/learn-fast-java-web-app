@@ -73,16 +73,16 @@
 
 ### Week 9
 - [X] Learn RESTful web services
-- [ ] Create team project repository with problem statement, project 
+- [X] Create team project repository with problem statement, project 
   plan, etc.
-- [ ] Deploy to AWS
-- [ ] Implement one JSP that displays data from the database
-- [ ] Implement authentication
-- [ ] Document progress in journal
+- [X] Deploy to AWS
+- [X] Implement one JSP that displays data from the database
+- [X] Implement authentication
+- [X] Document progress in journal
 
 ### Week 10
-- [ ] Work week
-- [ ] Document progress in journal
+- [X] Work week
+- [X] Document progress in journal
 
 ### Week 11
 - [ ] Work week
