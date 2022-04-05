@@ -110,7 +110,7 @@
 
 ### Week 12
 * 2022-APR-3-SUN - 1 hour
-* 2022-APR-4-MON - 
+* 2022-APR-4-MON - 1 hour
 * 2022-APR-5-TUE - 
 * 2022-APR-6-WED - 
 * 2022-APR-7-THU - 
