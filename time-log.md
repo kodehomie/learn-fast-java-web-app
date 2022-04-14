@@ -119,10 +119,10 @@
 * Week 12 (7 hours)
 
 ### Week 13
-* 2022-APR-10-SUN - 
-* 2022-APR-11-MON - 
-* 2022-APR-12-TUE - 
-* 2022-APR-13-WED - 
+* 2022-APR-10-SUN - 1 hour
+* 2022-APR-11-MON - 1 hour
+* 2022-APR-12-TUE - 3 hour
+* 2022-APR-13-WED - 1 hour
 * 2022-APR-14-THU - 
 * 2022-APR-15-FRI - 
 * 2022-APR-16-SAT - 
