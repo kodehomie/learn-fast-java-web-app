@@ -92,22 +92,23 @@
 
 ### Week 11
 ##### Dates: 2022-MAR-27-SUN - 2022-APR-2-SAT
-- [ ] Work week
-- [ ] Document progress in journal
+- [X] Work week
+- [X] Document progress in journal
 
 ### Week 12
 ##### Dates: 2022-APR-3-SUN - 2022-APR-9-SAT
-- [ ] Present team project
-- [ ] Document progress in journal
+- [X] Work on team project
+- [X] Document progress in journal
 
 ### Week 13
 ##### Dates: 2022-APR-10-SUN - 2022-APR-16-SAT
-- [ ] Learn asynchronous messaging
-- [ ] Present professional development project
-- [ ] Document progress in journal
+- [X] Present team project
+- [X] Document progress in journal
 
 ### Week 14
 ##### Dates: 2022-APR-17-SUN - 2022-APR-23-SAT
+- [ ] Learn asynchronous messaging
+- [ ] Present professional development project
 - [ ] Review individual project
 - [ ] Document progress in journal
 
