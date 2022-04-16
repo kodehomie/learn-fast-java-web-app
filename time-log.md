@@ -123,7 +123,7 @@
 * 2022-APR-11-MON - 1 hour
 * 2022-APR-12-TUE - 3 hour
 * 2022-APR-13-WED - 1 hour
-* 2022-APR-14-THU - 
-* 2022-APR-15-FRI - 
+* 2022-APR-14-THU - 3 hours
+* 2022-APR-15-FRI - 1 hour
 * 2022-APR-16-SAT - 
 * Week 13
