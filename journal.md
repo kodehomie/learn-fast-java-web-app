@@ -227,3 +227,10 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ##### Weekly Java Hours:
 ##### Total Enterprise Java Hours: 
 ##### Notes:
+- Meet team
+- Build team project
+- Create video for team project
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
