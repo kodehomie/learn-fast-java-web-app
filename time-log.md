@@ -125,5 +125,15 @@
 * 2022-APR-13-WED - 1 hour
 * 2022-APR-14-THU - 3 hours
 * 2022-APR-15-FRI - 1 hour
-* 2022-APR-16-SAT - 
-* Week 13
+* 2022-APR-16-SAT - 1 hour
+* Week 13 (11 hours)
+
+### Week 14
+* 2022-APR-17-SUN - 1 hour
+* 2022-APR-18-MON - 3 hours
+* 2022-APR-19-TUE - 
+* 2022-APR-20-WED - 
+* 2022-APR-21-THU - 
+* 2022-APR-22-FRI - 
+* 2022-APR-23-SAT - 
+* Week 14
