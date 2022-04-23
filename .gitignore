@@ -115,6 +115,9 @@ cognito.properties
 /resources/db.properties
 /resources/https-instance.config
 /resources/cognito.properties
+/service/CognitoResources.java
+*.CognitoResources.java
+CognitoResources.java
 
 # ignore ALL .log files
 *.log
