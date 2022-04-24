@@ -108,12 +108,13 @@
 ### Week 14
 ##### Dates: 2022-APR-17-SUN - 2022-APR-23-SAT
 - [ ] Learn asynchronous messaging
-- [ ] Present professional development project
-- [ ] Review individual project
-- [ ] Document progress in journal
+- [X] Present professional development project
+- [X] Review individual project
+- [X] Document progress in journal
 
 ### Week 15
 ##### Dates: 2022-APR-24-SUN - 2022-APR-30-SAT
+- [ ] Work on individual project
 - [ ] Final Presentation
 - [ ] Create video, add video link to readme.md
 - [ ] Finalize all documentation
