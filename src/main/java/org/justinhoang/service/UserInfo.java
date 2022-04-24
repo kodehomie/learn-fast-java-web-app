@@ -7,7 +7,6 @@ public class UserInfo
 {
     private final String username;
     private final String email;
-    private final String location;
 
     /**
      * Instantiates a new User info.
@@ -16,15 +15,11 @@ public class UserInfo
      *         the username
      * @param email
      *         the email
-     * @param location
-     *         the location
      */
-    public UserInfo(final String username, final String email,
-                    final String location)
+    public UserInfo(final String username, final String email)
     {
         this.username = username;
         this.email    = email;
-        this.location = location;
     }
 
     /**
@@ -32,7 +27,7 @@ public class UserInfo
      *
      * @return the user name
      */
-    public String getUserName()
+    public String getUsername()
     {
         return username;
     }
@@ -47,14 +42,5 @@ public class UserInfo
         return email;
     }
 
-    /**
-     * Gets location.
-     *
-     * @return the location
-     */
-    public String getLocation()
-    {
-        return location;
-    }
 
 }

@@ -29,7 +29,7 @@ public class PasswordRequest {
      *
      * @return the user name
      */
-    public String getUserName() {
+    public String getUsername() {
         return userName;
     }
 

@@ -14,13 +14,10 @@ public class LoginInfo extends UserInfo
      *         the username
      * @param email
      *         the email
-     * @param location
-     *         the location
      */
-    public LoginInfo(final String username, final String email,
-                     final String location)
+    public LoginInfo(final String username, final String email)
     {
-        super(username, email, location);
+        super(username, email);
     }
 
     /**
@@ -31,8 +28,7 @@ public class LoginInfo extends UserInfo
      */
     public LoginInfo(final UserInfo userInfo)
     {
-        this(userInfo.getUserName(), userInfo.getEmail(),
-             userInfo.getLocation());
+        this(userInfo.getUsername(), userInfo.getEmail());
     }
 
     /**

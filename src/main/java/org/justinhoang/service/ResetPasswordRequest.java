@@ -28,11 +28,11 @@ public class ResetPasswordRequest
     }
 
     /**
-     * Gets user name.
+     * Gets username.
      *
-     * @return the user name
+     * @return the username
      */
-    public String getUserName()
+    public String getUsername()
     {
         return username;
     }

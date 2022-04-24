@@ -81,7 +81,7 @@ public interface AuthenticationInterface
     void userLogout(String username) throws Exception;
 
     /**
-     * Change from temporary password.
+     * Update temp password.
      *
      * @param passwordRequest
      *         the password request
@@ -89,7 +89,7 @@ public interface AuthenticationInterface
      * @throws Exception
      *         the exception
      */
-    public void changeFromTemporaryPassword(final PasswordRequest passwordRequest) throws
+    public void updateTempPassword(final PasswordRequest passwordRequest) throws
                                                                                    Exception;
 
     /**
@@ -138,7 +138,7 @@ public interface AuthenticationInterface
     void resetPassword(ResetPasswordRequest resetRequest) throws Exception;
 
     /**
-     * Change password.
+     * Update password.
      *
      * @param passwordRequest
      *         the password request
@@ -146,10 +146,10 @@ public interface AuthenticationInterface
      * @throws Exception
      *         the exception
      */
-    void changePassword(PasswordRequest passwordRequest) throws Exception;
+    void updatePassword(PasswordRequest passwordRequest) throws Exception;
 
     /**
-     * Change email.
+     * Update email.
      *
      * @param username
      *         the username
@@ -159,5 +159,5 @@ public interface AuthenticationInterface
      * @throws Exception
      *         the exception
      */
-    void changeEmail(String username, String newEmail) throws Exception;
+    void updateEmail(String username, String newEmail) throws Exception;
 }

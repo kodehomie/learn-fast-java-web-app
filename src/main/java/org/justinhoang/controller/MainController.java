@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * The type Main controller.
  */
 @Controller
-public class MainController
+public class MainController extends AuthenticationBase
 {
     /**
      * Home string.
@@ -22,11 +22,28 @@ public class MainController
      * @return the string
      */
     @RequestMapping("/")
-    public String home()
-    {
-        return "index";
+    public ModelAndView index(ModelMap model, HttpServletRequest request ) {
+        String nextView = "index";
+        UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
+        if (info != null) {
+
+            nextView = "setup";
+            model.addAttribute(USER_SESSION_ATTR, info);
+        }
+        return new ModelAndView(nextView, model);
     }
 
+    @RequestMapping("/setup")
+    public ModelAndView setup(ModelMap model, HttpServletRequest request ) {
+        String nextView = "index";
+        UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
+        if (info != null) {
+
+            nextView = "setup";
+            model.addAttribute(USER_SESSION_ATTR, info);
+        }
+        return new ModelAndView(nextView, model);
+    }
 
     /**
      * Welcome string.

@@ -81,44 +81,34 @@ public class AuthenticationService
         final String email = userInfo.getEmail();
         if (email != null && email.length() > 0)
         {
-            // There should be no user with this email address, so info
-            // should be null
+
             UserInfo data = findUserByEmail(email);
             if (data == null)
             {
                 AdminCreateUserRequest cognitoRequest =
                         new AdminCreateUserRequest().withUserPoolId(poolId)
                                                     .withUsername(
-                                                            userInfo.getUserName())
+                                                            userInfo.getUsername())
                                                     .withUserAttributes(
                                                             new AttributeType().withName(
                                                                                        email)
                                                                                .withValue(
                                                                                        email),
                                                             new AttributeType().withName(
-                                                                                       location)
-                                                                               .withValue(
-                                                                                       userInfo.getLocation()),
-                                                            new AttributeType().withName(
-                                                                                       "email_verified")
+                                                                                       "emailVerified")
                                                                                .withValue(
                                                                                        "true"));
-                // The AdminCreateUserResult returned by this function
-                // doesn't contain useful information so the
-                // result is ignored.
+
                 mIdentityProvider.adminCreateUser(cognitoRequest);
             }
             else
             {
-                // The caller should have checked that the email address is
-                // not already used by a user. If this is not
-                // done, then it's an exception (e.g., something is wrong).
+
                 throw new DuplicateEmailException(
-                        "The email address " + email + " is already in the " +
-                        "database");
+                        "The email address " + email + " already exists.");
             }
         }
-    }  // createNewUser
+    }
 
     @Override
     public void deleteUser(final String username, final String password) throws
@@ -130,9 +120,6 @@ public class AuthenticationService
             AdminDeleteUserRequest deleteRequest =
                     new AdminDeleteUserRequest().withUsername(username)
                                                 .withUserPoolId(poolId);
-            // the adminDeleteUserRequest returns an AdminDeleteUserResult
-            // which doesn't contain anything useful.
-            // So the result is ignored.
             mIdentityProvider.adminDeleteUser(deleteRequest);
         }
     }
@@ -143,12 +130,8 @@ public class AuthenticationService
     {
         AdminUpdateUserAttributesRequest updateRequest =
                 new AdminUpdateUserAttributesRequest().withUsername(
-                                                              newData.getUserName()).withUserPoolId(poolId)
-                                                      .withUserAttributes(
-                                                              new AttributeType().withName(
-                                                                                         location)
-                                                                                 .withValue(
-                                                                                         newData.getLocation()));
+                                                              newData.getUsername()).withUserPoolId(poolId)
+                                                      .withUserAttributes();
         mIdentityProvider.adminUpdateUserAttributes(updateRequest);
     }
 
@@ -180,11 +163,6 @@ public class AuthenticationService
                                               .withAuthParameters(authParams);
         AdminInitiateAuthResult authResult =
                 mIdentityProvider.adminInitiateAuth(authRequest);
-        // If there is a bad username the adminInitiateAuth() call will throw
-        // a UserNotFoundException.
-        // Unfortunately the AWS documentation doesn't say what happens if
-        // the password is incorrect.
-        // Perhaps the NotAuthorizedException is thrown?
         if (authResult != null)
         {
             final String session     = authResult.getSession();
@@ -207,16 +185,12 @@ public class AuthenticationService
     {
         LoginInfo   loginInfo   = null;
         SessionInfo sessionInfo = sessionLogin(username, password);
-        // The process of sessionLogin should either return a session ID (if
-        // the account has not been verified) or a
-        // token ID (if the account has been verified).
+
         if (sessionInfo != null)
         {
             UserInfo userInfo = getUserInfo(username);
             loginInfo = new LoginInfo(userInfo);
-            // check to see if the password used was a temporary password. If
-            // this is the case, the password
-            // must be reset.
+
             String challengeResult = sessionInfo.getChallengeResult();
             if (challengeResult != null && challengeResult.length() > 0)
             {
@@ -234,21 +208,17 @@ public class AuthenticationService
         AdminUserGlobalSignOutRequest signOutRequest =
                 new AdminUserGlobalSignOutRequest().withUsername(username)
                                                    .withUserPoolId(poolId);
-        // The AdminUserGlobalSignOutResult returned by this function does
-        // not contain any useful information so the
-        // result is ignored.
+
         mIdentityProvider.adminUserGlobalSignOut(signOutRequest);
     }
 
     @Override
-    public void changePassword(final PasswordRequest passwordRequest) throws
+    public void updatePassword(final PasswordRequest passwordRequest) throws
                                                                       AWSCognitoIdentityProviderException
     {
-        // Signin with the old/temporary password. Apparently this is needed
-        // to establish a session for the
-        // password change.
+
         final SessionInfo sessionInfo =
-                sessionLogin(passwordRequest.getUserName(),
+                sessionLogin(passwordRequest.getUsername(),
                              passwordRequest.getOldPassword());
         if (sessionInfo != null && sessionInfo.getAccessToken() != null)
         {
@@ -263,13 +233,13 @@ public class AuthenticationService
         }
         else
         {
-            String msg = "Access token was not returned from session login";
+            String msg = "Session login did not return access token.";
             throw new AWSCognitoIdentityProviderException(msg);
         }
     }
 
     @Override
-    public void changeEmail(final String username, final String newEmail) throws
+    public void updateEmail(final String username, final String newEmail) throws
                                                                           AWSCognitoIdentityProviderException
     {
         AdminUpdateUserAttributesRequest updateRequest =
@@ -281,28 +251,26 @@ public class AuthenticationService
                                                                                  .withValue(
                                                                                          newEmail),
                                                               new AttributeType().withName(
-                                                                                         "email_verified")
+                                                                                         "emailVerified")
                                                                                  .withValue(
                                                                                          "true"));
         mIdentityProvider.adminUpdateUserAttributes(updateRequest);
     }
 
     @Override
-    public void changeFromTemporaryPassword(final PasswordRequest passwordRequest) throws
-                                                                                   AWSCognitoIdentityProviderException
+    public void updateTempPassword(final PasswordRequest passwordRequest) throws
+                                                                          AWSCognitoIdentityProviderException
     {
-        // Signin with the old/temporary password. Apparently this is needed
-        // to establish a session for the
-        // password change.
+
         final SessionInfo sessionInfo =
-                sessionLogin(passwordRequest.getUserName(),
+                sessionLogin(passwordRequest.getUsername(),
                              passwordRequest.getOldPassword());
         final String sessionString = sessionInfo.getSession();
         if (sessionString != null && sessionString.length() > 0)
         {
             Map<String, String> challengeResponses =
                     new HashMap<String, String>();
-            challengeResponses.put(USERNAME, passwordRequest.getUserName());
+            challengeResponses.put(USERNAME, passwordRequest.getUsername());
             challengeResponses.put(PASSWORD, passwordRequest.getOldPassword());
             challengeResponses.put(NEW_PASSWORD,
                                    passwordRequest.getNewPassword());
@@ -321,7 +289,7 @@ public class AuthenticationService
                     mIdentityProvider.adminRespondToAuthChallenge(
                             changeRequest);
         }
-    } // changePassword
+    }
 
     @Override
     public void resetPassword(ResetPasswordRequest resetRequest) throws
@@ -329,7 +297,7 @@ public class AuthenticationService
     {
         ConfirmForgotPasswordRequest passwordRequest =
                 new ConfirmForgotPasswordRequest().withUsername(
-                                                          resetRequest.getUserName()).withConfirmationCode(
+                                                          resetRequest.getUsername()).withConfirmationCode(
                                                           resetRequest.getResetCode()).withClientId(clientId)
                                                   .withPassword(
                                                           resetRequest.getNewPassword());
@@ -361,22 +329,17 @@ public class AuthenticationService
         List<AttributeType> userAttributes = userResult.getUserAttributes();
         final String        resultUserName = userResult.getUsername();
         String              email          = null;
-        String              location       = null;
         for (AttributeType attr : userAttributes)
         {
             if (attr.getName().equals(email))
             {
                 email = attr.getValue();
             }
-            else if (attr.getName().equals(location))
-            {
-                location = attr.getValue();
-            }
         }
         UserInfo data = null;
-        if (resultUserName != null && email != null && location != null)
+        if (resultUserName != null && email != null)
         {
-            data = new UserInfo(resultUserName, email, location);
+            data = new UserInfo(resultUserName, email);
         }
         return data;
     }
@@ -391,7 +354,7 @@ public class AuthenticationService
             final String emailQuery = "email=\"" + email + "\"";
             ListUsersRequest usersRequest =
                     new ListUsersRequest().withUserPoolId(poolId)
-                                          .withAttributesToGet(email, location)
+                                          .withAttributesToGet(email)
                                           .withFilter(emailQuery);
             ListUsersResult usersResult =
                     mIdentityProvider.listUsers(usersRequest);
@@ -403,7 +366,6 @@ public class AuthenticationService
                     UserType     user     = users.get(0);
                     final String username = user.getUsername();
                     email = null;
-                    String              location   = null;
                     List<AttributeType> attributes = user.getAttributes();
                     if (attributes != null)
                     {
@@ -413,15 +375,10 @@ public class AuthenticationService
                             {
                                 email = attr.getValue();
                             }
-                            else if (attr.getName().equals(location))
-                            {
-                                location = attr.getValue();
-                            }
                         }
-                        if (username != null && email != null &&
-                            location != null)
+                        if (username != null && email != null)
                         {
-                            data = new UserInfo(username, email, location);
+                            data = new UserInfo(username, email);
                         }
                     }
                 }
@@ -443,9 +400,9 @@ public class AuthenticationService
         try
         {
             UserInfo data = getUserInfo(username);
-            if (data != null && data.getUserName() != null &&
-                data.getUserName().length() > 0 &&
-                data.getUserName().equals(username))
+            if (data != null && data.getUsername() != null &&
+                data.getUsername().length() > 0 &&
+                data.getUsername().equals(username))
             {
                 userExists = true;
             }
