@@ -224,8 +224,8 @@ This journal.md file is for documenting my enterprise Java learning journey.
 ### WEEK 13
 
 ##### Dates: 2022-APR-10-SUN - 2022-APR-16-SAT
-##### Weekly Java Hours:
-##### Total Enterprise Java Hours: 
+##### Weekly Java Hours: 11 hours
+##### Total Enterprise Java Hours: 256 hours
 ##### Notes:
 - Meet team
 - Build team project
@@ -234,3 +234,23 @@ This journal.md file is for documenting my enterprise Java learning journey.
 - Study data structures and algorithms
 - Practice computer science Java flashcards
 - Learn about C
+
+### WEEK 14
+
+##### Dates: 2022-APR-17-SUN - 2022-APR-23-SAT
+##### Weekly Java Hours: 14 hours
+##### Total Enterprise Java Hours: 270 hours
+##### Notes:
+- Work on professional development project
+- Create video for professional development project
+- Work on individual project
+- Study data structures and algorithms
+- Practice computer science Java flashcards
+- Learn about C
+
+### WEEK 15
+
+##### Dates: 2022-APR-24-SUN - 2022-APR-30-SAT
+##### Weekly Java Hours: 
+##### Total Enterprise Java Hours:
+##### Notes:
