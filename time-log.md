@@ -139,7 +139,7 @@
 * Week 14 (14 hours)
 
 ### Week 15
-* 2022-APR-24-SUN -
+* 2022-APR-24-SUN - 5 hours
 * 2022-APR-25-MON -
 * 2022-APR-26-TUE -
 * 2022-APR-27-WED -

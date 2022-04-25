@@ -45,6 +45,18 @@ public class MainController extends AuthenticationBase
         return new ModelAndView(nextView, model);
     }
 
+    @RequestMapping("/scratch")
+    public ModelAndView scratch(ModelMap model, HttpServletRequest request ) {
+        String nextView = "scratch";
+        UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
+        if (info != null) {
+
+            nextView = "scratch";
+            model.addAttribute(USER_SESSION_ATTR, info);
+        }
+        return new ModelAndView(nextView, model);
+    }
+
     /**
      * Welcome string.
      *
