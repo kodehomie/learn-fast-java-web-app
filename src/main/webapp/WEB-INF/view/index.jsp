@@ -176,29 +176,5 @@ Time: 11:01 PM
             src = "resources/js/materialize.js"></script>
     <%--JAVASCRIPT END--%>
 </body>
-<!--FOOTER-->
-<div class = "fixed-footer">
-    <div class = "containerx">
-        <footer class = "page-footer materialize-red lighten-2"
-                id = "footer">
-            <div class = "container">
-                <div class = "row">
-                    <div>
-                        <a class = "white-text" href = "#!">Privacy</a>
-                        <a class = "white-text" href = "#!">Terms</a>
-                        <a class = "white-text" href = "#!">About Learn
-                                                            Fast</a>
-                        <a class = "white-text" href = "#!">Products</a>
-                        <a class = "white-text" href = "#!">Policy</a>
-                        <a class = "white-text" href = "#!">Privacy &
-                                                            Security</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-</div>
-<!--FOOTER END-->
-
 </html>
 

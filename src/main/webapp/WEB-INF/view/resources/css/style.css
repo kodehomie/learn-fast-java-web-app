@@ -18,7 +18,7 @@ TABLE OF CONTENTS:
 + UI - Icons
 + Form Select
 + Dropdowns
-+ Mediabox
++ Media-box
 + Date picker
 + Time picker
 + Feature Discovery
@@ -150,6 +150,15 @@ TABLE OF CONTENTS:
   + Dark Mode Text Color: #f5f5f5 / #CFD8DC
 
 -------------------------------------*/
+
+/*-------------------------------------
+  DataTables
+-------------------------------------*/
+
+div.dataTables_wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
 
 /*-------------------------------------
   Import Font
@@ -362,10 +371,10 @@ body .accent-text{ color: #7986cb; }
   Preloader
 ------------------------------------------*/
 #preloader:after{
-    border-top-color: #80CBC4;
+    border-top-color: #e7b395;
 }
 #preloader:before{
-    border-top-color: rgba(121, 134, 203, 1);;
+    border-top-color: rgb(162, 121, 203);;
 }
 #preloader{
     border-top-color: rgba(229, 115, 115, 1);
