@@ -140,10 +140,10 @@
 
 ### Week 15
 * 2022-APR-24-SUN - 5 hours
-* 2022-APR-25-MON -
-* 2022-APR-26-TUE -
-* 2022-APR-27-WED -
-* 2022-APR-28-THU -
+* 2022-APR-25-MON - 1 hour
+* 2022-APR-26-TUE - 1 hour
+* 2022-APR-27-WED - 1 hour
+* 2022-APR-28-THU - 1 hour
 * 2022-APR-29-FRI -
 * 2022-APR-30-SAT -
 * Week 15
