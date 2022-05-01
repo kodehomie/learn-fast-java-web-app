@@ -12,56 +12,15 @@ Time: 7:25 PM
     <%--META--%>
     <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <meta name = "msapplication-TileColor" content = "#ffffff">
+    <meta name = "msapplication-TileImage"
+          content = "resources/img/144.png">
+    <meta name = "theme-color" content = "#ffffff">
     <%--CSS--%>
     <link type = "text/css" rel = "stylesheet"
           href = "resources/css/style.css"
           id = "main-style"
           media = "screen,projection"/>
-    <link type = "text/css" rel = "stylesheet"
-          href = "resources/css/preloader.css"
-          media = "screen,projection"/>
-    <link type = "text/css" rel = "stylesheet"
-          href = "resources/plugins/perfect-scrollbar/perfect-scrollbar.css"
-          media = "screen,projection"/>
-    <%--MATERIAL DESIGN--%>
-    <link type = "text/css" rel = "stylesheet"
-          href = "resources/fonts/mdi/materialdesignicons.min.css"
-          media = "screen,projection"/>
-    <link type = "text/css" rel = "stylesheet"
-          href = "https://fonts.googleapis.com/icon?family=Material+Icons"
-          media = "screen,projection"/>
-    <%--ICON--%>
-    <link rel = "apple-touch-icon" sizes = "57x57"
-          href = "resources/img/icons/57.png">
-    <link rel = "apple-touch-icon" sizes = "60x60"
-          href = "resources/img/icons/60.png">
-    <link rel = "apple-touch-icon" sizes = "72x72"
-          href = "resources/img/icons/72.png">
-    <link rel = "apple-touch-icon" sizes = "76x76"
-          href = "resources/img/icons/76.png">
-    <link rel = "apple-touch-icon" sizes = "114x114"
-          href = "resources/img/icons/114.png">
-    <link rel = "apple-touch-icon" sizes = "120x120"
-          href = "resources/img/icons/120.png">
-    <link rel = "apple-touch-icon" sizes = "144x144"
-          href = "resources/img/icons/144.png">
-    <link rel = "apple-touch-icon" sizes = "152x152"
-          href = "resources/img/icons/152.png">
-    <link rel = "apple-touch-icon" sizes = "180x180"
-          href = "resources/img/icons/180.png">
-    <link rel = "icon" type = "image/png" sizes = "196x196"
-          href = "resources/img/icons/196.png">
-    <link rel = "icon" type = "image/png" sizes = "32x32"
-          href = "resources/img/icons/favicon-32x32.png">
-    <link rel = "icon" type = "image/png" sizes = "100x100"
-          href = "resources/img/icons/favicon-100x100.png">
-    <link rel = "icon" type = "image/png" sizes = "16x16"
-          href = "resources/img/icons/favicon-16x16.png">
-    <link rel = "manifest" href = "resources/img/icons/manifest.json">
-    <meta name = "msapplication-TileColor" content = "#ffffff">
-    <meta name = "msapplication-TileImage"
-          content = "resources/images/icons/ms-icon-144x144.png">
-    <meta name = "theme-color" content = "#ffffff">
     <%--MATERIALIZE CSS--%>
     <link type = "text/css" rel = "stylesheet"
           href = "https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -71,6 +30,28 @@ Time: 7:25 PM
     <link type = "text/css" rel = "stylesheet"
           href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
           media = "screen,projection">
+    <%--DATATABLES--%>
+    <link type = "text/css" rel = "stylesheet"
+          href = "resources/css/jquery.dataTables.min.css"
+          media = "screen,projection"/>
+    <link type = "text/css" rel = "stylesheet"
+          href = "resources/css/dataTables.material.min.css"
+          media = "screen,projection"/>
+    <%--MATERIAL DESIGN--%>
+    <link type = "text/css" rel = "stylesheet"
+          href = "resources/fonts/mdi/materialdesignicons.min.css"
+          media = "screen,projection"/>
+    <link type = "text/css" rel = "stylesheet"
+          href = "https://fonts.googleapis.com/icon?family=Material+Icons"
+          media = "screen,projection"/>
+    <%--OTHER--%>
+    <link type = "text/css" rel = "stylesheet"
+          href = "resources/css/preloader.css"
+          media = "screen,projection"/>
+    <link type = "text/css" rel = "stylesheet"
+          href = "resources/plugins/perfect-scrollbar/perfect-scrollbar.css"
+          media = "screen,projection"/>
+
     <%--TITLE--%>
     <title>Learn Fast: Free, Private & Secure Community</title>
 </head>
@@ -88,7 +69,8 @@ Time: 7:25 PM
 
 <nav class = "fixedtop topbar navigation primary" role = "navigation">
     <div class = "nav-wrapper">
-        <a id = "logo-container" href = "${pageContext.request.contextPath}/welcome"
+        <a id = "logo-container"
+           href = "${pageContext.request.contextPath}/welcome"
            class = "brand-logo">Learn Fast</a>
         <ul>
             <li><a href = "#"
@@ -136,6 +118,15 @@ Time: 7:25 PM
                 </div>
             </li>
 
+            <li class = "lvl1 ">
+                <div class = " waves-effect ">
+                    <a href = "${pageContext.request.contextPath}/course/coursesRead">
+                        <i class = "mdi mdi-school"></i>
+                        <span class = "title">Course Listing</span>
+                    </a>
+                </div>
+            </li>
+
             <li class = "sep-wrap">
                 <div class = "divider"></div>
             </li>
@@ -147,7 +138,15 @@ Time: 7:25 PM
                 <div class = "waves-effect ">
                     <a href = "tel:+1 234 567 890">
                         <i class = "mdi mdi-cellphone-basic"></i>
-                        <span class = "title">Phone</span> </a>
+                        <span class = "title">Call</span> </a>
+                </div>
+            </li>
+
+            <li class = "lvl1 ">
+                <div class = "waves-effect ">
+                    <a href = "sms:+1 234 567 890">
+                        <i class = "mdi mdi-message-text-outline"></i>
+                        <span class = "title">Text (SMS)</span> </a>
                 </div>
             </li>
 
@@ -159,25 +158,8 @@ Time: 7:25 PM
                 </div>
             </li>
 
-            <li class = "lvl1 ">
-                <div class = "waves-effect ">
-                    <a href = "sms:+1 234 567 890">
-                        <i class = "mdi mdi-message-text-outline"></i>
-                        <span class = "title">Message</span> </a>
-                </div>
-            </li>
-
             <li class = "sep-wrap">
                 <div class = "divider"></div>
-            </li>
-
-            <li class = "lvl1 ">
-                <div class = "waves-effect "><a href = "#"
-                                                data-target = "slide-settings"
-                                                class = "sidenav-trigger"><i
-                        class = "mdi mdi-settings-outline"></i><span
-                        class = "title">Settings</span> </a>
-                </div>
             </li>
 
             </li>
@@ -186,7 +168,7 @@ Time: 7:25 PM
 
     <li class = "copy-spacer"></li>
     <li class = "copy-wrap">
-        <div class = "copyright">&copy; Copyright @ JustinHoang</div>
+        <div class = "copyright">&copy; 2022 Justin Hoang, All rights reserved.</div>
 </ul>
 
 
@@ -361,7 +343,8 @@ Time: 7:25 PM
             <div class = "row">
                 <div class = "">
                     <h5 class = "logo">Learn Fast</h5>
-                    <p class = "text">Description</p>
+                    <p class = "text">A modern social connection and learning
+                    management system for mentors and mentees.</p>
                 </div>
                 <div class = "link-wrap">
                     <ul class = "link-ul">
@@ -370,7 +353,7 @@ Time: 7:25 PM
                         </li>
                         <li><a class = "" href = "#!"><i
                                 class = "mdi mdi-email"></i>
-                            justin@gmail.com</a>
+                            jhoang1@madisoncollege.edu</a>
                         </li>
                         <li><a class = "" href = "#!"><i
                                 class = "mdi mdi-map-marker"></i> 123 Street,
@@ -416,8 +399,9 @@ Time: 7:25 PM
                     <span>X</span>
                 </a></li>
             <li>
-                <a href = "${pageContext.request.contextPath}/user/usersRead"> <i
-                        class = "mdi mdi-account-search"></i>
+                <a href = "${pageContext.request.contextPath}/user/usersRead">
+                    <i
+                            class = "mdi mdi-account-search"></i>
                     <span>User Listing</span>
                 </a></li>
             <li>
@@ -426,13 +410,13 @@ Time: 7:25 PM
                     <span>Home</span>
                 </a></li>
             <li>
-                <a href = "#"> <i
-                        class = "mdi mdi-music"></i>
-                    <span>X</span>
+                <a href = "${pageContext.request.contextPath}/course/coursesRead"> <i
+                        class = "mdi mdi-school"></i>
+                    <span>Course Listing</span>
                 </a></li>
             <li>
                 <a href = "#"> <i
-                        class = "mdi mdi-food"></i>
+                        class = "mdi mdi-music"></i>
                     <span>X</span>
                 </a></li>
 

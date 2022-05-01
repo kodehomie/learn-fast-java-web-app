@@ -1,10 +1,10 @@
 package org.justinhoang.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type User.
@@ -35,4 +35,9 @@ public class User
     private String familyName;
     @Column(name = "gender")
     private String gender;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Course> courses = new HashSet<Course>();
 }

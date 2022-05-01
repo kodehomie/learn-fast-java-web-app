@@ -111,7 +111,7 @@ Time: 11:01 PM
 <div style = "padding-top: 1em;"></div>
 <div class = "row">
     <div class = "col-md-12">
-        <h2 align = "center">Create a new user account</h2>
+        <h2 align = "center">Create a new course</h2>
     </div>
 </div>
 <!-- row -->
@@ -123,11 +123,11 @@ Time: 11:01 PM
     </div>
 </div>
 <div style = "padding-top: 1em;"></div>
-<c:if test = "${createUserError != null && createUserError.length() > 0}">
+<c:if test = "${createCourseError != null && createCourseError.length() > 0}">
     <div class = "row">
         <div class = "col-md-2"></div>
         <div class = "col-md-8">
-            <div class = "box inputError">${createUserError}</div>
+            <div class = "box inputError">${createCourseError}</div>
         </div>
         <div class = "col-md-2"></div>
     </div>
@@ -135,27 +135,27 @@ Time: 11:01 PM
 <div class="row">
 <div class="col-md-12">
 <!-- Post to the login controller -->
-<form action="/create-user-form" method="post">
-<c:if test = "${userNameError != null && userNameError.length() > 0}">
+<form action="/create-course-form" method="post">
+<c:if test = "${courseNameError != null && courseNameError.length() > 0}">
     <div class = "form-group row">
         <div class = "col-sm-4"></div>
         <div class = "col-sm-8">
-            <span class = "inputError">${userNameError}</span>
+            <span class = "inputError">${courseNameError}</span>
         </div>
     </div>
 </c:if>
 <div class = "form-group row">
-    <label class = "col-sm-4 col-form-label">User name:</label>
+    <label class = "col-sm-4 col-form-label">Course name:</label>
 
     <c:choose>
-        <c:when test = "${userNameVal != null && userNameVal.length() > 0}">
-            <input type = "text" id = "user_name" name = "user_name"
-                   value = "${userNameVal}">
+        <c:when test = "${courseNameVal != null && courseNameVal.length() > 0}">
+            <input type = "text" id = "course_name" name = "course_name"
+                   value = "${courseNameVal}">
         </c:when>
         <c:otherwise>
             <div class = "col-sm-8">
-                <input type = "text" id = "username" name = "user_name"
-                       placeholder = "User name">
+                <input type = "text" id = "coursename" name = "course_name"
+                       placeholder = "Course name">
             </div>
             <!-- col-md-8 -->
         </c:otherwise>
@@ -171,13 +171,19 @@ Time: 11:01 PM
     </div>
 </c:if>
 <div class = "form-group row">
-    <label class = "col-sm-4 col-form-label">Email:</label>
+    <label  class = "col-sm-4 col-form-label">Email:</label>
     <div class = "col-sm-8">
         <input type = "text" id = "email" name = "email" placeholder = "Email">
     </div> <!-- col-sm-8 -->
 </div>
 <!-- form-group row -->
-
+<c:if test = "${locationError != null && locationError.length() > 0}">
+    <div class="form-group row">
+    <div class="col-sm-4"></div>
+    <span class="inputError">${locationError}</span>
+    <div class="col-sm-8">
+    </div>
+    </div>
 
     <!-- col-sm-8 -->
     </div> <!-- form-group row -->
@@ -185,7 +191,7 @@ Time: 11:01 PM
     <div class="col-sm-4"></div>
     <div class="col-sm-8">
     <span>
-    <button type="submit" class="btn btn-primary">Create User</button>
+    <button type="submit" class="btn btn-primary">Create Course</button>
     </span>
     <span>
     <a href="<c:url
@@ -195,7 +201,6 @@ Time: 11:01 PM
     </div>
     </form>
     </div> <!-- col-md-12 -->
-
     </div> <!-- container -->
     </main>
     <!--MAIN END-->
@@ -233,4 +238,3 @@ Time: 11:01 PM
     <!--FOOTER END-->
 
     </html>
-

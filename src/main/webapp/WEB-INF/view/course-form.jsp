@@ -27,7 +27,7 @@ Time: 5:44 PM
           href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
           media = "screen,projection">
     <%--TITLE--%>
-    <title>User Form</title>
+    <title>Course Form</title>
 </head>
 <body>
 <%--TOP NAV--%>
@@ -62,7 +62,7 @@ Time: 5:44 PM
                 <div class = "section no-pad-bot" id = "index-banner">
                     <div class = "container">
                         <br><br>
-                        <h1 class = "header center">User Data</h1>
+                        <h1 class = "header center">Course Data</h1>
                         <div class = "row center">
                             <h5 class = "header col s12 light"></h5>
                         </div>
@@ -75,83 +75,82 @@ Time: 5:44 PM
                 <div class = "container">
                     <section class = "section">
                         <table class = "responsive-table">
-                            <form:form action = "userCreate"
+                            <form:form action = "courseCreate"
                                        cssClass = "form-horizontal"
-                                       method = "post" modelAttribute = "user">
+                                       method = "post"
+                                       modelAttribute = "course">
 
                                 <form:hidden path = "id"/>
 
                                 <div class = "form-group">
-                                    <label for = "birthdate"
-                                           class = "control-label">Birthdate</label>
+                                    <label for = "title"
+                                           class = "control-label">Title</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "birthdate"
+                                        <form:input path = "title"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "email"
-                                           class = "control-label">Email</label>
+                                    <label for = "section"
+                                           class = "control-label">Section</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "email"
+                                        <form:input path = "section"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "phoneNumber"
-                                           class = "control-label">Phone
-                                                                   Number</label>
+                                    <label for = "format"
+                                           class = "control-label">Format</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "phoneNumber"
+                                        <form:input path = "format"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "givenName"
-                                           class = "control-label">First
-                                                                   Name</label>
+                                    <label for = "mentor"
+                                           class = "control-label">Mentor</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "givenName"
+                                        <form:input path = "mentor"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "familyName"
-                                           class = "control-label">Last
-                                                                   Name</label>
+                                    <label for = "sectionStatus"
+                                           class = "control-label">Section
+                                                                   Status</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "familyName"
+                                        <form:input path = "sectionStatus"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "gender"
-                                           class = "control-label">Gender</label>
+                                    <label for = "meets"
+                                           class = "control-label">Meets</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "gender"
+                                        <form:input path = "meets"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "username"
-                                           class = "control-label">Username</label>
+                                    <label for = "dates"
+                                           class = "control-label">Dates</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "username"
+                                        <form:input path = "dates"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "password"
-                                           class = "control-label">Password</label>
+                                    <label for = "description"
+                                           class = "control-label">Description</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "password"
+                                        <form:input path = "description"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
@@ -230,40 +229,40 @@ Time: 5:44 PM
 <%--JAVASCRIPT END--%>
 </body>
 <%--NAV--%>
-<div class = "fixed-footer">
-    <div class = "containerx">
-        <footer class = "page-footer materialize-red lighten-2"
-                id = "footer">
-            <nav class = "materialize-red lighten-2"
-                 role = "navigation">
-                <div class = "nav-wrapper container">
-                    <div class = "center container">
-                        <ul class = "center container" id = "nav-bottom">
-                            <li><a href = "welcome"><i
-                                    class = "material-icons">home</i></a>
-                            </li>
-                            <li><a href = "#"><i
-                                    class = "material-icons">search</i></a>
-                            </li>
-                            <li><a href = "#"><i
-                                    class = "material-icons">ondemand_video</i></a>
-                            </li>
-                            <li><a href = "#"><i
-                                    class = "material-icons">shop</i></a>
-                            </li>
-                            <li><a href = "#"><i
-                                    class = "material-icons">chat</i></a>
-                            </li>
-                            <li><a href = "#"><i
-                                    class = "material-icons">person_pin</i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    </ul>
-                </div>
-            </nav>
-        </footer>
-    </div>
-</div>
+<%--<div class = "fixed-footer">--%>
+<%--    <div class = "containerx">--%>
+<%--        <footer class = "page-footer materialize-red lighten-2"--%>
+<%--                id = "footer">--%>
+<%--            <nav class = "materialize-red lighten-2"--%>
+<%--                 role = "navigation">--%>
+<%--                <div class = "nav-wrapper container">--%>
+<%--                    <div class = "center container">--%>
+<%--                        <ul class = "center container" id = "nav-bottom">--%>
+<%--                            <li><a href = "welcome"><i--%>
+<%--                                    class = "material-icons">home</i></a>--%>
+<%--                            </li>--%>
+<%--                            <li><a href = "#"><i--%>
+<%--                                    class = "material-icons">search</i></a>--%>
+<%--                            </li>--%>
+<%--                            <li><a href = "#"><i--%>
+<%--                                    class = "material-icons">ondemand_video</i></a>--%>
+<%--                            </li>--%>
+<%--                            <li><a href = "#"><i--%>
+<%--                                    class = "material-icons">shop</i></a>--%>
+<%--                            </li>--%>
+<%--                            <li><a href = "#"><i--%>
+<%--                                    class = "material-icons">chat</i></a>--%>
+<%--                            </li>--%>
+<%--                            <li><a href = "#"><i--%>
+<%--                                    class = "material-icons">person_pin</i></a>--%>
+<%--                            </li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
+<%--                    </ul>--%>
+<%--                </div>--%>
+<%--            </nav>--%>
+<%--        </footer>--%>
+<%--    </div>--%>
+<%--</div>--%>
 <%--NAV END--%>
 </html>

@@ -53,7 +53,7 @@ Time: 6:09 PM
           media = "screen,projection"/>
 
     <%--TITLE--%>
-    <title>Learn Fast: User Listing</title>
+    <title>Learn Fast: Courses Listing</title>
 </head>
 <body class = "html" data-header = "colored" data-footer = "light"
       data-header_align = "center" data-menu_type = "left" data-menu = "colored"
@@ -68,7 +68,8 @@ Time: 6:09 PM
             <div class = "navbar-fixed">
 
                 <ul class = "left show-on-small">
-                    <li><a id = "logo-container" href = "${pageContext.request.contextPath}/welcome"
+                    <li><a id = "logo-container"
+                           href = "${pageContext.request.contextPath}/welcome"
                            class = "left brand-logo show-on-small">Learn
                                                                    Fast</a></li>
                 </ul>
@@ -84,8 +85,10 @@ Time: 6:09 PM
 </div>
 <%--TOP NAV END--%>
 
+
 <ul id = "slide-nav" class = "sidenav sidemenu">
     <li class = "menu-close"><i class = "mdi mdi-equal-box"></i></li>
+
     <li class = "menulinks">
         <ul class = "collapsible">
 
@@ -158,16 +161,19 @@ Time: 6:09 PM
             </li>
         </ul>
     </li>
+
     <li class = "copy-spacer"></li>
     <li class = "copy-wrap">
-        <div class = "copyright">&copy; Copyright @ JustinHoang</div>
+        <div class = "copyright">&copy; 2022 Justin Hoang, All rights
+                                 reserved.
+        </div>
 </ul>
 
 <div class = "content" id = "content">
     <div class = "section no-pad-bot" id = "index-banner">
         <div class = "container">
             <br><br>
-            <h1 class = "header center">User Listing</h1>
+            <h1 class = "header center">Course Listing</h1>
             <div class = "row center">
                 <h5 class = "header col s12 light"></h5>
             </div>
@@ -180,55 +186,59 @@ Time: 6:09 PM
 
 <div class = "container">
     <section class = "section">
-        <a href = "userCreateForm" class = "green btn">Create
-                                                       User</a>
+        <a href = "courseCreateForm" class = "green btn">Create
+                                                         Course</a>
         <br/><br/>
         <table id = "userTable"
                class = "display nowrap"
                style = "width:100%">
             <thead>
             <tr>
-                <th>Username</th>
-                <th>Birthdate</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Email</th>
-                <th>Phone Number</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Section #</th>
+                <th>Format</th>
+                <th>Mentor</th>
+                <th>Section Status</th>
+                <th>Meets</th>
+                <th>Dates</th>
+                <th>Description</th>
                 <th>Update || Delete</th>
             </tr>
             </thead>
             <tbody>
-            <%--TRAVERSE USERS--%>
-            <c:forEach var = "tmpUser"
-                       items = "${users}">
+            <%--TRAVERSE COURSES--%>
+            <c:forEach var = "tmpCourse"
+                       items = "${courses}">
                 <%--UPDATE--%>
                 <c:url var = "updateLink"
-                       value = "/user/userUpdateForm">
+                       value = "/course/courseUpdateForm">
                     <c:param name = "id"
-                             value = "${tmpUser.id}"/>
+                             value = "${tmpCourse.id}"/>
                 </c:url>
                 <%--DELETE--%>
                 <c:url var = "deleteLink"
-                       value = "/user/userDelete">
+                       value = "/course/courseDelete">
                     <c:param name = "id"
-                             value = "${tmpUser.id}"/>
+                             value = "${tmpCourse.id}"/>
                 </c:url>
                 <tr>
-                    <td>${tmpUser.username}</td>
-                    <td>${tmpUser.birthdate}</td>
-                    <td>${tmpUser.givenName}</td>
-                    <td>${tmpUser.familyName}</td>
-                    <td>${tmpUser.gender}</td>
-                    <td>${tmpUser.email}</td>
-                    <td>${tmpUser.phoneNumber}</td>
+                    <td>${tmpCourse.id}</td>
+                    <td>${tmpCourse.title}</td>
+                    <td>${tmpCourse.section}</td>
+                    <td>${tmpCourse.format}</td>
+                    <td>${tmpCourse.mentor}</td>
+                    <td>${tmpCourse.sectionStatus}</td>
+                    <td>${tmpCourse.meets}</td>
+                    <td>${tmpCourse.dates}</td>
+                    <td>${tmpCourse.description}</td>
                     <td>
                             <%--UPDATE--%>
                         <a href = "${updateLink}"
                            class = "green btn white-text">Update</a>
                         || <a href = "${deleteLink}"
                               class = "materialize-red btn white-text"
-                              onclick = "if (!(confirm('Do you intend to delete user?'))) return false">Delete</a>
+                              onclick = "if (!(confirm('Do you intend to delete course?'))) return false">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -278,14 +288,15 @@ Time: 6:09 PM
             </div>
         </div>
     </div>
-
     <div class = "footer-copyright">
         <div class = "container">
             Built with ❤️ & 🍜 by: Justin Hoang
         </div>
     </div>
-
 </footer>
+
+</div>
+
 
 <%--JAVASCRIPT--%>
 <script type = "text/javascript"
