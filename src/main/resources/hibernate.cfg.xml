@@ -20,7 +20,11 @@
         <property name = "hibernate.c3p0.idle_test_period">3000</property>
 
         <mapping class = "org.justinhoang.entity.User"/>
+        <mapping class = "org.justinhoang.entity.Course"/>
+        <mapping class = "org.justinhoang.entity.Group"/>
         <mapping class = "org.justinhoang.persistence.UserRepo"/>
+        <mapping class = "org.justinhoang.persistence.CourseRepo"/>
+        <mapping class = "org.justinhoang.persistence.GroupRepo"/>
 
     </session-factory>
 

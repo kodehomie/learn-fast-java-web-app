@@ -26,7 +26,7 @@ public class AuthenticationService
     /**
      * The M identity provider.
      */
-    protected AWSCognitoIdentityProvider mIdentityProvider = null;
+    protected AWSCognitoIdentityProvider mIdentityProvider;
 
     /**
      * Instantiates a new Authentication service.

@@ -1,5 +1,6 @@
 package org.justinhoang.conf;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,7 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -39,6 +42,17 @@ public class AppContext
     {
         super();
     }
+
+//    /**
+//     * Object mapper object mapper.
+//     *
+//     * @return the object mapper
+//     */
+//    @Bean
+//    ObjectMapper objectMapper()
+//    {
+//        return Jackson2ObjectMapperBuilder.json().build();
+//    }
 
     /**
      * Entity manager factory local container entity manager factory bean.

@@ -21,7 +21,7 @@ public class CourseController
 {
     @Autowired
     private       CourseService courseService;
-    private final Logger      logger = LogManager.getLogger(this.getClass());
+    static final Logger      logger = LogManager.getLogger();
 
     /**
      * Course create string.

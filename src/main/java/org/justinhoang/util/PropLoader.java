@@ -19,7 +19,7 @@ public interface PropLoader
      *
      * @return the properties
      */
-    default Properties load(String filePath)
+    default Properties load(final String filePath)
     {
         Properties properties = new Properties();
         try (InputStream inputStream = findFile(filePath))

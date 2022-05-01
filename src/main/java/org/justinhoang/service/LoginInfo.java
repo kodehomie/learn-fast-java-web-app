@@ -47,7 +47,7 @@ public class LoginInfo extends UserInfo
      * @param newPasswordRequired
      *         the new password required
      */
-    public void setNewPasswordRequired(Boolean newPasswordRequired)
+    public void setNewPasswordRequired(final Boolean newPasswordRequired)
     {
         this.newPasswordRequired = newPasswordRequired;
     }

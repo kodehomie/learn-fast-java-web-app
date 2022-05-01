@@ -84,7 +84,7 @@ public class AuthController extends HttpServlet implements PropLoader
      */
     Keys       jwks;
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
+    static final Logger logger = LogManager.getLogger();
 
     @Override
     public void init() throws ServletException
@@ -106,7 +106,8 @@ public class AuthController extends HttpServlet implements PropLoader
      * @throws IOException
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
+    protected void doGet(final HttpServletRequest req,final
+                         HttpServletResponse resp) throws
                                                                            ServletException,
                                                                            IOException
     {
@@ -156,7 +157,7 @@ public class AuthController extends HttpServlet implements PropLoader
      * @throws IOException
      * @throws InterruptedException
      */
-    private TokenResponse getToken(HttpRequest authRequest) throws IOException,
+    private TokenResponse getToken(final HttpRequest authRequest) throws IOException,
                                                                    InterruptedException
     {
         HttpClient      client   = HttpClient.newHttpClient();
@@ -188,7 +189,7 @@ public class AuthController extends HttpServlet implements PropLoader
      *
      * @throws IOException
      */
-    private String validate(TokenResponse tokenResponse) throws IOException
+    private String validate(final TokenResponse tokenResponse) throws IOException
     {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(
@@ -273,7 +274,7 @@ public class AuthController extends HttpServlet implements PropLoader
      *
      * @return the constructed oauth request
      */
-    private HttpRequest buildAuthRequest(String authCode)
+    private HttpRequest buildAuthRequest(final String authCode)
     {
         String keys = CLIENT_ID + ":" + CLIENT_SECRET;
 

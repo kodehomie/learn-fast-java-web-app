@@ -1,14 +1,14 @@
 package org.justinhoang.persistence;
 
-import org.justinhoang.entity.Course;
+import org.justinhoang.entity.Group;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * The interface Course repo.
+ * The interface Group repo.
  * Hibernate used for all data access.
  */
-@Repository("courseRepo")
-public interface CourseRepo extends JpaRepository<Course, Long>
+@Repository("groupRepo")
+public interface GroupRepo extends JpaRepository<Group, Long>
 {
 }

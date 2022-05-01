@@ -53,7 +53,7 @@ Time: 6:09 PM
           media = "screen,projection"/>
 
     <%--TITLE--%>
-    <title>Learn Fast: Courses Listing</title>
+    <title>Learn Fast: Groups Listing</title>
 </head>
 <body class = "html" data-header = "colored" data-footer = "light"
       data-header_align = "center" data-menu_type = "left" data-menu = "colored"
@@ -191,7 +191,7 @@ Time: 6:09 PM
     <div class = "section no-pad-bot" id = "index-banner">
         <div class = "container">
             <br><br>
-            <h1 class = "header center">Course Listing</h1>
+            <h1 class = "header center">Group Listing</h1>
             <div class = "row center">
                 <h5 class = "header col s12 light"></h5>
             </div>
@@ -204,8 +204,8 @@ Time: 6:09 PM
 
 <div class = "container">
     <section class = "section">
-        <a href = "courseCreateForm" class = "green btn">Create
-                                                         Course</a>
+        <a href = "${pageContext.request.contextPath}/group/groupCreateForm" class = "green btn">Create
+                                                         Group</a>
         <br/><br/>
         <table id = "userTable"
                class = "display nowrap"
@@ -213,50 +213,40 @@ Time: 6:09 PM
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
-                <th>Section #</th>
-                <th>Format</th>
-                <th>Mentor</th>
-                <th>Section Status</th>
-                <th>Meets</th>
-                <th>Dates</th>
+                <th>Name</th>
+                <th>Interests</th>
                 <th>Description</th>
                 <th>Update || Delete</th>
             </tr>
             </thead>
             <tbody>
-            <%--TRAVERSE COURSES--%>
-            <c:forEach var = "tmpCourse"
-                       items = "${courses}">
+            <%--TRAVERSE GROUPS--%>
+            <c:forEach var = "tmpGroup"
+                       items = "${groups}">
                 <%--UPDATE--%>
                 <c:url var = "updateLink"
-                       value = "/course/courseUpdateForm">
+                       value = "/group/groupUpdateForm">
                     <c:param name = "id"
-                             value = "${tmpCourse.id}"/>
+                             value = "${tmpGroup.id}"/>
                 </c:url>
                 <%--DELETE--%>
                 <c:url var = "deleteLink"
-                       value = "/course/courseDelete">
+                       value = "/group/groupDelete">
                     <c:param name = "id"
-                             value = "${tmpCourse.id}"/>
+                             value = "${tmpGroup.id}"/>
                 </c:url>
                 <tr>
-                    <td>${tmpCourse.id}</td>
-                    <td>${tmpCourse.title}</td>
-                    <td>${tmpCourse.section}</td>
-                    <td>${tmpCourse.format}</td>
-                    <td>${tmpCourse.mentor}</td>
-                    <td>${tmpCourse.sectionStatus}</td>
-                    <td>${tmpCourse.meets}</td>
-                    <td>${tmpCourse.dates}</td>
-                    <td>${tmpCourse.description}</td>
+                    <td>${tmpGroup.id}</td>
+                    <td>${tmpGroup.name}</td>
+                    <td>${tmpGroup.interests}</td>
+                    <td>${tmpGroup.description}</td>
                     <td>
                             <%--UPDATE--%>
                         <a href = "${updateLink}"
                            class = "green btn white-text">Update</a>
                         || <a href = "${deleteLink}"
                               class = "materialize-red btn white-text"
-                              onclick = "if (!(confirm('Do you intend to delete course?'))) return false">Delete</a>
+                              onclick = "if (!(confirm('Do you intend to delete group?'))) return false">Delete</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -346,23 +336,6 @@ Time: 6:09 PM
             "scrollX": true,
             "paging": true
         });
-    });
-
-    if ("serviceWorker" in navigator) {
-        if (navigator.serviceWorker.controller) {
-            console.log("[PWA Builder] active service worker found, no need to register");
-        } else {
-            navigator.serviceWorker
-                .register("pwabuilder-sw.js", {
-                    scope: "./"
-                })
-                .then(function (reg) {
-                    console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                });
-        }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-        $('.preloader-background').delay(10).fadeOut('slow');
     });
 </script>
 <%--JAVASCRIPT END--%>

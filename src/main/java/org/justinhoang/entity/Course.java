@@ -14,8 +14,8 @@ import javax.persistence.*;
 public class Course
 {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long   id;
     @Column(name = "title")
     private String title;
     @Column(name = "section")
@@ -33,8 +33,10 @@ public class Course
     @Column(name = "description")
     private String description;
 
+    // many-to-one
     @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name="username", referencedColumnName = "username",
+                nullable = false)
     private User user;
 
 }

@@ -6,6 +6,7 @@ Time: 7:25 PM
 <%@ page contentType = "text/html;charset=UTF-8" language = "java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored = "false" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html class = " ">
 <head>
@@ -123,6 +124,15 @@ Time: 7:25 PM
                     <a href = "${pageContext.request.contextPath}/course/coursesRead">
                         <i class = "mdi mdi-school"></i>
                         <span class = "title">Course Listing</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class = "lvl1 ">
+                <div class = " waves-effect ">
+                    <a href = "${pageContext.request.contextPath}/group/groupsRead">
+                        <i class = "mdi mdi-account-group"></i>
+                        <span class = "title">Group Listing</span>
                     </a>
                 </div>
             </li>
@@ -395,8 +405,9 @@ Time: 7:25 PM
     <div class = "footer-menu">
         <ul>
             <li>
-                <a href = "#"> <i class = "mdi mdi-food"></i>
-                    <span>X</span>
+                <a href = "${pageContext.request.contextPath}/group/groupsRead">
+                    <i class = "mdi mdi-account-group"></i>
+                    <span>Group Listing</span>
                 </a></li>
             <li>
                 <a href = "${pageContext.request.contextPath}/user/usersRead">

@@ -13,6 +13,10 @@ public class EmailValidator
             "(.[A-Za-z]{2,})$";
     private static final Pattern pattern       = Pattern.compile(EMAIL_PATTERN);
 
+    private EmailValidator()
+    {
+    }
+
     /**
      * Is valid boolean.
      *

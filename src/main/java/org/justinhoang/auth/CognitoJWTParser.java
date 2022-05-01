@@ -16,6 +16,10 @@ public class CognitoJWTParser
     private static final int SIGNATURE = 2;
     private static final int JWT_PARTS = 3;
 
+    private CognitoJWTParser()
+    {
+    }
+
     /**
      * Returns header for a JWT as a JSON object.
      *

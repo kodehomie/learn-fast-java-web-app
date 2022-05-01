@@ -7,7 +7,6 @@ Time: 5:44 PM
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored = "false" %>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +27,7 @@ Time: 5:44 PM
           href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
           media = "screen,projection">
     <%--TITLE--%>
-    <title>User Form</title>
+    <title>Group Form</title>
 </head>
 <body>
 <%--TOP NAV--%>
@@ -47,7 +46,7 @@ Time: 5:44 PM
                 <ul id = "nav-mobile" class = "right hide-on-small-only">
                     <li><a href = "usersRead">User Listing</a></li>
                     <li><a href = "coursesRead">Course Listing</a></li>
-                    <li><a href = "groupsRead">Group Listing</a></li>
+                    <li><a href = "groupsRead">3</a>Group Listing</li>
                 </ul>
 
             </div>
@@ -63,7 +62,7 @@ Time: 5:44 PM
                 <div class = "section no-pad-bot" id = "index-banner">
                     <div class = "container">
                         <br><br>
-                        <h1 class = "header center">User Data</h1>
+                        <h1 class = "header center">Group Data</h1>
                         <div class = "row center">
                             <h5 class = "header col s12 light"></h5>
                         </div>
@@ -76,83 +75,36 @@ Time: 5:44 PM
                 <div class = "container">
                     <section class = "section">
                         <table class = "responsive-table">
-                            <form:form action = "userCreate"
+                            <form:form action = "groupCreate"
                                        cssClass = "form-horizontal"
-                                       method = "post" modelAttribute = "user">
+                                       method = "post"
+                                       modelAttribute = "group">
 
                                 <form:hidden path = "id"/>
 
                                 <div class = "form-group">
-                                    <label for = "birthdate"
-                                           class = "control-label">Birthdate</label>
+                                    <label for = "name"
+                                           class = "control-label">Name</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "birthdate"
+                                        <form:input path = "name"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "email"
-                                           class = "control-label">Email</label>
+                                    <label for = "interests"
+                                           class = "control-label">Interests</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "email"
+                                        <form:input path = "interests"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>
 
                                 <div class = "form-group">
-                                    <label for = "phoneNumber"
-                                           class = "control-label">Phone
-                                                                   Number</label>
+                                    <label for = "description"
+                                           class = "control-label">Description</label>
                                     <div class = "col-md-9">
-                                        <form:input path = "phoneNumber"
-                                                    cssClass = "form-control"/>
-                                    </div>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for = "givenName"
-                                           class = "control-label">First
-                                                                   Name</label>
-                                    <div class = "col-md-9">
-                                        <form:input path = "givenName"
-                                                    cssClass = "form-control"/>
-                                    </div>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for = "familyName"
-                                           class = "control-label">Last
-                                                                   Name</label>
-                                    <div class = "col-md-9">
-                                        <form:input path = "familyName"
-                                                    cssClass = "form-control"/>
-                                    </div>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for = "gender"
-                                           class = "control-label">Gender</label>
-                                    <div class = "col-md-9">
-                                        <form:input path = "gender"
-                                                    cssClass = "form-control"/>
-                                    </div>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for = "username"
-                                           class = "control-label">Username</label>
-                                    <div class = "col-md-9">
-                                        <form:input path = "username"
-                                                    cssClass = "form-control"/>
-                                    </div>
-                                </div>
-
-                                <div class = "form-group">
-                                    <label for = "password"
-                                           class = "control-label">Password</label>
-                                    <div class = "col-md-9">
-                                        <form:input path = "password"
+                                        <form:input path = "description"
                                                     cssClass = "form-control"/>
                                     </div>
                                 </div>

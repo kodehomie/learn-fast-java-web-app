@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * The interface User repo.
+ * Hibernate used for all data access.
  */
 @Repository("userRepo")
 public interface UserRepo extends JpaRepository<User, Long>

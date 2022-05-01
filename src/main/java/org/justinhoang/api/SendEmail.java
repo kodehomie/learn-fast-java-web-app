@@ -15,8 +15,8 @@ import java.util.Properties;
 public class SendEmail
 {
 
-    private final  Logger     log = LogManager.getLogger(this.getClass());
-    private static Properties properties;
+    static final Logger     log = LogManager.getLogger();
+    Properties properties;
 
     /**
      * Instantiates a new Send email.

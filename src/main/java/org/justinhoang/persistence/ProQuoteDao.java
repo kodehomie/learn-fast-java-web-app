@@ -2,10 +2,10 @@ package org.justinhoang.persistence;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.ws.rs.client.Client;
-import jakarta.ws.rs.client.ClientBuilder;
-import jakarta.ws.rs.client.WebTarget;
-import jakarta.ws.rs.core.MediaType;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.justinhoang.api.ProgrammingQuotes;
@@ -16,11 +16,14 @@ import java.util.Properties;
 
 /**
  * The type Pro quote dao.
+ * Consumes public api using Java.
+ * ProgrammingQuotesApi v2
+ * https://programming-quotes-api.herokuapp.com/index.html
  */
 public class ProQuoteDao implements PropLoader
 {
-    private final Logger     log = LogManager.getLogger(this.getClass());
-    private       Properties prop;
+    static final Logger     log = LogManager.getLogger();
+    Properties prop;
 
     /**
      * Instantiates a new Pro quote dao.

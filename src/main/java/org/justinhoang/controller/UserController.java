@@ -21,7 +21,7 @@ public class UserController
 {
     @Autowired
     private       UserService userService;
-    private final Logger      logger = LogManager.getLogger(this.getClass());
+    static final Logger      logger = LogManager.getLogger();
 
     /**
      * User create string.
@@ -83,7 +83,6 @@ public class UserController
     @GetMapping("/userUpdateForm")
     public String userUpdateForm(@RequestParam("id") Long id, Model entity) throws
                                                                             ResourceNotFoundException
-
     {
         User user = userService.readUser(id);
         entity.addAttribute("user", user);

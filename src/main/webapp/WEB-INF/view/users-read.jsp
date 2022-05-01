@@ -73,9 +73,9 @@ Time: 6:09 PM
                                                                    Fast</a></li>
                 </ul>
                 <ul id = "nav-mobile" class = "right hide-on-small-only">
-                    <li><a href = "usersRead">User Listing</a></li>
-                    <li><a href = "coursesRead">Course Listing</a></li>
-                    <li><a href = "#">3</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/user/usersRead">User Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/course/coursesRead">Course Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/group/groupsRead">Group Listing</a></li>
                 </ul>
 
             </div>
@@ -107,6 +107,24 @@ Time: 6:09 PM
                     <a href = "${pageContext.request.contextPath}/user/usersRead">
                         <i class = "mdi mdi-account-search"></i>
                         <span class = "title">User Listing</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class = "lvl1 ">
+                <div class = " waves-effect ">
+                    <a href = "${pageContext.request.contextPath}/course/coursesRead">
+                        <i class = "mdi mdi-school"></i>
+                        <span class = "title">Course Listing</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class = "lvl1 ">
+                <div class = " waves-effect ">
+                    <a href = "${pageContext.request.contextPath}/group/groupsRead">
+                        <i class = "mdi mdi-account-group"></i>
+                        <span class = "title">Group Listing</span>
                     </a>
                 </div>
             </li>

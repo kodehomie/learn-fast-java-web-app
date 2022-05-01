@@ -29,7 +29,8 @@ public class AccountDeleteController extends AuthenticationBase
      * @return the string
      */
     @GetMapping("/account-delete")
-    public String deleteAccount(Model model, HttpServletRequest request)
+    public String deleteAccount(final Model model,
+                                final HttpServletRequest request)
     {
         String nextView = "account-delete";
         UserInfo info =
@@ -55,9 +56,9 @@ public class AccountDeleteController extends AuthenticationBase
      */
     @PostMapping("/account-delete-form")
     public String deleteAccountForm(@RequestParam("password")
-                                    final String password,
+                                    final String password,final
                                     RedirectAttributes redirect,
-                                    HttpServletRequest request)
+                                    final HttpServletRequest request)
     {
         String nextView = "redirect:account-delete";
         UserInfo info =

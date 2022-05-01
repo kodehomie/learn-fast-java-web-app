@@ -15,7 +15,11 @@ import java.util.Date;
  */
 public class EmailUtil
 {
-    private final Logger log = LogManager.getLogger(this.getClass());
+    static final Logger log = LogManager.getLogger();
+
+    private EmailUtil()
+    {
+    }
 
     /**
      * Send email.

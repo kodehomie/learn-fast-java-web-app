@@ -23,7 +23,7 @@ public class SignInController extends HttpServlet implements PropLoader
      * The Properties.
      */
     Properties properties;
-    private final Logger logger = LogManager.getLogger(this.getClass());
+    static final Logger logger = LogManager.getLogger();
     /**
      * The constant CLIENT_ID.
      */

@@ -56,4 +56,5 @@ public interface UserService
      *         the resource not found exception
      */
     void deleteUser(Long id) throws ResourceNotFoundException;
+
 }
