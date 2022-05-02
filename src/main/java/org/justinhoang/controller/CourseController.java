@@ -32,7 +32,7 @@ public class CourseController
      * @return the string
      */
     @PostMapping("/courseCreate")
-    public String courseCreate(@ModelAttribute("course") Course course)
+    public String courseCreate(@ModelAttribute("course") final Course course)
     {
         courseService.createCourse(course);
         return "redirect:/course/courses-read";
@@ -47,7 +47,7 @@ public class CourseController
      * @return the string
      */
     @GetMapping("/courseCreateForm")
-    public String courseCreateForm(Model entity)
+    public String courseCreateForm(final Model entity)
     {
         Course course = new Course();
         entity.addAttribute("course", course);
@@ -63,7 +63,7 @@ public class CourseController
      * @return the string
      */
     @GetMapping("/coursesRead")
-    public String coursesRead(Model entity)
+    public String coursesRead(final Model entity)
     {
         List<Course> courses = courseService.readCourses();
         entity.addAttribute("courses", courses);
@@ -81,7 +81,8 @@ public class CourseController
      * @return the string
      */
     @GetMapping("/courseUpdateForm")
-    public String courseUpdateForm(@RequestParam("id") Long id, Model entity) throws
+    public String courseUpdateForm(@RequestParam("id") final Long id,
+                                   final Model entity) throws
                                                                             ResourceNotFoundException
 
     {
@@ -99,7 +100,7 @@ public class CourseController
      * @return the string
      */
     @GetMapping("/courseDelete")
-    public String courseDelete(@RequestParam("id") Long id) throws
+    public String courseDelete(@RequestParam("id")final Long id) throws
                                                           ResourceNotFoundException
     {
         courseService.deleteCourse(id);

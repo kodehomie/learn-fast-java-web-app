@@ -26,7 +26,7 @@ public class UserCreateController extends AuthenticationBase
      * @return the string
      */
     @GetMapping("/user-create")
-    public String userCreate(ModelMap model)
+    public String userCreate(final ModelMap model)
     {
         return "/user-create";
     }
@@ -46,7 +46,8 @@ public class UserCreateController extends AuthenticationBase
     @PostMapping("/user-create-form")
     public String newUser(
             @RequestParam("username") final String userName,
-            @RequestParam("email") final String email, RedirectAttributes redirect)
+            @RequestParam("email") final String email,
+            final RedirectAttributes redirect)
     {
         String  newPage     = "redirect:user-create";
         String  userNameArg = null;

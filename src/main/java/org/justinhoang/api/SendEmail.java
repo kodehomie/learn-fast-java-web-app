@@ -52,7 +52,7 @@ public class SendEmail
      * @param msg
      *         the msg
      */
-    public void SMTP(String Subject, String msg)
+    public void SMTP(final String Subject, final String msg)
     {
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");

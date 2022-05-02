@@ -20,14 +20,14 @@ public class CourseServiceImp implements CourseService
 
     @Override
     @Transactional
-    public void createCourse(Course course)
+    public void createCourse(final Course course)
     {
         courseRepo.save(course);
     }
 
     @Override
     @Transactional
-    public Course readCourse(Long id) throws ResourceNotFoundException
+    public Course readCourse(final Long id) throws ResourceNotFoundException
     {
         return courseRepo.findById(id)
                        .orElseThrow(() -> new ResourceNotFoundException(id));
@@ -42,14 +42,14 @@ public class CourseServiceImp implements CourseService
 
     @Override
     @Transactional
-    public void updateCourse(Course course)
+    public void updateCourse(final Course course)
     {
         courseRepo.save(course);
     }
 
     @Override
     @Transactional
-    public void deleteCourse(Long id)
+    public void deleteCourse(final Long id)
     {
         courseRepo.deleteById(id);
     }

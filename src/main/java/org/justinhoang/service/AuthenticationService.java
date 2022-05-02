@@ -49,7 +49,8 @@ public class AuthenticationService
      *
      * @return the credentials
      */
-    protected AWSCredentials getCredentials(String AWS_ID, String AWS_KEY)
+    protected AWSCredentials getCredentials(final String AWS_ID,
+                                            final String AWS_KEY)
     {
         return new BasicAWSCredentials(AWS_ID, AWS_KEY);
     }
@@ -289,7 +290,7 @@ public class AuthenticationService
     }
 
     @Override
-    public void resetPassword(ResetPasswordRequest resetRequest) throws
+    public void resetPassword(final ResetPasswordRequest resetRequest) throws
                                                                  AWSCognitoIdentityProviderException
     {
         ConfirmForgotPasswordRequest passwordRequest =

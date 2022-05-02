@@ -28,7 +28,7 @@ public class CognitoJWTParser
      *
      * @return header as a JSONObject.
      */
-    public static JSONObject getHeader(String jwt)
+    public static JSONObject getHeader(final String jwt)
     {
         try
         {
@@ -56,7 +56,7 @@ public class CognitoJWTParser
      *
      * @return payload as a JSONObject.
      */
-    public static JSONObject getPayload(String jwt)
+    public static JSONObject getPayload(final String jwt)
     {
         try
         {
@@ -85,7 +85,7 @@ public class CognitoJWTParser
      *
      * @return signature as a String.
      */
-    public static String getSignature(String jwt)
+    public static String getSignature(final String jwt)
     {
         try
         {
@@ -111,7 +111,7 @@ public class CognitoJWTParser
      *
      * @return claim from the JWT as a String.
      */
-    public static String getClaim(String jwt, String claim)
+    public static String getClaim(final String jwt, final String claim)
     {
         try
         {
@@ -137,7 +137,7 @@ public class CognitoJWTParser
      * @param jwt
      *         REQUIRED: The JWT as a {@link String}.
      */
-    public static void validateJWT(String jwt)
+    public static void validateJWT(final String jwt)
     {
         // Check if the the JWT has the three parts
         final String[] jwtParts = jwt.split("\\.");

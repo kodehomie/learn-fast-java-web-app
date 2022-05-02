@@ -13,7 +13,7 @@ public class ResourceNotFoundException extends Exception
      * @param id
      *         the id
      */
-    public ResourceNotFoundException(Object id)
+    public ResourceNotFoundException(final Object id)
     {
         super(id != null ? id.toString() : null);
     }

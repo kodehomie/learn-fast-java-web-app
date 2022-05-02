@@ -16,7 +16,7 @@ class ErrorController
 {
 
     @RequestMapping("/error")
-    ResponseEntity<Map<String, Object>> handleError(HttpServletRequest request)
+    ResponseEntity<Map<String, Object>> handleError(final HttpServletRequest request)
     {
         HttpStatus httpStatus = HttpStatus.valueOf((int) request.getAttribute(
                 RequestDispatcher.ERROR_STATUS_CODE));

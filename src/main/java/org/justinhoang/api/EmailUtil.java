@@ -33,8 +33,8 @@ public class EmailUtil
      * @param body
      *         the body
      */
-    public static void sendEmail(Session session, String recipient,
-                                 String subject, String body)
+    public static void sendEmail(final Session session, final String recipient,
+                                 final String subject, final String body)
     {
 
         try

@@ -24,7 +24,7 @@ public class UserAttributes
      * @param key
      *         the key
      */
-    public void setKey(String key)
+    public void setKey(final String key)
     {
         this.key = key;
     }
@@ -45,7 +45,7 @@ public class UserAttributes
      * @param value
      *         the value
      */
-    public void setValue(String value)
+    public void setValue(final String value)
     {
         this.value = value;
     }

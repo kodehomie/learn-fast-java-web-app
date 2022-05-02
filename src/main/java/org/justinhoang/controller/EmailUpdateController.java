@@ -31,8 +31,8 @@ public class EmailUpdateController extends AuthenticationBase
      * @return the model and view
      */
     @GetMapping("/email-update")
-    public ModelAndView emailUpdateRequest(ModelMap model,
-                                           HttpServletRequest request)
+    public ModelAndView emailUpdateRequest(final ModelMap model,
+                                           final HttpServletRequest request)
     {
         String   nextView = "email-update";
         UserInfo info     =
@@ -64,8 +64,8 @@ public class EmailUpdateController extends AuthenticationBase
     @PostMapping("/email-update-form")
     public String EmailUpdateRequestForm(@RequestParam("email")
                                          final String newEmail,
-                                         RedirectAttributes redirect,
-                                         HttpServletRequest request)
+                                         final RedirectAttributes redirect,
+                                         final HttpServletRequest request)
     {
         String   nextView = "redirect:email-update";
         UserInfo info     =

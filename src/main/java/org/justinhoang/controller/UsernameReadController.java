@@ -26,7 +26,7 @@ public class UsernameReadController extends AuthenticationBase
      * @return the string
      */
     @GetMapping("username-read")
-    public String usernameRead(Model model)
+    public String usernameRead(final Model model)
     {
         return "username-read";
     }
@@ -43,7 +43,8 @@ public class UsernameReadController extends AuthenticationBase
      */
     @PostMapping("username-read-form")
     public String usernameReadForm(
-            @RequestParam("email") String email, RedirectAttributes redirect)
+            @RequestParam("email") final String email,
+            final RedirectAttributes redirect)
     {
         String nextView = "redirect:username-read";
         if (Strings.isNullOrEmpty(email))

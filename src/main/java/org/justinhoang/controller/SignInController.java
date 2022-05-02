@@ -76,7 +76,8 @@ public class SignInController extends HttpServlet implements PropLoader
      *         servlet response
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
+    protected void doGet(final HttpServletRequest req,
+                         final HttpServletResponse resp) throws
                                                                            IOException
     {
         // TODO if properties weren't loaded properly, route to an error page
