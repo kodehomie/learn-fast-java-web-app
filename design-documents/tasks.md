@@ -1,59 +1,66 @@
 # Tasks by Story
 
 ### About
-- [ ] Create new about static page
+- [X] Create about features in footer
 
 ### Contact
-- [ ] Create new contact static page
+- [X] Create contact features in menu
 
 ### Create an account
-- [ ] Create new user JSP
-- [ ] Create user controller (Java class)
-- [ ] Create user entity (Java class)
-- [ ] Create user table
-- [ ] Create user DAO to add user in DB (Java class)
+- [X] Create new user JSP
+- [X] Create user controller (Java class)
+- [X] Create user entity (Java class)
+- [X] Create user table
+- [X] Create user persistence and service  to add user in DB (Java class)
 - [ ] Unit test dao add user functionality
 
 ### Sign In
-- [ ] Learn Google authentication
-- [ ] Add tasks once I learn more!
+- [X] AWS Cognito
 
-### Find Mentees
-- [ ] Crate mentee table
-- [ ] Search mentees JSP
-- [ ] Search mentees controller (Java class)
-- [ ] Create mentee entity (Java class)
-- [ ] Create mentee table
-- [ ] Create mentee DAO to search for mentee by name and location
-- [ ] Unit test mentee DAO searches (find by name and location)
+### Read Users Listing
+- [X] Create user table
+- [X] Search user JSP
+- [X] Search user controller (Java class)
+- [X] Create user entity (Java class)
+- [X] Create user table
+- [X] Create user persistence and service to add user in DB (Java class)
+- [X] Create user service with read feature
+- [ ] Unit test service add user functionality
 
-### Find Mentors
-- [ ] Create mentor table
-- [ ] Search mentors JSP
-- [ ] Search mentors controller (Java class)
-- [ ] Create mentor entity (Java class)
-- [ ] Create mentor table
-- [ ] Create mentor DAO to search for mentor by name and location
-- [ ] Unit test mentor dao searches (find by name and location)
+### Update Users
+- [X] Create user service with update feature
 
-### View Available Mentees
-- [ ] Create mentee DAO to search for mentee by availability
-- [ ] Unit test mentee DAO searches (find by availability)
+### Delete Users
+- [X] Create user service with delete feature
 
-### View Available Mentors
-- [ ] Create mentor DAO to search for mentee by availability
-- [ ] Unit test mentor DAO searches (find by availability)
+### Read Courses Listing
+- [X] Create course table
+- [X] Search course JSP
+- [X] Search course controller (Java class)
+- [X] Create course entity (Java class)
+- [X] Create course table
+- [X] Create course persistence and service to add user in DB (Java class)
+- [X] Create course service with read feature
+- [ ] Unit test service add course functionality
 
-### Connect With Mentees
-- [ ] Create mentee DAO to search for mentee by contact information
-- [ ] Unit test mentee dao searches (find by contact information)
+### Update Courses
+- [X] Create course service with update feature
 
-### Connect With Mentors
-- [ ] Create mentor DAO to search for mentee by contact information
-- [ ] Unit test mentor DAO searches (find by contact information)
+### Delete Courses
+- [X] Create course service with delete feature
 
-### Admin Edit Mentee
-- [ ] 
+### Read Groups Listing
+- [X] Create group table
+- [X] Search group JSP
+- [X] Search group controller (Java class)
+- [X] Create group entity (Java class)
+- [X] Create group table
+- [X] Create group persistence and service to add user in DB (Java class)
+- [X] Create group service with read feature
+- [ ] Unit test service add group functionality
 
-### Admit Edit Mentor
-- [ ] 
+### Update Groups
+- [X] Create group service with update feature
+
+### Delete Groups
+- [X] Create group service with delete feature
