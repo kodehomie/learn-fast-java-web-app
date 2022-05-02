@@ -28,8 +28,7 @@ public class UsernameReadController extends AuthenticationBase
     @GetMapping("username-read")
     public String usernameRead(Model model)
     {
-        String nextView = "username-read";
-        return nextView;
+        return "username-read";
     }
 
     /**

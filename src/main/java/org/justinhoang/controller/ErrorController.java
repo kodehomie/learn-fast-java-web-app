@@ -26,9 +26,7 @@ class ErrorController
                                                   RequestDispatcher.ERROR_REQUEST_URI),
                                           "timestamp",
                                           Instant.now().toEpochMilli());
-        ResponseEntity<Map<String, Object>> response =
-                new ResponseEntity<>(body, httpStatus);
-        return response;
+        return new ResponseEntity<>(body, httpStatus);
     }
 
 }

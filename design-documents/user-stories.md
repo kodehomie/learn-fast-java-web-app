@@ -15,38 +15,44 @@
 ### Sign in
 - As a "Learn Fast" user, I want to sign in so that I can access resources. (MVP)
 
-### Find Mentees
-- As any user, I want to find mentees so that I can learn more
+### Create Users Listing
+- As any user, I want to find users so that I can learn more
   about them. (MVP)
 
-### Find Mentors
-- As any user, I want to find mentors so that I can learn more
+### Read Users Listing
+- As any user, I want to read user data so that I can learn more
   about them. (MVP)
 
-### View Available Mentees
-- As any user, I want to view available mentees so that I can connect with
-  them. (MVP)
+### Update Users
+- As any user, I want to update my user data, so I can provide my current information. (MVP)
 
-### View Available Mentors
-- As any user, I want to view available mentors so that I can connect with
-  them. (MVP)
+### Delete Users
+- As any user, I want to delete my user data if I want to pause my account. (MVP)
 
-### Delete Availability
-- As any user, I want to delete available status so that others will not  
-  connect with me at this time. (MVP)
+### Create Courses Listing
+- As any user, I want to find courses so that I can learn more
+  about them. (MVP)
 
-### Connect With Mentee
-- As a mentor, I want to connect with a mentee so that I can build my
-  network with rising mentees. (MVP)
+### Read Courses Listing
+- As any user, I want to read course data so that I can learn more
+  about them. (MVP)
 
-### Connect With Mentor
-- As a mentee, I want to connect with a mentor so that I can learn from an
-  expert. (MVP)
+### Update Course
+- As a mentor, I want to update my course data, so I can provide my current information. (MVP)
 
-### Admin Edit Mentee
-- As an admin, I want to edit mentees so that I can assist in connecting
-  mentors and mentees. (MVP)
+### Delete Course
+- As a mentor, I want to delete my course data if I want to pause my course. (MVP)
 
-### Admit Edit Mentor
-- As an admin, I want to edit mentors so that I can assist in connecting
-  mentors and mentees. (MVP)
+### Create Group Listing
+- As any user, I want to find groups so that I can learn more
+  about them. (MVP)
+
+### Read Group Listing
+- As any user, I want to read group data so that I can learn more
+  about them. (MVP)
+
+### Update Group
+- As an admin, I want to update my group data, so I can provide the current information. (MVP)
+
+### Delete Group
+- As an admin, I want to delete my group data if I want to pause my group. (MVP)

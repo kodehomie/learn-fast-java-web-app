@@ -51,8 +51,7 @@ public class AuthenticationService
      */
     protected AWSCredentials getCredentials(String AWS_ID, String AWS_KEY)
     {
-        AWSCredentials credentials = new BasicAWSCredentials(AWS_ID, AWS_KEY);
-        return credentials;
+        return new BasicAWSCredentials(AWS_ID, AWS_KEY);
     }
 
     /**
@@ -65,13 +64,11 @@ public class AuthenticationService
         AWSCredentials credentials = getCredentials(cognitoId, cognitoKey);
         AWSCredentialsProvider credProvider =
                 new AWSStaticCredentialsProvider(credentials);
-        AWSCognitoIdentityProvider client =
-                AWSCognitoIdentityProviderClientBuilder.standard()
-                                                       .withCredentials(
-                                                               credProvider)
-                                                       .withRegion(region)
-                                                       .build();
-        return client;
+        return AWSCognitoIdentityProviderClientBuilder.standard()
+                                              .withCredentials(
+                                                       credProvider)
+                                              .withRegion(region)
+                                              .build();
     }
 
     @Override

@@ -294,14 +294,12 @@ public class AuthController extends HttpServlet implements PropLoader
 
         String encoding = Base64.getEncoder().encodeToString(keys.getBytes());
 
-        HttpRequest request =
-                HttpRequest.newBuilder().uri(URI.create(OAUTH_URL))
-                           .headers("Content-Type",
-                                    "application/x-www-form-urlencoded",
-                                    "Authorization", "Basic " + encoding)
-                           .POST(HttpRequest.BodyPublishers.ofString(form))
-                           .build();
-        return request;
+        return HttpRequest.newBuilder().uri(URI.create(OAUTH_URL))
+                  .headers("Content-Type",
+                            "application/x-www-form-urlencoded",
+                            "Authorization", "Basic " + encoding)
+                  .POST(HttpRequest.BodyPublishers.ofString(form))
+                  .build();
     }
 
     /**

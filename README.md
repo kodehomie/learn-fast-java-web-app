@@ -53,8 +53,7 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 * Hibernate Validation
 
 ##### Authentication & Authorization
-* Apache Tomcat DataSourceRealm
-* Google Authentication Identity Service
+* Amazon Cognito
 
 ##### Logging Framework
 * Log4J
@@ -62,21 +61,23 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Unit Testing
 * JUnit
 
-##### Web Service Consumption
+##### Web Service Consumption / API
 * Oracle JavaMail API
-* Google Translate
+* ProgrammingQuotesApi
+* https://programming-quotes-api.herokuapp.com/index.html
 
 ##### Hosting
 * Amazon Web Services (AWS)
 
 ##### Independent Research Topics
 * C
+* Google Guava
 * Materialize
 * Hibernate Validation
 * Hibernate Search
 * Spring Framework
+* Spring MVC
 * Project Lombok
-* Spring Boot
 
 ### Design
 
