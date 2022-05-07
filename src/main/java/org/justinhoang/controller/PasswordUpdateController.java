@@ -26,7 +26,7 @@ public class PasswordUpdateController extends AuthenticationBase
      * @return the string
      */
     @GetMapping("password-update")
-    public String passwordUpdate(Model model)
+    public String passwordUpdate(final Model model)
     {
         return "password-update";
     }
@@ -53,7 +53,7 @@ public class PasswordUpdateController extends AuthenticationBase
             @RequestParam("resetCode") final String resetCode,
             @RequestParam("newPassword") final String newPassword,
             @RequestParam("verifyPassword")
-            final String verifyPassword, RedirectAttributes redirect)
+            final String verifyPassword, final RedirectAttributes redirect)
     {
         boolean hasErrors         = false;
         String  usernameArg       = null;

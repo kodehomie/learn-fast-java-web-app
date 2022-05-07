@@ -23,7 +23,7 @@ public class ProgrammingQuotes
      * @param author
      *         the author
      */
-    public void setAuthor(String author)
+    public void setAuthor(final String author)
     {
         this.author = author;
     }
@@ -44,7 +44,7 @@ public class ProgrammingQuotes
      * @param en
      *         the en
      */
-    public void setEn(String en)
+    public void setEn(final String en)
     {
         this.en = en;
     }
@@ -65,7 +65,7 @@ public class ProgrammingQuotes
      * @param id
      *         the id
      */
-    public void setId(String id)
+    public void setId(final String id)
     {
         this.id = id;
     }

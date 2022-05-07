@@ -34,7 +34,7 @@ public class GroupController
      * @return the string
      */
     @PostMapping("/groupCreate")
-    public String groupCreate(@ModelAttribute("group") Group group)
+    public String groupCreate(@ModelAttribute("group") final Group group)
     {
         groupService.createGroup(group);
         return "redirect:/group/groups-read";
@@ -49,7 +49,7 @@ public class GroupController
      * @return the string
      */
     @GetMapping("/groupCreateForm")
-    public String groupCreateForm(Model entity)
+    public String groupCreateForm(final Model entity)
     {
         Group group = new Group();
         entity.addAttribute("group", group);
@@ -65,7 +65,7 @@ public class GroupController
      * @return the string
      */
     @GetMapping("/groupsRead")
-    public String groupsRead(Model entity)
+    public String groupsRead(final Model entity)
     {
         List<Group> groups = groupService.readGroups();
         entity.addAttribute("groups", groups);
@@ -83,7 +83,8 @@ public class GroupController
      * @return the string
      */
     @GetMapping("/groupUpdateForm")
-    public String groupUpdateForm(@RequestParam("id") Long id, Model entity) throws
+    public String groupUpdateForm(@RequestParam("id") final Long id,
+                                  final Model entity) throws
                                                                             ResourceNotFoundException
 
     {
@@ -101,7 +102,7 @@ public class GroupController
      * @return the string
      */
     @GetMapping("/groupDelete")
-    public String groupDelete(@RequestParam("id") Long id) throws
+    public String groupDelete(@RequestParam("id") final Long id) throws
                                                           ResourceNotFoundException
     {
         groupService.deleteGroup(id);

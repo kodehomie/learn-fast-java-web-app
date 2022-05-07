@@ -28,7 +28,7 @@ public class PasswordForgotController extends AuthenticationBase
      * @return the string
      */
     @GetMapping("/password-forgot")
-    public String passwordForgotView(Model model)
+    public String passwordForgotView(final Model model)
     {
         return "password-forgot";
     }
@@ -47,9 +47,9 @@ public class PasswordForgotController extends AuthenticationBase
      */
     @PostMapping("/password-forgot-form")
     public String passwordForgotForm(@RequestParam("username")
-                                            String user,
-                                    RedirectAttributes redirect,
-                                    HttpServletRequest request)
+                                            final String user,
+                                    final RedirectAttributes redirect,
+                                    final HttpServletRequest request)
     {
         boolean hasErrors   = false;
         String  usernameArg = null;

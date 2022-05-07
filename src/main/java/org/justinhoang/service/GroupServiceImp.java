@@ -20,14 +20,14 @@ public class GroupServiceImp implements GroupService
 
     @Override
     @Transactional
-    public void createGroup(Group group)
+    public void createGroup(final Group group)
     {
         groupRepo.save(group);
     }
 
     @Override
     @Transactional
-    public Group readGroup(Long id) throws ResourceNotFoundException
+    public Group readGroup(final Long id) throws ResourceNotFoundException
     {
         return groupRepo.findById(id)
                        .orElseThrow(() -> new ResourceNotFoundException(id));
@@ -42,14 +42,14 @@ public class GroupServiceImp implements GroupService
 
     @Override
     @Transactional
-    public void updateGroup(Group group)
+    public void updateGroup(final Group group)
     {
         groupRepo.save(group);
     }
 
     @Override
     @Transactional
-    public void deleteGroup(Long id)
+    public void deleteGroup(final Long id)
     {
         groupRepo.deleteById(id);
     }

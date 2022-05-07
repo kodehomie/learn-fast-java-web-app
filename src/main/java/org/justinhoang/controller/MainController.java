@@ -22,7 +22,8 @@ public class MainController extends AuthenticationBase
      * @return the string
      */
     @RequestMapping("/")
-    public ModelAndView index(ModelMap model, HttpServletRequest request ) {
+    public ModelAndView index(final ModelMap model,
+                              final HttpServletRequest request ) {
         String nextView = "index";
         UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
         if (info != null) {
@@ -34,7 +35,8 @@ public class MainController extends AuthenticationBase
     }
 
     @RequestMapping("/setup")
-    public ModelAndView setup(ModelMap model, HttpServletRequest request ) {
+    public ModelAndView setup(final ModelMap model,
+                              final HttpServletRequest request ) {
         String nextView = "index";
         UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
         if (info != null) {
@@ -46,7 +48,8 @@ public class MainController extends AuthenticationBase
     }
 
     @RequestMapping("/scratch")
-    public ModelAndView scratch(ModelMap model, HttpServletRequest request ) {
+    public ModelAndView scratch(final ModelMap model,
+                                final HttpServletRequest request ) {
         String nextView = "scratch";
         UserInfo info = (UserInfo)request.getSession().getAttribute(USER_SESSION_ATTR);
         if (info != null) {

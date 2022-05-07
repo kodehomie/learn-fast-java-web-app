@@ -32,7 +32,7 @@ public class UserController
      * @return the string
      */
     @PostMapping("/userCreate")
-    public String userCreate(@ModelAttribute("user") User user)
+    public String userCreate(@ModelAttribute("user") final User user)
     {
         userService.createUser(user);
         return "redirect:/user/users-read";
@@ -47,7 +47,7 @@ public class UserController
      * @return the string
      */
     @GetMapping("/userCreateForm")
-    public String userCreateForm(Model entity)
+    public String userCreateForm(final Model entity)
     {
         User user = new User();
         entity.addAttribute("user", user);
@@ -63,7 +63,7 @@ public class UserController
      * @return the string
      */
     @GetMapping("/usersRead")
-    public String usersRead(Model entity)
+    public String usersRead(final Model entity)
     {
         List<User> users = userService.readUsers();
         entity.addAttribute("users", users);
@@ -81,7 +81,8 @@ public class UserController
      * @return the string
      */
     @GetMapping("/userUpdateForm")
-    public String userUpdateForm(@RequestParam("id") Long id, Model entity) throws
+    public String userUpdateForm(@RequestParam("id") final Long id,
+                                 final Model entity) throws
                                                                             ResourceNotFoundException
     {
         User user = userService.readUser(id);
@@ -98,7 +99,7 @@ public class UserController
      * @return the string
      */
     @GetMapping("/userDelete")
-    public String userDelete(@RequestParam("id") Long id) throws
+    public String userDelete(@RequestParam("id") final Long id) throws
                                                           ResourceNotFoundException
     {
         userService.deleteUser(id);

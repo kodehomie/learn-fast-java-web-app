@@ -30,9 +30,9 @@ public class ProfileUpdateController extends AuthenticationBase
      * @return the model and view
      */
     @GetMapping("/profile-update")
-    public ModelAndView profileUpdate(ModelMap model,
-                                      RedirectAttributes redirect,
-                                      HttpServletRequest request)
+    public ModelAndView profileUpdate(final ModelMap model,
+                                      final RedirectAttributes redirect,
+                                      final HttpServletRequest request)
     {
         String nextView = "profile-update";
         UserInfo info =
@@ -60,8 +60,8 @@ public class ProfileUpdateController extends AuthenticationBase
      */
     @PostMapping("/profile-update-form")
     public String profileUpdateForm(
-                                    RedirectAttributes redirect,
-                                    HttpServletRequest request)
+                                    final RedirectAttributes redirect,
+                                    final HttpServletRequest request)
     {
         String nextView = "redirect:profile-update";
         UserInfo info =

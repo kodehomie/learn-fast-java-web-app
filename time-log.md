@@ -152,8 +152,8 @@
 * 2022-MAY-1-SUN - 4 hours
 * 2022-MAY-2-MON - 2 hours
 * 2022-MAY-3-TUE - 1 hour
-* 2022-MAY-4-WED - 
-* 2022-MAY-5-THU - 
-* 2022-MAY-6-FRI - 
+* 2022-MAY-4-WED - 1 hour
+* 2022-MAY-5-THU - 1 hour
+* 2022-MAY-6-FRI - 1 hour
 * 2022-MAY-7-SAT - 
 * Week 16 

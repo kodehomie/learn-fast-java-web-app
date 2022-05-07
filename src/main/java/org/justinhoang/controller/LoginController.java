@@ -35,8 +35,8 @@ public class LoginController extends AuthenticationBase
     @PostMapping("/login-form")
     public String login(
             @RequestParam("username") String user, @RequestParam("password")
-            String password, RedirectAttributes redirect,
-            HttpServletRequest request)
+            final String password, final RedirectAttributes redirect,
+            final HttpServletRequest request)
     {
         boolean hasErrors   = false;
         String  usernameArg = null;

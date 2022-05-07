@@ -5,7 +5,7 @@ import org.justinhoang.service.AuthenticationService;
 /**
  * The type Authentication base.
  */
-public abstract class AuthenticationBase
+public class AuthenticationBase
 {
     /**
      * The constant authService.

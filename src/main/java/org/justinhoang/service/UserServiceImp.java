@@ -20,14 +20,14 @@ public class UserServiceImp implements UserService
 
     @Override
     @Transactional
-    public void createUser(User user)
+    public void createUser(final User user)
     {
         userRepo.save(user);
     }
 
     @Override
     @Transactional
-    public User readUser(Long id) throws ResourceNotFoundException
+    public User readUser(final Long id) throws ResourceNotFoundException
     {
         return userRepo.findById(id)
                        .orElseThrow(() -> new ResourceNotFoundException(id));
@@ -42,14 +42,14 @@ public class UserServiceImp implements UserService
 
     @Override
     @Transactional
-    public void updateUser(User user)
+    public void updateUser(final User user)
     {
         userRepo.save(user);
     }
 
     @Override
     @Transactional
-    public void deleteUser(Long id)
+    public void deleteUser(final Long id)
     {
         userRepo.deleteById(id);
     }

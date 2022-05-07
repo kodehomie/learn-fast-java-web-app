@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AccountDeleteController extends AuthenticationBase
 {
+    public AccountDeleteController()
+    {
+    }
 
     /**
      * Delete account string.
