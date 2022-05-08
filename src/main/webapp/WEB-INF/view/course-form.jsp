@@ -9,52 +9,9 @@ Time: 5:44 PM
 <%@ page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <%--META--%>
-    <meta http-equiv = "Content-Type" content = "text/html; charset=ISO-8859-1">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">
-    <%--CSS--%>
-    <link type = "text/css" rel = "stylesheet"
-          href = "resources/css/style.css"
-          media = "screen,projection"/>
-    <%--MATERIALIZE CSS--%>
-    <link type = "text/css" rel = "stylesheet"
-          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link type = "text/css" rel = "stylesheet"
-          href = "resources/css/materialize.css"
-          media = "screen,projection"/>
-    <link type = "text/css" rel = "stylesheet"
-          href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-          media = "screen,projection">
-    <%--TITLE--%>
-    <title>Course Form</title>
-</head>
+<jsp:include page = "head.jsp"/>
 <body>
-<%--TOP NAV--%>
-<div class = "fixed-header">
-    <div class = "containerx">
-        <nav class = "materialize-red lighten-2" id = "nav"
-             role = "navigation">
-            <div class = "navbar-fixed">
-
-                <ul class = "left show-on-small">
-                    <li><a id = "logo-container"
-                           href = "${pageContext.request.contextPath}/welcome"
-                           class = "left brand-logo show-on-small">Learn
-                                                                   Fast</a></li>
-                </ul>
-                <ul id = "nav-mobile" class = "right hide-on-small-only">
-                    <li><a href = "usersRead">User Listing</a></li>
-                    <li><a href = "coursesRead">Course Listing</a></li>
-                    <li><a href = "#">3</a></li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>
-</div>
-<%--TOP NAV END--%>
-
+<jsp:include page = "navj.jsp"/>
 <div class = "container">
     <div id = "page-container">
         <div id = "content-wrap">
@@ -172,97 +129,7 @@ Time: 5:44 PM
         </div>
     </div>
 </div>
-
-<footer class = "page-footer">
-    <div class = "container footer-content">
-        <div class = "row">
-            <div class = "">
-                <h5 class = "logo">Learn Fast</h5>
-                <p class = "text">A modern social connection and learning
-                                  management system for mentors and mentees.</p>
-            </div>
-            <div class = "link-wrap">
-                <ul class = "link-ul">
-                    <li><a class = "white-text" href = "#!"><i
-                            class = "mdi mdi-phone"></i> +1 234 567 890</a>
-                    </li>
-                    <li><a class = "white-text" href = "#!"><i
-                            class = "mdi mdi-email"></i>
-                        jhoang1@madisoncollege.edu</a>
-                    </li>
-                    <li><a class = "white-text" href = "#!"><i
-                            class = "mdi mdi-map-marker"></i> 123 Street,
-                                                              Madison, WI,
-                                                              USA</a></li>
-                </ul>
-                <ul class = "social-wrap">
-                    <li class = "social">
-                        <a class = "" href = "#!"><i
-                                class = "mdi mdi-facebook"></i></a>
-                        <a class = "" href = "#!"><i
-                                class = "mdi mdi-twitter"></i></a>
-                        <a class = "" href = "#!"><i
-                                class = "mdi mdi-dribbble"></i></a>
-                        <a class = "" href = "#!"><i
-                                class = "mdi mdi-google-plus"></i></a>
-                        <a class = "" href = "#!"><i
-                                class = "mdi mdi-linkedin"></i></a>
-
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class = "footer-copyright">
-        <div class = "container">
-            Built with ?? & ? by: Justin Hoang
-        </div>
-    </div>
-</footer>
-<%--JAVASCRIPT--%>
-<script type = "text/javascript"
-        src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type = "text/javascript"
-        src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type = "text/javascript" src = "resources/js/init.js"></script>
-<script type = "text/javascript" src = "resources/js/materialize.js"></script>
-<%--JAVASCRIPT END--%>
+<jsp:include page = "footer.jsp"/>
+<jsp:include page = "js.jsp"/>
 </body>
-<%--NAV--%>
-<%--<div class = "fixed-footer">--%>
-<%--    <div class = "containerx">--%>
-<%--        <footer class = "page-footer materialize-red lighten-2"--%>
-<%--                id = "footer">--%>
-<%--            <nav class = "materialize-red lighten-2"--%>
-<%--                 role = "navigation">--%>
-<%--                <div class = "nav-wrapper container">--%>
-<%--                    <div class = "center container">--%>
-<%--                        <ul class = "center container" id = "nav-bottom">--%>
-<%--                            <li><a href = "welcome"><i--%>
-<%--                                    class = "material-icons">home</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">search</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">ondemand_video</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">shop</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">chat</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">person_pin</i></a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                    </ul>--%>
-<%--                </div>--%>
-<%--            </nav>--%>
-<%--        </footer>--%>
-<%--    </div>--%>
-<%--</div>--%>
-<%--NAV END--%>
 </html>

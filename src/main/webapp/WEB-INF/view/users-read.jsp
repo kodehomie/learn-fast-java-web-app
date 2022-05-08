@@ -8,13 +8,13 @@ Time: 6:09 PM
 <%@ page isELIgnored = "false" %>
 <!DOCTYPE html>
 <html class = " ">
-<jsp:include page="head.jsp" />
+<jsp:include page = "head.jsp"/>
 <body class = "html" data-header = "colored" data-footer = "light"
       data-header_align = "center" data-menu_type = "left" data-menu = "colored"
       data-menu_icons = "on" data-footer_type = "left" data-site_mode = "light"
       data-footer_menu = "show" data-footer_menu_style = "colored">
 
-<jsp:include page="navj.jsp" />
+<jsp:include page = "navj.jsp"/>
 
 <div class = "content" id = "content">
     <div class = "section no-pad-bot" id = "index-banner">
@@ -89,35 +89,7 @@ Time: 6:09 PM
         </table>
     </section>
 </div>
-
 <jsp:include page = "footer.jsp"/>
 <jsp:include page = "js.jsp"/>
-<script>
-    $(document).ready(function () {
-        $('#userTable').DataTable({
-            "scrollY": 500,
-            "scrollX": true,
-            "paging": true
-        });
-    });
-
-    if ("serviceWorker" in navigator) {
-        if (navigator.serviceWorker.controller) {
-            console.log("[PWA Builder] active service worker found, no need to register");
-        } else {
-            navigator.serviceWorker
-                .register("pwabuilder-sw.js", {
-                    scope: "./"
-                })
-                .then(function (reg) {
-                    console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                });
-        }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-        $('.preloader-background').delay(10).fadeOut('slow');
-    });
-</script>
-<%--JAVASCRIPT END--%>
 </body>
 </html>
