@@ -40,7 +40,7 @@
         <!--GENERIC PROPERTIES end-->
 
         <!--ADDITIONAL PROPERTIES-->
-        <spring-version>5.3.17</spring-version>
+        <spring-version>5.3.19</spring-version>
         <spring-data-version>2.6.4</spring-data-version>
         <spring-data-jpa-version>2.6.3</spring-data-jpa-version>
         <hibernate-core-version>5.6.8.Final</hibernate-core-version>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <!--ORIGINAL DEPENDENCY END-->
@@ -281,14 +281,8 @@
         </dependency>
 
         <!--JUNIT-->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-<!--        <dependency>-->
-<!--            <groupId>junit</groupId>-->
-<!--            <artifactId>junit</artifactId>-->
-<!--            <version>4.13.2</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <!--JUnit Jupiter API for writing tests.-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -439,8 +433,6 @@
             <artifactId>json-path</artifactId>
             <version>2.7.0</version>
         </dependency>
-
-
 
         <!--ADDITIONAL DEPENDENCIES END-->
 

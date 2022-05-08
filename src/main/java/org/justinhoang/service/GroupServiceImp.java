@@ -37,7 +37,7 @@ public class GroupServiceImp implements GroupService
     @Transactional
     public List<Group> readGroups()
     {
-        return groupRepo.findAll();
+        return (List<Group>) groupRepo.findAll();
     }
 
     @Override

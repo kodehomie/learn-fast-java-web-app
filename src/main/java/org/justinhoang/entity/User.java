@@ -1,10 +1,12 @@
 package org.justinhoang.entity;
 
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -12,9 +14,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "user")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class User implements Serializable
 {
     @Id
@@ -42,11 +45,6 @@ public class User implements Serializable
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Set<Course> courses = new HashSet<Course>();
-    // one-to-many
-    @OneToMany(mappedBy = "user")
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    private Set<Group> groups = new HashSet<Group>();
 
     // one-to-many
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
@@ -56,5 +54,22 @@ public class User implements Serializable
 
     public void setRoles(final Set<Role> roles) {
         this.roles = roles;
+    }
+
+    @Override
+    public boolean equals(final Object o)
+    {
+        if (this == o)
+            return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o))
+            return false;
+        final User user = (User) o;
+        return id != null && Objects.equals(id, user.id);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return getClass().hashCode();
     }
 }
