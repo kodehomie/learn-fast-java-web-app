@@ -4,6 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 
+/**
+ * The type Role.
+ */
 @Entity
 @Table(name = "role")
 @Data

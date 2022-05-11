@@ -4,8 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name = "connection.url">jdbc:mysql://localhost:3306
-            /learnfasttest
+<!--        <property name = "connection.url">jdbc:mysql://aa1eui0brs6vuug.ctmsazb7vffv.us-east-1.rds.amazonaws.com:3306/learnfasttest-->
+<!--        </property>-->
+        <property
+                name = "connection.url">jdbc:mysql://localhost:3306/learnfasttest
         </property>
         <property name = "connection.driver_class">com.mysql.jdbc.Driver
         </property>

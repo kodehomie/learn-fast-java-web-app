@@ -3,7 +3,6 @@ package org.justinhoang.conf;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -36,25 +35,36 @@ public class WebMvcConf implements WebMvcConfigurer
     }
 
     @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry)
+    public void addResourceHandlers(ResourceHandlerRegistry registry)
     {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("classpath:/resources/")
-                .resourceChain(false).addResolver(new PathResourceResolver());
-        registry.addResourceHandler("/css/**")
-                .addResourceLocations("classpath:/css/").resourceChain(false)
+                .resourceChain(false)
                 .addResolver(new PathResourceResolver());
-        registry.addResourceHandler("/img/**")
-                .addResourceLocations("classpath:/img/").resourceChain(false)
+
+        registry.addResourceHandler("//**")
+                .addResourceLocations("classpath:/css/")
+                .resourceChain(false)
                 .addResolver(new PathResourceResolver());
+
+        registry.addResourceHandler("//**")
+                .addResourceLocations("classpath:/img/")
+                .resourceChain(false)
+                .addResolver(new PathResourceResolver());
+
         registry.addResourceHandler("/include/**")
                 .addResourceLocations("classpath:/include/")
-                .resourceChain(false).addResolver(new PathResourceResolver());
-        registry.addResourceHandler("/js/**")
-                .addResourceLocations("classpath:/js/").resourceChain(false)
+                .resourceChain(false)
                 .addResolver(new PathResourceResolver());
+
+        registry.addResourceHandler("//**")
+                .addResourceLocations("classpath:/js/")
+                .resourceChain(false)
+                .addResolver(new PathResourceResolver());
+
         registry.addResourceHandler("/jsp/**")
-                .addResourceLocations("classpath:/jsp/").resourceChain(false)
+                .addResourceLocations("classpath:/jsp/")
+                .resourceChain(false)
                 .addResolver(new PathResourceResolver());
     }
 }

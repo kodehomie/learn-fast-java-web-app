@@ -52,6 +52,12 @@ public class User implements Serializable
     @EqualsAndHashCode.Exclude
     private Set<Role> roles = new HashSet<Role>();
 
+    /**
+     * Sets roles.
+     *
+     * @param roles
+     *         the roles
+     */
     public void setRoles(final Set<Role> roles) {
         this.roles = roles;
     }

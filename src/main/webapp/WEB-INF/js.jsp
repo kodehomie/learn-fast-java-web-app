@@ -5,20 +5,20 @@
         src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <%--FRAMEWORK--%>
 <script type = "text/javascript"
-        src = "resources/js/jquery-3.6.0.min.js"></script>
+        src = "js/jquery-3.6.0.min.js"></script>
 <script type = "text/javascript"
-        src = "resources/js/materialize.js"></script>
+        src = "js/materialize.js"></script>
 <script type = "text/javascript"
-        src = "resources/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        src = "plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 <%--TEMPLATE--%>
-<script type = "text/javascript" src = "resources/js/init.js"></script>
-<script type = "text/javascript" src = "resources/js/settings.js"></script>
+<script type = "text/javascript" src = "js/init.js"></script>
+<script type = "text/javascript" src = "js/settings.js"></script>
 <%--    <script type = "text/javascript" src = "resources/js/scripts.js"></script>--%>
 <%--DATATABLES--%>
 <script type = "text/javascript"
-        src = "resources/js/jquery.dataTables.min.js"></script>
+        src = "js/jquery.dataTables.min.js"></script>
 <script type = "text/javascript"
-        src = "resources/js/dataTables.material.min.js"></script>
+        src = "js/dataTables.material.min.js"></script>
 <script type = "text/javascript"
         src = "https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script>

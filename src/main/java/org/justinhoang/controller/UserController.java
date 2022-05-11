@@ -51,7 +51,7 @@ public class UserController
     {
         User user = new User();
         entity.addAttribute("user", user);
-        return "user-form";
+        return "/user-form";
     }
 
     /**
@@ -67,7 +67,7 @@ public class UserController
     {
         List<User> users = userService.readUsers();
         entity.addAttribute("users", users);
-        return "users-read";
+        return "/users-read";
     }
 
     /**
@@ -87,7 +87,7 @@ public class UserController
     {
         User user = userService.readUser(id);
         entity.addAttribute("user", user);
-        return "user-form";
+        return "/user-form";
     }
 
     /**

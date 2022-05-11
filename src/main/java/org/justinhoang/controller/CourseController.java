@@ -51,7 +51,7 @@ public class CourseController
     {
         Course course = new Course();
         entity.addAttribute("course", course);
-        return "course-form";
+        return "/course-form";
     }
 
     /**
@@ -67,7 +67,7 @@ public class CourseController
     {
         List<Course> courses = courseService.readCourses();
         entity.addAttribute("courses", courses);
-        return "courses-read";
+        return "/courses-read";
     }
 
     /**
@@ -88,7 +88,7 @@ public class CourseController
     {
         Course course = courseService.readCourse(id);
         entity.addAttribute("course", course);
-        return "course-form";
+        return "/course-form";
     }
 
     /**

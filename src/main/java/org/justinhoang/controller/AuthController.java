@@ -90,6 +90,7 @@ public class AuthController extends HttpServlet implements PropLoader
     public void init() throws ServletException
     {
         super.init();
+        load();
         loadKey();
     }
 
@@ -346,7 +347,7 @@ public class AuthController extends HttpServlet implements PropLoader
      */
     // TODO This code appears in a couple classes, consider using a startup
     //  servlet similar to adv java project
-    private void loadProperties()
+    private void load()
     {
         try
         {

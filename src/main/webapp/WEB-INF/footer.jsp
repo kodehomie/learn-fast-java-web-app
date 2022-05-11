@@ -18,7 +18,7 @@
                     <li><i
                             class = "mdi mdi-map-marker"></i> 123 Street,
                                                               Madison, WI,
-                                                              USA</a></li>
+                                                              USA</li>
                 </ul>
                 <ul class = "social-wrap">
                     <li class = "social">

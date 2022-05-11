@@ -17,7 +17,7 @@ public class MainController
     @RequestMapping("/")
     public String home()
     {
-        return "index";
+        return "/index";
     }
 
     /**
@@ -28,7 +28,7 @@ public class MainController
     @RequestMapping("/welcome")
     public String welcome()
     {
-        return "welcome";
+        return "/welcome";
     }
 
 }

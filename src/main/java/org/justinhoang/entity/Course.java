@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * The type Course.
+ */
 @Entity
 @Table(name = "course")
 @Data
