@@ -98,5 +98,5 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 ### Demo
 
-*[Video Demo](https://youtu.be/YusEjb0OHmA)
-*[AWS Link](https://justinhoang-learnfast.us-east-2.elasticbeanstalk.com/)
+* [Video Demo](https://youtu.be/YusEjb0OHmA)
+* [AWS Link](https://justinhoang-learnfast.us-east-2.elasticbeanstalk.com/)
