@@ -63,8 +63,8 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 ##### Web Service Consumption / API
 * Oracle JavaMail API
-* ProgrammingQuotesApi
-* https://programming-quotes-api.herokuapp.com/index.html
+* [Activity API](https://www.boredapi.com/api/activity/)
+* [ProgrammingQuotesApi](https://programming-quotes-api.herokuapp.com/quotes/random)
 
 ##### Hosting
 * Amazon Web Services (AWS)
@@ -72,6 +72,8 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 ##### Independent Research Topics
 * C
 * Google Guava
+* GSON
+* Guice
 * Materialize
 * Hibernate Validation
 * Hibernate Search
@@ -93,3 +95,8 @@ Mentors and mentees need a more efficient way to connect and manage their learni
 
 * [Time Log](time-log.md)
 * [Journal](journal.md)
+
+### Demo
+
+*[Video Demo](https://youtu.be/YusEjb0OHmA)
+*[AWS Link](https://justinhoang-learnfast.us-east-2.elasticbeanstalk.com/)
