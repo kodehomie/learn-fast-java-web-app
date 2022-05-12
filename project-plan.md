@@ -121,16 +121,16 @@
 
 ### Week 16
 ##### Dates: 2022-MAY-1-SUN - 2022-MAY-7-SAT
-- [ ] Create video, add video link to readme.md
-- [ ] Finalize all documentation
-- [ ] Code quality check
-- [ ] Final Presentation
-- [ ] Final touches before code complete
-- [ ] Document progress in journal
+- [X] Create video, add video link to readme.md
+- [X] Finalize all documentation
+- [X] Code quality check
+- [X] Final Presentation
+- [X] Final touches before code complete
+- [X] Document progress in journal
 
 ### Week 17
 ##### Dates: 2022-MAY-9-SUN - 2022-MAY-14-SAT
-- [ ] Present individual project
-- [ ] Final touches before code complete
-- [ ] Document progress in journal
-- [ ] Complete enterprise Java
+- [X] Present individual project
+- [X] Final touches before code complete
+- [X] Document progress in journal
+- [X] Complete enterprise Java
