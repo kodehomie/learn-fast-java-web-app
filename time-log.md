@@ -162,5 +162,5 @@
 * 2022-MAY-8-SUN - 5 hours
 * 2022-MAY-9-MON - 6 hours
 * 2022-MAY-10-TUE - 7 hours
-* 2022-MAY-11-WED -
+* 2022-MAY-11-WED - 5 hours
 * Week 17

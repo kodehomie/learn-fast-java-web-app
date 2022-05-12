@@ -45,9 +45,11 @@ Time: 5:44 PM
                                                                    Fast</a></li>
                 </ul>
                 <ul id = "nav-mobile" class = "right hide-on-small-only">
-                    <li><a href = "usersRead">User Listing</a></li>
-                    <li><a href = "coursesRead">Course Listing</a></li>
-                    <li><a href = "groupsRead">Group Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/welcome">Home</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/user/usersRead">User Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/course/coursesRead">Course Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/activity-generator">Activity Generator</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/programming-quotes">Programming Quotes</a></li>
                 </ul>
 
             </div>

@@ -44,9 +44,11 @@ Time: 5:44 PM
                                                                    Fast</a></li>
                 </ul>
                 <ul id = "nav-mobile" class = "right hide-on-small-only">
-                    <li><a href = "usersRead">User Listing</a></li>
-                    <li><a href = "coursesRead">Course Listing</a></li>
-                    <li><a href = "#">3</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/welcome">Home</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/user/usersRead">User Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/course/coursesRead">Course Listing</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/activity-generator">Activity Generator</a></li>
+                    <li><a href = "${pageContext.request.contextPath}/programming-quotes">Programming Quotes</a></li>
                 </ul>
 
             </div>
@@ -215,7 +217,7 @@ Time: 5:44 PM
     </div>
     <div class = "footer-copyright">
         <div class = "container">
-            Built with ?? & ? by: Justin Hoang
+            Built with ❤️ & 🍜 by: Justin Hoang
         </div>
     </div>
 </footer>
@@ -228,41 +230,5 @@ Time: 5:44 PM
 <script type = "text/javascript" src = "resources/js/materialize.js"></script>
 <%--JAVASCRIPT END--%>
 </body>
-<%--NAV--%>
-<%--<div class = "fixed-footer">--%>
-<%--    <div class = "containerx">--%>
-<%--        <footer class = "page-footer materialize-red lighten-2"--%>
-<%--                id = "footer">--%>
-<%--            <nav class = "materialize-red lighten-2"--%>
-<%--                 role = "navigation">--%>
-<%--                <div class = "nav-wrapper container">--%>
-<%--                    <div class = "center container">--%>
-<%--                        <ul class = "center container" id = "nav-bottom">--%>
-<%--                            <li><a href = "welcome"><i--%>
-<%--                                    class = "material-icons">home</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">search</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">ondemand_video</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">shop</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">chat</i></a>--%>
-<%--                            </li>--%>
-<%--                            <li><a href = "#"><i--%>
-<%--                                    class = "material-icons">person_pin</i></a>--%>
-<%--                            </li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-<%--                    </ul>--%>
-<%--                </div>--%>
-<%--            </nav>--%>
-<%--        </footer>--%>
-<%--    </div>--%>
-<%--</div>--%>
-<%--NAV END--%>
+
 </html>

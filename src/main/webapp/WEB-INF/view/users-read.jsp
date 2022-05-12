@@ -74,6 +74,7 @@ Time: 6:09 PM
                                                                    Fast</a></li>
                 </ul>
                 <ul id = "nav-mobile" class = "right hide-on-small-only">
+                    <li><a href = "${pageContext.request.contextPath}/welcome">Home</a></li>
                     <li><a href = "${pageContext.request.contextPath}/user/usersRead">User Listing</a></li>
                     <li><a href = "${pageContext.request.contextPath}/course/coursesRead">Course Listing</a></li>
                     <li><a href = "${pageContext.request.contextPath}/activity-generator">Activity Generator</a></li>
